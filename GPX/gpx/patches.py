@@ -1,15 +1,25 @@
 """Runtime patches for third-party libraries used by GPX."""
 
-# Hey team — just wanted to document what changed here because it's the fix for
-# the zero-division crash we kept seeing in the discrete solver. GPkit's
-# ``PosynomialInequality.sens_from_dual`` routine divides by the constant
-# coefficient of a constraint when it back-substitutes dual values. That works
-# fine until the constraint is effectively constant (coefficient ~= 0), at which
-# point the division blows up and the entire solve fails. I've copied the core
-# routine so that we can short-circuit the constant-term contribution whenever
-# the coefficient is zero-ish. Everything else remains identical to the upstream
-# implementation, so sensitivities are unchanged for normal cases, and the
-# solver can now march on safely when the constant term disappears.
+# Quick recap for the team: this module is where I patched the zero-division
+# crash we saw coming out of GPkit. Their
+# ``PosynomialInequality.sens_from_dual`` helper divides by the constraint's
+# constant coefficient when it folds dual values back into primal sensitivities.
+# When that coefficient is effectively zero (which happens in our discrete
+# solve), the division trips ``ZeroDivisionError`` and the whole solve aborts.
+#
+# To keep the behaviour identical in the normal case, I copied the GPkit
+# routine verbatim and only changed the tiny bit that handles the constant-term
+# contribution. Now, whenever the constant coefficient vanishes, we simply skip
+# that portion of the calculation and continue using the dual values provided by
+# the solver. That preserves GPkit's math when the coefficient is non-zero while
+# letting us side-step the pathological case that caused the crash.
+#
+# The ``apply_patches`` function at the bottom performs the actual override:
+# importing ``gpx.patches`` rebinds
+# ``PosynomialInequality.sens_from_dual`` to this guarded copy. Because our
+# package's ``__init__`` imports ``patches`` on load, the swap happens before any
+# models are solved, so every subsequent call into GPkit automatically picks up
+# the patched logic.
 
 from __future__ import annotations
 
