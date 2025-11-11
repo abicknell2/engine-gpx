@@ -1,0 +1,54 @@
+# For more information, please refer to https://aka.ms/vscode-docker-python
+FROM python:3.13-slim
+
+RUN apt-get update \
+&& apt-get install -y --no-install-recommends git \
+&& rm -rf /var/lib/apt/lists/*
+
+EXPOSE 8080
+
+# Keeps Python from generating .pyc files in the container
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Turns off buffering for easier container logging
+ENV PYTHONUNBUFFERED=1
+
+# Set to user external login
+# ENV COP_EXTERN_LOGIN=1
+
+# Folder that holds requirements.txt  (we'll set it at build-time)
+ARG ENGINE_DIR
+
+# Install pip requirements
+COPY ${ENGINE_DIR}/prod-requirements.txt .
+COPY ${ENGINE_DIR}/vendor ./vendor
+RUN  python -m pip install -r prod-requirements.txt
+
+# Install the GPX models
+
+# Build command injects the correct relative path
+ARG GPX_TARBALL_PATH
+
+# Use the arg in the ADD
+COPY ${GPX_TARBALL_PATH} /tmp/gpx.tar.gz
+RUN python -m pip install --no-cache-dir /tmp/gpx.tar.gz \
+&& rm -f /tmp/gpx.tar.gz
+
+# Install the AD package from the vendored wheel
+COPY ${ENGINE_DIR}/ad-1.3.2-py3-none-any.whl /tmp/
+RUN pip install /tmp/ad-1.3.2-py3-none-any.whl && rm /tmp/ad-1.3.2-py3-none-any.whl
+
+WORKDIR /app
+COPY ${ENGINE_DIR} /app
+
+# run the gpkit tests as the admin
+RUN python -c "import gpkit"
+
+# Creates a non-root user with an explicit UID and adds permission to access the /app folder
+# For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
+USER appuser
+
+# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
+CMD ["uwsgi", "--http-socket", "0.0.0.0:8080", "--enable-threads", "-w", "wsgi:app"]
+

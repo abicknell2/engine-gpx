@@ -1,0 +1,428 @@
+{
+  "id": 248640269.8910335,
+  "model": {
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "month",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rate": 100,
+      "rates": [],
+      "selectedModule": 2186884652.9123797
+    },
+    "modelName": "CE-607 Powertrain Manufacturing",
+    "modules": [
+      {
+        "id": 2186884652.9123797,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "Install Engine Cell"
+            },
+            {
+              "name": "Assemble Engine Cell"
+            },
+            {
+              "name": "Assemble Cylinder Heads Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "feederLines": [
+            {
+              "id": "Engine Assembly",
+              "to": "P010"
+            },
+            {
+              "id": "Cylinder Heads Subassembly",
+              "to": "F1010"
+            },
+            {
+              "id": "Valves",
+              "to": "F2010"
+            },
+            {
+              "id": "Pistons",
+              "to": "F1010"
+            },
+            {
+              "id": "Engine Block",
+              "to": "F1010"
+            }
+          ],
+          "feederProcesses": [
+            {
+              "cell": "Assemble Engine Cell",
+              "feederLine": "Engine Assembly",
+              "id": "F1010",
+              "type": "Assemble Engine"
+            },
+            {
+              "cell": "Assemble Cylinder Heads Cell",
+              "feederLine": "Cylinder Heads Subassembly",
+              "id": "F2010",
+              "type": "Assemble Cylinder Heads"
+            }
+          ],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "table",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "Install Engine Cell",
+              "id": "P010",
+              "type": "Install Engine"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [],
+          "variables": [
+            {
+              "category": "all processes",
+              "key": "All Processes CV // Powertrain-Engine",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 25
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "Install Engine Cell Batch Size // Powertrain-Engine",
+              "name": "Install Engine Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Install Engine Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Install Engine Time // Powertrain-Engine",
+              "name": "Install Engine Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Install Engine",
+              "unit": "min",
+              "value": 10
+            },
+            {
+              "category": "feederLines",
+              "key": "Engine Assembly Quantity // Powertrain-Engine",
+              "name": "Engine Assembly Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Engine Assembly",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "Assemble Engine Cell Batch Size // Powertrain-Engine",
+              "name": "Assemble Engine Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Assemble Engine Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Assemble Engine Time // Powertrain-Engine",
+              "name": "Assemble Engine Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Assemble Engine",
+              "unit": "min",
+              "value": 60
+            },
+            {
+              "category": "feederLines",
+              "key": "Cylinder Heads Subassembly Quantity // Powertrain-Engine",
+              "name": "Cylinder Heads Subassembly Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Cylinder Heads Subassembly",
+              "unit": "count",
+              "value": 2
+            },
+            {
+              "category": "cells",
+              "key": "Assemble Cylinder Heads Cell Batch Size // Powertrain-Engine",
+              "name": "Assemble Cylinder Heads Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Assemble Cylinder Heads Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Assemble Cylinder Heads Time // Powertrain-Engine",
+              "name": "Assemble Cylinder Heads Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Assemble Cylinder Heads",
+              "unit": "min",
+              "value": 30
+            },
+            {
+              "category": "feederLines",
+              "key": "Valves Quantity // Powertrain-Engine",
+              "name": "Valves Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Valves",
+              "unit": "count",
+              "value": 12
+            },
+            {
+              "category": "feederLines",
+              "key": "Valves Variable Cost // Powertrain-Engine",
+              "name": "Valves Variable Cost",
+              "property": "Variable Cost",
+              "sign": "=",
+              "type": "Valves",
+              "unit": "$",
+              "value": 20
+            },
+            {
+              "category": "feederLines",
+              "key": "Pistons Quantity // Powertrain-Engine",
+              "name": "Pistons Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Pistons",
+              "unit": "count",
+              "value": 6
+            },
+            {
+              "category": "feederLines",
+              "key": "Pistons Variable Cost // Powertrain-Engine",
+              "name": "Pistons Variable Cost",
+              "property": "Variable Cost",
+              "sign": "=",
+              "type": "Pistons",
+              "unit": "$",
+              "value": 50
+            },
+            {
+              "category": "feederLines",
+              "key": "Engine Block Quantity // Powertrain-Engine",
+              "name": "Engine Block Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Engine Block",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "feederLines",
+              "key": "Engine Block Variable Cost // Powertrain-Engine",
+              "name": "Engine Block Variable Cost",
+              "property": "Variable Cost",
+              "sign": "=",
+              "type": "Engine Block",
+              "unit": "$",
+              "value": 100
+            },
+            {
+              "category": "cells",
+              "key": "Install Engine Cell Non-Recurring Cost // Powertrain-Engine",
+              "name": "Install Engine Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Install Engine Cell",
+              "unit": "$",
+              "value": 150000
+            },
+            {
+              "category": "cells",
+              "key": "Assemble Engine Cell Non-Recurring Cost // Powertrain-Engine",
+              "name": "Assemble Engine Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Assemble Engine Cell",
+              "unit": "$",
+              "value": 100000
+            },
+            {
+              "category": "cells",
+              "key": "Assemble Cylinder Heads Cell Non-Recurring Cost // Powertrain-Engine",
+              "name": "Assemble Cylinder Heads Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Assemble Cylinder Heads Cell",
+              "unit": "$",
+              "value": 20000
+            }
+          ]
+        },
+        "name": "Powertrain-Engine",
+        "type": "manufacturing"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["manufacturing"],
+    "version": "1.0.47"
+  }
+}

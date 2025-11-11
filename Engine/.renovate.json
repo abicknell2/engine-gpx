@@ -1,0 +1,7 @@
+{
+  "extends": ["config:base"],
+  "automerge": false,
+  "labels": ["dependencies"],
+  "schedule": ["at any time"],
+  "dependencyDashboard": true
+}

@@ -1,0 +1,1337 @@
+[
+  {
+    "key": "perimeter // Spar Design",
+    "name": "Part Perimeter",
+    "unit": "m",
+    "module": "Spar Design"
+  },
+  {
+    "key": "length // Spar Design",
+    "name": "Part Length",
+    "unit": "m",
+    "module": "Spar Design"
+  },
+  {
+    "key": "width // Spar Design",
+    "name": "Part Width",
+    "unit": "m",
+    "module": "Spar Design"
+  },
+  {
+    "key": "surfaceArea // Spar Design",
+    "name": "Total Surface Area",
+    "unit": "m^2",
+    "module": "Spar Design"
+  },
+  {
+    "key": "layupArea // Spar Design",
+    "name": "Layup Area / Layer",
+    "unit": "m^2",
+    "module": "Spar Design"
+  },
+  {
+    "key": "holeCount // Spar Design",
+    "name": "Hole Count",
+    "unit": "count",
+    "module": "Spar Design"
+  },
+  {
+    "key": "cutoutPerimeter // Spar Design",
+    "name": "Cutout Perimeter",
+    "unit": "m",
+    "module": "Spar Design"
+  },
+  {
+    "key": "curvature // Spar Design",
+    "name": "Part Min. Curvature Radius",
+    "unit": "m",
+    "module": "Spar Design"
+  },
+  {
+    "likely": 301.6,
+    "module": "Spar Design",
+    "name": "Part Mass",
+    "sign": "=",
+    "unit": "lb",
+    "value": 301.6
+  },
+  {
+    "likely": 100,
+    "module": "Spar Design",
+    "name": "Part Thickness",
+    "sign": "=",
+    "unit": "count",
+    "value": 100
+  },
+  {
+    "best": 0.125,
+    "module": "RI2-HRRI",
+    "name": "CV",
+    "sign": "=",
+    "unit": "",
+    "value": 0.25,
+    "worst": 0.375
+  },
+  {
+    "likely": 1.05,
+    "module": "RI2-HRRI",
+    "name": "PLANNED MAINT",
+    "sign": "=",
+    "unit": "",
+    "value": 1.05
+  },
+  {
+    "best": 50,
+    "module": "RI2-HRRI",
+    "name": "Labor Rate",
+    "sign": "=",
+    "unit": "$/hr",
+    "value": 100,
+    "worst": 100
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-HRRI-LCPF PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "+",
+      "5354-HRRI-LCPF QUALITY",
+      "+",
+      "5354-HRRI-LCPF SETUP"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF PRIMARY",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-HRRI-LCPF STEP 1 Trim",
+      "*",
+      "5354-HRRI-LCPF CYCLES PER PART",
+      "*",
+      "5354-HRRI-LCPF RELIABILITY STEP 1",
+      "^-1",
+      "+",
+      "5354-HRRI-LCPF STEP 2 Pick and Form",
+      "*",
+      "5354-HRRI-LCPF CYCLES PER PART",
+      "*",
+      "5354-HRRI-LCPF RELIABILITY STEP 2",
+      "^-1",
+      "+",
+      "5354-HRRI-LCPF STEP 3 Inspection",
+      "*",
+      "5354-HRRI-LCPF CYCLES PER PART",
+      "*",
+      "5354-HRRI-LCPF RELIABILITY STEP 3",
+      "^-1",
+      "+",
+      "5354-HRRI-LCPF STEP 4 Form",
+      "*",
+      "5354-HRRI-LCPF CYCLES PER PART",
+      "*",
+      "5354-HRRI-LCPF RELIABILITY STEP 4",
+      "^-1"
+    ]
+  },
+  {
+    "best": 0.25,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF STEP 1 Trim",
+    "sign": "=",
+    "unit": "min",
+    "value": 1,
+    "worst": 0.75,
+    "likely": null
+  },
+  {
+    "best": 0.83333,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF STEP 2 Pick and Form",
+    "sign": "=",
+    "unit": "min",
+    "value": 1,
+    "worst": 1.383333,
+    "likely": 1.1083333
+  },
+  {
+    "best": 0.083,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF STEP 3 Inspection",
+    "sign": "=",
+    "unit": "min",
+    "value": 1,
+    "worst": 0.6
+  },
+  {
+    "best": 0.99,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF RELIABILITY STEP 1",
+    "sign": "=",
+    "unit": "",
+    "value": 0.9,
+    "worst": 0.9
+  },
+  {
+    "best": 0.99,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF RELIABILITY STEP 2",
+    "sign": "=",
+    "unit": "",
+    "value": 0.9,
+    "worst": 0.9
+  },
+  {
+    "best": 0.99,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF RELIABILITY STEP 3",
+    "sign": "=",
+    "unit": "",
+    "value": 0.9,
+    "worst": 0.9
+  },
+  {
+    "best": 40,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF CYCLES PER PART",
+    "sign": "=",
+    "unit": "count",
+    "value": 300,
+    "worst": 60
+  },
+  {
+    "best": 0.5,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF QUALITY",
+    "sign": "=",
+    "unit": "hr",
+    "value": 2,
+    "worst": 1
+  },
+  {
+    "best": 0.083333,
+    "likely": null,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF SETUP",
+    "sign": "=",
+    "unit": "hr",
+    "value": 4,
+    "worst": 0.25
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "5354-HRRI-LCPF PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "Labor Rate",
+      "*",
+      "5354-HRRI-LCPF Time",
+      "*",
+      "5354-HRRI-LCPF TOTAL HEADCOUNT"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF TOTAL HEADCOUNT",
+    "sign": ">=",
+    "unit": "count",
+    "value": [
+      "5354-HRRI-LCPF HEADCOUNT PRIMARY",
+      "+",
+      "5354-HRRI-LCPF HEADCOUNT QA REWORK",
+      "+",
+      "5354-HRRI-LCPF HEADCOUNT QA INSPECTION"
+    ]
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF HEADCOUNT PRIMARY",
+    "sign": "=",
+    "unit": "count",
+    "value": 1
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF HEADCOUNT QA INSPECTION",
+    "sign": "=",
+    "unit": "count",
+    "value": 1,
+    "worst": 0.5
+  },
+  {
+    "likely": 2,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 HEADCOUNT PRIMARY",
+    "sign": "=",
+    "unit": "count",
+    "value": 4
+  },
+  {
+    "likely": 0.25,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 HEADCOUNT QA INSPECTION",
+    "sign": "=",
+    "unit": "count",
+    "value": 0.5
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE Stage Thaw Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-STAGE PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "5354-STAGE RELIABILITY",
+      "^-1",
+      "+",
+      "5354-STAGE SETUP"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "5354-STAGE Stage Thaw Time",
+      "*",
+      "Labor Rate",
+      "*",
+      "5354-STAGE PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-STAGE HEADCOUNT PRIMARY"
+    ]
+  },
+  {
+    "best": 0.95,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE RELIABILITY",
+    "sign": "=",
+    "unit": "",
+    "value": 0.95,
+    "worst": 0.75
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF PERSONNEL UTILIZATION",
+    "sign": "=",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-STORE LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-STORE HEADCOUNT",
+      "*",
+      "5354-STORE LABOR HOURS"
+    ]
+  },
+  {
+    "best": 0.85,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE PERSONNEL UTILIZATION",
+    "sign": "=",
+    "unit": "",
+    "value": 0.7,
+    "worst": 0.63
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "RI Material Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Part Mass",
+      "*",
+      "RI MATERIAL UNIT PRICE",
+      "*",
+      "5354-HRRI-LCPF BUY TO FLY"
+    ]
+  },
+  {
+    "best": 35,
+    "module": "RI2-HRRI",
+    "name": "RI MATERIAL UNIT PRICE",
+    "sign": "=",
+    "unit": "$/lb",
+    "value": 40,
+    "worst": 45
+  },
+  {
+    "best": 1.25,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF BUY TO FLY",
+    "sign": "=",
+    "unit": "",
+    "value": 1.3,
+    "worst": 1.35
+  },
+  {
+    "likely": 2,
+    "module": "RI2-HRRI",
+    "name": "5354-STORE HEADCOUNT",
+    "sign": "=",
+    "unit": "count",
+    "value": 2
+  },
+  {
+    "likely": 6888,
+    "module": "RI2-HRRI",
+    "name": "5354-STORE LABOR HOURS",
+    "sign": "=",
+    "unit": "hr",
+    "value": 6888
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-HL-FG1 PRIMARY",
+      "+",
+      "5354-HL-FG1 QUALITY",
+      "+",
+      "5354-HL-FG1 SETUP"
+    ]
+  },
+  {
+    "best": 0.25,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 PRIMARY",
+    "unit": "hr",
+    "value": 0.5,
+    "worst": 0.5
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 QUALITY",
+    "unit": "hr",
+    "value": 0.25,
+    "worst": 0.5
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 SETUP",
+    "unit": "hr",
+    "value": 0.125,
+    "worst": 0.25
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP Charge Resin Sys Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-RESIN-PREP PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "5354-RESIN-PREP RELIABILITY",
+      "^-1",
+      "+",
+      "5354-RESIN-PREP QUALITY"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP Charge Resin Sys Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-RESIN-PREP Charge Resin Sys Time"]
+  },
+  {
+    "best": 0.5,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP PRIMARY",
+    "unit": "hr",
+    "value": 1,
+    "worst": 1
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP QUALITY",
+    "unit": "hr",
+    "value": 0.25,
+    "worst": 0.25
+  },
+  {
+    "likely": 0.95,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP RELIABILITY",
+    "unit": "",
+    "value": 0.95
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-RESIN-PREP Charge Resin Sys Time",
+      "*",
+      "5354-RESIN-PREP PERSONNEL UTILIZATION",
+      "*",
+      "5354-RESIN-PREP HEADCOUNT PRIMARY"
+    ]
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 2
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-ADM PRIMARY",
+      "*",
+      "5354-ADM RELIABILITY",
+      "^-1",
+      "+",
+      "5354-ADM SECONDARY",
+      "+",
+      "5354-ADM SETUP"
+    ]
+  },
+  {
+    "best": 0.1,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM PRIMARY",
+    "unit": "hr",
+    "value": 0.5,
+    "worst": 0.5
+  },
+  {
+    "likely": 0.95,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM RELIABILITY",
+    "unit": "",
+    "value": 0.95
+  },
+  {
+    "best": 0.1,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM SECONDARY",
+    "unit": "hr",
+    "value": 1,
+    "worst": 1.5
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM SETUP",
+    "unit": "hr",
+    "value": 0.25,
+    "worst": 0.25
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-ADM Time",
+      "*",
+      "5354-ADM PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-ADM HEADCOUNT PRIMARY"
+    ]
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 1
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-HRRI-CURE PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "5354-HRRI-CURE RELIABILITY",
+      "^-1",
+      "+",
+      "5354-HRRI-CURE QUALITY",
+      "+",
+      "5354-HRRI-CURE SETUP"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-HRRI-CURE Time",
+      "*",
+      "5354-HRRI-CURE PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-HRRI-CURE HEADCOUNT PRIMARY"
+    ]
+  },
+  {
+    "best": 1.5,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE PRIMARY",
+    "unit": "hr",
+    "value": 2,
+    "worst": 2.5
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE QUALITY",
+    "unit": "hr",
+    "value": 0.5,
+    "worst": 0.5
+  },
+  {
+    "best": 0.00001,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE SETUP",
+    "unit": "hr",
+    "value": 0.5,
+    "worst": 0.5
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 1
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT Cut Kit Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-RIKIT PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "5354-RIKIT RELIABILITY",
+      "^-1",
+      "+",
+      "5354-RIKIT QUALITY",
+      "+",
+      "5354-RIKIT SETUP"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT Cut Kit Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-RIKIT Cut Kit Time"]
+  },
+  {
+    "best": 0.25,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT PRIMARY",
+    "unit": "hr",
+    "value": 1,
+    "worst": 0.5
+  },
+  {
+    "best": 0.1,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT SETUP",
+    "unit": "hr",
+    "value": 1,
+    "worst": 0.25
+  },
+  {
+    "likely": 0.95,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT RELIABILITY",
+    "unit": "",
+    "value": 0.95
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-RIKIT Cut Kit Time",
+      "*",
+      "5354-RIKIT PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-RIKIT HEADCOUNT PRIMARY"
+    ]
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 2
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE PRIMARY",
+    "unit": "hr",
+    "value": 1
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE SETUP",
+    "sign": ">=",
+    "unit": "hr",
+    "value": ["5354-STAGE SETUP RATE", "*", "Part Mass"]
+  },
+  {
+    "likely": 0.15,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE SETUP RATE",
+    "unit": "min/lb",
+    "value": 0.15
+  },
+  {
+    "likely": 0.95,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE RELIABILITY",
+    "unit": "",
+    "value": 0.95
+  },
+  {
+    "best": 120000,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE Cell Cost",
+    "unit": "$",
+    "value": 300000,
+    "worst": 250000
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 1
+  },
+  {
+    "best": 100000,
+    "module": "RI2-HRRI",
+    "name": "5354-RIKIT Cell Cost",
+    "unit": "$",
+    "value": 2000000,
+    "worst": 250000
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-STAGE Stage Thaw Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-STAGE Stage Thaw Time"]
+  },
+  {
+    "best": 460000,
+    "module": "RI2-HRRI",
+    "name": "5354-RESIN-PREP Cell Cost",
+    "unit": "$",
+    "value": 1000000,
+    "worst": 600000
+  },
+  {
+    "best": 1000000,
+    "module": "RI2-HRRI",
+    "name": "MALE Cure Mandrel Tool Cost",
+    "unit": "$",
+    "value": 3000000,
+    "worst": 2000000
+  },
+  {
+    "best": 1500000,
+    "module": "RI2-HRRI",
+    "name": "FEMALE Cure Mandrel Tool Cost",
+    "unit": "$",
+    "value": 4000000,
+    "worst": 3000000
+  },
+  {
+    "best": 1000000,
+    "module": "RI2-HRRI",
+    "name": "Lamination Tool Cost",
+    "unit": "$",
+    "value": 500000,
+    "worst": 2000000
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-HL-FG1 Time",
+      "*",
+      "5354-HL-FG1 PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-HL-FG1 HEADCOUNT TOTAL"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 HEADCOUNT TOTAL",
+    "sign": ">=",
+    "unit": "count",
+    "value": [
+      "5354-HL-FG1 HEADCOUNT PRIMARY",
+      "+",
+      "5354-HL-FG1 HEADCOUNT QA INSPECTION"
+    ]
+  },
+  {
+    "best": 0.85,
+    "likely": 0.75,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.75,
+    "worst": 0.63
+  },
+  {
+    "best": 500000,
+    "module": "RI2-HRRI",
+    "name": "5354-STORE EQUIP",
+    "unit": "$",
+    "value": 3000000,
+    "worst": 750000
+  },
+  {
+    "best": 12000000,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF EQUIP COST",
+    "unit": "$",
+    "value": 10000000,
+    "worst": 18000000
+  },
+  {
+    "best": 500000,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG EQUIP COST",
+    "unit": "$",
+    "value": 1000000,
+    "worst": 1500000
+  },
+  {
+    "best": 4300000,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE EQUIP COST",
+    "unit": "$",
+    "value": 500000,
+    "worst": 6500000
+  },
+  {
+    "best": 500000,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM EQUIP COST",
+    "unit": "$",
+    "value": 3000000,
+    "worst": 1000000
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE Free Stand Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "5354-PCURE PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "5354-PCURE RELIABILITY",
+      "^-1",
+      "*",
+      "5354-PCURE CYCLES PER PART",
+      "+",
+      "5354-PCURE QUALITY",
+      "+",
+      "5354-PCURE SETUP"
+    ]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE Free Stand Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-PCURE Free Stand Time"]
+  },
+  {
+    "likely": null,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE PRIMARY",
+    "unit": "hr",
+    "value": 3.5,
+    "best": 8,
+    "worst": 16
+  },
+  {
+    "likely": null,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE RELIABILITY",
+    "unit": "",
+    "value": 0.95,
+    "best": 0.95,
+    "worst": 0.75
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "Labor Rate",
+      "*",
+      "5354-PCURE Free Stand Time",
+      "*",
+      "5354-PCURE PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "5354-PCURE Head Count"
+    ]
+  },
+  {
+    "best": 0.85,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.85,
+    "worst": 0.63,
+    "likely": 0.75
+  },
+  {
+    "likely": 1,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE HEADCOUNT PRIMARY",
+    "unit": "count",
+    "value": 2
+  },
+  {
+    "best": 5000000,
+    "module": "RI2-HRRI",
+    "name": "5354-PCURE Cell Cost",
+    "unit": "$",
+    "value": 6000000,
+    "worst": 6500000,
+    "likely": null
+  },
+  {
+    "best": 100000,
+    "module": "RI2-HRRI",
+    "name": "FST Tool Tool Cost",
+    "unit": "$",
+    "value": 1000000,
+    "worst": 500000
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-HRRI-LCPF Time"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-HL-FG1 Time"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "M-PTT-VG Time"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-HRRI-CURE Time"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM Std. Dev.",
+    "sign": ">=",
+    "unit": "min",
+    "value": ["CV", "*", "5354-ADM Time"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-LCPF Cell Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": ["5354-HRRI-LCPF EQUIP COST"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG1 Cell Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": ["5354-HL-FG EQUIP COST"]
+  },
+  {
+    "likely": 10000,
+    "module": "RI2-HRRI",
+    "name": "5354-HL-FG EQUIP COST",
+    "unit": "$",
+    "value": 10000
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG1 Cell Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": ["M-PTT-VG EQUIP COST"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-HRRI-CURE Cell Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": ["5354-HRRI-CURE EQUIP COST"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "5354-ADM Cell Cost",
+    "sign": ">=",
+    "unit": "$",
+    "value": ["5354-ADM EQUIP COST"]
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG LABOR",
+    "sign": ">=",
+    "unit": "$",
+    "value": [
+      "M-PTT-VG Time",
+      "*",
+      "Labor Rate",
+      "*",
+      "M-PTT-VG PERSONNEL UTILIZATION",
+      "^-1",
+      "*",
+      "M-PTT-VG HEADCOUNT PRIMARY",
+      "*",
+      "2"
+    ]
+  },
+  {
+    "best": 0.85,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG PERSONNEL UTILIZATION",
+    "unit": "",
+    "value": 0.7,
+    "worst": 0.63
+  },
+  {
+    "isConstrained": true,
+    "math": true,
+    "module": "RI2-HRRI",
+    "name": "M-PTT-VG Time",
+    "sign": ">=",
+    "unit": "min",
+    "value": [
+      "M-PTT-VG PRIMARY",
+      "*",
+      "PLANNED MAINT",
+      "*",
+      "M-PTT-VG RELIABILITY",
+      "^-1",
+      "+",
+      "M-PTT-VG QUALITY"
+    ]
+  },
+  {
+    "name": "M-PTT-VG PRIMARY",
+    "value": 0.3,
+    "unit": "hr",
+    "module": "RI2-HRRI",
+    "likely": null,
+    "best": 0.1,
+    "worst": 0.45
+  },
+  {
+    "name": "M-PTT-VG RELIABILITY",
+    "value": 0.8,
+    "unit": "",
+    "module": "RI2-HRRI",
+    "likely": null,
+    "best": 0.95,
+    "worst": 0.75
+  },
+  {
+    "name": "M-PTT-VG QUALITY",
+    "value": 0.3,
+    "unit": "hr",
+    "module": "RI2-HRRI",
+    "likely": 0.3
+  },
+  {
+    "name": "5354-STAGE CYCLES PER PART",
+    "value": 0.2,
+    "unit": "count",
+    "module": "RI2-HRRI",
+    "likely": 0.2
+  },
+  {
+    "name": "5354-PCURE PARALLEL",
+    "value": 8,
+    "unit": "count",
+    "module": "RI2-HRRI",
+    "likely": 8
+  },
+  {
+    "name": "LCPF COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "FG COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "sign": ">=",
+    "math": true,
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "PTT COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "CURE COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "DEMOLD COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "MIN COUNT",
+    "value": 4,
+    "unit": "count",
+    "module": "RI2-HRRI",
+    "likely": 4
+  },
+  {
+    "name": "LAMINATION TOOL COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "CT-M TOOL COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "CT-F TOOL COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "sign": ">=",
+    "math": true,
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  },
+  {
+    "name": "MIN TOOL COUNT",
+    "value": ["MIN COUNT"],
+    "unit": "count",
+    "math": true,
+    "sign": ">=",
+    "module": "RI2-HRRI",
+    "isConstrained": true
+  }
+]

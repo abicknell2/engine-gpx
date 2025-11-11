@@ -1,0 +1,351 @@
+{
+  "id": 248640269.8910335,
+  "model": {
+    "design": {
+      "interfaceVariables": [
+        {
+          "name": "Part Length",
+          "unit": "m"
+        }
+      ],
+      "parameters": [],
+      "plyBook": {
+        "length": [
+          [
+            {
+              "value": 0
+            }
+          ],
+          [
+            {
+              "value": 0
+            }
+          ]
+        ],
+        "stack": [
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ],
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ]
+        ],
+        "width": [
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ]
+        ]
+      },
+      "selectedModule": 539764487.9758756
+    },
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "month",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rates": [],
+      "selectedModule": 6197168031.81211
+    },
+    "modelName": "CE-669 Simple Variants by rate Split",
+    "modules": [
+      {
+        "id": 6197168031.81211,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "Manufacturing Process Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "feederLines": [],
+          "feederProcesses": [],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "constraint",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "Manufacturing Process Cell",
+              "id": "P010",
+              "type": "Manufacturing Process"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [],
+          "variables": [
+            {
+              "acyclic": true,
+              "category": "processes",
+              "key": "Manufacturing Process Time // New Manufacturing Module",
+              "math": true,
+              "monomial": true,
+              "name": "Manufacturing Process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Manufacturing Process",
+              "unit": "min",
+              "value": ["Part Length", "*", "Cutting Rate"]
+            },
+            {
+              "category": "custom",
+              "key": "Cutting Rate // New Manufacturing Module",
+              "name": "Cutting Rate",
+              "sign": "=",
+              "unit": "min/m",
+              "value": 25
+            },
+            {
+              "category": "all processes",
+              "key": "All Processes CV // New Manufacturing Module",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 25
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "Manufacturing Process Cell Batch Size // New Manufacturing Module",
+              "name": "Manufacturing Process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Manufacturing Process Cell",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "Manufacturing Process Cell Non-Recurring Cost // New Manufacturing Module",
+              "name": "Manufacturing Process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Manufacturing Process Cell",
+              "unit": "$",
+              "value": 500000
+            }
+          ]
+        },
+        "name": "New Manufacturing Module",
+        "type": "manufacturing"
+      },
+      {
+        "design": {
+          "variables": [
+            {
+              "category": "interface",
+              "key": "Part Length // New Design Module",
+              "name": "Part Length",
+              "sign": "=",
+              "unit": "m",
+              "value": 25
+            }
+          ]
+        },
+        "id": 539764487.9758756,
+        "name": "New Design Module",
+        "type": "design"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["custom", "variants"],
+    "variants": [
+      {
+        "name": "Standard Variant",
+        "parameters": [],
+        "rate": 75
+      },
+      {
+        "name": "Short Part",
+        "parameters": [
+          {
+            "category": "interface",
+            "index": 0,
+            "key": "Part Length // New Design Module",
+            "name": "Part Length",
+            "sign": "=",
+            "unit": "m",
+            "value": 10
+          }
+        ],
+        "rate": 25
+      }
+    ],
+    "version": "1.0.53"
+  }
+}

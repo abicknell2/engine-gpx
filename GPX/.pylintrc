@@ -1,0 +1,11 @@
+[MESSAGES CONTROL]
+disable=
+    C0114,  ; missing-module-docstring
+    C0115,  ; missing-class-docstring
+    C0116,  ; missing-function-docstring
+    C0301,  ; line-too-long (handled by Flake8)
+    C0303,  ; trailing-whitespace (handled by Flake8)
+    E1101,  ; no-member (Pyflakes does this)
+    W0611,  ; unused-import (Flake8 handles this)
+    W0613,  ; unused-argument (Flake8 checks this)
+    W0311   ; bad-indentation (Flake8 checks this)

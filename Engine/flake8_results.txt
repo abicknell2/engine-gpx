@@ -1,0 +1,59 @@
+/root/Development/Code/Engine/api/acyclic_interpreter.py:4:1: F401 'gpx' imported but unused
+/root/Development/Code/Engine/api/api.py:11:1: F401 'flask.logging' imported but unused
+/root/Development/Code/Engine/api/context/ramp.py:169:48: W291 trailing whitespace
+/root/Development/Code/Engine/api/context/solution_context.py:43:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/context/solution_context.py:216:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/context/uncertain.py:75:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/errors.py:29:37: W292 no newline at end of file
+/root/Development/Code/Engine/api/interactive/gpx_builder.py:41:13: E265 block comment should start with '# '
+/root/Development/Code/Engine/api/interactive/gpx_builder.py:44:29: W291 trailing whitespace
+/root/Development/Code/Engine/api/interactive/gpx_builder.py:75:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/interactive/model.py:39:1: F401 'utils.units.replace_unit_display_text' imported but unused
+/root/Development/Code/Engine/api/interactive/model.py:169:115: W291 trailing whitespace
+/root/Development/Code/Engine/api/interactive/model.py:195:35: W291 trailing whitespace
+/root/Development/Code/Engine/api/interactive/model.py:199:67: E261 at least two spaces before inline comment
+/root/Development/Code/Engine/api/interactive/model.py:237:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/interactive/model.py:306:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/interactive/model.py:327:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/interactive/model.py:445:34: E124 closing bracket does not match visual indentation
+/root/Development/Code/Engine/api/interactive/model.py:452:1: W391 blank line at end of file
+/root/Development/Code/Engine/api/module_types/design.py:1:1: F401 'typing.cast' imported but unused
+/root/Development/Code/Engine/api/module_types/design.py:3:1: F401 'gpkit' imported but unused
+/root/Development/Code/Engine/api/module_types/design.py:9:1: F401 'utils.types.data.Parameter' imported but unused
+/root/Development/Code/Engine/api/module_types/design.py:10:1: F401 'utils.types.shared.AcceptedTypes' imported but unused
+/root/Development/Code/Engine/api/module_types/production_finance.py:64:89: F821 undefined name 'Design'
+/root/Development/Code/Engine/api/module_types/production_finance.py:65:41: F821 undefined name 'AssemblySystem'
+/root/Development/Code/Engine/api/multiproduct.py:6:1: F401 'typing.TYPE_CHECKING' imported but unused
+/root/Development/Code/Engine/api/result_generators/celltimes.py:151:50: W292 no newline at end of file
+/root/Development/Code/Engine/api/result_generators/mc_class_results.py:14:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/result_generators/mc_class_results.py:18:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/api/result_generators/non_recurring_cost_results.py:25:17: F821 undefined name 'Manufacturing'
+/root/Development/Code/Engine/api/result_generators/non_recurring_cost_results.py:26:31: F821 undefined name 'CellResults'
+/root/Development/Code/Engine/api/result_generators/product_summary.py:12:20: W291 trailing whitespace
+/root/Development/Code/Engine/api/result_generators/product_summary.py:13:29: W291 trailing whitespace
+/root/Development/Code/Engine/api/result_generators/product_summary.py:14:22: W291 trailing whitespace
+/root/Development/Code/Engine/api/result_generators/product_summary.py:15:30: W291 trailing whitespace
+/root/Development/Code/Engine/api/result_generators/product_summary.py:16:20: W291 trailing whitespace
+/root/Development/Code/Engine/api/result_generators/var_cost_results.py:1:1: F401 'typing.TYPE_CHECKING' imported but unused
+/root/Development/Code/Engine/api/small_scripts.py:291:45: W291 trailing whitespace
+/root/Development/Code/Engine/test/test_parameter_repr.py:3:1: F401 'pytest' imported but unused
+/root/Development/Code/Engine/test/test_parameter_repr.py:51:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/interactive_helpers.py:79:9: W292 no newline at end of file
+/root/Development/Code/Engine/utils/result_gens_helpers.py:10:1: F401 'api.constants.MAX_MINUTES_PROCESS' imported but unused
+/root/Development/Code/Engine/utils/result_gens_helpers.py:10:1: F401 'api.constants.TIME_ROUND_DEC' imported but unused
+/root/Development/Code/Engine/utils/result_gens_helpers.py:482:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:908:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:931:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:935:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:943:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:975:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1028:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1032:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1040:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1088:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1120:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1124:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1211:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1257:5: E731 do not assign a lambda expression, use a def
+/root/Development/Code/Engine/utils/result_gens_helpers.py:1406:1: W293 blank line contains whitespace
+/root/Development/Code/Engine/wsgi.py:4:1: F401 'gpx.custom_units' imported but unused

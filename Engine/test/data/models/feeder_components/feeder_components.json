@@ -1,0 +1,298 @@
+{
+  "id": 248640269.8910335,
+  "model": {
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "month",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rate": 100,
+      "rates": [],
+      "selectedModule": 7056866819.655381
+    },
+    "modelName": "Feeder Components",
+    "modules": [
+      {
+        "id": 7056866819.655381,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "Main Process Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "feederLines": [
+            {
+              "id": "Feeder Line",
+              "to": "P010"
+            },
+            {
+              "id": "Empty Feeder",
+              "to": "P010"
+            }
+          ],
+          "feederProcesses": [],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "table",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "Main Process Cell",
+              "id": "P010",
+              "type": "Main Process"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [],
+          "variables": [
+            {
+              "category": "all processes",
+              "key": "All Processes CV // New Module",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 25
+            },
+            {
+              "category": "labor",
+              "key": "Labor Variable Cost // New Module",
+              "name": "Labor Variable Cost",
+              "property": "Cost",
+              "sign": "=",
+              "unit": "$/hr",
+              "value": 20
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "Main Process Cell Batch Size // New Module",
+              "name": "Main Process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Main Process Cell",
+              "value": 1
+            },
+            {
+              "category": "feederLines",
+              "key": "Feeder Line Quantity // New Module",
+              "name": "Feeder Line Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Feeder Line",
+              "unit": "count",
+              "value": 2
+            },
+            {
+              "category": "cells",
+              "key": "Main Process Cell Non-Recurring Cost // New Module",
+              "name": "Main Process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Main Process Cell",
+              "unit": "$",
+              "value": 100000
+            },
+            {
+              "category": "feederLines",
+              "key": "Feeder Line Variable Cost // New Module",
+              "name": "Feeder Line Variable Cost",
+              "property": "Variable Cost",
+              "sign": "=",
+              "type": "Feeder Line",
+              "unit": "$",
+              "value": 100
+            },
+            {
+              "category": "processes",
+              "key": "Main Process Time // New Module",
+              "name": "Main Process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Main Process",
+              "unit": "min",
+              "value": 120
+            },
+            {
+              "category": "feederLines",
+              "key": "Empty Feeder Quantity // New Module",
+              "name": "Empty Feeder Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Empty Feeder",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "Main Process Cell Head Count // New Module",
+              "name": "Main Process Cell Head Count",
+              "property": "Head Count",
+              "sign": "=",
+              "type": "Main Process Cell",
+              "unit": "count",
+              "value": 1
+            }
+          ]
+        },
+        "name": "New Module",
+        "type": "manufacturing"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["manufacturing"],
+    "version": "1.0.47"
+  }
+}

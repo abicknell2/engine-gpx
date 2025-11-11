@@ -1,0 +1,4818 @@
+{
+  "resultsIndex": [
+    {
+      "name": "Assembly Component Results",
+      "value": "componentResults"
+    },
+    {
+      "name": "Assembly Component Hierarchy",
+      "value": "componentHierarchy"
+    },
+    {
+      "name": "Manufacturing Cells",
+      "value": "cellResults"
+    },
+    {
+      "name": "Manufacturing Processes",
+      "value": "processResults"
+    },
+    {
+      "name": "Process Time Stack-Ups",
+      "value": "processStacks"
+    },
+    {
+      "name": "Line Summary",
+      "value": "lineSummary"
+    },
+    {
+      "name": "Flow Time Distribution",
+      "value": "pdfpoints"
+    },
+    {
+      "name": "Variable Cost Components",
+      "value": "variableCosts"
+    },
+    {
+      "name": "Recurring Cost Components",
+      "value": "recurringCosts"
+    },
+    {
+      "name": "Capital Cost Components",
+      "value": "costComponents"
+    },
+    {
+      "name": "Total Costs",
+      "value": "totalCost"
+    },
+    {
+      "name": "Feeder Line Flow Times",
+      "value": "feederLines"
+    },
+    {
+      "name": "Shared Tooling",
+      "value": "tooling"
+    },
+    {
+      "name": "Time in Cell Detail",
+      "value": "timeInCellDetail"
+    },
+    {
+      "name": "Time in Cell Decomposed",
+      "value": "timeInCellDecomp"
+    },
+    {
+      "name": "Product Summary",
+      "value": "productSummary"
+    },
+    {
+      "name": "All Variables",
+      "value": "allVariables"
+    }
+  ],
+  "componentResults": [
+    {
+      "componentName": "Basic operations with assembly sub model 1",
+      "componentResults": {
+        "cellResults": [
+          {
+            "name": "First process Cell",
+            "cellNumber": 1,
+            "numWorkstations": 17.577,
+            "wip": 2.958,
+            "wipQueue": 2.075,
+            "wipStation": 0.882,
+            "queueingTime": 235.19,
+            "queueingTimeUnit": "minute",
+            "cellTimeSensitivity": 0.09459,
+            "cellVariationSensitivity": 0.08865,
+            "utilization": 0.05,
+            "processTime": 100.0,
+            "cellFlowTime": 335.19,
+            "cellCVD": 11.287,
+            "queueingBeforeCell": "True",
+            "accumFlow": 335.19,
+            "capitalCost": 1757667.55,
+            "waitForNextCell": 0.0,
+            "waitForNextCellUnit": "minute"
+          },
+          {
+            "name": "Second Process Cell",
+            "cellNumber": 2,
+            "numWorkstations": 10.0,
+            "wip": 8.919,
+            "wipQueue": 7.596,
+            "wipStation": 1.324,
+            "queueingTime": 860.822,
+            "queueingTimeUnit": "minute",
+            "cellTimeSensitivity": 0.33736,
+            "cellVariationSensitivity": 0.29016,
+            "utilization": 0.132,
+            "processTime": 150.0,
+            "cellFlowTime": 1010.822,
+            "cellCVD": 13.902,
+            "queueingBeforeCell": "True",
+            "accumFlow": 1346.012,
+            "capitalCost": 5000000.0,
+            "waitForNextCell": 0.0,
+            "waitForNextCellUnit": "minute"
+          }
+        ],
+        "processResults": [
+          {
+            "type": "First process",
+            "name": "First process",
+            "processTime": 1.667,
+            "stdev": 41.667,
+            "unit": "hr",
+            "breakdown": {
+              "primary": 100.0
+            }
+          },
+          {
+            "type": "Second Process",
+            "name": "Second Process",
+            "processTime": 2.5,
+            "stdev": 62.5,
+            "unit": "hr",
+            "breakdown": {
+              "primary": 150.0
+            }
+          }
+        ],
+        "processStacks": [],
+        "lineSummary": [
+          {
+            "name": "Average Production Rate",
+            "value": 0.529,
+            "unit": "count/hr"
+          },
+          {
+            "name": "Average Mainline Total Flow Time",
+            "value": 22.434,
+            "unit": "hr"
+          },
+          {
+            "name": "Total Mainline WIP Inventory",
+            "value": 11.877,
+            "unit": "count"
+          }
+        ],
+        "probabilities": {
+          "flowTime": {
+            "low": 1.2396094376383766e-149,
+            "q1": 6.2528812697717394e-68,
+            "median": 9.628504787805332e-33,
+            "q3": 3.6890485141381644e-12,
+            "high": 3.696156790371356,
+            "boxPlot": [
+              {
+                "time": [
+                  1.2396094376383766e-149, 6.2528812697717394e-68,
+                  9.628504787805332e-33, 3.6890485141381644e-12,
+                  3.696156790371356
+                ]
+              },
+              {}
+            ],
+            "unit": "hour",
+            "pdfPoints": [
+              {
+                "time": 10.026,
+                "probability": 0.0008144378959764594,
+                "unit": "hour"
+              },
+              {
+                "time": 20.053,
+                "probability": 0.0004080776074010745,
+                "unit": "hour"
+              },
+              {
+                "time": 30.079,
+                "probability": 0.0002719552435996968,
+                "unit": "hour"
+              },
+              {
+                "time": 40.105,
+                "probability": 0.00020368873949417932,
+                "unit": "hour"
+              },
+              {
+                "time": 50.131,
+                "probability": 0.0001626393167932777,
+                "unit": "hour"
+              },
+              {
+                "time": 60.158,
+                "probability": 0.0001352262979789437,
+                "unit": "hour"
+              },
+              {
+                "time": 70.184,
+                "probability": 0.00011561829655192057,
+                "unit": "hour"
+              },
+              {
+                "time": 80.21,
+                "probability": 0.00010089513084335692,
+                "unit": "hour"
+              },
+              {
+                "time": 90.236,
+                "probability": 8.943237461445181e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 100.263,
+                "probability": 8.025427836579345e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 110.289,
+                "probability": 7.273929542133068e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 120.315,
+                "probability": 6.647269349755373e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 130.342,
+                "probability": 6.116711921137556e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 140.368,
+                "probability": 5.6617169039651414e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 150.394,
+                "probability": 5.267211148997363e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 160.42,
+                "probability": 4.921882673796533e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 170.447,
+                "probability": 4.61707605504499e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 180.473,
+                "probability": 4.3460555877439145e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 190.499,
+                "probability": 4.103500851993286e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 200.525,
+                "probability": 3.8851534261562424e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 210.552,
+                "probability": 3.6875644153763385e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 220.578,
+                "probability": 3.5079107507395815e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 230.604,
+                "probability": 3.343859350575658e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 240.631,
+                "probability": 3.1934651987100264e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 250.657,
+                "probability": 3.0550938529390066e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 260.683,
+                "probability": 2.9273618133532267e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 270.709,
+                "probability": 2.809090125136673e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 280.736,
+                "probability": 2.6992679107891556e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 290.762,
+                "probability": 2.597023437614441e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 300.788,
+                "probability": 2.5016009641635606e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 310.814,
+                "probability": 2.4123420621391378e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 320.841,
+                "probability": 2.3286704358329044e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 330.867,
+                "probability": 2.2500794980171975e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 340.893,
+                "probability": 2.1761221354165758e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 350.92,
+                "probability": 2.106402226332872e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 360.946,
+                "probability": 2.04056757010939e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 370.972,
+                "probability": 1.9783039616303334e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 380.998,
+                "probability": 1.9193302001663332e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 391.025,
+                "probability": 1.8633938650531433e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 401.051,
+                "probability": 1.8102677241604028e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 411.077,
+                "probability": 1.7597466672364788e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 421.104,
+                "probability": 1.7116450767502135e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 431.13,
+                "probability": 1.6657945650909395e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 441.156,
+                "probability": 1.6220420199096256e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 451.182,
+                "probability": 1.5802479097234347e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 461.209,
+                "probability": 1.5402848102242588e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 471.235,
+                "probability": 1.5020361184585722e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 481.261,
+                "probability": 1.4653949275125964e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 491.287,
+                "probability": 1.4302630388001723e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 501.314,
+                "probability": 1.3965500927115091e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 511.34,
+                "probability": 1.3641728013962076e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 521.366,
+                "probability": 1.3330542699478773e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 531.393,
+                "probability": 1.3031233943283896e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 541.419,
+                "probability": 1.2743143260957821e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 551.445,
+                "probability": 1.2465659954435598e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 561.471,
+                "probability": 1.2198216852711102e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 571.498,
+                "probability": 1.1940286500256798e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 581.524,
+                "probability": 1.1691377739188679e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 591.55,
+                "probability": 1.145103263851655e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 601.576,
+                "probability": 1.1218823730034498e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 611.603,
+                "probability": 1.0994351515705527e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 621.629,
+                "probability": 1.0777242215924355e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 631.655,
+                "probability": 1.0567145731926315e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 641.682,
+                "probability": 1.0363733798948112e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 651.708,
+                "probability": 1.0166698309622812e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 661.734,
+                "probability": 9.975749789575481e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 671.76,
+                "probability": 9.790616009337259e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 681.787,
+                "probability": 9.611040718561887e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 691.813,
+                "probability": 9.436782490152345e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 701.839,
+                "probability": 9.267613663319803e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 711.865,
+                "probability": 9.10331937583292e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 721.892,
+                "probability": 8.943696676796656e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 731.918,
+                "probability": 8.788553712248037e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 741.944,
+                "probability": 8.637708976689177e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 751.971,
+                "probability": 8.490990624410933e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 761.997,
+                "probability": 8.34823583510683e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 772.023,
+                "probability": 8.209290228847903e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 782.049,
+                "probability": 8.074007325993967e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 792.076,
+                "probability": 7.942248048064578e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 802.102,
+                "probability": 7.813880255990043e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 812.128,
+                "probability": 7.688778322516146e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 822.154,
+                "probability": 7.566822735850504e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 832.181,
+                "probability": 7.447899731919158e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 842.207,
+                "probability": 7.331900952851925e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 852.233,
+                "probability": 7.218723129539351e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 862.26,
+                "probability": 7.108267786304294e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 872.286,
+                "probability": 7.000440965910982e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 882.312,
+                "probability": 6.8951529732958754e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 892.338,
+                "probability": 6.792318136549557e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 902.365,
+                "probability": 6.691854583809702e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 912.391,
+                "probability": 6.5936840348425805e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 922.417,
+                "probability": 6.4977316061970005e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 932.443,
+                "probability": 6.403925628910297e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 942.47,
+                "probability": 6.312197477832875e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 952.496,
+                "probability": 6.222481411716207e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 962.522,
+                "probability": 6.134714423280506e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 972.549,
+                "probability": 6.048836098542714e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 982.575,
+                "probability": 5.964788484744267e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 992.601,
+                "probability": 5.882515966271246e-6,
+                "unit": "hour"
+              }
+            ]
+          }
+        },
+        "pdfpoints": [
+          {
+            "time": 10.026,
+            "probability": 0.0008144378959764594,
+            "unit": "hour"
+          },
+          {
+            "time": 20.053,
+            "probability": 0.0004080776074010745,
+            "unit": "hour"
+          },
+          {
+            "time": 30.079,
+            "probability": 0.0002719552435996968,
+            "unit": "hour"
+          },
+          {
+            "time": 40.105,
+            "probability": 0.00020368873949417932,
+            "unit": "hour"
+          },
+          {
+            "time": 50.131,
+            "probability": 0.0001626393167932777,
+            "unit": "hour"
+          },
+          {
+            "time": 60.158,
+            "probability": 0.0001352262979789437,
+            "unit": "hour"
+          },
+          {
+            "time": 70.184,
+            "probability": 0.00011561829655192057,
+            "unit": "hour"
+          },
+          {
+            "time": 80.21,
+            "probability": 0.00010089513084335692,
+            "unit": "hour"
+          },
+          {
+            "time": 90.236,
+            "probability": 8.943237461445181e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 100.263,
+            "probability": 8.025427836579345e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 110.289,
+            "probability": 7.273929542133068e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 120.315,
+            "probability": 6.647269349755373e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 130.342,
+            "probability": 6.116711921137556e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 140.368,
+            "probability": 5.6617169039651414e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 150.394,
+            "probability": 5.267211148997363e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 160.42,
+            "probability": 4.921882673796533e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 170.447,
+            "probability": 4.61707605504499e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 180.473,
+            "probability": 4.3460555877439145e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 190.499,
+            "probability": 4.103500851993286e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 200.525,
+            "probability": 3.8851534261562424e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 210.552,
+            "probability": 3.6875644153763385e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 220.578,
+            "probability": 3.5079107507395815e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 230.604,
+            "probability": 3.343859350575658e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 240.631,
+            "probability": 3.1934651987100264e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 250.657,
+            "probability": 3.0550938529390066e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 260.683,
+            "probability": 2.9273618133532267e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 270.709,
+            "probability": 2.809090125136673e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 280.736,
+            "probability": 2.6992679107891556e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 290.762,
+            "probability": 2.597023437614441e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 300.788,
+            "probability": 2.5016009641635606e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 310.814,
+            "probability": 2.4123420621391378e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 320.841,
+            "probability": 2.3286704358329044e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 330.867,
+            "probability": 2.2500794980171975e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 340.893,
+            "probability": 2.1761221354165758e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 350.92,
+            "probability": 2.106402226332872e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 360.946,
+            "probability": 2.04056757010939e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 370.972,
+            "probability": 1.9783039616303334e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 380.998,
+            "probability": 1.9193302001663332e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 391.025,
+            "probability": 1.8633938650531433e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 401.051,
+            "probability": 1.8102677241604028e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 411.077,
+            "probability": 1.7597466672364788e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 421.104,
+            "probability": 1.7116450767502135e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 431.13,
+            "probability": 1.6657945650909395e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 441.156,
+            "probability": 1.6220420199096256e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 451.182,
+            "probability": 1.5802479097234347e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 461.209,
+            "probability": 1.5402848102242588e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 471.235,
+            "probability": 1.5020361184585722e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 481.261,
+            "probability": 1.4653949275125964e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 491.287,
+            "probability": 1.4302630388001723e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 501.314,
+            "probability": 1.3965500927115091e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 511.34,
+            "probability": 1.3641728013962076e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 521.366,
+            "probability": 1.3330542699478773e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 531.393,
+            "probability": 1.3031233943283896e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 541.419,
+            "probability": 1.2743143260957821e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 551.445,
+            "probability": 1.2465659954435598e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 561.471,
+            "probability": 1.2198216852711102e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 571.498,
+            "probability": 1.1940286500256798e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 581.524,
+            "probability": 1.1691377739188679e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 591.55,
+            "probability": 1.145103263851655e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 601.576,
+            "probability": 1.1218823730034498e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 611.603,
+            "probability": 1.0994351515705527e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 621.629,
+            "probability": 1.0777242215924355e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 631.655,
+            "probability": 1.0567145731926315e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 641.682,
+            "probability": 1.0363733798948112e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 651.708,
+            "probability": 1.0166698309622812e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 661.734,
+            "probability": 9.975749789575481e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 671.76,
+            "probability": 9.790616009337259e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 681.787,
+            "probability": 9.611040718561887e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 691.813,
+            "probability": 9.436782490152345e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 701.839,
+            "probability": 9.267613663319803e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 711.865,
+            "probability": 9.10331937583292e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 721.892,
+            "probability": 8.943696676796656e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 731.918,
+            "probability": 8.788553712248037e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 741.944,
+            "probability": 8.637708976689177e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 751.971,
+            "probability": 8.490990624410933e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 761.997,
+            "probability": 8.34823583510683e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 772.023,
+            "probability": 8.209290228847903e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 782.049,
+            "probability": 8.074007325993967e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 792.076,
+            "probability": 7.942248048064578e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 802.102,
+            "probability": 7.813880255990043e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 812.128,
+            "probability": 7.688778322516146e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 822.154,
+            "probability": 7.566822735850504e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 832.181,
+            "probability": 7.447899731919158e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 842.207,
+            "probability": 7.331900952851925e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 852.233,
+            "probability": 7.218723129539351e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 862.26,
+            "probability": 7.108267786304294e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 872.286,
+            "probability": 7.000440965910982e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 882.312,
+            "probability": 6.8951529732958754e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 892.338,
+            "probability": 6.792318136549557e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 902.365,
+            "probability": 6.691854583809702e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 912.391,
+            "probability": 6.5936840348425805e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 922.417,
+            "probability": 6.4977316061970005e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 932.443,
+            "probability": 6.403925628910297e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 942.47,
+            "probability": 6.312197477832875e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 952.496,
+            "probability": 6.222481411716207e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 962.522,
+            "probability": 6.134714423280506e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 972.549,
+            "probability": 6.048836098542714e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 982.575,
+            "probability": 5.964788484744267e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 992.601,
+            "probability": 5.882515966271246e-6,
+            "unit": "hour"
+          }
+        ],
+        "variableCosts": [
+          {
+            "name": "Inventory Holding Cost",
+            "value": 0.6
+          }
+        ],
+        "recurringCosts": [
+          {
+            "name": "First process Cell",
+            "value": 51265,
+            "unit": "$/month"
+          }
+        ],
+        "costComponents": [
+          {
+            "name": "First process Cell",
+            "value": 1757667.55
+          },
+          {
+            "name": "Second Process Cell",
+            "value": 5000000.0
+          },
+          {
+            "name": "Tooling",
+            "value": 11876940.239
+          }
+        ],
+        "totalCost": [
+          {
+            "name": "Total Unit Cost",
+            "value": 2344,
+            "unit": "$"
+          },
+          {
+            "name": "Total Non-Recurring Cost",
+            "value": 18634608,
+            "unit": "$"
+          },
+          {
+            "name": "Total Recurring Cost",
+            "value": 51265,
+            "unit": "$/month"
+          },
+          {
+            "name": "Total Variable Cost",
+            "value": 0.6,
+            "unit": "$/count"
+          },
+          {
+            "name": "Total Production Quantity",
+            "value": 9264.99,
+            "unit": "count"
+          }
+        ],
+        "unitCostBreakout": [
+          {
+            "name": "Inventory Holding Cost",
+            "value": 0.6,
+            "costType": "Variable",
+            "resource": "-"
+          },
+          {
+            "name": "First process Cell Recurring Cost",
+            "value": 96831,
+            "costType": "Recurring",
+            "resource": "First process Cell"
+          },
+          {
+            "name": "First process Cell Non-Recurring Cost",
+            "value": 190,
+            "costType": "Non-Recurring Cost",
+            "resource": "First process Cell"
+          },
+          {
+            "name": "Second Process Cell Non-Recurring Cost",
+            "value": 540,
+            "costType": "Non-Recurring Cost",
+            "resource": "Second Process Cell"
+          }
+        ],
+        "feederLines": [],
+        "tooling": [
+          {
+            "name": "Tooling",
+            "totalCost": 11876940.24,
+            "toolCount": 11.877,
+            "utilization": 82.527,
+            "toolFlowTime": 1346.012
+          }
+        ],
+        "timeInCellDetail": [
+          {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 3.92,
+            "Processing Time": 1.667,
+            "Productivity": 29.834,
+            "Cell Name": "First process Cell",
+            "unit": "hr"
+          },
+          {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 14.347,
+            "Processing Time": 2.5,
+            "Productivity": 14.839,
+            "Cell Name": "Second Process Cell",
+            "unit": "hr"
+          }
+        ],
+        "timeInCellDecomp": [
+          {
+            "Cell Name": "First process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "First process Cell",
+            "time": 3.92,
+            "type": "Queueing Before Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "First process Cell",
+            "time": 1.667,
+            "type": "Processing Time",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 14.347,
+            "type": "Queueing Before Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 2.5,
+            "type": "Processing Time",
+            "unit": "hr"
+          }
+        ],
+        "productSummary": [
+          {
+            "Part Flow Time": 22.434,
+            "Part Flow Time Units": "hour",
+            "Total Invenotry Holding Cost": 0.6,
+            "Total Invenotry Holding Cost Units": "$",
+            "Total Unit Cost": 2343.89,
+            "Total Unit Cost Units": "$",
+            "Total Capital Cost": 18634607.79,
+            "Total Capital Cost Units": "$"
+          }
+        ],
+        "allVariables": [
+          {
+            "name": "First process Cell Workstations",
+            "value": 17.577,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Queueing Time",
+            "value": 235.19,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Process Time",
+            "value": 100.0,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Total Flow Time",
+            "value": 335.19,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Utilization",
+            "value": 0.05,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Workstations",
+            "value": 10.0,
+            "unit": "count",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": -0.23951,
+            "marginalCost": 127,
+            "marginalCostUnit": "USD / count"
+          },
+          {
+            "name": "Second Process Cell Queueing Time",
+            "value": 860.822,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Process Time",
+            "value": 150.0,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Total Flow Time",
+            "value": 1010.822,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Utilization",
+            "value": 0.132,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Basic operations with assembly sub model 1 | First process Time",
+            "value": 100.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.11185,
+            "marginalCost": 6.15,
+            "marginalCostUnit": "USD / minute"
+          },
+          {
+            "name": "Basic operations with assembly sub model 1 | Second Process Time",
+            "value": 150.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.36326,
+            "marginalCost": 13.3,
+            "marginalCostUnit": "USD / minute"
+          },
+          {
+            "name": "Average Production Rate",
+            "value": 0.529,
+            "unit": "count/hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Average Mainline Total Flow Time",
+            "value": 22.434,
+            "unit": "hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Mainline WIP Inventory",
+            "value": 11.877,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Inventory Holding Cost",
+            "value": 0.6,
+            "unit": "$/count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Subtotal Cell Cost",
+            "value": 1757668,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Subtotal Cell Cost",
+            "value": 5000000,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Unit Cost",
+            "value": 2344,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Non-Recurring Cost",
+            "value": 18634608,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Recurring Cost",
+            "value": 176,
+            "unit": "$/hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Variable Cost",
+            "value": 0.6,
+            "unit": "$/count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Production Quantity",
+            "value": 9264.992,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Tooling Subtotal Tool Cost",
+            "value": 11876940,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Tooling Count of Tools",
+            "value": 11.877,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          }
+        ]
+      },
+      "componentQuantity": 1
+    },
+    {
+      "componentName": "Basic operations with assembly sub model 2",
+      "componentResults": {
+        "cellResults": [
+          {
+            "name": "First process Cell",
+            "cellNumber": 1,
+            "numWorkstations": 17.577,
+            "wip": 2.958,
+            "wipQueue": 2.075,
+            "wipStation": 0.882,
+            "queueingTime": 235.19,
+            "queueingTimeUnit": "minute",
+            "cellTimeSensitivity": 0.09459,
+            "cellVariationSensitivity": 0.08865,
+            "utilization": 0.05,
+            "processTime": 100.0,
+            "cellFlowTime": 335.19,
+            "cellCVD": 11.287,
+            "queueingBeforeCell": "True",
+            "accumFlow": 335.19,
+            "capitalCost": 1757667.59,
+            "waitForNextCell": 0.0,
+            "waitForNextCellUnit": "minute"
+          },
+          {
+            "name": "Second Process Cell",
+            "cellNumber": 2,
+            "numWorkstations": 10.0,
+            "wip": 8.919,
+            "wipQueue": 7.596,
+            "wipStation": 1.324,
+            "queueingTime": 860.822,
+            "queueingTimeUnit": "minute",
+            "cellTimeSensitivity": 0.33736,
+            "cellVariationSensitivity": 0.29016,
+            "utilization": 0.132,
+            "processTime": 150.0,
+            "cellFlowTime": 1010.822,
+            "cellCVD": 13.902,
+            "queueingBeforeCell": "True",
+            "accumFlow": 1346.012,
+            "capitalCost": 5000000.0,
+            "waitForNextCell": 0.0,
+            "waitForNextCellUnit": "minute"
+          }
+        ],
+        "processResults": [
+          {
+            "type": "First process",
+            "name": "First process",
+            "processTime": 1.667,
+            "stdev": 41.667,
+            "unit": "hr",
+            "breakdown": {
+              "primary": 100.0
+            }
+          },
+          {
+            "type": "Second Process",
+            "name": "Second Process",
+            "processTime": 2.5,
+            "stdev": 62.5,
+            "unit": "hr",
+            "breakdown": {
+              "primary": 150.0
+            }
+          }
+        ],
+        "processStacks": [],
+        "lineSummary": [
+          {
+            "name": "Average Production Rate",
+            "value": 0.529,
+            "unit": "count/hr"
+          },
+          {
+            "name": "Average Mainline Total Flow Time",
+            "value": 22.434,
+            "unit": "hr"
+          },
+          {
+            "name": "Total Mainline WIP Inventory",
+            "value": 11.877,
+            "unit": "count"
+          }
+        ],
+        "probabilities": {
+          "flowTime": {
+            "low": 1.2396139024348145e-149,
+            "q1": 6.252891645708509e-68,
+            "median": 9.628512710557649e-33,
+            "q3": 3.689049744430384e-12,
+            "high": 3.6961569688727676,
+            "boxPlot": [
+              {
+                "time": [
+                  1.2396139024348145e-149, 6.252891645708509e-68,
+                  9.628512710557649e-33, 3.689049744430384e-12,
+                  3.6961569688727676
+                ]
+              },
+              {}
+            ],
+            "unit": "hour",
+            "pdfPoints": [
+              {
+                "time": 10.026,
+                "probability": 0.000814437910960547,
+                "unit": "hour"
+              },
+              {
+                "time": 20.053,
+                "probability": 0.0004080776149256639,
+                "unit": "hour"
+              },
+              {
+                "time": 30.079,
+                "probability": 0.00027195524861856085,
+                "unit": "hour"
+              },
+              {
+                "time": 40.105,
+                "probability": 0.00020368874325426715,
+                "unit": "hour"
+              },
+              {
+                "time": 50.131,
+                "probability": 0.00016263931979551726,
+                "unit": "hour"
+              },
+              {
+                "time": 60.158,
+                "probability": 0.000135226300474601,
+                "unit": "hour"
+              },
+              {
+                "time": 70.184,
+                "probability": 0.00011561829868494462,
+                "unit": "hour"
+              },
+              {
+                "time": 80.21,
+                "probability": 0.00010089513270390901,
+                "unit": "hour"
+              },
+              {
+                "time": 90.236,
+                "probability": 8.943237626275078e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 100.263,
+                "probability": 8.025427984406091e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 110.289,
+                "probability": 7.273929676031783e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 120.315,
+                "probability": 6.647269472035422e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 130.342,
+                "probability": 6.116712033577504e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 140.368,
+                "probability": 5.661717007963957e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 150.394,
+                "probability": 5.267211245675373e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 160.42,
+                "probability": 4.9218827640648604e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 170.447,
+                "probability": 4.61707613965463e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 180.473,
+                "probability": 4.3460556673212234e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 190.499,
+                "probability": 4.1035009270661254e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 200.525,
+                "probability": 3.885153497173638e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 210.552,
+                "probability": 3.6875644827234315e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 220.578,
+                "probability": 3.50791081474921e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 230.604,
+                "probability": 3.343859411537442e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 240.631,
+                "probability": 3.193465256877523e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 250.657,
+                "probability": 3.0550939085354825e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 260.683,
+                "probability": 2.927361866576293e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 270.709,
+                "probability": 2.8090901761620796e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 280.736,
+                "probability": 2.6992679597738943e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 290.762,
+                "probability": 2.5970234846993364e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 300.788,
+                "probability": 2.501601009475412e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 310.814,
+                "probability": 2.4123421057925216e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 320.841,
+                "probability": 2.3286704779317084e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 330.867,
+                "probability": 2.2500795386558965e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 340.893,
+                "probability": 2.1761221746813427e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 350.92,
+                "probability": 2.106402264302528e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 360.946,
+                "probability": 2.0405676068562104e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 370.972,
+                "probability": 1.978303997220758e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 380.998,
+                "probability": 1.919330234661578e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 391.025,
+                "probability": 1.8633938985097334e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 401.051,
+                "probability": 1.8102677566306404e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 411.077,
+                "probability": 1.7597466987688527e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 421.104,
+                "probability": 1.7116451073897635e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 431.13,
+                "probability": 1.665794594879574e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 441.156,
+                "probability": 1.6220420488864072e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 451.182,
+                "probability": 1.58024793792483e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 461.209,
+                "probability": 1.540284837684366e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 471.235,
+                "probability": 1.5020361452093195e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 481.261,
+                "probability": 1.4653949535839218e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 491.287,
+                "probability": 1.4302630642201908e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 501.314,
+                "probability": 1.3965501175066512e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 511.34,
+                "probability": 1.3641728255913565e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 521.366,
+                "probability": 1.3330542935664829e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 531.393,
+                "probability": 1.303123417392579e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 541.419,
+                "probability": 1.2743143486264574e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 551.445,
+                "probability": 1.2465660174604867e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 561.471,
+                "probability": 1.2198217067929961e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 571.498,
+                "probability": 1.1940286710702528e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 581.524,
+                "probability": 1.1691377945029403e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 591.55,
+                "probability": 1.1451032839911864e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 601.576,
+                "probability": 1.1218823927136045e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 611.603,
+                "probability": 1.0994351708657491e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 621.629,
+                "probability": 1.0777242404863975e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 631.655,
+                "probability": 1.0567145916984296e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 641.682,
+                "probability": 1.0363733980249052e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 651.708,
+                "probability": 1.0166698487285562e-5,
+                "unit": "hour"
+              },
+              {
+                "time": 661.734,
+                "probability": 9.975749963713512e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 671.76,
+                "probability": 9.790616180058955e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 681.787,
+                "probability": 9.611040885970856e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 691.813,
+                "probability": 9.436782654347704e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 701.839,
+                "probability": 9.267613824396422e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 711.865,
+                "probability": 9.103319533881668e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 721.892,
+                "probability": 8.943696831904611e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 731.918,
+                "probability": 8.788553864498703e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 741.944,
+                "probability": 8.637709126162676e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 751.971,
+                "probability": 8.490990771184186e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 761.997,
+                "probability": 8.348235979253718e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 772.023,
+                "probability": 8.209290370439428e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 782.049,
+                "probability": 8.074007465098402e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 792.076,
+                "probability": 7.942248184747604e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 802.102,
+                "probability": 7.813880390314874e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 812.128,
+                "probability": 7.688778454543641e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 822.154,
+                "probability": 7.566822865639316e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 832.181,
+                "probability": 7.447899859525799e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 842.207,
+                "probability": 7.331901078330894e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 852.233,
+                "probability": 7.218723252943218e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 862.26,
+                "probability": 7.108267907683797e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 872.286,
+                "probability": 7.000441085315099e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 882.312,
+                "probability": 6.895153090771913e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 892.338,
+                "probability": 6.792318252143229e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 902.365,
+                "probability": 6.691854697565186e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 912.391,
+                "probability": 6.5936841468025976e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 922.417,
+                "probability": 6.497731716402873e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 932.443,
+                "probability": 6.4039257374020115e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 942.47,
+                "probability": 6.312197584649139e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 952.496,
+                "probability": 6.222481516894497e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 962.522,
+                "probability": 6.134714526857119e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 972.549,
+                "probability": 6.048836200552823e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 982.575,
+                "probability": 5.964788585221969e-6,
+                "unit": "hour"
+              },
+              {
+                "time": 992.601,
+                "probability": 5.882516065249595e-6,
+                "unit": "hour"
+              }
+            ]
+          }
+        },
+        "pdfpoints": [
+          {
+            "time": 10.026,
+            "probability": 0.000814437910960547,
+            "unit": "hour"
+          },
+          {
+            "time": 20.053,
+            "probability": 0.0004080776149256639,
+            "unit": "hour"
+          },
+          {
+            "time": 30.079,
+            "probability": 0.00027195524861856085,
+            "unit": "hour"
+          },
+          {
+            "time": 40.105,
+            "probability": 0.00020368874325426715,
+            "unit": "hour"
+          },
+          {
+            "time": 50.131,
+            "probability": 0.00016263931979551726,
+            "unit": "hour"
+          },
+          {
+            "time": 60.158,
+            "probability": 0.000135226300474601,
+            "unit": "hour"
+          },
+          {
+            "time": 70.184,
+            "probability": 0.00011561829868494462,
+            "unit": "hour"
+          },
+          {
+            "time": 80.21,
+            "probability": 0.00010089513270390901,
+            "unit": "hour"
+          },
+          {
+            "time": 90.236,
+            "probability": 8.943237626275078e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 100.263,
+            "probability": 8.025427984406091e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 110.289,
+            "probability": 7.273929676031783e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 120.315,
+            "probability": 6.647269472035422e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 130.342,
+            "probability": 6.116712033577504e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 140.368,
+            "probability": 5.661717007963957e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 150.394,
+            "probability": 5.267211245675373e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 160.42,
+            "probability": 4.9218827640648604e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 170.447,
+            "probability": 4.61707613965463e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 180.473,
+            "probability": 4.3460556673212234e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 190.499,
+            "probability": 4.1035009270661254e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 200.525,
+            "probability": 3.885153497173638e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 210.552,
+            "probability": 3.6875644827234315e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 220.578,
+            "probability": 3.50791081474921e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 230.604,
+            "probability": 3.343859411537442e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 240.631,
+            "probability": 3.193465256877523e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 250.657,
+            "probability": 3.0550939085354825e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 260.683,
+            "probability": 2.927361866576293e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 270.709,
+            "probability": 2.8090901761620796e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 280.736,
+            "probability": 2.6992679597738943e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 290.762,
+            "probability": 2.5970234846993364e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 300.788,
+            "probability": 2.501601009475412e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 310.814,
+            "probability": 2.4123421057925216e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 320.841,
+            "probability": 2.3286704779317084e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 330.867,
+            "probability": 2.2500795386558965e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 340.893,
+            "probability": 2.1761221746813427e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 350.92,
+            "probability": 2.106402264302528e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 360.946,
+            "probability": 2.0405676068562104e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 370.972,
+            "probability": 1.978303997220758e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 380.998,
+            "probability": 1.919330234661578e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 391.025,
+            "probability": 1.8633938985097334e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 401.051,
+            "probability": 1.8102677566306404e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 411.077,
+            "probability": 1.7597466987688527e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 421.104,
+            "probability": 1.7116451073897635e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 431.13,
+            "probability": 1.665794594879574e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 441.156,
+            "probability": 1.6220420488864072e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 451.182,
+            "probability": 1.58024793792483e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 461.209,
+            "probability": 1.540284837684366e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 471.235,
+            "probability": 1.5020361452093195e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 481.261,
+            "probability": 1.4653949535839218e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 491.287,
+            "probability": 1.4302630642201908e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 501.314,
+            "probability": 1.3965501175066512e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 511.34,
+            "probability": 1.3641728255913565e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 521.366,
+            "probability": 1.3330542935664829e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 531.393,
+            "probability": 1.303123417392579e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 541.419,
+            "probability": 1.2743143486264574e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 551.445,
+            "probability": 1.2465660174604867e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 561.471,
+            "probability": 1.2198217067929961e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 571.498,
+            "probability": 1.1940286710702528e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 581.524,
+            "probability": 1.1691377945029403e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 591.55,
+            "probability": 1.1451032839911864e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 601.576,
+            "probability": 1.1218823927136045e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 611.603,
+            "probability": 1.0994351708657491e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 621.629,
+            "probability": 1.0777242404863975e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 631.655,
+            "probability": 1.0567145916984296e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 641.682,
+            "probability": 1.0363733980249052e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 651.708,
+            "probability": 1.0166698487285562e-5,
+            "unit": "hour"
+          },
+          {
+            "time": 661.734,
+            "probability": 9.975749963713512e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 671.76,
+            "probability": 9.790616180058955e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 681.787,
+            "probability": 9.611040885970856e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 691.813,
+            "probability": 9.436782654347704e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 701.839,
+            "probability": 9.267613824396422e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 711.865,
+            "probability": 9.103319533881668e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 721.892,
+            "probability": 8.943696831904611e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 731.918,
+            "probability": 8.788553864498703e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 741.944,
+            "probability": 8.637709126162676e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 751.971,
+            "probability": 8.490990771184186e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 761.997,
+            "probability": 8.348235979253718e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 772.023,
+            "probability": 8.209290370439428e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 782.049,
+            "probability": 8.074007465098402e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 792.076,
+            "probability": 7.942248184747604e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 802.102,
+            "probability": 7.813880390314874e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 812.128,
+            "probability": 7.688778454543641e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 822.154,
+            "probability": 7.566822865639316e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 832.181,
+            "probability": 7.447899859525799e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 842.207,
+            "probability": 7.331901078330894e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 852.233,
+            "probability": 7.218723252943218e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 862.26,
+            "probability": 7.108267907683797e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 872.286,
+            "probability": 7.000441085315099e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 882.312,
+            "probability": 6.895153090771913e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 892.338,
+            "probability": 6.792318252143229e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 902.365,
+            "probability": 6.691854697565186e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 912.391,
+            "probability": 6.5936841468025976e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 922.417,
+            "probability": 6.497731716402873e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 932.443,
+            "probability": 6.4039257374020115e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 942.47,
+            "probability": 6.312197584649139e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 952.496,
+            "probability": 6.222481516894497e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 962.522,
+            "probability": 6.134714526857119e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 972.549,
+            "probability": 6.048836200552823e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 982.575,
+            "probability": 5.964788585221969e-6,
+            "unit": "hour"
+          },
+          {
+            "time": 992.601,
+            "probability": 5.882516065249595e-6,
+            "unit": "hour"
+          }
+        ],
+        "variableCosts": [
+          {
+            "name": "Inventory Holding Cost",
+            "value": 0.6
+          }
+        ],
+        "recurringCosts": [
+          {
+            "name": "First process Cell",
+            "value": 51265,
+            "unit": "$/month"
+          }
+        ],
+        "costComponents": [
+          {
+            "name": "First process Cell",
+            "value": 1757667.59
+          },
+          {
+            "name": "Second Process Cell",
+            "value": 5000000.0
+          },
+          {
+            "name": "Tooling",
+            "value": 11876940.122
+          }
+        ],
+        "totalCost": [
+          {
+            "name": "Total Unit Cost",
+            "value": 2344,
+            "unit": "$"
+          },
+          {
+            "name": "Total Non-Recurring Cost",
+            "value": 18634608,
+            "unit": "$"
+          },
+          {
+            "name": "Total Recurring Cost",
+            "value": 51265,
+            "unit": "$/month"
+          },
+          {
+            "name": "Total Variable Cost",
+            "value": 0.6,
+            "unit": "$/count"
+          },
+          {
+            "name": "Total Production Quantity",
+            "value": 9264.99,
+            "unit": "count"
+          }
+        ],
+        "unitCostBreakout": [
+          {
+            "name": "Inventory Holding Cost",
+            "value": 0.6,
+            "costType": "Variable",
+            "resource": "-"
+          },
+          {
+            "name": "First process Cell Recurring Cost",
+            "value": 96831,
+            "costType": "Recurring",
+            "resource": "First process Cell"
+          },
+          {
+            "name": "First process Cell Non-Recurring Cost",
+            "value": 190,
+            "costType": "Non-Recurring Cost",
+            "resource": "First process Cell"
+          },
+          {
+            "name": "Second Process Cell Non-Recurring Cost",
+            "value": 540,
+            "costType": "Non-Recurring Cost",
+            "resource": "Second Process Cell"
+          }
+        ],
+        "feederLines": [],
+        "tooling": [
+          {
+            "name": "Tooling",
+            "totalCost": 11876940.12,
+            "toolCount": 11.877,
+            "utilization": 82.527,
+            "toolFlowTime": 1346.012
+          }
+        ],
+        "timeInCellDetail": [
+          {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 3.92,
+            "Processing Time": 1.667,
+            "Productivity": 29.834,
+            "Cell Name": "First process Cell",
+            "unit": "hr"
+          },
+          {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 14.347,
+            "Processing Time": 2.5,
+            "Productivity": 14.839,
+            "Cell Name": "Second Process Cell",
+            "unit": "hr"
+          }
+        ],
+        "timeInCellDecomp": [
+          {
+            "Cell Name": "First process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "First process Cell",
+            "time": 3.92,
+            "type": "Queueing Before Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "First process Cell",
+            "time": 1.667,
+            "type": "Processing Time",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 14.347,
+            "type": "Queueing Before Cell",
+            "unit": "hr"
+          },
+          {
+            "Cell Name": "Second Process Cell",
+            "time": 2.5,
+            "type": "Processing Time",
+            "unit": "hr"
+          }
+        ],
+        "productSummary": [
+          {
+            "Part Flow Time": 22.434,
+            "Part Flow Time Units": "hour",
+            "Total Invenotry Holding Cost": 0.6,
+            "Total Invenotry Holding Cost Units": "$",
+            "Total Unit Cost": 2343.89,
+            "Total Unit Cost Units": "$",
+            "Total Capital Cost": 18634607.72,
+            "Total Capital Cost Units": "$"
+          }
+        ],
+        "allVariables": [
+          {
+            "name": "First process Cell Workstations",
+            "value": 17.577,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Queueing Time",
+            "value": 235.19,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Process Time",
+            "value": 100.0,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Total Flow Time",
+            "value": 335.19,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Utilization",
+            "value": 0.05,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Workstations",
+            "value": 10.0,
+            "unit": "count",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": -0.23951,
+            "marginalCost": 127,
+            "marginalCostUnit": "USD / count"
+          },
+          {
+            "name": "Second Process Cell Queueing Time",
+            "value": 860.822,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Process Time",
+            "value": 150.0,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Total Flow Time",
+            "value": 1010.822,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Utilization",
+            "value": 0.132,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Basic operations with assembly sub model 2 | First process Time",
+            "value": 100.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.11185,
+            "marginalCost": 6.15,
+            "marginalCostUnit": "USD / minute"
+          },
+          {
+            "name": "Basic operations with assembly sub model 2 | Second Process Time",
+            "value": 150.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.36326,
+            "marginalCost": 13.3,
+            "marginalCostUnit": "USD / minute"
+          },
+          {
+            "name": "Average Production Rate",
+            "value": 0.529,
+            "unit": "count/hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Average Mainline Total Flow Time",
+            "value": 22.434,
+            "unit": "hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Mainline WIP Inventory",
+            "value": 11.877,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Inventory Holding Cost",
+            "value": 0.6,
+            "unit": "$/count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "First process Cell Subtotal Cell Cost",
+            "value": 1757668,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Second Process Cell Subtotal Cell Cost",
+            "value": 5000000,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Unit Cost",
+            "value": 2344,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Non-Recurring Cost",
+            "value": 18634608,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Recurring Cost",
+            "value": 176,
+            "unit": "$/hour",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Variable Cost",
+            "value": 0.6,
+            "unit": "$/count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Total Production Quantity",
+            "value": 9264.992,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Tooling Subtotal Tool Cost",
+            "value": 11876940,
+            "unit": "$",
+            "source": "Calculated Value",
+            "tags": []
+          },
+          {
+            "name": "Tooling Count of Tools",
+            "value": 11.877,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+          }
+        ]
+      },
+      "componentQuantity": 1
+    }
+  ],
+  "componentHierarchy": {
+    "componentName": "CE-626 Recurring Floor Costs",
+    "childComponents": [
+      {
+        "componentName": "Basic operations with assembly sub model 1",
+        "childComponents": []
+      },
+      {
+        "componentName": "Basic operations with assembly sub model 2",
+        "childComponents": []
+      }
+    ]
+  },
+  "cellResults": [
+    {
+      "name": "First process Cell",
+      "cellNumber": 1,
+      "numWorkstations": 1.222,
+      "wip": 2.052,
+      "wipQueue": 0.073,
+      "wipStation": 0.882,
+      "queueingTime": 8.253,
+      "queueingTimeUnit": "minute",
+      "cellTimeSensitivity": 0.00668,
+      "cellVariationSensitivity": 0.00265,
+      "utilization": 0.722,
+      "processTime": 100.0,
+      "cellFlowTime": 232.599,
+      "cellCVD": 0.222,
+      "queueingBeforeCell": "True",
+      "accumFlow": 232.599,
+      "capitalCost": 122239.88,
+      "waitForNextCell": 0.0,
+      "waitForNextCellUnit": "minute",
+      "totalFloorSpace": 24.448,
+      "totalFloorSpaceUnits": "meter ^ 2"
+    },
+    {
+      "name": "Second Process Cell",
+      "cellNumber": 2,
+      "numWorkstations": 10.0,
+      "wip": 2.581,
+      "wipQueue": 0.007,
+      "wipStation": 1.324,
+      "queueingTime": 0.785,
+      "queueingTimeUnit": "minute",
+      "cellTimeSensitivity": 0.00043,
+      "cellVariationSensitivity": 0.00047,
+      "utilization": 0.132,
+      "processTime": 150.0,
+      "cellFlowTime": 292.519,
+      "cellCVD": 0.123,
+      "queueingBeforeCell": "True",
+      "accumFlow": 525.118,
+      "capitalCost": 5000000.0,
+      "waitForNextCell": 0.0,
+      "waitForNextCellUnit": "minute",
+      "totalFloorSpace": 300.0,
+      "totalFloorSpaceUnits": "meter ^ 2"
+    }
+  ],
+  "processResults": [
+    {
+      "type": "First process",
+      "name": "First process",
+      "processTime": 1.667,
+      "stdev": 0.417,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 100.0
+      }
+    },
+    {
+      "type": "Second Process",
+      "name": "Second Process",
+      "processTime": 2.5,
+      "stdev": 0.625,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 150.0
+      }
+    }
+  ],
+  "processStacks": [],
+  "lineSummary": [
+    {
+      "name": "Average Production Rate",
+      "value": 0.529,
+      "unit": "count/hr"
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 14.012,
+      "unit": "hr"
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 7.418,
+      "unit": "count"
+    }
+  ],
+  "probabilities": {
+    "flowTime": {
+      "low": 7.098128453008346,
+      "q1": 8.022142938051532,
+      "median": 8.70993958044539,
+      "q3": 9.435986235152082,
+      "high": 10.549144238977728,
+      "boxPlot": [
+        {
+          "time": [
+            7.098128453008346, 8.022142938051532, 8.70993958044539,
+            9.435986235152082, 10.549144238977728
+          ]
+        },
+        {}
+      ],
+      "unit": "hour",
+      "pdfPoints": [
+        {
+          "time": 0.0,
+          "probability": 0.0,
+          "unit": "hour"
+        },
+        {
+          "time": 0.131,
+          "probability": 2.9356188890341544e-96,
+          "unit": "hour"
+        },
+        {
+          "time": 0.262,
+          "probability": 3.9542247033271594e-76,
+          "unit": "hour"
+        },
+        {
+          "time": 0.393,
+          "probability": 1.5312168535213206e-64,
+          "unit": "hour"
+        },
+        {
+          "time": 0.523,
+          "probability": 1.8879500459760513e-56,
+          "unit": "hour"
+        },
+        {
+          "time": 0.654,
+          "probability": 2.8233967982005418e-50,
+          "unit": "hour"
+        },
+        {
+          "time": 0.785,
+          "probability": 2.5913933327411964e-45,
+          "unit": "hour"
+        },
+        {
+          "time": 0.916,
+          "probability": 3.4664990048092e-41,
+          "unit": "hour"
+        },
+        {
+          "time": 1.047,
+          "probability": 1.1325427856144978e-37,
+          "unit": "hour"
+        },
+        {
+          "time": 1.178,
+          "probability": 1.260792618982065e-34,
+          "unit": "hour"
+        },
+        {
+          "time": 1.309,
+          "probability": 6.003486237211573e-32,
+          "unit": "hour"
+        },
+        {
+          "time": 1.439,
+          "probability": 1.438020975595774e-29,
+          "unit": "hour"
+        },
+        {
+          "time": 1.57,
+          "probability": 1.9531357125563117e-27,
+          "unit": "hour"
+        },
+        {
+          "time": 1.701,
+          "probability": 1.6473932097441126e-25,
+          "unit": "hour"
+        },
+        {
+          "time": 1.832,
+          "probability": 9.260994927872273e-24,
+          "unit": "hour"
+        },
+        {
+          "time": 1.963,
+          "probability": 3.669854153680626e-22,
+          "unit": "hour"
+        },
+        {
+          "time": 2.094,
+          "probability": 1.0724786785145002e-20,
+          "unit": "hour"
+        },
+        {
+          "time": 2.225,
+          "probability": 2.3984099738799245e-19,
+          "unit": "hour"
+        },
+        {
+          "time": 2.356,
+          "probability": 4.231995421451554e-18,
+          "unit": "hour"
+        },
+        {
+          "time": 2.486,
+          "probability": 6.044888782789393e-17,
+          "unit": "hour"
+        },
+        {
+          "time": 2.617,
+          "probability": 7.142866501839866e-16,
+          "unit": "hour"
+        },
+        {
+          "time": 2.748,
+          "probability": 7.112755775555474e-15,
+          "unit": "hour"
+        },
+        {
+          "time": 2.879,
+          "probability": 6.064593797171602e-14,
+          "unit": "hour"
+        },
+        {
+          "time": 3.01,
+          "probability": 4.4890903387827486e-13,
+          "unit": "hour"
+        },
+        {
+          "time": 3.141,
+          "probability": 2.9196876984336034e-12,
+          "unit": "hour"
+        },
+        {
+          "time": 3.272,
+          "probability": 1.686257453381288e-11,
+          "unit": "hour"
+        },
+        {
+          "time": 3.402,
+          "probability": 8.729085212701479e-11,
+          "unit": "hour"
+        },
+        {
+          "time": 3.533,
+          "probability": 4.0837618227242746e-10,
+          "unit": "hour"
+        },
+        {
+          "time": 3.664,
+          "probability": 1.7393884837396471e-9,
+          "unit": "hour"
+        },
+        {
+          "time": 3.795,
+          "probability": 6.7895069500562614e-9,
+          "unit": "hour"
+        },
+        {
+          "time": 3.926,
+          "probability": 2.4431786887466708e-8,
+          "unit": "hour"
+        },
+        {
+          "time": 4.057,
+          "probability": 8.148254554970495e-8,
+          "unit": "hour"
+        },
+        {
+          "time": 4.188,
+          "probability": 2.530827680999726e-7,
+          "unit": "hour"
+        },
+        {
+          "time": 4.318,
+          "probability": 7.352785523208663e-7,
+          "unit": "hour"
+        },
+        {
+          "time": 4.449,
+          "probability": 2.006156517455507e-6,
+          "unit": "hour"
+        },
+        {
+          "time": 4.58,
+          "probability": 5.159206419130778e-6,
+          "unit": "hour"
+        },
+        {
+          "time": 4.711,
+          "probability": 1.2547409246250317e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 4.842,
+          "probability": 2.894723889430488e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 4.973,
+          "probability": 6.35279251595109e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 5.104,
+          "probability": 0.00013297006427742274,
+          "unit": "hour"
+        },
+        {
+          "time": 5.234,
+          "probability": 0.00026608253677226754,
+          "unit": "hour"
+        },
+        {
+          "time": 5.365,
+          "probability": 0.0005101719600378329,
+          "unit": "hour"
+        },
+        {
+          "time": 5.496,
+          "probability": 0.0009391808279183292,
+          "unit": "hour"
+        },
+        {
+          "time": 5.627,
+          "probability": 0.001663205089227086,
+          "unit": "hour"
+        },
+        {
+          "time": 5.758,
+          "probability": 0.0028384452483466577,
+          "unit": "hour"
+        },
+        {
+          "time": 5.889,
+          "probability": 0.004676009040145813,
+          "unit": "hour"
+        },
+        {
+          "time": 6.02,
+          "probability": 0.007447399165493452,
+          "unit": "hour"
+        },
+        {
+          "time": 6.151,
+          "probability": 0.011484160156241124,
+          "unit": "hour"
+        },
+        {
+          "time": 6.281,
+          "probability": 0.017169204324967127,
+          "unit": "hour"
+        },
+        {
+          "time": 6.412,
+          "probability": 0.02491792396445419,
+          "unit": "hour"
+        },
+        {
+          "time": 6.543,
+          "probability": 0.03514836549376239,
+          "unit": "hour"
+        },
+        {
+          "time": 6.674,
+          "probability": 0.048241398424794336,
+          "unit": "hour"
+        },
+        {
+          "time": 6.805,
+          "probability": 0.06449372583536415,
+          "unit": "hour"
+        },
+        {
+          "time": 6.936,
+          "probability": 0.08406841303813292,
+          "unit": "hour"
+        },
+        {
+          "time": 7.067,
+          "probability": 0.10694897368475718,
+          "unit": "hour"
+        },
+        {
+          "time": 7.197,
+          "probability": 0.13290360623603764,
+          "unit": "hour"
+        },
+        {
+          "time": 7.328,
+          "probability": 0.161465703583982,
+          "unit": "hour"
+        },
+        {
+          "time": 7.459,
+          "probability": 0.19193523643468946,
+          "unit": "hour"
+        },
+        {
+          "time": 7.59,
+          "probability": 0.22340321498359886,
+          "unit": "hour"
+        },
+        {
+          "time": 7.721,
+          "probability": 0.25479852034406925,
+          "unit": "hour"
+        },
+        {
+          "time": 7.852,
+          "probability": 0.28495343428494524,
+          "unit": "hour"
+        },
+        {
+          "time": 7.983,
+          "probability": 0.3126816676136708,
+          "unit": "hour"
+        },
+        {
+          "time": 8.113,
+          "probability": 0.3368610008127721,
+          "unit": "hour"
+        },
+        {
+          "time": 8.244,
+          "probability": 0.3565120587414276,
+          "unit": "hour"
+        },
+        {
+          "time": 8.375,
+          "probability": 0.3708653038068651,
+          "unit": "hour"
+        },
+        {
+          "time": 8.506,
+          "probability": 0.3794099150351898,
+          "unit": "hour"
+        },
+        {
+          "time": 8.637,
+          "probability": 0.3819205345681732,
+          "unit": "hour"
+        },
+        {
+          "time": 8.768,
+          "probability": 0.3784605273469827,
+          "unit": "hour"
+        },
+        {
+          "time": 8.899,
+          "probability": 0.3693630154118233,
+          "unit": "hour"
+        },
+        {
+          "time": 9.029,
+          "probability": 0.35519316694069014,
+          "unit": "hour"
+        },
+        {
+          "time": 9.16,
+          "probability": 0.3366967937768877,
+          "unit": "hour"
+        },
+        {
+          "time": 9.291,
+          "probability": 0.3147411173405811,
+          "unit": "hour"
+        },
+        {
+          "time": 9.422,
+          "probability": 0.2902536048230284,
+          "unit": "hour"
+        },
+        {
+          "time": 9.553,
+          "probability": 0.2641641636889369,
+          "unit": "hour"
+        },
+        {
+          "time": 9.684,
+          "probability": 0.23735489178939248,
+          "unit": "hour"
+        },
+        {
+          "time": 9.815,
+          "probability": 0.21062022357913646,
+          "unit": "hour"
+        },
+        {
+          "time": 9.945,
+          "probability": 0.1846388962860912,
+          "unit": "hour"
+        },
+        {
+          "time": 10.076,
+          "probability": 0.15995785707636886,
+          "unit": "hour"
+        },
+        {
+          "time": 10.207,
+          "probability": 0.1369871673141141,
+          "unit": "hour"
+        },
+        {
+          "time": 10.338,
+          "probability": 0.11600420136661449,
+          "unit": "hour"
+        },
+        {
+          "time": 10.469,
+          "probability": 0.097165001427796,
+          "unit": "hour"
+        },
+        {
+          "time": 10.6,
+          "probability": 0.08052051092544402,
+          "unit": "hour"
+        },
+        {
+          "time": 10.731,
+          "probability": 0.0660355131259596,
+          "unit": "hour"
+        },
+        {
+          "time": 10.862,
+          "probability": 0.05360837986670364,
+          "unit": "hour"
+        },
+        {
+          "time": 10.992,
+          "probability": 0.043090116920093395,
+          "unit": "hour"
+        },
+        {
+          "time": 11.123,
+          "probability": 0.03430161325357041,
+          "unit": "hour"
+        },
+        {
+          "time": 11.254,
+          "probability": 0.027048410056125613,
+          "unit": "hour"
+        },
+        {
+          "time": 11.385,
+          "probability": 0.02113266577002374,
+          "unit": "hour"
+        },
+        {
+          "time": 11.516,
+          "probability": 0.016362284527253964,
+          "unit": "hour"
+        },
+        {
+          "time": 11.647,
+          "probability": 0.012557389509853958,
+          "unit": "hour"
+        },
+        {
+          "time": 11.778,
+          "probability": 0.009554462135358401,
+          "unit": "hour"
+        },
+        {
+          "time": 11.908,
+          "probability": 0.0072085417484122625,
+          "unit": "hour"
+        },
+        {
+          "time": 12.039,
+          "probability": 0.005393901554929834,
+          "unit": "hour"
+        },
+        {
+          "time": 12.17,
+          "probability": 0.004003598936823066,
+          "unit": "hour"
+        },
+        {
+          "time": 12.301,
+          "probability": 0.0029482554294438974,
+          "unit": "hour"
+        },
+        {
+          "time": 12.432,
+          "probability": 0.002154365071850948,
+          "unit": "hour"
+        },
+        {
+          "time": 12.563,
+          "probability": 0.0015623686576837238,
+          "unit": "hour"
+        },
+        {
+          "time": 12.694,
+          "probability": 0.0011246721760847208,
+          "unit": "hour"
+        },
+        {
+          "time": 12.824,
+          "probability": 0.0008037346427827854,
+          "unit": "hour"
+        },
+        {
+          "time": 12.955,
+          "probability": 0.0005703058220777608,
+          "unit": "hour"
+        }
+      ]
+    }
+  },
+  "pdfpoints": [
+    {
+      "time": 0.0,
+      "probability": 0.0,
+      "unit": "hour"
+    },
+    {
+      "time": 0.131,
+      "probability": 2.9356188890341544e-96,
+      "unit": "hour"
+    },
+    {
+      "time": 0.262,
+      "probability": 3.9542247033271594e-76,
+      "unit": "hour"
+    },
+    {
+      "time": 0.393,
+      "probability": 1.5312168535213206e-64,
+      "unit": "hour"
+    },
+    {
+      "time": 0.523,
+      "probability": 1.8879500459760513e-56,
+      "unit": "hour"
+    },
+    {
+      "time": 0.654,
+      "probability": 2.8233967982005418e-50,
+      "unit": "hour"
+    },
+    {
+      "time": 0.785,
+      "probability": 2.5913933327411964e-45,
+      "unit": "hour"
+    },
+    {
+      "time": 0.916,
+      "probability": 3.4664990048092e-41,
+      "unit": "hour"
+    },
+    {
+      "time": 1.047,
+      "probability": 1.1325427856144978e-37,
+      "unit": "hour"
+    },
+    {
+      "time": 1.178,
+      "probability": 1.260792618982065e-34,
+      "unit": "hour"
+    },
+    {
+      "time": 1.309,
+      "probability": 6.003486237211573e-32,
+      "unit": "hour"
+    },
+    {
+      "time": 1.439,
+      "probability": 1.438020975595774e-29,
+      "unit": "hour"
+    },
+    {
+      "time": 1.57,
+      "probability": 1.9531357125563117e-27,
+      "unit": "hour"
+    },
+    {
+      "time": 1.701,
+      "probability": 1.6473932097441126e-25,
+      "unit": "hour"
+    },
+    {
+      "time": 1.832,
+      "probability": 9.260994927872273e-24,
+      "unit": "hour"
+    },
+    {
+      "time": 1.963,
+      "probability": 3.669854153680626e-22,
+      "unit": "hour"
+    },
+    {
+      "time": 2.094,
+      "probability": 1.0724786785145002e-20,
+      "unit": "hour"
+    },
+    {
+      "time": 2.225,
+      "probability": 2.3984099738799245e-19,
+      "unit": "hour"
+    },
+    {
+      "time": 2.356,
+      "probability": 4.231995421451554e-18,
+      "unit": "hour"
+    },
+    {
+      "time": 2.486,
+      "probability": 6.044888782789393e-17,
+      "unit": "hour"
+    },
+    {
+      "time": 2.617,
+      "probability": 7.142866501839866e-16,
+      "unit": "hour"
+    },
+    {
+      "time": 2.748,
+      "probability": 7.112755775555474e-15,
+      "unit": "hour"
+    },
+    {
+      "time": 2.879,
+      "probability": 6.064593797171602e-14,
+      "unit": "hour"
+    },
+    {
+      "time": 3.01,
+      "probability": 4.4890903387827486e-13,
+      "unit": "hour"
+    },
+    {
+      "time": 3.141,
+      "probability": 2.9196876984336034e-12,
+      "unit": "hour"
+    },
+    {
+      "time": 3.272,
+      "probability": 1.686257453381288e-11,
+      "unit": "hour"
+    },
+    {
+      "time": 3.402,
+      "probability": 8.729085212701479e-11,
+      "unit": "hour"
+    },
+    {
+      "time": 3.533,
+      "probability": 4.0837618227242746e-10,
+      "unit": "hour"
+    },
+    {
+      "time": 3.664,
+      "probability": 1.7393884837396471e-9,
+      "unit": "hour"
+    },
+    {
+      "time": 3.795,
+      "probability": 6.7895069500562614e-9,
+      "unit": "hour"
+    },
+    {
+      "time": 3.926,
+      "probability": 2.4431786887466708e-8,
+      "unit": "hour"
+    },
+    {
+      "time": 4.057,
+      "probability": 8.148254554970495e-8,
+      "unit": "hour"
+    },
+    {
+      "time": 4.188,
+      "probability": 2.530827680999726e-7,
+      "unit": "hour"
+    },
+    {
+      "time": 4.318,
+      "probability": 7.352785523208663e-7,
+      "unit": "hour"
+    },
+    {
+      "time": 4.449,
+      "probability": 2.006156517455507e-6,
+      "unit": "hour"
+    },
+    {
+      "time": 4.58,
+      "probability": 5.159206419130778e-6,
+      "unit": "hour"
+    },
+    {
+      "time": 4.711,
+      "probability": 1.2547409246250317e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 4.842,
+      "probability": 2.894723889430488e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 4.973,
+      "probability": 6.35279251595109e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 5.104,
+      "probability": 0.00013297006427742274,
+      "unit": "hour"
+    },
+    {
+      "time": 5.234,
+      "probability": 0.00026608253677226754,
+      "unit": "hour"
+    },
+    {
+      "time": 5.365,
+      "probability": 0.0005101719600378329,
+      "unit": "hour"
+    },
+    {
+      "time": 5.496,
+      "probability": 0.0009391808279183292,
+      "unit": "hour"
+    },
+    {
+      "time": 5.627,
+      "probability": 0.001663205089227086,
+      "unit": "hour"
+    },
+    {
+      "time": 5.758,
+      "probability": 0.0028384452483466577,
+      "unit": "hour"
+    },
+    {
+      "time": 5.889,
+      "probability": 0.004676009040145813,
+      "unit": "hour"
+    },
+    {
+      "time": 6.02,
+      "probability": 0.007447399165493452,
+      "unit": "hour"
+    },
+    {
+      "time": 6.151,
+      "probability": 0.011484160156241124,
+      "unit": "hour"
+    },
+    {
+      "time": 6.281,
+      "probability": 0.017169204324967127,
+      "unit": "hour"
+    },
+    {
+      "time": 6.412,
+      "probability": 0.02491792396445419,
+      "unit": "hour"
+    },
+    {
+      "time": 6.543,
+      "probability": 0.03514836549376239,
+      "unit": "hour"
+    },
+    {
+      "time": 6.674,
+      "probability": 0.048241398424794336,
+      "unit": "hour"
+    },
+    {
+      "time": 6.805,
+      "probability": 0.06449372583536415,
+      "unit": "hour"
+    },
+    {
+      "time": 6.936,
+      "probability": 0.08406841303813292,
+      "unit": "hour"
+    },
+    {
+      "time": 7.067,
+      "probability": 0.10694897368475718,
+      "unit": "hour"
+    },
+    {
+      "time": 7.197,
+      "probability": 0.13290360623603764,
+      "unit": "hour"
+    },
+    {
+      "time": 7.328,
+      "probability": 0.161465703583982,
+      "unit": "hour"
+    },
+    {
+      "time": 7.459,
+      "probability": 0.19193523643468946,
+      "unit": "hour"
+    },
+    {
+      "time": 7.59,
+      "probability": 0.22340321498359886,
+      "unit": "hour"
+    },
+    {
+      "time": 7.721,
+      "probability": 0.25479852034406925,
+      "unit": "hour"
+    },
+    {
+      "time": 7.852,
+      "probability": 0.28495343428494524,
+      "unit": "hour"
+    },
+    {
+      "time": 7.983,
+      "probability": 0.3126816676136708,
+      "unit": "hour"
+    },
+    {
+      "time": 8.113,
+      "probability": 0.3368610008127721,
+      "unit": "hour"
+    },
+    {
+      "time": 8.244,
+      "probability": 0.3565120587414276,
+      "unit": "hour"
+    },
+    {
+      "time": 8.375,
+      "probability": 0.3708653038068651,
+      "unit": "hour"
+    },
+    {
+      "time": 8.506,
+      "probability": 0.3794099150351898,
+      "unit": "hour"
+    },
+    {
+      "time": 8.637,
+      "probability": 0.3819205345681732,
+      "unit": "hour"
+    },
+    {
+      "time": 8.768,
+      "probability": 0.3784605273469827,
+      "unit": "hour"
+    },
+    {
+      "time": 8.899,
+      "probability": 0.3693630154118233,
+      "unit": "hour"
+    },
+    {
+      "time": 9.029,
+      "probability": 0.35519316694069014,
+      "unit": "hour"
+    },
+    {
+      "time": 9.16,
+      "probability": 0.3366967937768877,
+      "unit": "hour"
+    },
+    {
+      "time": 9.291,
+      "probability": 0.3147411173405811,
+      "unit": "hour"
+    },
+    {
+      "time": 9.422,
+      "probability": 0.2902536048230284,
+      "unit": "hour"
+    },
+    {
+      "time": 9.553,
+      "probability": 0.2641641636889369,
+      "unit": "hour"
+    },
+    {
+      "time": 9.684,
+      "probability": 0.23735489178939248,
+      "unit": "hour"
+    },
+    {
+      "time": 9.815,
+      "probability": 0.21062022357913646,
+      "unit": "hour"
+    },
+    {
+      "time": 9.945,
+      "probability": 0.1846388962860912,
+      "unit": "hour"
+    },
+    {
+      "time": 10.076,
+      "probability": 0.15995785707636886,
+      "unit": "hour"
+    },
+    {
+      "time": 10.207,
+      "probability": 0.1369871673141141,
+      "unit": "hour"
+    },
+    {
+      "time": 10.338,
+      "probability": 0.11600420136661449,
+      "unit": "hour"
+    },
+    {
+      "time": 10.469,
+      "probability": 0.097165001427796,
+      "unit": "hour"
+    },
+    {
+      "time": 10.6,
+      "probability": 0.08052051092544402,
+      "unit": "hour"
+    },
+    {
+      "time": 10.731,
+      "probability": 0.0660355131259596,
+      "unit": "hour"
+    },
+    {
+      "time": 10.862,
+      "probability": 0.05360837986670364,
+      "unit": "hour"
+    },
+    {
+      "time": 10.992,
+      "probability": 0.043090116920093395,
+      "unit": "hour"
+    },
+    {
+      "time": 11.123,
+      "probability": 0.03430161325357041,
+      "unit": "hour"
+    },
+    {
+      "time": 11.254,
+      "probability": 0.027048410056125613,
+      "unit": "hour"
+    },
+    {
+      "time": 11.385,
+      "probability": 0.02113266577002374,
+      "unit": "hour"
+    },
+    {
+      "time": 11.516,
+      "probability": 0.016362284527253964,
+      "unit": "hour"
+    },
+    {
+      "time": 11.647,
+      "probability": 0.012557389509853958,
+      "unit": "hour"
+    },
+    {
+      "time": 11.778,
+      "probability": 0.009554462135358401,
+      "unit": "hour"
+    },
+    {
+      "time": 11.908,
+      "probability": 0.0072085417484122625,
+      "unit": "hour"
+    },
+    {
+      "time": 12.039,
+      "probability": 0.005393901554929834,
+      "unit": "hour"
+    },
+    {
+      "time": 12.17,
+      "probability": 0.004003598936823066,
+      "unit": "hour"
+    },
+    {
+      "time": 12.301,
+      "probability": 0.0029482554294438974,
+      "unit": "hour"
+    },
+    {
+      "time": 12.432,
+      "probability": 0.002154365071850948,
+      "unit": "hour"
+    },
+    {
+      "time": 12.563,
+      "probability": 0.0015623686576837238,
+      "unit": "hour"
+    },
+    {
+      "time": 12.694,
+      "probability": 0.0011246721760847208,
+      "unit": "hour"
+    },
+    {
+      "time": 12.824,
+      "probability": 0.0008037346427827854,
+      "unit": "hour"
+    },
+    {
+      "time": 12.955,
+      "probability": 0.0005703058220777608,
+      "unit": "hour"
+    }
+  ],
+  "variableCosts": [
+    {
+      "name": "Inventory Holding Cost",
+      "value": 1.41
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 Total Variable Cost",
+      "value": 0.6
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 Total Variable Cost",
+      "value": 0.6
+    }
+  ],
+  "recurringCosts": [
+    {
+      "name": "First process Cell",
+      "value": 3565,
+      "unit": "$/month"
+    },
+    {
+      "name": "Floorspace Recurring Cost",
+      "value": 648,
+      "unit": "$/month"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 Total Recurring Cost",
+      "value": 51265
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 Total Recurring Cost",
+      "value": 51265
+    }
+  ],
+  "costComponents": [
+    {
+      "name": "First process Cell",
+      "value": 122239.88
+    },
+    {
+      "name": "Second Process Cell",
+      "value": 5000000.0
+    },
+    {
+      "name": "Tooling",
+      "value": 2285703.493
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 Total Non-Recurring Cost",
+      "value": 18634608
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 Total Non-Recurring Cost",
+      "value": 18634608
+    }
+  ],
+  "totalCost": [
+    {
+      "name": "Total Unit Cost",
+      "value": 5520,
+      "unit": "$"
+    },
+    {
+      "name": "Total Non-Recurring Cost",
+      "value": 7440388,
+      "unit": "$"
+    },
+    {
+      "name": "Total Recurring Cost",
+      "value": 4213,
+      "unit": "$/month"
+    },
+    {
+      "name": "Total Variable Cost",
+      "value": 4689,
+      "unit": "$/count"
+    },
+    {
+      "name": "Total Production Quantity",
+      "value": 9264.99,
+      "unit": "count"
+    }
+  ],
+  "unitCostBreakout": [
+    {
+      "name": "Inventory Holding Cost",
+      "value": 1.41,
+      "costType": "Variable",
+      "resource": "-"
+    },
+    {
+      "name": "First process Cell Recurring Cost",
+      "value": 6734,
+      "costType": "Recurring",
+      "resource": "First process Cell"
+    },
+    {
+      "name": "Floorspace Recurring Cost",
+      "value": 1223,
+      "costType": "Recurring",
+      "resource": "Floorspace Recurring Cost"
+    },
+    {
+      "name": "First process Cell Non-Recurring Cost",
+      "value": 13.2,
+      "costType": "Non-Recurring Cost",
+      "resource": "First process Cell"
+    },
+    {
+      "name": "Second Process Cell Non-Recurring Cost",
+      "value": 540,
+      "costType": "Non-Recurring Cost",
+      "resource": "Second Process Cell"
+    }
+  ],
+  "feederLines": [],
+  "tooling": [
+    {
+      "name": "Tooling",
+      "totalCost": 2285703.49,
+      "toolCount": 2.286,
+      "utilization": 96.814,
+      "toolFlowTime": 259.038
+    }
+  ],
+  "timeInCellDetail": [
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.138,
+      "Processing Time": 1.667,
+      "Productivity": 92.376,
+      "Cell Name": "First process Cell",
+      "unit": "hr"
+    },
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.013,
+      "Processing Time": 2.5,
+      "Productivity": 99.479,
+      "Cell Name": "Second Process Cell",
+      "unit": "hr"
+    }
+  ],
+  "timeInCellDecomp": [
+    {
+      "Cell Name": "First process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr"
+    },
+    {
+      "Cell Name": "First process Cell",
+      "time": 0.138,
+      "type": "Queueing Before Cell",
+      "unit": "hr"
+    },
+    {
+      "Cell Name": "First process Cell",
+      "time": 1.667,
+      "type": "Processing Time",
+      "unit": "hr"
+    },
+    {
+      "Cell Name": "Second Process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr"
+    },
+    {
+      "Cell Name": "Second Process Cell",
+      "time": 0.013,
+      "type": "Queueing Before Cell",
+      "unit": "hr"
+    },
+    {
+      "Cell Name": "Second Process Cell",
+      "time": 2.5,
+      "type": "Processing Time",
+      "unit": "hr"
+    }
+  ],
+  "productSummary": [
+    {
+      "Part Flow Time": 14.012,
+      "Part Flow Time Units": "hour",
+      "Total Invenotry Holding Cost": 1.414,
+      "Total Invenotry Holding Cost Units": "$",
+      "Total Unit Cost": 5519.53,
+      "Total Unit Cost Units": "$",
+      "Total Capital Cost": 7440388.16,
+      "Total Capital Cost Units": "$",
+      "Total Floor Space": 324.448,
+      "Total Floor Space Units": "meter ^ 2"
+    }
+  ],
+  "allVariables": [
+    {
+      "name": "All Processes CV",
+      "value": 25.0,
+      "unit": "%",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00312,
+      "marginalCost": 0.675,
+      "marginalCostUnit": "USD / %"
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 840.72,
+      "unit": "minutes",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Average Production Rate",
+      "value": 0.529,
+      "unit": "count/hour",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 Component Assembly Quantity",
+      "value": 1.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.47487,
+      "marginalCost": 2151,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | All Processes CV",
+      "value": 25.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.37881,
+      "marginalCost": 82.6,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | First process Cell Non-Recurring Cost",
+      "value": 100000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.03439,
+      "marginalCost": 0.019,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | First process Cell Recurring Cost",
+      "value": 10.0,
+      "unit": "$/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.06018,
+      "marginalCost": 31.8,
+      "marginalCostUnit": "USD / $/hour"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | First process Time",
+      "value": 100.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.11185,
+      "marginalCost": 6.15,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | Second Process Cell Non-Recurring Cost",
+      "value": 500000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.09782,
+      "marginalCost": 0.011,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | Second Process Cell Workstation Count",
+      "value": 10.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.23951,
+      "marginalCost": 127,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | Second Process Time",
+      "value": 150.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.36326,
+      "marginalCost": 13.3,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | Tooling Lot Size",
+      "value": 1.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.23237,
+      "marginalCost": 965,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 1 | Tooling Non-Recurring Cost",
+      "value": 1000000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.23237,
+      "marginalCost": 0.013,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 Component Assembly Quantity",
+      "value": 1.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.47487,
+      "marginalCost": 2151,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | All Processes CV",
+      "value": 25.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.37881,
+      "marginalCost": 82.6,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | First process Cell Non-Recurring Cost",
+      "value": 100000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.03439,
+      "marginalCost": 0.019,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | First process Cell Recurring Cost",
+      "value": 10.0,
+      "unit": "$/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.06018,
+      "marginalCost": 31.8,
+      "marginalCostUnit": "USD / $/hour"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | First process Time",
+      "value": 100.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.11185,
+      "marginalCost": 6.15,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | Second Process Cell Non-Recurring Cost",
+      "value": 500000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.09782,
+      "marginalCost": 0.011,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | Second Process Cell Workstation Count",
+      "value": 10.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.23951,
+      "marginalCost": 127,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | Second Process Time",
+      "value": 150.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.36326,
+      "marginalCost": 13.3,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | Tooling Lot Size",
+      "value": 1.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.23237,
+      "marginalCost": 965,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Basic operations with assembly sub model 2 | Tooling Non-Recurring Cost",
+      "value": 1000000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.23237,
+      "marginalCost": 0.013,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "First process Cell",
+      "value": 24.448,
+      "unit": "meter^2",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Floor Space",
+      "value": 20.0,
+      "unit": "meter^2",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00011,
+      "marginalCost": 0.028,
+      "marginalCostUnit": "USD / meter^2"
+    },
+    {
+      "name": "First process Cell Non-Recurring Cost",
+      "value": 100000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00239,
+      "marginalCost": 0.013,
+      "marginalCostUnit": "USD / 100.0 USD"
+    },
+    {
+      "name": "First process Cell Process Time",
+      "value": 100.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Queueing Time",
+      "value": 8.253,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Recurring Cost",
+      "value": 10.0,
+      "unit": "$/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00418,
+      "marginalCost": 2.2,
+      "marginalCostUnit": "USD / $/hour"
+    },
+    {
+      "name": "First process Cell Subtotal Cell Cost",
+      "value": 122240,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Total Flow Time",
+      "value": 232.599,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Utilization",
+      "value": 0.722,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Cell Workstations",
+      "value": 1.222,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First process Time",
+      "value": 100.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.02394,
+      "marginalCost": 1.31,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Floor Space Non-Recurring Cost",
+      "value": 100,
+      "unit": "$/meter^2",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00063,
+      "marginalCost": 0.035,
+      "marginalCostUnit": "USD / $/meter^2"
+    },
+    {
+      "name": "Floor Space Recurring Cost",
+      "value": 5.0,
+      "unit": "$/meter^2/month",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00076,
+      "marginalCost": 0.765,
+      "marginalCostUnit": "USD / $/meter^2/month"
+    },
+    {
+      "name": "Second Process Cell",
+      "value": 300.0,
+      "unit": "meter^2",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Floor Space",
+      "value": 30.0,
+      "unit": "meter^2",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00129,
+      "marginalCost": 0.233,
+      "marginalCostUnit": "USD / meter^2"
+    },
+    {
+      "name": "Second Process Cell Non-Recurring Cost",
+      "value": 500000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.0978,
+      "marginalCost": 0.011,
+      "marginalCostUnit": "USD / 10.0 USD"
+    },
+    {
+      "name": "Second Process Cell Process Time",
+      "value": 150.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Queueing Time",
+      "value": 0.785,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Subtotal Cell Cost",
+      "value": 5000000,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Total Flow Time",
+      "value": 292.519,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Utilization",
+      "value": 0.132,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Second Process Cell Workstation Count",
+      "value": 10.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.09866,
+      "marginalCost": 52.1,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Second Process Time",
+      "value": 150.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.02632,
+      "marginalCost": 0.965,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Tooling Count of Tools",
+      "value": 2.286,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Tooling Lot Size",
+      "value": 1.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.04471,
+      "marginalCost": 174,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Tooling Non-Recurring Cost",
+      "value": 1000000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.04471,
+      "marginalCost": 0.025,
+      "marginalCostUnit": "USD / 100.0 USD"
+    },
+    {
+      "name": "Tooling Subtotal Tool Cost",
+      "value": 2285703,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Tooling Utilization",
+      "value": 96.81,
+      "unit": "%",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Total Floor Space",
+      "value": 324.448,
+      "unit": "meter^2",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Floor Space Non-Recurring Cost",
+      "value": 32445,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Floor Space Recurring Cost",
+      "value": 2.22,
+      "unit": "$/hour",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Inventory Holding Cost",
+      "value": 1.41,
+      "unit": "$/count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 7.418,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Non-Recurring Cost",
+      "value": 7440388,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Production Quantity",
+      "value": 9264.992,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Recurring Cost",
+      "value": 14.4,
+      "unit": "$/hour",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Unit Cost",
+      "value": 5520,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Variable Cost",
+      "value": 4689,
+      "unit": "$/count",
+      "source": "Calculated Value",
+      "tags": []
+    }
+  ]
+}

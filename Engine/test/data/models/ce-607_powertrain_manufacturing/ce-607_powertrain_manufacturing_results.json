@@ -1,0 +1,2049 @@
+{
+  "resultsIndex": [
+    {
+      "name": "Manufacturing Cells",
+      "value": "cellResults"
+    },
+    {
+      "name": "Manufacturing Processes",
+      "value": "processResults"
+    },
+    {
+      "name": "Process Time Stack-Ups",
+      "value": "processStacks"
+    },
+    {
+      "name": "Line Summary",
+      "value": "lineSummary"
+    },
+    {
+      "name": "Flow Time Distribution",
+      "value": "pdfpoints"
+    },
+    {
+      "name": "Variable Cost Components",
+      "value": "variableCosts"
+    },
+    {
+      "name": "Recurring Cost Components",
+      "value": "recurringCosts"
+    },
+    {
+      "name": "Capital Cost Components",
+      "value": "costComponents"
+    },
+    {
+      "name": "Total Costs",
+      "value": "totalCost"
+    },
+    {
+      "name": "Feeder Line Flow Times",
+      "value": "feederLines"
+    },
+    {
+      "name": "Shared Tooling",
+      "value": "tooling"
+    },
+    {
+      "name": "Time in Cell Detail",
+      "value": "timeInCellDetail"
+    },
+    {
+      "name": "Time in Cell Decomposed",
+      "value": "timeInCellDecomp"
+    },
+    {
+      "name": "Product Summary",
+      "value": "productSummary"
+    },
+    {
+      "name": "All Variables",
+      "value": "allVariables"
+    }
+  ],
+  "cellResults": [
+    {
+      "name": "Install Engine Cell",
+      "cellNumber": 1,
+      "numWorkstations": 0.059,
+      "wip": 1.735,
+      "wipQueue": 1.678,
+      "wipStation": 0.057,
+      "queueingTime": 293.621,
+      "queueingTimeUnit": "minute",
+      "cellTimeSensitivity": 0.00167,
+      "cellVariationSensitivity": 0.0001,
+      "utilization": 0.965,
+      "processTime": 10.0,
+      "cellFlowTime": 303.621,
+      "cellCVD": 0.25,
+      "queueingBeforeCell": "True",
+      "accumFlow": 303.621,
+      "capitalCost": 8879.64,
+      "waitForNextCell": 0.0,
+      "waitForNextCellUnit": "minute"
+    },
+    {
+      "name": "Assemble Engine Cell",
+      "cellNumber": 2,
+      "numWorkstations": 0.349,
+      "wip": 3.756,
+      "wipQueue": 3.413,
+      "wipStation": 0.343,
+      "queueingTime": 597.342,
+      "queueingTimeUnit": "minute",
+      "cellTimeSensitivity": 0.00656,
+      "cellVariationSensitivity": 0.00018,
+      "utilization": 0.982,
+      "processTime": 60.0,
+      "cellFlowTime": 657.342,
+      "cellCVD": 0.25,
+      "queueingBeforeCell": "True",
+      "accumFlow": 960.963,
+      "capitalCost": 34902.4,
+      "waitForNextCell": 1.0,
+      "waitForNextCellUnit": "minute"
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell",
+      "cellNumber": 3,
+      "numWorkstations": 0.353,
+      "wip": 2.48,
+      "wipQueue": 2.137,
+      "wipStation": 0.343,
+      "queueingTime": 187.02,
+      "queueingTimeUnit": "minute",
+      "cellTimeSensitivity": 0.00133,
+      "cellVariationSensitivity": 0.00013,
+      "utilization": 0.972,
+      "processTime": 30.0,
+      "cellFlowTime": 217.02,
+      "cellCVD": 0.25,
+      "queueingBeforeCell": "True",
+      "accumFlow": 1177.983,
+      "capitalCost": 7052.11,
+      "waitForNextCell": 1.0,
+      "waitForNextCellUnit": "minute"
+    }
+  ],
+  "processResults": [
+    {
+      "type": "Install Engine",
+      "name": "Install Engine",
+      "processTime": 10.0,
+      "stdev": 2.5,
+      "unit": "min",
+      "breakdown": {
+        "primary": 10.0
+      }
+    }
+  ],
+  "processStacks": [],
+  "lineSummary": [
+    {
+      "name": "Average Production Rate",
+      "value": 0.343,
+      "unit": "count/hr"
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 5.06,
+      "unit": "hr"
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 1.735,
+      "unit": "count"
+    },
+    {
+      "name": "Aggregate Production Rate",
+      "value": 100.0,
+      "unit": "count/month"
+    },
+    {
+      "name": "Standard Deviation of Aggregate Production Rate",
+      "value": 1.464,
+      "unit": "count/month"
+    }
+  ],
+  "probabilities": {
+    "flowTime": {
+      "low": 3.1740892619893786,
+      "q1": 4.159622475959398,
+      "median": 4.955322966057423,
+      "q3": 5.846754253174885,
+      "high": 7.3049688634655,
+      "boxPlot": [
+        {
+          "time": [
+            3.1740892619893786, 4.159622475959398, 4.955322966057423,
+            5.846754253174885, 7.3049688634655
+          ]
+        },
+        {}
+      ],
+      "unit": "hour",
+      "pdfPoints": [
+        {
+          "time": 0.0,
+          "probability": 0.0,
+          "unit": "hour"
+        },
+        {
+          "time": 0.102,
+          "probability": 7.687474693575808e-20,
+          "unit": "hour"
+        },
+        {
+          "time": 0.204,
+          "probability": 1.8232895223062654e-15,
+          "unit": "hour"
+        },
+        {
+          "time": 0.307,
+          "probability": 5.77891780279735e-13,
+          "unit": "hour"
+        },
+        {
+          "time": 0.409,
+          "probability": 3.13003762942265e-11,
+          "unit": "hour"
+        },
+        {
+          "time": 0.511,
+          "probability": 6.439049215179217e-10,
+          "unit": "hour"
+        },
+        {
+          "time": 0.613,
+          "probability": 7.180627945952832e-9,
+          "unit": "hour"
+        },
+        {
+          "time": 0.716,
+          "probability": 5.247908550372452e-8,
+          "unit": "hour"
+        },
+        {
+          "time": 0.818,
+          "probability": 2.8150586766691216e-7,
+          "unit": "hour"
+        },
+        {
+          "time": 0.92,
+          "probability": 1.192332210673128e-6,
+          "unit": "hour"
+        },
+        {
+          "time": 1.022,
+          "probability": 4.191617286709727e-6,
+          "unit": "hour"
+        },
+        {
+          "time": 1.125,
+          "probability": 1.2673421751456682e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 1.227,
+          "probability": 3.383329445568865e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 1.329,
+          "probability": 8.135755146642007e-5,
+          "unit": "hour"
+        },
+        {
+          "time": 1.431,
+          "probability": 0.00017897406706561723,
+          "unit": "hour"
+        },
+        {
+          "time": 1.533,
+          "probability": 0.0003646367566195646,
+          "unit": "hour"
+        },
+        {
+          "time": 1.636,
+          "probability": 0.0006948855580395466,
+          "unit": "hour"
+        },
+        {
+          "time": 1.738,
+          "probability": 0.0012487323227188564,
+          "unit": "hour"
+        },
+        {
+          "time": 1.84,
+          "probability": 0.002130321232274482,
+          "unit": "hour"
+        },
+        {
+          "time": 1.942,
+          "probability": 0.003469632843708041,
+          "unit": "hour"
+        },
+        {
+          "time": 2.045,
+          "probability": 0.00542065075770132,
+          "unit": "hour"
+        },
+        {
+          "time": 2.147,
+          "probability": 0.008156670146723945,
+          "unit": "hour"
+        },
+        {
+          "time": 2.249,
+          "probability": 0.011862758184833946,
+          "unit": "hour"
+        },
+        {
+          "time": 2.351,
+          "probability": 0.016725726540597466,
+          "unit": "hour"
+        },
+        {
+          "time": 2.454,
+          "probability": 0.02292229321961699,
+          "unit": "hour"
+        },
+        {
+          "time": 2.556,
+          "probability": 0.03060635098847341,
+          "unit": "hour"
+        },
+        {
+          "time": 2.658,
+          "probability": 0.03989639270784572,
+          "unit": "hour"
+        },
+        {
+          "time": 2.76,
+          "probability": 0.050864157937749475,
+          "unit": "hour"
+        },
+        {
+          "time": 2.862,
+          "probability": 0.06352546504142471,
+          "unit": "hour"
+        },
+        {
+          "time": 2.965,
+          "probability": 0.07783399775259978,
+          "unit": "hour"
+        },
+        {
+          "time": 3.067,
+          "probability": 0.09367855345204604,
+          "unit": "hour"
+        },
+        {
+          "time": 3.169,
+          "probability": 0.1108839654121311,
+          "unit": "hour"
+        },
+        {
+          "time": 3.271,
+          "probability": 0.12921561592232333,
+          "unit": "hour"
+        },
+        {
+          "time": 3.374,
+          "probability": 0.14838719025370364,
+          "unit": "hour"
+        },
+        {
+          "time": 3.476,
+          "probability": 0.16807110481382054,
+          "unit": "hour"
+        },
+        {
+          "time": 3.578,
+          "probability": 0.18791089044046755,
+          "unit": "hour"
+        },
+        {
+          "time": 3.68,
+          "probability": 0.2075347292286831,
+          "unit": "hour"
+        },
+        {
+          "time": 3.782,
+          "probability": 0.22656932884862044,
+          "unit": "hour"
+        },
+        {
+          "time": 3.885,
+          "probability": 0.24465336435970172,
+          "unit": "hour"
+        },
+        {
+          "time": 3.987,
+          "probability": 0.2614498123198512,
+          "unit": "hour"
+        },
+        {
+          "time": 4.089,
+          "probability": 0.2766566315318941,
+          "unit": "hour"
+        },
+        {
+          "time": 4.191,
+          "probability": 0.29001539449934693,
+          "unit": "hour"
+        },
+        {
+          "time": 4.294,
+          "probability": 0.3013176298413833,
+          "unit": "hour"
+        },
+        {
+          "time": 4.396,
+          "probability": 0.3104087866450246,
+          "unit": "hour"
+        },
+        {
+          "time": 4.498,
+          "probability": 0.3171898675936397,
+          "unit": "hour"
+        },
+        {
+          "time": 4.6,
+          "probability": 0.3216168920435726,
+          "unit": "hour"
+        },
+        {
+          "time": 4.703,
+          "probability": 0.3236984391019405,
+          "unit": "hour"
+        },
+        {
+          "time": 4.805,
+          "probability": 0.32349158275823464,
+          "unit": "hour"
+        },
+        {
+          "time": 4.907,
+          "probability": 0.3210965669067299,
+          "unit": "hour"
+        },
+        {
+          "time": 5.009,
+          "probability": 0.31665057995376283,
+          "unit": "hour"
+        },
+        {
+          "time": 5.111,
+          "probability": 0.3103209800456073,
+          "unit": "hour"
+        },
+        {
+          "time": 5.214,
+          "probability": 0.3022982968436257,
+          "unit": "hour"
+        },
+        {
+          "time": 5.316,
+          "probability": 0.29278929851723345,
+          "unit": "hour"
+        },
+        {
+          "time": 5.418,
+          "probability": 0.28201036742650937,
+          "unit": "hour"
+        },
+        {
+          "time": 5.52,
+          "probability": 0.27018137867621705,
+          "unit": "hour"
+        },
+        {
+          "time": 5.623,
+          "probability": 0.25752022566859,
+          "unit": "hour"
+        },
+        {
+          "time": 5.725,
+          "probability": 0.2442380886700277,
+          "unit": "hour"
+        },
+        {
+          "time": 5.827,
+          "probability": 0.2305354982899816,
+          "unit": "hour"
+        },
+        {
+          "time": 5.929,
+          "probability": 0.21659920706785912,
+          "unit": "hour"
+        },
+        {
+          "time": 6.032,
+          "probability": 0.20259984991370145,
+          "unit": "hour"
+        },
+        {
+          "time": 6.134,
+          "probability": 0.188690348288086,
+          "unit": "hour"
+        },
+        {
+          "time": 6.236,
+          "probability": 0.1750049936628613,
+          "unit": "hour"
+        },
+        {
+          "time": 6.338,
+          "probability": 0.1616591325887098,
+          "unit": "hour"
+        },
+        {
+          "time": 6.44,
+          "probability": 0.14874936799614763,
+          "unit": "hour"
+        },
+        {
+          "time": 6.543,
+          "probability": 0.1363541884204055,
+          "unit": "hour"
+        },
+        {
+          "time": 6.645,
+          "probability": 0.12453493784545319,
+          "unit": "hour"
+        },
+        {
+          "time": 6.747,
+          "probability": 0.11333704297486281,
+          "unit": "hour"
+        },
+        {
+          "time": 6.849,
+          "probability": 0.10279142115785848,
+          "unit": "hour"
+        },
+        {
+          "time": 6.952,
+          "probability": 0.09291600019514966,
+          "unit": "hour"
+        },
+        {
+          "time": 7.054,
+          "probability": 0.08371729017555724,
+          "unit": "hour"
+        },
+        {
+          "time": 7.156,
+          "probability": 0.07519195680485155,
+          "unit": "hour"
+        },
+        {
+          "time": 7.258,
+          "probability": 0.06732835493871375,
+          "unit": "hour"
+        },
+        {
+          "time": 7.361,
+          "probability": 0.060107989878161,
+          "unit": "hour"
+        },
+        {
+          "time": 7.463,
+          "probability": 0.05350688217671102,
+          "unit": "hour"
+        },
+        {
+          "time": 7.565,
+          "probability": 0.04749681907534175,
+          "unit": "hour"
+        },
+        {
+          "time": 7.667,
+          "probability": 0.042046482126297885,
+          "unit": "hour"
+        },
+        {
+          "time": 7.769,
+          "probability": 0.03712244605135616,
+          "unit": "hour"
+        },
+        {
+          "time": 7.872,
+          "probability": 0.03269004841236181,
+          "unit": "hour"
+        },
+        {
+          "time": 7.974,
+          "probability": 0.028714133295373912,
+          "unit": "hour"
+        },
+        {
+          "time": 8.076,
+          "probability": 0.0251596749935174,
+          "unit": "hour"
+        },
+        {
+          "time": 8.178,
+          "probability": 0.02199228970307996,
+          "unit": "hour"
+        },
+        {
+          "time": 8.281,
+          "probability": 0.019178644616966445,
+          "unit": "hour"
+        },
+        {
+          "time": 8.383,
+          "probability": 0.016686774606866312,
+          "unit": "hour"
+        },
+        {
+          "time": 8.485,
+          "probability": 0.014486317026302382,
+          "unit": "hour"
+        },
+        {
+          "time": 8.587,
+          "probability": 0.012548675132040476,
+          "unit": "hour"
+        },
+        {
+          "time": 8.689,
+          "probability": 0.010847120294607892,
+          "unit": "hour"
+        },
+        {
+          "time": 8.792,
+          "probability": 0.009356842624550075,
+          "unit": "hour"
+        },
+        {
+          "time": 8.894,
+          "probability": 0.008054958944562974,
+          "unit": "hour"
+        },
+        {
+          "time": 8.996,
+          "probability": 0.00692048624403781,
+          "unit": "hour"
+        },
+        {
+          "time": 9.098,
+          "probability": 0.0059342879076470815,
+          "unit": "hour"
+        },
+        {
+          "time": 9.201,
+          "probability": 0.005078999150273343,
+          "unit": "hour"
+        },
+        {
+          "time": 9.303,
+          "probability": 0.00433893724565787,
+          "unit": "hour"
+        },
+        {
+          "time": 9.405,
+          "probability": 0.0037000013272518732,
+          "unit": "hour"
+        },
+        {
+          "time": 9.507,
+          "probability": 0.0031495657823226073,
+          "unit": "hour"
+        },
+        {
+          "time": 9.61,
+          "probability": 0.0026763705645694667,
+          "unit": "hour"
+        },
+        {
+          "time": 9.712,
+          "probability": 0.002270411122191004,
+          "unit": "hour"
+        },
+        {
+          "time": 9.814,
+          "probability": 0.001922830079881536,
+          "unit": "hour"
+        },
+        {
+          "time": 9.916,
+          "probability": 0.0016258123242742512,
+          "unit": "hour"
+        },
+        {
+          "time": 10.018,
+          "probability": 0.0013724847205059633,
+          "unit": "hour"
+        },
+        {
+          "time": 10.121,
+          "probability": 0.001156821329002189,
+          "unit": "hour"
+        }
+      ]
+    }
+  },
+  "pdfpoints": [
+    {
+      "time": 0.0,
+      "probability": 0.0,
+      "unit": "hour"
+    },
+    {
+      "time": 0.102,
+      "probability": 7.687474693575808e-20,
+      "unit": "hour"
+    },
+    {
+      "time": 0.204,
+      "probability": 1.8232895223062654e-15,
+      "unit": "hour"
+    },
+    {
+      "time": 0.307,
+      "probability": 5.77891780279735e-13,
+      "unit": "hour"
+    },
+    {
+      "time": 0.409,
+      "probability": 3.13003762942265e-11,
+      "unit": "hour"
+    },
+    {
+      "time": 0.511,
+      "probability": 6.439049215179217e-10,
+      "unit": "hour"
+    },
+    {
+      "time": 0.613,
+      "probability": 7.180627945952832e-9,
+      "unit": "hour"
+    },
+    {
+      "time": 0.716,
+      "probability": 5.247908550372452e-8,
+      "unit": "hour"
+    },
+    {
+      "time": 0.818,
+      "probability": 2.8150586766691216e-7,
+      "unit": "hour"
+    },
+    {
+      "time": 0.92,
+      "probability": 1.192332210673128e-6,
+      "unit": "hour"
+    },
+    {
+      "time": 1.022,
+      "probability": 4.191617286709727e-6,
+      "unit": "hour"
+    },
+    {
+      "time": 1.125,
+      "probability": 1.2673421751456682e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 1.227,
+      "probability": 3.383329445568865e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 1.329,
+      "probability": 8.135755146642007e-5,
+      "unit": "hour"
+    },
+    {
+      "time": 1.431,
+      "probability": 0.00017897406706561723,
+      "unit": "hour"
+    },
+    {
+      "time": 1.533,
+      "probability": 0.0003646367566195646,
+      "unit": "hour"
+    },
+    {
+      "time": 1.636,
+      "probability": 0.0006948855580395466,
+      "unit": "hour"
+    },
+    {
+      "time": 1.738,
+      "probability": 0.0012487323227188564,
+      "unit": "hour"
+    },
+    {
+      "time": 1.84,
+      "probability": 0.002130321232274482,
+      "unit": "hour"
+    },
+    {
+      "time": 1.942,
+      "probability": 0.003469632843708041,
+      "unit": "hour"
+    },
+    {
+      "time": 2.045,
+      "probability": 0.00542065075770132,
+      "unit": "hour"
+    },
+    {
+      "time": 2.147,
+      "probability": 0.008156670146723945,
+      "unit": "hour"
+    },
+    {
+      "time": 2.249,
+      "probability": 0.011862758184833946,
+      "unit": "hour"
+    },
+    {
+      "time": 2.351,
+      "probability": 0.016725726540597466,
+      "unit": "hour"
+    },
+    {
+      "time": 2.454,
+      "probability": 0.02292229321961699,
+      "unit": "hour"
+    },
+    {
+      "time": 2.556,
+      "probability": 0.03060635098847341,
+      "unit": "hour"
+    },
+    {
+      "time": 2.658,
+      "probability": 0.03989639270784572,
+      "unit": "hour"
+    },
+    {
+      "time": 2.76,
+      "probability": 0.050864157937749475,
+      "unit": "hour"
+    },
+    {
+      "time": 2.862,
+      "probability": 0.06352546504142471,
+      "unit": "hour"
+    },
+    {
+      "time": 2.965,
+      "probability": 0.07783399775259978,
+      "unit": "hour"
+    },
+    {
+      "time": 3.067,
+      "probability": 0.09367855345204604,
+      "unit": "hour"
+    },
+    {
+      "time": 3.169,
+      "probability": 0.1108839654121311,
+      "unit": "hour"
+    },
+    {
+      "time": 3.271,
+      "probability": 0.12921561592232333,
+      "unit": "hour"
+    },
+    {
+      "time": 3.374,
+      "probability": 0.14838719025370364,
+      "unit": "hour"
+    },
+    {
+      "time": 3.476,
+      "probability": 0.16807110481382054,
+      "unit": "hour"
+    },
+    {
+      "time": 3.578,
+      "probability": 0.18791089044046755,
+      "unit": "hour"
+    },
+    {
+      "time": 3.68,
+      "probability": 0.2075347292286831,
+      "unit": "hour"
+    },
+    {
+      "time": 3.782,
+      "probability": 0.22656932884862044,
+      "unit": "hour"
+    },
+    {
+      "time": 3.885,
+      "probability": 0.24465336435970172,
+      "unit": "hour"
+    },
+    {
+      "time": 3.987,
+      "probability": 0.2614498123198512,
+      "unit": "hour"
+    },
+    {
+      "time": 4.089,
+      "probability": 0.2766566315318941,
+      "unit": "hour"
+    },
+    {
+      "time": 4.191,
+      "probability": 0.29001539449934693,
+      "unit": "hour"
+    },
+    {
+      "time": 4.294,
+      "probability": 0.3013176298413833,
+      "unit": "hour"
+    },
+    {
+      "time": 4.396,
+      "probability": 0.3104087866450246,
+      "unit": "hour"
+    },
+    {
+      "time": 4.498,
+      "probability": 0.3171898675936397,
+      "unit": "hour"
+    },
+    {
+      "time": 4.6,
+      "probability": 0.3216168920435726,
+      "unit": "hour"
+    },
+    {
+      "time": 4.703,
+      "probability": 0.3236984391019405,
+      "unit": "hour"
+    },
+    {
+      "time": 4.805,
+      "probability": 0.32349158275823464,
+      "unit": "hour"
+    },
+    {
+      "time": 4.907,
+      "probability": 0.3210965669067299,
+      "unit": "hour"
+    },
+    {
+      "time": 5.009,
+      "probability": 0.31665057995376283,
+      "unit": "hour"
+    },
+    {
+      "time": 5.111,
+      "probability": 0.3103209800456073,
+      "unit": "hour"
+    },
+    {
+      "time": 5.214,
+      "probability": 0.3022982968436257,
+      "unit": "hour"
+    },
+    {
+      "time": 5.316,
+      "probability": 0.29278929851723345,
+      "unit": "hour"
+    },
+    {
+      "time": 5.418,
+      "probability": 0.28201036742650937,
+      "unit": "hour"
+    },
+    {
+      "time": 5.52,
+      "probability": 0.27018137867621705,
+      "unit": "hour"
+    },
+    {
+      "time": 5.623,
+      "probability": 0.25752022566859,
+      "unit": "hour"
+    },
+    {
+      "time": 5.725,
+      "probability": 0.2442380886700277,
+      "unit": "hour"
+    },
+    {
+      "time": 5.827,
+      "probability": 0.2305354982899816,
+      "unit": "hour"
+    },
+    {
+      "time": 5.929,
+      "probability": 0.21659920706785912,
+      "unit": "hour"
+    },
+    {
+      "time": 6.032,
+      "probability": 0.20259984991370145,
+      "unit": "hour"
+    },
+    {
+      "time": 6.134,
+      "probability": 0.188690348288086,
+      "unit": "hour"
+    },
+    {
+      "time": 6.236,
+      "probability": 0.1750049936628613,
+      "unit": "hour"
+    },
+    {
+      "time": 6.338,
+      "probability": 0.1616591325887098,
+      "unit": "hour"
+    },
+    {
+      "time": 6.44,
+      "probability": 0.14874936799614763,
+      "unit": "hour"
+    },
+    {
+      "time": 6.543,
+      "probability": 0.1363541884204055,
+      "unit": "hour"
+    },
+    {
+      "time": 6.645,
+      "probability": 0.12453493784545319,
+      "unit": "hour"
+    },
+    {
+      "time": 6.747,
+      "probability": 0.11333704297486281,
+      "unit": "hour"
+    },
+    {
+      "time": 6.849,
+      "probability": 0.10279142115785848,
+      "unit": "hour"
+    },
+    {
+      "time": 6.952,
+      "probability": 0.09291600019514966,
+      "unit": "hour"
+    },
+    {
+      "time": 7.054,
+      "probability": 0.08371729017555724,
+      "unit": "hour"
+    },
+    {
+      "time": 7.156,
+      "probability": 0.07519195680485155,
+      "unit": "hour"
+    },
+    {
+      "time": 7.258,
+      "probability": 0.06732835493871375,
+      "unit": "hour"
+    },
+    {
+      "time": 7.361,
+      "probability": 0.060107989878161,
+      "unit": "hour"
+    },
+    {
+      "time": 7.463,
+      "probability": 0.05350688217671102,
+      "unit": "hour"
+    },
+    {
+      "time": 7.565,
+      "probability": 0.04749681907534175,
+      "unit": "hour"
+    },
+    {
+      "time": 7.667,
+      "probability": 0.042046482126297885,
+      "unit": "hour"
+    },
+    {
+      "time": 7.769,
+      "probability": 0.03712244605135616,
+      "unit": "hour"
+    },
+    {
+      "time": 7.872,
+      "probability": 0.03269004841236181,
+      "unit": "hour"
+    },
+    {
+      "time": 7.974,
+      "probability": 0.028714133295373912,
+      "unit": "hour"
+    },
+    {
+      "time": 8.076,
+      "probability": 0.0251596749935174,
+      "unit": "hour"
+    },
+    {
+      "time": 8.178,
+      "probability": 0.02199228970307996,
+      "unit": "hour"
+    },
+    {
+      "time": 8.281,
+      "probability": 0.019178644616966445,
+      "unit": "hour"
+    },
+    {
+      "time": 8.383,
+      "probability": 0.016686774606866312,
+      "unit": "hour"
+    },
+    {
+      "time": 8.485,
+      "probability": 0.014486317026302382,
+      "unit": "hour"
+    },
+    {
+      "time": 8.587,
+      "probability": 0.012548675132040476,
+      "unit": "hour"
+    },
+    {
+      "time": 8.689,
+      "probability": 0.010847120294607892,
+      "unit": "hour"
+    },
+    {
+      "time": 8.792,
+      "probability": 0.009356842624550075,
+      "unit": "hour"
+    },
+    {
+      "time": 8.894,
+      "probability": 0.008054958944562974,
+      "unit": "hour"
+    },
+    {
+      "time": 8.996,
+      "probability": 0.00692048624403781,
+      "unit": "hour"
+    },
+    {
+      "time": 9.098,
+      "probability": 0.0059342879076470815,
+      "unit": "hour"
+    },
+    {
+      "time": 9.201,
+      "probability": 0.005078999150273343,
+      "unit": "hour"
+    },
+    {
+      "time": 9.303,
+      "probability": 0.00433893724565787,
+      "unit": "hour"
+    },
+    {
+      "time": 9.405,
+      "probability": 0.0037000013272518732,
+      "unit": "hour"
+    },
+    {
+      "time": 9.507,
+      "probability": 0.0031495657823226073,
+      "unit": "hour"
+    },
+    {
+      "time": 9.61,
+      "probability": 0.0026763705645694667,
+      "unit": "hour"
+    },
+    {
+      "time": 9.712,
+      "probability": 0.002270411122191004,
+      "unit": "hour"
+    },
+    {
+      "time": 9.814,
+      "probability": 0.001922830079881536,
+      "unit": "hour"
+    },
+    {
+      "time": 9.916,
+      "probability": 0.0016258123242742512,
+      "unit": "hour"
+    },
+    {
+      "time": 10.018,
+      "probability": 0.0013724847205059633,
+      "unit": "hour"
+    },
+    {
+      "time": 10.121,
+      "probability": 0.001156821329002189,
+      "unit": "hour"
+    }
+  ],
+  "variableCosts": [
+    {
+      "name": "Valves Variable Cost",
+      "value": 480
+    },
+    {
+      "name": "Pistons Variable Cost",
+      "value": 300
+    },
+    {
+      "name": "Engine Block Variable Cost",
+      "value": 100
+    },
+    {
+      "name": "Inventory Holding Cost",
+      "value": 0.199
+    }
+  ],
+  "recurringCosts": [],
+  "costComponents": [
+    {
+      "name": "Install Engine Cell",
+      "value": 8879.64
+    },
+    {
+      "name": "Assemble Engine Cell",
+      "value": 34902.4
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell",
+      "value": 7052.11
+    }
+  ],
+  "totalCost": [
+    {
+      "name": "Total Unit Cost",
+      "value": 889,
+      "unit": "$"
+    },
+    {
+      "name": "Total Non-Recurring Cost",
+      "value": 50834,
+      "unit": "$"
+    },
+    {
+      "name": "Total Variable Cost",
+      "value": 880,
+      "unit": "$/count"
+    },
+    {
+      "name": "Total Production Quantity",
+      "value": 6000.0,
+      "unit": "count"
+    },
+    {
+      "name": "NPV Recurring Cost",
+      "value": 0.0,
+      "unit": "$"
+    },
+    {
+      "name": "NPV Variable Cost",
+      "value": 4404375,
+      "unit": "$"
+    },
+    {
+      "name": "Total NPV Cost",
+      "value": 4455209,
+      "unit": "$"
+    }
+  ],
+  "unitCostBreakout": [
+    {
+      "name": "Valves Variable Cost",
+      "value": 480,
+      "costType": "Variable",
+      "resource": "-"
+    },
+    {
+      "name": "Pistons Variable Cost",
+      "value": 300,
+      "costType": "Variable",
+      "resource": "-"
+    },
+    {
+      "name": "Engine Block Variable Cost",
+      "value": 100,
+      "costType": "Variable",
+      "resource": "-"
+    },
+    {
+      "name": "Inventory Holding Cost",
+      "value": 0.2,
+      "costType": "Variable",
+      "resource": "-"
+    },
+    {
+      "name": "Install Engine Cell Non-Recurring Cost",
+      "value": 1.48,
+      "costType": "Non-Recurring Cost",
+      "resource": "Install Engine Cell"
+    },
+    {
+      "name": "Assemble Engine Cell Non-Recurring Cost",
+      "value": 5.82,
+      "costType": "Non-Recurring Cost",
+      "resource": "Assemble Engine Cell"
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Non-Recurring Cost",
+      "value": 1.18,
+      "costType": "Non-Recurring Cost",
+      "resource": "Assemble Cylinder Heads Cell"
+    }
+  ],
+  "cashflows": [
+    {
+      "cashflow": 138854,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    },
+    {
+      "cashflow": 88020,
+      "output": 100.0
+    }
+  ],
+  "feederLines": [
+    {
+      "flowTime": 10.956,
+      "startOffset": -10.956,
+      "endQueueTime": 0.0,
+      "timeUnit": "hr",
+      "name": "Engine Assembly"
+    },
+    {
+      "flowTime": 3.617,
+      "startOffset": -14.916,
+      "endQueueTime": 0.343,
+      "timeUnit": "hr",
+      "name": "Cylinder Heads Subassembly"
+    },
+    {
+      "flowTime": 0.0,
+      "startOffset": -14.916,
+      "endQueueTime": 0.0,
+      "timeUnit": "hr",
+      "name": "Valves"
+    },
+    {
+      "flowTime": 0.0,
+      "startOffset": -10.956,
+      "endQueueTime": 0.0,
+      "timeUnit": "hr",
+      "name": "Pistons"
+    },
+    {
+      "flowTime": 0.0,
+      "startOffset": -10.956,
+      "endQueueTime": 0.0,
+      "timeUnit": "hr",
+      "name": "Engine Block"
+    }
+  ],
+  "tooling": [],
+  "timeInCellDetail": [
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 293.621,
+      "Processing Time": 10.0,
+      "Productivity": 3.294,
+      "Cell Name": "Install Engine Cell",
+      "unit": "min"
+    },
+    {
+      "Waiting for Next Cell": 1.0,
+      "Queueing Before Cell": 597.342,
+      "Processing Time": 60.0,
+      "Productivity": 9.114,
+      "Cell Name": "Assemble Engine Cell",
+      "unit": "min"
+    },
+    {
+      "Waiting for Next Cell": 1.0,
+      "Queueing Before Cell": 187.02,
+      "Processing Time": 30.0,
+      "Productivity": 13.76,
+      "Cell Name": "Assemble Cylinder Heads Cell",
+      "unit": "min"
+    }
+  ],
+  "timeInCellDecomp": [
+    {
+      "Cell Name": "Install Engine Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Install Engine Cell",
+      "time": 293.621,
+      "type": "Queueing Before Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Install Engine Cell",
+      "time": 10.0,
+      "type": "Processing Time",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Engine Cell",
+      "time": 1.0,
+      "type": "Waiting for Next Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Engine Cell",
+      "time": 597.342,
+      "type": "Queueing Before Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Engine Cell",
+      "time": 60.0,
+      "type": "Processing Time",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Cylinder Heads Cell",
+      "time": 1.0,
+      "type": "Waiting for Next Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Cylinder Heads Cell",
+      "time": 187.02,
+      "type": "Queueing Before Cell",
+      "unit": "min"
+    },
+    {
+      "Cell Name": "Assemble Cylinder Heads Cell",
+      "time": 30.0,
+      "type": "Processing Time",
+      "unit": "min"
+    }
+  ],
+  "productSummary": [
+    {
+      "Part Flow Time": 5.06,
+      "Part Flow Time Units": "hour",
+      "Total Invenotry Holding Cost": 0.199,
+      "Total Invenotry Holding Cost Units": "$",
+      "Total Unit Cost": 888.67,
+      "Total Unit Cost Units": "$",
+      "Total Capital Cost": 50834.15,
+      "Total Capital Cost Units": "$",
+      "Aggregate Rate": 100.0,
+      "Aggregate Rate Units": "count/month",
+      "Average Turnaround Time": 5.1,
+      "Average Turnaround Time Units": "hour"
+    }
+  ],
+  "allVariables": [
+    {
+      "name": "Aggregate Production Rate",
+      "value": 100.0,
+      "unit": "count/month",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "All Processes CV",
+      "value": 25.0,
+      "unit": "%",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00041,
+      "marginalCost": 0.014,
+      "marginalCostUnit": "USD / %"
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Non-Recurring Cost",
+      "value": 20000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00132,
+      "marginalCost": 0.057,
+      "marginalCostUnit": "USD / 1000.0 USD"
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Process Time",
+      "value": 30.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Queueing Time",
+      "value": 187.02,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Subtotal Cell Cost",
+      "value": 7052,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Total Flow Time",
+      "value": 217.02,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Utilization",
+      "value": 0.972,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Cell Workstations",
+      "value": 0.353,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Cylinder Heads Time",
+      "value": 30.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00133,
+      "marginalCost": 0.039,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Assemble Engine Cell Non-Recurring Cost",
+      "value": 100000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00655,
+      "marginalCost": 0.058,
+      "marginalCostUnit": "USD / 1000.0 USD"
+    },
+    {
+      "name": "Assemble Engine Cell Process Time",
+      "value": 60.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Cell Queueing Time",
+      "value": 597.342,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Cell Subtotal Cell Cost",
+      "value": 34902,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Cell Total Flow Time",
+      "value": 657.342,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Cell Utilization",
+      "value": 0.982,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Cell Workstations",
+      "value": 0.349,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Assemble Engine Time",
+      "value": 60.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00656,
+      "marginalCost": 0.096,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 303.59999999999997,
+      "unit": "minutes",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Average Production Rate",
+      "value": 0.343,
+      "unit": "count/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": -0.00021,
+      "marginalCost": 0.249,
+      "marginalCostUnit": "USD / count/hour"
+    },
+    {
+      "name": "Average Turnaround Time",
+      "value": 306.0,
+      "unit": "minutes",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Cylinder Heads Subassembly Quantity",
+      "value": 2.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.54154,
+      "marginalCost": 218,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Engine Block Variable Cost",
+      "value": 100,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.11255,
+      "marginalCost": 0.996,
+      "marginalCostUnit": "USD / USD"
+    },
+    {
+      "name": "Install Engine Cell Non-Recurring Cost",
+      "value": 150000,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00167,
+      "marginalCost": 0.096,
+      "marginalCostUnit": "USD / 10000.0 USD"
+    },
+    {
+      "name": "Install Engine Cell Process Time",
+      "value": 10.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Cell Queueing Time",
+      "value": 293.621,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Cell Subtotal Cell Cost",
+      "value": 8880,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Cell Total Flow Time",
+      "value": 303.621,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Cell Utilization",
+      "value": 0.965,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Cell Workstations",
+      "value": 0.059,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Install Engine Time",
+      "value": 10.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00167,
+      "marginalCost": 0.141,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "NPV Recurring Cost",
+      "value": 0.0,
+      "unit": "$",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "NPV Variable Cost",
+      "value": 4404375,
+      "unit": "$",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Pistons Quantity",
+      "value": 6.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.33766,
+      "marginalCost": 47.5,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Pistons Variable Cost",
+      "value": 50.0,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.33766,
+      "marginalCost": 5.96,
+      "marginalCostUnit": "USD / USD"
+    },
+    {
+      "name": "Standard Deviation of Aggregate Production Rate",
+      "value": 1.464,
+      "unit": "count/month",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Total Inventory Holding Cost",
+      "value": 0.199,
+      "unit": "$/count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 1.735,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total NPV Cost",
+      "value": 4455209,
+      "unit": "$",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Total Non-Recurring Cost",
+      "value": 50834,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Production Quantity",
+      "value": 6000.0,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Unit Cost",
+      "value": 889,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Variable Cost",
+      "value": 880,
+      "unit": "$/count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Valves Quantity",
+      "value": 12.0,
+      "unit": "count",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.54025,
+      "marginalCost": 39.3,
+      "marginalCostUnit": "USD / count"
+    },
+    {
+      "name": "Valves Variable Cost",
+      "value": 20.0,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.54025,
+      "marginalCost": 23.7,
+      "marginalCostUnit": "USD / USD"
+    }
+  ]
+}

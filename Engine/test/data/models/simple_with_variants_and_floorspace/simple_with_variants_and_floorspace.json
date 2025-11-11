@@ -1,0 +1,407 @@
+{
+  "id": 724361891.6877624,
+  "model": {
+    "design": {
+      "interfaceVariables": [
+        {
+          "name": "part length",
+          "unit": "m"
+        },
+        {
+          "name": "part mass",
+          "unit": "kg"
+        }
+      ],
+      "selectedModule": 9038498983.56514
+    },
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "month",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rate": 400,
+      "rates": [],
+      "selectedModule": 2706442708.256405
+    },
+    "modelName": "simple with variants and floorspace",
+    "modules": [
+      {
+        "id": 2706442708.256405,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "First Process Cell"
+            },
+            {
+              "name": "Second Process Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "feederLines": [],
+          "feederProcesses": [],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "constraint",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Useful Life",
+                "unit": "years"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "First Process Cell",
+              "id": "P010",
+              "type": "First Process"
+            },
+            {
+              "cell": "Second Process Cell",
+              "id": "P020",
+              "type": "Second Process"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [],
+          "variables": [
+            {
+              "category": "all processes",
+              "key": "All Processes CV // New Module",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 30
+            },
+            {
+              "acyclic": true,
+              "category": "processes",
+              "key": "First Process Time // New Module",
+              "math": true,
+              "monomial": true,
+              "name": "First Process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "First Process",
+              "unit": "min",
+              "value": ["part length", "*", "length rate"]
+            },
+            {
+              "acyclic": true,
+              "category": "processes",
+              "key": "Second Process Time // New Module",
+              "math": true,
+              "monomial": true,
+              "name": "Second Process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Second Process",
+              "unit": "min",
+              "value": ["part mass", "*", "mass rate"]
+            },
+            {
+              "category": "custom",
+              "key": "length rate // New Module",
+              "name": "length rate",
+              "sign": "=",
+              "unit": "min/m",
+              "value": 10
+            },
+            {
+              "category": "custom",
+              "key": "mass rate // New Module",
+              "name": "mass rate",
+              "sign": "=",
+              "unit": "min/kg",
+              "value": 5
+            },
+            {
+              "category": "floor space",
+              "key": "Floor Space Recurring Cost // New Module",
+              "name": "Floor Space Recurring Cost",
+              "property": "Cost",
+              "sign": "=",
+              "unit": "$/m^2/month",
+              "value": 3
+            },
+            {
+              "category": "floor space",
+              "key": "Floor Space Non-Recurring Cost // New Module",
+              "name": "Floor Space Non-Recurring Cost",
+              "property": "Cost",
+              "sign": "=",
+              "unit": "$/m^2",
+              "value": 100
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "First Process Cell Batch Size // New Module",
+              "name": "First Process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "First Process Cell",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "Second Process Cell Batch Size // New Module",
+              "name": "Second Process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "First Process Cell Non-Recurring Cost // New Module",
+              "name": "First Process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "First Process Cell",
+              "unit": "$",
+              "value": 500000
+            },
+            {
+              "category": "cells",
+              "key": "Second Process Cell Non-Recurring Cost // New Module",
+              "name": "Second Process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "unit": "$",
+              "value": 750000
+            },
+            {
+              "category": "cells",
+              "key": "First Process Cell Floor Space // New Module",
+              "name": "First Process Cell Floor Space",
+              "property": "Floor Space",
+              "sign": "=",
+              "type": "First Process Cell",
+              "unit": "m^2",
+              "value": 50
+            },
+            {
+              "category": "cells",
+              "key": "Second Process Cell Floor Space // New Module",
+              "name": "Second Process Cell Floor Space",
+              "property": "Floor Space",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "unit": "m^2",
+              "value": 100
+            }
+          ]
+        },
+        "name": "New Module",
+        "type": "manufacturing"
+      },
+      {
+        "design": {
+          "variables": [
+            {
+              "category": "interface",
+              "key": "part length // New Design Module",
+              "name": "part length",
+              "sign": "=",
+              "unit": "m",
+              "value": 8
+            },
+            {
+              "category": "interface",
+              "key": "part mass // New Design Module",
+              "name": "part mass",
+              "sign": "=",
+              "unit": "kg",
+              "value": 10
+            }
+          ]
+        },
+        "id": 9038498983.56514,
+        "name": "New Design Module",
+        "type": "design"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["custom", "variants"],
+    "variants": [
+      {
+        "name": "Standard Variant",
+        "parameters": [],
+        "partsPer": 3
+      },
+      {
+        "name": "Light Part",
+        "parameters": [
+          {
+            "category": "interface",
+            "index": 1,
+            "key": "part mass // New Design Module",
+            "name": "part mass",
+            "sign": "=",
+            "unit": "kg",
+            "value": 5
+          }
+        ],
+        "partsPer": 1
+      }
+    ],
+    "version": "1.0.53"
+  }
+}

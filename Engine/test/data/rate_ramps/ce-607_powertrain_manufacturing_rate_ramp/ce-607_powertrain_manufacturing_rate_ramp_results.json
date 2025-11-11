@@ -1,0 +1,3604 @@
+{
+  "plot": [
+    {
+      "rate": 50.0,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 970.1400238221689
+    },
+    {
+      "rate": 51.01010101010101,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 968.3578188727166
+    },
+    {
+      "rate": 52.02020202020202,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 966.6448257659615
+    },
+    {
+      "rate": 53.03030303030303,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 964.9970895394638
+    },
+    {
+      "rate": 54.04040404040404,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 963.4109509289098
+    },
+    {
+      "rate": 55.05050505050505,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 961.8830192398441
+    },
+    {
+      "rate": 56.06060606060606,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 960.4101481521861
+    },
+    {
+      "rate": 57.07070707070707,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 958.9894140941798
+    },
+    {
+      "rate": 58.08080808080808,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 957.6180968729736
+    },
+    {
+      "rate": 59.09090909090909,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 956.2936622918088
+    },
+    {
+      "rate": 60.101010101010104,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 955.0137465200949
+    },
+    {
+      "rate": 61.111111111111114,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 953.7761420135614
+    },
+    {
+      "rate": 62.121212121212125,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 952.5787848080536
+    },
+    {
+      "rate": 63.131313131313135,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 951.419743033122
+    },
+    {
+      "rate": 64.14141414141415,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 950.2972065109441
+    },
+    {
+      "rate": 65.15151515151516,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 949.2094773227873
+    },
+    {
+      "rate": 66.16161616161617,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 948.1549612396122
+    },
+    {
+      "rate": 67.17171717171718,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 947.1321599258562
+    },
+    {
+      "rate": 68.18181818181819,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 946.1396638362113
+    },
+    {
+      "rate": 69.1919191919192,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 945.1761457345852
+    },
+    {
+      "rate": 70.20202020202021,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 944.2403547725744
+    },
+    {
+      "rate": 71.21212121212122,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 943.3311110718971
+    },
+    {
+      "rate": 72.22222222222223,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 942.4473007614486
+    },
+    {
+      "rate": 73.23232323232324,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 941.5878714250814
+    },
+    {
+      "rate": 74.24242424242425,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 940.7518279209963
+    },
+    {
+      "rate": 75.25252525252526,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 939.9382285378263
+    },
+    {
+      "rate": 76.26262626262627,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 939.1461814561972
+    },
+    {
+      "rate": 77.27272727272728,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 938.3748414878132
+    },
+    {
+      "rate": 78.28282828282829,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 937.6234070670005
+    },
+    {
+      "rate": 79.2929292929293,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 936.8911174721958
+    },
+    {
+      "rate": 80.30303030303031,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 936.1772502571346
+    },
+    {
+      "rate": 81.31313131313132,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 935.4811188735034
+    },
+    {
+      "rate": 82.32323232323233,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 934.8020704686116
+    },
+    {
+      "rate": 83.33333333333334,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 934.1394838432325
+    },
+    {
+      "rate": 84.34343434343435,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 933.4927675561858
+    },
+    {
+      "rate": 85.35353535353536,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 932.8613581635069
+    },
+    {
+      "rate": 86.36363636363637,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 932.2447185811832
+    },
+    {
+      "rate": 87.37373737373738,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 931.6423365614565
+    },
+    {
+      "rate": 88.3838383838384,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 931.0537232736093
+    },
+    {
+      "rate": 89.3939393939394,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 930.4784119809677
+    },
+    {
+      "rate": 90.40404040404042,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 929.9159568065975
+    },
+    {
+      "rate": 91.41414141414143,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 929.365931580832
+    },
+    {
+      "rate": 92.42424242424244,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 928.8279287643729
+    },
+    {
+      "rate": 93.43434343434345,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 928.3015584412427
+    },
+    {
+      "rate": 94.44444444444446,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 927.7864473763614
+    },
+    {
+      "rate": 95.45454545454547,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 927.2822381329588
+    },
+    {
+      "rate": 96.46464646464648,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 926.7885882454392
+    },
+    {
+      "rate": 97.47474747474749,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 926.3051694436712
+    },
+    {
+      "rate": 98.48484848484848,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 925.8316669250164
+    },
+    {
+      "rate": 99.4949494949495,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 925.3677786706997
+    },
+    {
+      "rate": 100.5050505050505,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 924.9132148034046
+    },
+    {
+      "rate": 101.51515151515152,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 924.4676969832196
+    },
+    {
+      "rate": 102.52525252525253,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 924.0309578392946
+    },
+    {
+      "rate": 103.53535353535354,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 923.6027404347633
+    },
+    {
+      "rate": 104.54545454545455,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 923.1827977626866
+    },
+    {
+      "rate": 105.55555555555556,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 922.7708922709368
+    },
+    {
+      "rate": 106.56565656565657,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 922.3667954141016
+    },
+    {
+      "rate": 107.57575757575758,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 921.9702872306342
+    },
+    {
+      "rate": 108.58585858585859,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 921.5811559436034
+    },
+    {
+      "rate": 109.5959595959596,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 921.1991975835226
+    },
+    {
+      "rate": 110.60606060606061,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 920.824215631845
+    },
+    {
+      "rate": 111.61616161616162,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 920.4560206838177
+    },
+    {
+      "rate": 112.62626262626263,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 920.094430129477
+    },
+    {
+      "rate": 113.63636363636364,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 919.7392678516579
+    },
+    {
+      "rate": 114.64646464646465,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 919.3903639399678
+    },
+    {
+      "rate": 115.65656565656566,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 919.0475544197482
+    },
+    {
+      "rate": 116.66666666666667,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 918.7106809951168
+    },
+    {
+      "rate": 117.67676767676768,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 918.3795908052431
+    },
+    {
+      "rate": 118.68686868686869,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 918.0541361930693
+    },
+    {
+      "rate": 119.6969696969697,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 917.7341744857424
+    },
+    {
+      "rate": 120.70707070707071,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 917.4195677860695
+    },
+    {
+      "rate": 121.71717171717172,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 917.110182774358
+    },
+    {
+      "rate": 122.72727272727273,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 916.8058905200409
+    },
+    {
+      "rate": 123.73737373737374,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 916.5065663025289
+    },
+    {
+      "rate": 124.74747474747475,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 916.2120894407661
+    },
+    {
+      "rate": 125.75757575757576,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 915.9223431309996
+    },
+    {
+      "rate": 126.76767676767678,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 915.637214292305
+    },
+    {
+      "rate": 127.77777777777779,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 915.3565934194395
+    },
+    {
+      "rate": 128.7878787878788,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 915.080374442619
+    },
+    {
+      "rate": 129.7979797979798,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 914.8084545938425
+    },
+    {
+      "rate": 130.80808080808083,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 914.5407342794099
+    },
+    {
+      "rate": 131.8181818181818,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 914.277116958302
+    },
+    {
+      "rate": 132.82828282828285,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 914.0175090261083
+    },
+    {
+      "rate": 133.83838383838383,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 913.7618197042118
+    },
+    {
+      "rate": 134.84848484848487,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 913.5099609339543
+    },
+    {
+      "rate": 135.85858585858585,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 913.2618472755221
+    },
+    {
+      "rate": 136.8686868686869,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 913.0173958113103
+    },
+    {
+      "rate": 137.87878787878788,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 912.7765260535339
+    },
+    {
+      "rate": 138.8888888888889,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 912.5391598558706
+    },
+    {
+      "rate": 139.8989898989899,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 912.3052213289317
+    },
+    {
+      "rate": 140.90909090909093,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 912.0746367593682
+    },
+    {
+      "rate": 141.91919191919192,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 911.847334532432
+    },
+    {
+      "rate": 142.92929292929296,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 911.6232450578199
+    },
+    {
+      "rate": 143.93939393939394,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 911.402300698641
+    },
+    {
+      "rate": 144.94949494949498,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 911.1844357033531
+    },
+    {
+      "rate": 145.95959595959596,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 910.969586140526
+    },
+    {
+      "rate": 146.96969696969697,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 910.7576898362944
+    },
+    {
+      "rate": 147.97979797979798,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 910.5486863143731
+    },
+    {
+      "rate": 148.989898989899,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 910.3425167385118
+    },
+    {
+      "rate": 150.0,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "Install Engine Cell Workstation Count",
+          "type": "Install Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Install Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Engine Cell Workstation Count",
+          "type": "Assemble Engine Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Engine Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        },
+        {
+          "category": "cells",
+          "name": "Assemble Cylinder Heads Cell Workstation Count",
+          "type": "Assemble Cylinder Heads Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Assemble Cylinder Heads Cell Workstation Count // Powertrain-Engine",
+          "sign": "=",
+          "value": 1.0
+        }
+      ],
+      "Total Unit Cost": 910.1391238572749
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "model": {
+    "type": ["manufacturing", "bestworst"],
+    "modelName": "Training TS Autoclave Updated With Uncertainty best worse",
+    "manufacturing": {
+      "line": "cell",
+      "amortization": "duration",
+      "duration": 5,
+      "selectedModule": 8354930555.6539545,
+      "rate": 40,
+      "rates": []
+    },
+    "finance": {
+      "shiftsPerDay": 2,
+      "hrsPerShift": 7,
+      "daysPerWeek": 5,
+      "weeksPerYear": 50,
+      "costOfCapital": 5,
+      "rateUnit": "month",
+      "durationUnit": "years"
+    },
+    "modules": [
+      {
+        "name": "New Module",
+        "id": 8354930555.6539545,
+        "type": "manufacturing",
+        "manufacturing": {
+          "processChain": [
+            {
+              "id": "P070",
+              "type": "Setup",
+              "cell": "AFP Layup Cell"
+            },
+            {
+              "id": "P010",
+              "type": "AFP Layup",
+              "cell": "AFP Layup Cell"
+            },
+            {
+              "id": "P020",
+              "type": "Bag & Prep",
+              "cell": "Bag & Prep Cell"
+            },
+            {
+              "id": "P080",
+              "type": "Setup",
+              "cell": "Autoclave Cure Cell"
+            },
+            {
+              "id": "P030",
+              "type": "Autoclave Cure",
+              "cell": "Autoclave Cure Cell"
+            },
+            {
+              "id": "P090",
+              "type": "Setup",
+              "cell": "Trim & Drill Cell"
+            },
+            {
+              "id": "P040",
+              "type": "Trim & Drill",
+              "cell": "Trim & Drill Cell"
+            },
+            {
+              "id": "P050",
+              "type": "Demold",
+              "cell": "Demold Cell"
+            },
+            {
+              "id": "P060",
+              "type": "Inspect Part",
+              "cell": "Inspect Part Cell"
+            }
+          ],
+          "cvByProcess": false,
+          "cellsFromProcesses": false,
+          "feederProcesses": [],
+          "feederLines": [],
+          "secProcesses": [],
+          "routes": [],
+          "tools": [
+            {
+              "name": "Layup",
+              "route": [
+                "P070",
+                "P010",
+                "P020",
+                "P080",
+                "P030",
+                "P090",
+                "P040",
+                "P050"
+              ]
+            }
+          ],
+          "cells": [
+            {
+              "name": "AFP Layup Cell"
+            },
+            {
+              "name": "Bag & Prep Cell"
+            },
+            {
+              "name": "Autoclave Cure Cell"
+            },
+            {
+              "name": "Trim & Drill Cell"
+            },
+            {
+              "name": "Demold Cell"
+            },
+            {
+              "name": "Inspect Part Cell",
+              "noQueueing": true
+            }
+          ],
+          "costs": [],
+          "inputFormat": {
+            "processes": [
+              {
+                "property": "Time",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Std. Dev.",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "FPY",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              }
+            ],
+            "cells": [
+              {
+                "property": "Batch Size",
+                "unit": "",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Mean Operations to Failure",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTF",
+                "unit": "min",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTR",
+                "unit": "min",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Extra Shifts",
+                "unit": "hr",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Useful Life",
+                "unit": "years",
+                "inputFormat": "-"
+              }
+            ],
+            "tools": [
+              {
+                "property": "Lot Size",
+                "unit": "",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Useful Life",
+                "unit": "years",
+                "inputFormat": "-"
+              }
+            ],
+            "feederLines": [
+              {
+                "property": "Quantity",
+                "unit": "",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Variable Cost",
+                "unit": "$",
+                "inputFormat": "-"
+              }
+            ],
+            "routes": [
+              {
+                "property": "% Diverted",
+                "unit": "%",
+                "inputFormat": "table"
+              }
+            ],
+            "costs": [
+              {
+                "property": "Variable",
+                "unit": "$",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Non-Recurring",
+                "unit": "$",
+                "inputFormat": "constraint"
+              }
+            ]
+          },
+          "variables": [
+            {
+              "name": "All Processes CV",
+              "category": "all processes",
+              "property": "CV",
+              "unit": "",
+              "sign": "=",
+              "key": "All Processes CV // New Module",
+              "value": 0.25
+            },
+            {
+              "name": "AFP Layup Cell Non-Recurring Cost",
+              "value": 500000,
+              "unit": "$",
+              "sign": "=",
+              "type": "AFP Layup Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "AFP Layup Cell Non-Recurring Cost // New Module",
+              "min": 250000,
+              "max": 1000000
+            },
+            {
+              "name": "AFP Layup Time",
+              "value": 300,
+              "unit": "min",
+              "sign": "=",
+              "type": "AFP Layup",
+              "property": "Time",
+              "category": "processes",
+              "key": "AFP Layup Time // New Module",
+              "math": false,
+              "min": 150,
+              "max": 500
+            },
+            {
+              "name": "Autoclave Cure Time",
+              "value": 500,
+              "unit": "min",
+              "sign": "=",
+              "type": "Autoclave Cure",
+              "property": "Time",
+              "category": "processes",
+              "key": "Autoclave Cure Time // New Module",
+              "math": false,
+              "min": 400,
+              "max": 800
+            }
+          ],
+          "variablesSimple": [
+            {
+              "name": "Layup Cell Batch Size",
+              "sign": "=",
+              "type": "Layup Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Layup Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Bag & Prep Cell Batch Size",
+              "sign": "=",
+              "type": "Bag & Prep Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Bag & Prep Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Autoclave Cure Cell Batch Size",
+              "sign": "=",
+              "type": "Autoclave Cure Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Autoclave Cure Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Trim & Drill Cell Batch Size",
+              "sign": "=",
+              "type": "Trim & Drill Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Trim & Drill Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Layup Cell Non-Recurring Cost",
+              "value": 500000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Layup Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Layup Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Bag & Prep Cell Non-Recurring Cost",
+              "value": 25000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Bag & Prep Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Bag & Prep Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Autoclave Cure Cell Non-Recurring Cost",
+              "value": 1000000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Autoclave Cure Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Autoclave Cure Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Trim & Drill Cell Non-Recurring Cost",
+              "value": 250000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Trim & Drill Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Trim & Drill Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Demold Cell Batch Size",
+              "sign": "=",
+              "type": "Demold Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Demold Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Inspect Part Cell Batch Size",
+              "sign": "=",
+              "type": "Inspect Part Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Inspect Part Cell Batch Size // New Module",
+              "unit": "count"
+            },
+            {
+              "name": "Demold Cell Non-Recurring Cost",
+              "value": 50000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Demold Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Demold Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Inspect Part Cell Non-Recurring Cost",
+              "value": 150000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Inspect Part Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Inspect Part Cell Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "Layup Lot Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "Layup",
+              "property": "Lot Size",
+              "category": "tools",
+              "key": "Layup Lot Size // New Module"
+            },
+            {
+              "name": "Layup Non-Recurring Cost",
+              "value": 50000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Layup",
+              "property": "Non-Recurring Cost",
+              "category": "tools",
+              "key": "Layup Non-Recurring Cost // New Module"
+            },
+            {
+              "name": "AFP Layup Cell Batch Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "AFP Layup Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "key": "AFP Layup Cell Batch Size // New Module"
+            },
+            {
+              "name": "Bag & Prep Time",
+              "value": 200,
+              "unit": "min",
+              "sign": "=",
+              "type": "Bag & Prep",
+              "property": "Time",
+              "category": "processes",
+              "key": "Bag & Prep Time // New Module",
+              "math": false
+            },
+            {
+              "name": "Trim & Drill Time",
+              "value": 150,
+              "unit": "min",
+              "sign": "=",
+              "type": "Trim & Drill",
+              "property": "Time",
+              "category": "processes",
+              "key": "Trim & Drill Time // New Module",
+              "math": false
+            },
+            {
+              "name": "Demold Time",
+              "value": 60,
+              "unit": "min",
+              "sign": "=",
+              "type": "Demold",
+              "property": "Time",
+              "category": "processes",
+              "key": "Demold Time // New Module",
+              "math": false
+            },
+            {
+              "name": "Inspect Part Time",
+              "value": 400,
+              "unit": "min",
+              "sign": "=",
+              "type": "Inspect Part",
+              "property": "Time",
+              "category": "processes",
+              "key": "Inspect Part Time // New Module"
+            },
+            {
+              "name": "Setup Time",
+              "value": 30,
+              "unit": "min",
+              "sign": "=",
+              "type": "Setup",
+              "property": "Time",
+              "category": "processes",
+              "key": "Setup Time // New Module"
+            }
+          ],
+          "exposedVariables": []
+        }
+      }
+    ],
+    "scenario": "likely",
+    "version": "1.0.53"
+  },
+  "rateHike": {
+    "minRate": 50,
+    "maxRate": 100,
+    "bestWorst": true,
+    "resources": [
+      {
+        "category": "cells",
+        "name": "AFP Layup Cell Workstation Count",
+        "type": "AFP Layup Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "AFP Layup Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Bag & Prep Cell Workstation Count",
+        "type": "Bag & Prep Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Bag & Prep Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Autoclave Cure Cell Workstation Count",
+        "type": "Autoclave Cure Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Autoclave Cure Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Trim & Drill Cell Workstation Count",
+        "type": "Trim & Drill Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Trim & Drill Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Demold Cell Workstation Count",
+        "type": "Demold Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Demold Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Inspect Part Cell Workstation Count",
+        "type": "Inspect Part Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Inspect Part Cell Workstation Count // New Module",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "tools",
+        "name": "Layup Count",
+        "type": "Layup",
+        "property": "Count",
+        "unit": "count",
+        "key": "Layup Count // New Module",
+        "sign": "=",
+        "value": 1
+      }
+    ]
+  },
+  "id": 248640269.8910335
+}

@@ -1,0 +1,286 @@
+{
+  "model": {
+    "type": ["manufacturing"],
+    "modelName": "Basic Operations Currency Conversion Using Fallback",
+    "manufacturing": {
+      "line": "cell",
+      "rate": 1,
+      "amortization": "duration",
+      "duration": 5,
+      "quantity": 1000,
+      "selectedModule": 7097106935.374624,
+      "rates": []
+    },
+    "finance": {
+      "shiftsPerDay": 2,
+      "rateUnit": "month",
+      "durationUnit": "years",
+      "costOfCapital": 10,
+      "hrsPerShift": 7,
+      "daysPerWeek": 5,
+      "weeksPerYear": 50
+    },
+    "modules": [
+      {
+        "name": "First Module",
+        "type": "manufacturing",
+        "customUnits": {
+          "unitCurrency": "GBP"
+        },
+        "manufacturing": {
+          "processChain": [
+            {
+              "id": "P010",
+              "type": "First Process",
+              "cell": "First process Cell"
+            },
+            {
+              "id": "P020",
+              "type": "Second Process",
+              "cell": "Second Process Cell"
+            }
+          ],
+          "feederProcesses": [],
+          "feederLines": [],
+          "secProcesses": [],
+          "routes": [],
+          "tools": [],
+          "cells": [
+            {
+              "name": "First process Cell",
+              "noQueueing": false
+            },
+            {
+              "name": "Second Process Cell",
+              "noQueueing": ""
+            }
+          ],
+          "costs": [],
+          "cvByProcess": false,
+          "cellsFromProcesses": true,
+          "inputFormat": {
+            "processes": [
+              {
+                "property": "Time",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Std. Dev.",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "FPY",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              }
+            ],
+            "cells": [
+              {
+                "property": "Batch Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "GBP",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "GBP/hr",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Mean Operations to Failure",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTF",
+                "unit": "hr",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTR",
+                "unit": "hr",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Extra Shifts",
+                "unit": "hr",
+                "inputFormat": "-"
+              }
+            ],
+            "tools": [
+              {
+                "property": "Lot Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "GBP",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "GBP/hr",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              }
+            ],
+            "feederLines": [
+              {
+                "property": "Quantity",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Variable Cost",
+                "unit": "GBP",
+                "inputFormat": "-"
+              }
+            ],
+            "routes": [
+              {
+                "property": "% Diverted",
+                "unit": "%",
+                "inputFormat": "table"
+              }
+            ],
+            "costs": [
+              {
+                "property": "Variable",
+                "unit": "GBP",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring",
+                "unit": "GBP/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Non-Recurring",
+                "unit": "GBP",
+                "inputFormat": "constraint"
+              }
+            ]
+          },
+          "variables": [
+            {
+              "name": "All Processes CV",
+              "category": "all processes",
+              "property": "CV",
+              "unit": "%",
+              "value": 25,
+              "sign": "=",
+              "key": "All Processes CV // First Module"
+            },
+            {
+              "name": "First process Cell Non-Recurring Cost",
+              "value": 100000,
+              "unit": "$",
+              "sign": "=",
+              "type": "First process Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "First process Cell Non-Recurring Cost // First Module"
+            },
+            {
+              "name": "Second Process Cell Non-Recurring Cost",
+              "value": 100000,
+              "unit": "GBP",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Second Process Cell Non-Recurring Cost // First Module"
+            }
+          ],
+          "variablesSimple": [
+            {
+              "name": "First process Cell Batch Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "First process Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "key": "First process Cell Batch Size // First Module"
+            },
+            {
+              "name": "Second Process Cell Batch Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "key": "Second Process Cell Batch Size // First Module"
+            },
+            {
+              "name": "First Process Time",
+              "value": 100,
+              "unit": "min",
+              "sign": "=",
+              "type": "First Process",
+              "property": "Time",
+              "category": "processes",
+              "key": "First Process Time // First Module"
+            },
+            {
+              "name": "Second Process Time",
+              "value": 150,
+              "unit": "min",
+              "sign": "=",
+              "type": "Second Process",
+              "property": "Time",
+              "category": "processes",
+              "key": "Second Process Time // First Module"
+            }
+          ],
+          "line": "cell",
+          "exposedVariables": []
+        },
+        "id": 7097106935.374624
+      }
+    ],
+    "scenario": "likely",
+    "version": "1.0.47"
+  },
+  "id": 248640269.8910335
+}

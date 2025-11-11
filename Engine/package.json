@@ -1,0 +1,8 @@
+{
+  "name": "copernicus-engine",
+  "version": "0.0.1",
+  "description": "Python 3 engine for the Copernicus modeling environment.",
+  "devDependencies": {
+    "prettier": "^3.5.0"
+  }
+}

@@ -1,0 +1,2164 @@
+{
+  "model": {
+    "type": ["bestworst", "custom"],
+    "modelName": "RI_HRRI_REV-4",
+    "design": {
+      "selectedModule": 969628738.6813263,
+      "plyBook": {
+        "width": [
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ]
+        ],
+        "length": [
+          [
+            {
+              "value": 0
+            }
+          ],
+          [
+            {
+              "value": 0
+            }
+          ]
+        ],
+        "stack": [
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ],
+          [
+            {
+              "value": 0
+            },
+            {
+              "value": 0
+            }
+          ]
+        ]
+      },
+      "parameters": [],
+      "interfaceVariables": [
+        {
+          "name": "Part Mass",
+          "unit": "lb"
+        },
+        {
+          "name": "Part Thickness",
+          "unit": "count"
+        },
+        {
+          "name": "Part Length",
+          "unit": "in"
+        },
+        {
+          "name": "Part Width",
+          "unit": "in"
+        }
+      ]
+    },
+    "manufacturing": {
+      "rate": 168,
+      "line": "cell",
+      "quantity": 56448,
+      "cells": [],
+      "selectedModule": 2487492352.60187,
+      "processChain": [],
+      "duration": 14,
+      "amortization": "duration",
+      "rates": []
+    },
+    "finance": {
+      "shiftsPerDay": 3,
+      "hrsPerShift": 7,
+      "daysPerWeek": 5,
+      "weeksPerYear": 50,
+      "costOfCapital": 10,
+      "rateUnit": "month",
+      "durationUnit": "years"
+    },
+    "modules": [
+      {
+        "design": {
+          "variables": [
+            {
+              "sign": "=",
+              "name": "Part Mass",
+              "unit": "lb",
+              "value": 301.6
+            },
+            {
+              "sign": "=",
+              "name": "Part Thickness",
+              "unit": "count",
+              "value": 100
+            },
+            {
+              "name": "Part Length",
+              "unit": "in",
+              "sign": "=",
+              "value": 675
+            },
+            {
+              "name": "Part Width",
+              "unit": "in",
+              "sign": "=",
+              "value": 40
+            }
+          ]
+        },
+        "type": "design",
+        "name": "Spar Design",
+        "id": 969628738.6813263
+      },
+      {
+        "type": "manufacturing",
+        "name": "RI2-HRRI",
+        "manufacturing": {
+          "variables": [
+            {
+              "sign": "=",
+              "max": 0.375,
+              "unit": "",
+              "name": "CV",
+              "min": 0.125,
+              "category": "custom",
+              "key": "CV // RI2-HRRI",
+              "value": 0.25
+            },
+            {
+              "sign": "=",
+              "name": "PLANNED MAINT",
+              "unit": "",
+              "category": "custom",
+              "key": "PLANNED MAINT // RI2-HRRI",
+              "value": 1.05
+            },
+            {
+              "sign": "=",
+              "max": 300,
+              "unit": "$/hr",
+              "name": "Labor Rate",
+              "min": 45,
+              "category": "custom",
+              "key": "Labor Rate // RI2-HRRI",
+              "value": 115
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-LCPF Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-HRRI-LCPF",
+              "key": "5354-HRRI-LCPF Time // RI2-HRRI",
+              "value": [
+                "5354-HRRI-LCPF PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "+",
+                "5354-HRRI-LCPF QUALITY",
+                "+",
+                "5354-HRRI-LCPF SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-LCPF PRIMARY",
+              "unit": "min",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF PRIMARY // RI2-HRRI",
+              "value": [
+                "5354-HRRI-LCPF STEP 1 Laminate",
+                "*",
+                "5354-HRRI-LCPF CYCLES PER PART",
+                "*",
+                "5354-HRRI-LCPF RELIABILITY STEP 1",
+                "^-1",
+                "+",
+                "5354-HRRI-LCPF STEP 2 Trim",
+                "*",
+                "5354-HRRI-LCPF CYCLES PER PART",
+                "*",
+                "5354-HRRI-LCPF RELIABILITY STEP 2",
+                "^-1",
+                "+",
+                "5354-HRRI-LCPF STEP 3 Place",
+                "*",
+                "5354-HRRI-LCPF CYCLES PER PART",
+                "*",
+                "5354-HRRI-LCPF RELIABILITY STEP 3",
+                "^-1"
+              ],
+              "acyclic": false
+            },
+            {
+              "sign": "=",
+              "max": 0.75,
+              "unit": "min",
+              "name": "5354-HRRI-LCPF STEP 1 Laminate",
+              "min": 0.25,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF STEP 1 Laminate // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 1.383333333,
+              "unit": "min",
+              "name": "5354-HRRI-LCPF STEP 2 Trim",
+              "min": 0.833333333,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF STEP 2 Trim // RI2-HRRI",
+              "value": 1.108333333
+            },
+            {
+              "sign": "=",
+              "max": 0.6,
+              "unit": "min",
+              "name": "5354-HRRI-LCPF STEP 3 Place",
+              "min": 0.083,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF STEP 3 Place // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 0.99,
+              "unit": "",
+              "name": "5354-HRRI-LCPF RELIABILITY STEP 1",
+              "min": 0.9,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF RELIABILITY STEP 1 // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 0.99,
+              "unit": "",
+              "name": "5354-HRRI-LCPF RELIABILITY STEP 2",
+              "min": 0.9,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF RELIABILITY STEP 2 // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 0.99,
+              "unit": "",
+              "name": "5354-HRRI-LCPF RELIABILITY STEP 3",
+              "min": 0.9,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF RELIABILITY STEP 3 // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 1,
+              "unit": "hr",
+              "name": "5354-HRRI-LCPF QUALITY",
+              "min": 0.5,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF QUALITY // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "name": "5354-HRRI-LCPF SETUP",
+              "unit": "min",
+              "min": 5,
+              "max": 15,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF SETUP // RI2-HRRI"
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-LCPF LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-HRRI-LCPF LABOR",
+              "key": "5354-HRRI-LCPF LABOR // RI2-HRRI",
+              "value": [
+                "5354-HRRI-LCPF PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "Labor Rate",
+                "*",
+                "5354-HRRI-LCPF Time",
+                "*",
+                "5354-HRRI-LCPF TOTAL HEADCOUNT"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-LCPF TOTAL HEADCOUNT",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF TOTAL HEADCOUNT // RI2-HRRI",
+              "value": [
+                "5354-HRRI-LCPF HEADCOUNT PRIMARY",
+                "+",
+                "5354-HRRI-LCPF HEADCOUNT QA INSPECTION"
+              ],
+              "acyclic": false
+            },
+            {
+              "sign": "=",
+              "name": "5354-HRRI-LCPF HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "sign": "=",
+              "unit": "count",
+              "name": "5354-HRRI-LCPF HEADCOUNT QA INSPECTION",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF HEADCOUNT QA INSPECTION // RI2-HRRI",
+              "value": 0.0001
+            },
+            {
+              "sign": "=",
+              "name": "5354-HL-FG1 HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HL-FG1 HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 4
+            },
+            {
+              "sign": "=",
+              "name": "5354-HL-FG1 HEADCOUNT QA INSPECTION",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HL-FG1 HEADCOUNT QA INSPECTION // RI2-HRRI",
+              "value": 0.0001
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-STAGE Stage Thaw Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-STAGE Stage Thaw",
+              "key": "5354-STAGE Stage Thaw Time // RI2-HRRI",
+              "value": [
+                "5354-STAGE PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "5354-STAGE RELIABILITY",
+                "^-1",
+                "*",
+                "5354-STAGE CYCLES PER PART",
+                "+",
+                "5354-STAGE SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-STAGE LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-STAGE LABOR",
+              "key": "5354-STAGE LABOR // RI2-HRRI",
+              "value": [
+                "5354-STAGE Stage Thaw Time",
+                "*",
+                "Labor Rate",
+                "*",
+                "5354-STAGE PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-STAGE HEADCOUNT PRIMARY"
+              ],
+              "acyclic": false
+            },
+            {
+              "sign": "=",
+              "max": 0.95,
+              "unit": "",
+              "name": "5354-HRRI-CURE RELIABILITY",
+              "min": 0.75,
+              "category": "custom",
+              "key": "5354-HRRI-CURE RELIABILITY // RI2-HRRI",
+              "value": 0.95
+            },
+            {
+              "sign": "=",
+              "max": 0.85,
+              "unit": "",
+              "name": "5354-HRRI-LCPF PERSONNEL UTILIZATION",
+              "min": 0.63,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-STORE LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Non-Recurring",
+              "type": "5354-STORE LABOR",
+              "key": "5354-STORE LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-STORE HEADCOUNT",
+                "*",
+                "5354-STORE LABOR HOURS"
+              ],
+              "acyclic": false
+            },
+            {
+              "sign": "=",
+              "max": 0.85,
+              "unit": "",
+              "name": "5354-STAGE PERSONNEL UTILIZATION",
+              "min": 0.63,
+              "category": "custom",
+              "key": "5354-STAGE PERSONNEL UTILIZATION // RI2-HRRI"
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "RI Material Cost",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "RI Material Cost",
+              "key": "RI Material Cost // RI2-HRRI",
+              "value": [
+                "Part Mass",
+                "*",
+                "RI MATERIAL UNIT PRICE",
+                "*",
+                "5354-HRRI-LCPF BUY TO FLY"
+              ],
+              "acyclic": false
+            },
+            {
+              "sign": "=",
+              "max": 38,
+              "unit": "$/lb",
+              "name": "RI MATERIAL UNIT PRICE",
+              "min": 28,
+              "category": "custom",
+              "key": "RI MATERIAL UNIT PRICE // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "max": 1.35,
+              "unit": "",
+              "name": "5354-HRRI-LCPF BUY TO FLY",
+              "min": 1.25,
+              "category": "custom",
+              "key": "5354-HRRI-LCPF BUY TO FLY // RI2-HRRI"
+            },
+            {
+              "sign": "=",
+              "name": "5354-STORE HEADCOUNT",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-STORE HEADCOUNT // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "sign": "=",
+              "name": "5354-STORE LABOR HOURS",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-STORE LABOR HOURS // RI2-HRRI",
+              "value": 6888
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HL-FG1 Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-HL-FG1",
+              "key": "5354-HL-FG1 Time // RI2-HRRI",
+              "value": [
+                "5354-HL-FG1 PRIMARY",
+                "+",
+                "5354-HL-FG1 QUALITY",
+                "+",
+                "5354-HL-FG1 SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.75,
+              "min": 0.25,
+              "name": "5354-HL-FG1 PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HL-FG1 PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.5,
+              "min": 1e-5,
+              "name": "5354-HL-FG1 QUALITY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HL-FG1 QUALITY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.25,
+              "min": 1e-5,
+              "name": "5354-HL-FG1 SETUP",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HL-FG1 SETUP // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-RESIN-PREP Charge Resin Sys Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-RESIN-PREP Charge Resin Sys",
+              "key": "5354-RESIN-PREP Charge Resin Sys Time // RI2-HRRI",
+              "value": [
+                "5354-RESIN-PREP PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "5354-RESIN-PREP RELIABILITY",
+                "^-1",
+                "+",
+                "5354-RESIN-PREP QUALITY"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-RESIN-PREP Charge Resin Sys Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-RESIN-PREP Charge Resin Sys",
+              "key": "5354-RESIN-PREP Charge Resin Sys Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-RESIN-PREP Charge Resin Sys Time"],
+              "acyclic": false
+            },
+            {
+              "max": 1,
+              "min": 0.5,
+              "name": "5354-RESIN-PREP PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-RESIN-PREP PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.25,
+              "min": 1e-5,
+              "name": "5354-RESIN-PREP QUALITY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-RESIN-PREP QUALITY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "name": "5354-RESIN-PREP RELIABILITY",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-RESIN-PREP RELIABILITY // RI2-HRRI",
+              "value": 0.95
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-RESIN-PREP LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-RESIN-PREP LABOR",
+              "key": "5354-RESIN-PREP LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-RESIN-PREP Charge Resin Sys Time",
+                "*",
+                "5354-RESIN-PREP PERSONNEL UTILIZATION",
+                "*",
+                "5354-RESIN-PREP HEADCOUNT PRIMARY"
+              ],
+              "acyclic": false
+            },
+            {
+              "name": "5354-RESIN-PREP HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-RESIN-PREP HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "5354-RESIN-PREP PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-RESIN-PREP PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-ADM Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-ADM",
+              "key": "5354-ADM Time // RI2-HRRI",
+              "value": [
+                "5354-ADM PRIMARY",
+                "*",
+                "5354-ADM RELIABILITY",
+                "^-1",
+                "+",
+                "5354-ADM SECONDARY",
+                "+",
+                "5354-ADM SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.5,
+              "min": 0.1,
+              "name": "5354-ADM PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-ADM PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "name": "5354-ADM RELIABILITY",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-ADM RELIABILITY // RI2-HRRI",
+              "value": 0.95
+            },
+            {
+              "max": 1.5,
+              "min": 0.1,
+              "name": "5354-ADM SECONDARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-ADM SECONDARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.25,
+              "min": 1e-5,
+              "name": "5354-ADM SETUP",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-ADM SETUP // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-ADM LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-ADM LABOR",
+              "key": "5354-ADM LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-ADM Time",
+                "*",
+                "5354-ADM PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-ADM HEADCOUNT PRIMARY"
+              ],
+              "acyclic": false
+            },
+            {
+              "name": "5354-ADM HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-ADM HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "5354-ADM PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-ADM PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CURE Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-HRRI-CURE",
+              "key": "5354-HRRI-CURE Time // RI2-HRRI",
+              "value": [
+                "5354-HRRI-CURE PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "5354-HRRI-CURE RELIABILITY",
+                "^-1",
+                "+",
+                "5354-HRRI-CURE QUALITY",
+                "+",
+                "5354-HRRI-CURE SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CURE LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-HRRI-CURE LABOR",
+              "key": "5354-HRRI-CURE LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-HRRI-CURE Time",
+                "*",
+                "5354-HRRI-CURE PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-HRRI-CURE HEADCOUNT PRIMARY"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 2.5,
+              "min": 1.5,
+              "name": "5354-HRRI-CURE PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HRRI-CURE PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.5,
+              "min": 1e-5,
+              "name": "5354-HRRI-CURE QUALITY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HRRI-CURE QUALITY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.5,
+              "min": 1e-5,
+              "name": "5354-HRRI-CURE SETUP",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HRRI-CURE SETUP // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.95,
+              "min": 0.75,
+              "name": "5354-HRRI-CURE RELIABILITY",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-HRRI-CURE RELIABILITY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "5354-HRRI-CURE PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-HRRI-CURE PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "name": "5354-HRRI-CURE HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HRRI-CURE HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CK Cut Kit Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-HRRI-CK Cut Kit",
+              "key": "5354-HRRI-CK Cut Kit Time // RI2-HRRI",
+              "value": [
+                "5354-HRRI-CK PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "5354-HRRI-CK RELIABILITY",
+                "^-1",
+                "+",
+                "5354-HRRI-CK SETUP"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CK Cut Kit Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-HRRI-CK Cut Kit",
+              "key": "5354-HRRI-CK Cut Kit Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-HRRI-CK Cut Kit Time"],
+              "acyclic": false
+            },
+            {
+              "max": 0.5,
+              "min": 0.25,
+              "name": "5354-HRRI-CK PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HRRI-CK PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 0.25,
+              "min": 0.1,
+              "name": "5354-HRRI-CK SETUP",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-HRRI-CK SETUP // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "name": "5354-HRRI-CK RELIABILITY",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-HRRI-CK RELIABILITY // RI2-HRRI",
+              "value": 0.95
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CK LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-HRRI-CK LABOR",
+              "key": "5354-HRRI-CK LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-HRRI-CK Cut Kit Time",
+                "*",
+                "5354-HRRI-CK PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-HRRI-CK HEADCOUNT PRIMARY"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "5354-HRRI-CK PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-HRRI-CK PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "name": "5354-HRRI-CK HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HRRI-CK HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "name": "5354-STAGE PRIMARY",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-STAGE PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-STAGE SETUP",
+              "unit": "hr",
+              "category": "custom",
+              "key": "5354-STAGE SETUP // RI2-HRRI",
+              "value": ["5354-STAGE SETUP RATE", "*", "Part Mass"],
+              "acyclic": false
+            },
+            {
+              "name": "5354-STAGE SETUP RATE",
+              "unit": "min/lb",
+              "category": "custom",
+              "key": "5354-STAGE SETUP RATE // RI2-HRRI",
+              "value": 0.15
+            },
+            {
+              "name": "5354-STAGE RELIABILITY",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-STAGE RELIABILITY // RI2-HRRI",
+              "value": 0.95
+            },
+            {
+              "name": "5354-STAGE HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-STAGE HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-STAGE Stage Thaw Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-STAGE Stage Thaw",
+              "key": "5354-STAGE Stage Thaw Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-STAGE Stage Thaw Time"],
+              "acyclic": false
+            },
+            {
+              "type": "Resin Transfer System",
+              "name": "Resin Transfer System Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Resin Transfer System Non-Recurring Cost // RI2-HRRI",
+              "min": 460000,
+              "max": 600000,
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HL-FG1 LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-HL-FG1 LABOR",
+              "key": "5354-HL-FG1 LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-HL-FG1 Time",
+                "*",
+                "5354-HL-FG1 PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-HL-FG1 HEADCOUNT TOTAL"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HL-FG1 HEADCOUNT TOTAL",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-HL-FG1 HEADCOUNT TOTAL // RI2-HRRI",
+              "value": [
+                "5354-HL-FG1 HEADCOUNT PRIMARY",
+                "+",
+                "5354-HL-FG1 HEADCOUNT QA INSPECTION"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "5354-HL-FG1 PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-HL-FG1 PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "max": 750000,
+              "min": 500000,
+              "name": "5354-STORE EQUIP",
+              "unit": "$",
+              "category": "costs",
+              "property": "Non-Recurring",
+              "type": "5354-STORE EQUIP",
+              "key": "5354-STORE EQUIP // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 18000000,
+              "min": 12000000,
+              "name": "5354-HRRI-LCPF EQUIP COST",
+              "unit": "$",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF EQUIP COST // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 1500000,
+              "min": 500000,
+              "name": "M-PTT-VG EQUIP COST",
+              "unit": "$",
+              "category": "custom",
+              "key": "M-PTT-VG EQUIP COST // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 6500000,
+              "min": 4300000,
+              "name": "5354-HRRI-CURE EQUIP COST",
+              "unit": "$",
+              "category": "custom",
+              "key": "5354-HRRI-CURE EQUIP COST // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "max": 1000000,
+              "min": 500000,
+              "name": "5354-ADM EQUIP COST",
+              "unit": "$",
+              "category": "custom",
+              "key": "5354-ADM EQUIP COST // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-PCURE Free Stand Time",
+              "unit": "min",
+              "category": "processes",
+              "property": "Time",
+              "type": "5354-PCURE Free Stand",
+              "key": "5354-PCURE Free Stand Time // RI2-HRRI",
+              "value": [
+                "5354-PCURE PRIMARY",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "5354-PCURE RELIABILITY",
+                "^-1",
+                "*",
+                "5354-PCURE CYCLES PER PART"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-PCURE Free Stand Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-PCURE Free Stand",
+              "key": "5354-PCURE Free Stand Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-PCURE Free Stand Time"],
+              "acyclic": false
+            },
+            {
+              "name": "5354-PCURE PRIMARY",
+              "unit": "hr",
+              "min": 1,
+              "max": 2,
+              "category": "custom",
+              "key": "5354-PCURE PRIMARY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "name": "5354-PCURE CYCLES PER PART",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-PCURE CYCLES PER PART // RI2-HRRI",
+              "value": 1
+            },
+            {
+              "name": "5354-PCURE RELIABILITY",
+              "unit": "",
+              "min": 0.75,
+              "max": 0.95,
+              "category": "custom",
+              "key": "5354-PCURE RELIABILITY // RI2-HRRI",
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-PCURE LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "5354-PCURE LABOR",
+              "key": "5354-PCURE LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "5354-PCURE Free Stand Time",
+                "*",
+                "5354-PCURE PERSONNEL UTILIZATION",
+                "^-1",
+                "*",
+                "5354-PCURE Head Count"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.95,
+              "min": 0.63,
+              "name": "5354-PCURE PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "5354-PCURE PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-PCURE Head Count",
+              "unit": "count",
+              "category": "custom",
+              "property": "Head Count",
+              "type": "5354-PCURE",
+              "key": "5354-PCURE Head Count // RI2-HRRI",
+              "value": ["5354-PCURE HEADCOUNT PRIMARY"],
+              "acyclic": false
+            },
+            {
+              "name": "5354-PCURE HEADCOUNT PRIMARY",
+              "unit": "count",
+              "category": "custom",
+              "key": "5354-PCURE HEADCOUNT PRIMARY // RI2-HRRI",
+              "value": 2
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-LCPF Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-HRRI-LCPF",
+              "key": "5354-HRRI-LCPF Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-HRRI-LCPF Time"],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HL-FG1 Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-HL-FG1",
+              "key": "5354-HL-FG1 Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-HL-FG1 Time"],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "M-PTT-VG Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "M-PTT-VG",
+              "key": "M-PTT-VG Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "M-PTT-VG Time"],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-HRRI-CURE Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-HRRI-CURE",
+              "key": "5354-HRRI-CURE Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-HRRI-CURE Time"],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "5354-ADM Std. Dev.",
+              "unit": "min",
+              "category": "processes",
+              "property": "Std. Dev.",
+              "type": "5354-ADM",
+              "key": "5354-ADM Std. Dev. // RI2-HRRI",
+              "value": ["CV", "*", "5354-ADM Time"],
+              "acyclic": false
+            },
+            {
+              "name": "5354-HL-FG EQUIP COST",
+              "unit": "$",
+              "category": "custom",
+              "key": "5354-HL-FG EQUIP COST // RI2-HRRI",
+              "value": 10000
+            },
+            {
+              "name": "M-PTT-VG Time",
+              "unit": "min",
+              "math": true,
+              "sign": ">=",
+              "category": "processes",
+              "property": "Time",
+              "type": "M-PTT-VG",
+              "key": "M-PTT-VG Time // RI2-HRRI",
+              "value": [
+                "M-PTT-VG PRIMARY PROCES",
+                "*",
+                "PLANNED MAINT",
+                "*",
+                "M-PTT-VG RELIABILITY",
+                "^-1",
+                "+",
+                "M-PTT-VG QUALITY PROCESS"
+              ],
+              "acyclic": false
+            },
+            {
+              "math": true,
+              "sign": ">=",
+              "name": "M-PTT-VG LABOR",
+              "unit": "$",
+              "category": "costs",
+              "property": "Variable",
+              "type": "M-PTT-VG LABOR",
+              "key": "M-PTT-VG LABOR // RI2-HRRI",
+              "value": [
+                "Labor Rate",
+                "*",
+                "M-PTT-VG Time",
+                "*",
+                "M-PTT-VG PERSONNEL UTILIZATION",
+                "*",
+                "M-PTT-VG PRIMARY HEADCOUNT"
+              ],
+              "acyclic": false
+            },
+            {
+              "max": 0.85,
+              "min": 0.63,
+              "name": "M-PTT-VG PERSONNEL UTILIZATION",
+              "unit": "",
+              "category": "custom",
+              "key": "M-PTT-VG PERSONNEL UTILIZATION // RI2-HRRI",
+              "value": 0.75,
+              "sign": "="
+            },
+            {
+              "type": "HRRI Laydown Cell",
+              "name": "HRRI Laydown Cell Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "HRRI Laydown Cell Non-Recurring Cost // RI2-HRRI",
+              "math": true,
+              "sign": ">=",
+              "value": ["5354-HRRI-LCPF EQUIP COST"],
+              "acyclic": false
+            },
+            {
+              "type": "Hand Layup Cell",
+              "name": "Hand Layup Cell Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Hand Layup Cell Non-Recurring Cost // RI2-HRRI",
+              "math": true,
+              "sign": ">=",
+              "value": ["5354-HL-FG EQUIP COST"],
+              "acyclic": false
+            },
+            {
+              "type": "GRIP GANTRY",
+              "name": "GRIP GANTRY Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "GRIP GANTRY Non-Recurring Cost // RI2-HRRI",
+              "math": true,
+              "sign": ">=",
+              "value": ["M-PTT-VG EQUIP COST"],
+              "acyclic": false
+            },
+            {
+              "type": "Close Mold Tool",
+              "name": "Close Mold Tool Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Close Mold Tool Non-Recurring Cost // RI2-HRRI",
+              "math": true,
+              "sign": ">=",
+              "value": ["5354-HRRI-CURE EQUIP COST"],
+              "acyclic": false
+            },
+            {
+              "type": "ADM Cell",
+              "name": "ADM Cell Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "ADM Cell Non-Recurring Cost // RI2-HRRI",
+              "math": true,
+              "sign": ">=",
+              "value": ["5354-ADM EQUIP COST"],
+              "acyclic": false
+            },
+            {
+              "type": "Post-Cure Oven",
+              "name": "Post-Cure Oven Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Post-Cure Oven Non-Recurring Cost // RI2-HRRI",
+              "min": 5000000,
+              "max": 6500000,
+              "sign": "="
+            },
+            {
+              "type": "Lamination Tool (LT)",
+              "name": "Lamination Tool (LT) Non-Recurring Cost",
+              "category": "tools",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Lamination Tool (LT) Non-Recurring Cost // RI2-HRRI",
+              "min": 1000000,
+              "max": 2000000,
+              "sign": "="
+            },
+            {
+              "type": "Female Cure Tool (CT-F)",
+              "name": "Female Cure Tool (CT-F) Non-Recurring Cost",
+              "category": "tools",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Female Cure Tool (CT-F) Non-Recurring Cost // RI2-HRRI",
+              "min": 1500000,
+              "max": 3000000,
+              "sign": "="
+            },
+            {
+              "type": "Male Cure Tool (CT-M)",
+              "name": "Male Cure Tool (CT-M) Non-Recurring Cost",
+              "category": "tools",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Male Cure Tool (CT-M) Non-Recurring Cost // RI2-HRRI",
+              "min": 1000000,
+              "max": 2000000,
+              "sign": "="
+            },
+            {
+              "type": "Free Standing Tool (FST)",
+              "name": "Free Standing Tool (FST) Non-Recurring Cost",
+              "category": "tools",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Free Standing Tool (FST) Non-Recurring Cost // RI2-HRRI",
+              "min": 100000,
+              "max": 500000,
+              "sign": "="
+            },
+            {
+              "type": "Heating Chamber",
+              "name": "Heating Chamber Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Heating Chamber Non-Recurring Cost // RI2-HRRI",
+              "min": 120000,
+              "max": 300000,
+              "value": 300000,
+              "sign": "="
+            },
+            {
+              "type": "Ultrasonic Knife",
+              "name": "Ultrasonic Knife Non-Recurring Cost",
+              "category": "cells",
+              "property": "Non-Recurring Cost",
+              "unit": "$",
+              "key": "Ultrasonic Knife Non-Recurring Cost // RI2-HRRI",
+              "min": 100000,
+              "max": 250000,
+              "sign": "="
+            },
+            {
+              "name": "M-PTT-VG PRIMARY PROCES",
+              "category": "custom",
+              "key": "M-PTT-VG PRIMARY PROCES // RI2-HRRI",
+              "unit": "hr",
+              "min": 0.1,
+              "max": 0.45,
+              "sign": "="
+            },
+            {
+              "name": "M-PTT-VG QUALITY PROCESS",
+              "category": "custom",
+              "key": "M-PTT-VG QUALITY PROCESS // RI2-HRRI",
+              "unit": "hr",
+              "min": 0.1,
+              "max": 0.45,
+              "sign": "="
+            },
+            {
+              "name": "M-PTT-VG RELIABILITY",
+              "category": "custom",
+              "key": "M-PTT-VG RELIABILITY // RI2-HRRI",
+              "unit": "",
+              "min": 0.75,
+              "max": 0.95,
+              "sign": "="
+            },
+            {
+              "name": "M-PTT-VG PRIMARY HEADCOUNT",
+              "category": "custom",
+              "key": "M-PTT-VG PRIMARY HEADCOUNT // RI2-HRRI",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "name": "5354-HRRI-LCPF CYCLES PER PART",
+              "category": "custom",
+              "key": "5354-HRRI-LCPF CYCLES PER PART // RI2-HRRI",
+              "unit": "count",
+              "min": 40,
+              "max": 60,
+              "sign": "="
+            },
+            {
+              "name": "5354-STAGE CYCLES PER PART",
+              "category": "custom",
+              "key": "5354-STAGE CYCLES PER PART // RI2-HRRI",
+              "unit": "count",
+              "value": 0.2
+            },
+            {
+              "name": "Floor Space Non-Recurring Cost",
+              "category": "floor space",
+              "key": "Floor Space Non-Recurring Cost // RI2-HRRI",
+              "unit": "$/ft^2",
+              "min": 600,
+              "max": 1000,
+              "property": "Cost",
+              "sign": "="
+            },
+            {
+              "name": "TRAIN FOOTPRINT",
+              "category": "custom",
+              "key": "TRAIN FOOTPRINT // RI2-HRRI",
+              "unit": "ft^2",
+              "math": true,
+              "sign": ">=",
+              "value": [
+                "TRAIN FOOTPRINT LENGTH",
+                "*",
+                "TRAIN FOOTPRINT WIDTH",
+                "*",
+                "Part Width",
+                "*",
+                "Part Length"
+              ],
+              "acyclic": false
+            },
+            {
+              "name": "TRAIN FOOTPRINT LENGTH",
+              "category": "custom",
+              "key": "TRAIN FOOTPRINT LENGTH // RI2-HRRI",
+              "unit": "",
+              "value": 7
+            },
+            {
+              "name": "TRAIN FOOTPRINT WIDTH",
+              "category": "custom",
+              "key": "TRAIN FOOTPRINT WIDTH // RI2-HRRI",
+              "unit": "",
+              "min": 3,
+              "max": 5,
+              "sign": "="
+            },
+            {
+              "type": "Heating Chamber",
+              "name": "Heating Chamber Floor Space",
+              "category": "cells",
+              "property": "Floor Space",
+              "unit": "ft^2",
+              "key": "Heating Chamber Floor Space // RI2-HRRI",
+              "sign": "=",
+              "value": 100
+            },
+            {
+              "type": "Resin Transfer System",
+              "name": "Resin Transfer System Floor Space",
+              "category": "cells",
+              "property": "Floor Space",
+              "unit": "ft^2",
+              "key": "Resin Transfer System Floor Space // RI2-HRRI",
+              "sign": "=",
+              "value": 100
+            },
+            {
+              "type": "Ultrasonic Knife",
+              "name": "Ultrasonic Knife Floor Space",
+              "category": "cells",
+              "property": "Floor Space",
+              "unit": "ft^2",
+              "key": "Ultrasonic Knife Floor Space // RI2-HRRI",
+              "sign": ">=",
+              "math": true,
+              "value": [
+                "ULTRASONIC KNIFE FLOOR WIDTH",
+                "*",
+                "ULTRASONIC KNIFE FLOOR LENGTH"
+              ],
+              "acyclic": false
+            },
+            {
+              "name": "ULTRASONIC KNIFE FLOOR LENGTH",
+              "category": "custom",
+              "key": "ULTRASONIC KNIFE FLOOR LENGTH // RI2-HRRI",
+              "unit": "ft",
+              "min": 30,
+              "max": 50,
+              "sign": "="
+            },
+            {
+              "name": "ULTRASONIC KNIFE FLOOR WIDTH",
+              "category": "custom",
+              "key": "ULTRASONIC KNIFE FLOOR WIDTH // RI2-HRRI",
+              "unit": "ft",
+              "sign": "=",
+              "value": 25
+            },
+            {
+              "name": "Close Mold Tool Floor Space",
+              "unit": "m^2",
+              "type": "Close Mold Tool",
+              "property": "Floor Space",
+              "category": "cells",
+              "key": "Close Mold Tool Floor Space // RI2-HRRI",
+              "math": true,
+              "sign": "=",
+              "monomial": true,
+              "value": ["TRAIN FOOTPRINT"],
+              "acyclic": false
+            },
+            {
+              "name": "HRRI Laydown Cell Floor Space",
+              "unit": "m^2",
+              "type": "HRRI Laydown Cell",
+              "property": "Floor Space",
+              "category": "cells",
+              "sign": "=",
+              "key": "HRRI Laydown Cell Floor Space // RI2-HRRI",
+              "math": true,
+              "monomial": true,
+              "value": ["TRAIN FOOTPRINT"],
+              "acyclic": false
+            },
+            {
+              "name": "ADM Cell Floor Space",
+              "unit": "m^2",
+              "type": "ADM Cell",
+              "property": "Floor Space",
+              "category": "cells",
+              "sign": "=",
+              "key": "ADM Cell Floor Space // RI2-HRRI",
+              "math": true,
+              "monomial": true,
+              "value": ["TRAIN FOOTPRINT"],
+              "acyclic": false
+            },
+            {
+              "name": "GRIP GANTRY Floor Space",
+              "unit": "m^2",
+              "type": "GRIP GANTRY",
+              "property": "Floor Space",
+              "category": "cells",
+              "sign": ">=",
+              "key": "GRIP GANTRY Floor Space // RI2-HRRI",
+              "math": true,
+              "value": ["TRAIN FOOTPRINT"],
+              "acyclic": false
+            }
+          ],
+          "processTypes": [],
+          "tools": [
+            {
+              "name": "Lamination Tool (LT)",
+              "route": [
+                "Lay, Cut, Place, Form",
+                "Apply FEP",
+                "Part+Tool Transfer"
+              ]
+            },
+            {
+              "name": "Female Cure Tool (CT-F)",
+              "route": ["Part+Tool Transfer", "Cure", "AutoDemold/Clean"]
+            },
+            {
+              "name": "Male Cure Tool (CT-M)",
+              "route": ["Cure"]
+            },
+            {
+              "name": "Free Standing Tool (FST)",
+              "route": ["AutoDemold/Clean", "Free Stand PCure"]
+            }
+          ],
+          "secProcesses": [],
+          "routes": [],
+          "costs": [
+            {
+              "type": "Variable",
+              "name": "5354-HRRI-LCPF LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-HL-FG1 LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "M-PTT-VG LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-HRRI-CURE LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-ADM LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-PCURE LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-RESIN-PREP LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-HRRI-CK LABOR"
+            },
+            {
+              "type": "Variable",
+              "name": "5354-STAGE LABOR"
+            },
+            {
+              "type": "Non-Recurring",
+              "name": "5354-STORE LABOR"
+            },
+            {
+              "type": "Non-Recurring",
+              "name": "5354-STORE EQUIP"
+            },
+            {
+              "type": "Variable",
+              "name": "RI Material Cost"
+            }
+          ],
+          "cells": [
+            {
+              "name": "HRRI Laydown Cell"
+            },
+            {
+              "name": "Hand Layup Cell"
+            },
+            {
+              "name": "GRIP GANTRY"
+            },
+            {
+              "name": "Close Mold Tool"
+            },
+            {
+              "name": "ADM Cell"
+            },
+            {
+              "name": "Post-Cure Oven"
+            },
+            {
+              "name": "Heating Chamber"
+            },
+            {
+              "name": "Resin Transfer System"
+            },
+            {
+              "name": "Ultrasonic Knife"
+            }
+          ],
+          "processChain": [
+            {
+              "#": 10,
+              "type": "5354-HRRI-LCPF",
+              "cell": "HRRI Laydown Cell",
+              "id": "Lay, Cut, Place, Form"
+            },
+            {
+              "#": 20,
+              "type": "5354-HL-FG1",
+              "cell": "Hand Layup Cell",
+              "id": "Apply FEP"
+            },
+            {
+              "#": 30,
+              "type": "M-PTT-VG",
+              "cell": "GRIP GANTRY",
+              "id": "Part+Tool Transfer"
+            },
+            {
+              "#": 40,
+              "type": "5354-HRRI-CURE",
+              "cell": "Close Mold Tool",
+              "id": "Cure"
+            },
+            {
+              "#": 50,
+              "type": "5354-ADM",
+              "cell": "ADM Cell",
+              "id": "AutoDemold/Clean"
+            },
+            {
+              "#": 60,
+              "type": "5354-PCURE Free Stand",
+              "cell": "Post-Cure Oven",
+              "id": "Free Stand PCure"
+            }
+          ],
+          "exposedVariables": [],
+          "cvByProcess": true,
+          "feederLines": [
+            {
+              "id": "Feeder 1",
+              "to": "Apply FEP"
+            },
+            {
+              "id": "Feeder 2",
+              "to": "Cure"
+            }
+          ],
+          "variablesSimple": [
+            {
+              "name": "HRRI Laydown Cell Batch Size",
+              "sign": "=",
+              "type": "HRRI Laydown Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "HRRI Laydown Cell Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Hand Layup Cell Batch Size",
+              "sign": "=",
+              "type": "Hand Layup Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Hand Layup Cell Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "GRIP GANTRY Batch Size",
+              "sign": "=",
+              "type": "GRIP GANTRY",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "GRIP GANTRY Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Close Mold Tool Batch Size",
+              "sign": "=",
+              "type": "Close Mold Tool",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Close Mold Tool Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "ADM Cell Batch Size",
+              "sign": "=",
+              "type": "ADM Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "ADM Cell Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Post-Cure Oven Batch Size",
+              "sign": "=",
+              "type": "Post-Cure Oven",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Post-Cure Oven Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Heating Chamber Batch Size",
+              "sign": "=",
+              "type": "Heating Chamber",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Heating Chamber Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Resin Transfer System Batch Size",
+              "sign": "=",
+              "type": "Resin Transfer System",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Resin Transfer System Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Ultrasonic Knife Batch Size",
+              "sign": "=",
+              "type": "Ultrasonic Knife",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Ultrasonic Knife Batch Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Lamination Tool (LT) Lot Size",
+              "sign": "=",
+              "type": "Lamination Tool (LT)",
+              "property": "Lot Size",
+              "category": "tools",
+              "value": 1,
+              "key": "Lamination Tool (LT) Lot Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Female Cure Tool (CT-F) Lot Size",
+              "sign": "=",
+              "type": "Female Cure Tool (CT-F)",
+              "property": "Lot Size",
+              "category": "tools",
+              "value": 1,
+              "key": "Female Cure Tool (CT-F) Lot Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Male Cure Tool (CT-M) Lot Size",
+              "sign": "=",
+              "type": "Male Cure Tool (CT-M)",
+              "property": "Lot Size",
+              "category": "tools",
+              "value": 1,
+              "key": "Male Cure Tool (CT-M) Lot Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Free Standing Tool (FST) Lot Size",
+              "sign": "=",
+              "type": "Free Standing Tool (FST)",
+              "property": "Lot Size",
+              "category": "tools",
+              "value": 1,
+              "key": "Free Standing Tool (FST) Lot Size // RI2-HRRI",
+              "unit": "count"
+            },
+            {
+              "name": "Feeder 1 Quantity",
+              "sign": "=",
+              "type": "Feeder 1",
+              "property": "Quantity",
+              "category": "feederLines",
+              "value": 1,
+              "key": "Feeder 1 Quantity // RI2-HRRI"
+            },
+            {
+              "name": "Feeder 2 Quantity",
+              "sign": "=",
+              "type": "Feeder 2",
+              "property": "Quantity",
+              "category": "feederLines",
+              "value": 1,
+              "key": "Feeder 2 Quantity // RI2-HRRI"
+            }
+          ],
+          "inputFormat": {
+            "processes": [
+              {
+                "property": "Time",
+                "unit": "h",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Std. Dev.",
+                "unit": "h",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "FPY",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Labor Rate",
+                "unit": "$/hr",
+                "inputFormat": "-"
+              }
+            ],
+            "cells": [
+              {
+                "property": "Batch Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Labor Rate",
+                "unit": "$/hr",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Mean Operations to Failure",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTF",
+                "unit": "h",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTR",
+                "unit": "h",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Extra Shifts",
+                "unit": "hr",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Useful Life",
+                "unit": "years",
+                "inputFormat": "-"
+              }
+            ],
+            "tools": [
+              {
+                "property": "Lot Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Useful Life",
+                "unit": "years",
+                "inputFormat": "-"
+              }
+            ],
+            "feederLines": [
+              {
+                "property": "Variable Cost",
+                "unit": "$",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Quantity",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              }
+            ],
+            "routes": [
+              {
+                "property": "% Diverted",
+                "unit": "%",
+                "inputFormat": "table"
+              }
+            ],
+            "costs": [
+              {
+                "property": "Variable",
+                "unit": "$",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Non-Recurring",
+                "unit": "$",
+                "inputFormat": "constraint"
+              }
+            ],
+            "laborTypes": [
+              {
+                "property": "Direct Variable",
+                "unit": "$/hr",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Direct Pooled",
+                "unit": "$/hr",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Fixed Indirect",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Non-Recurring",
+                "unit": "$",
+                "inputFormat": "constraint"
+              }
+            ]
+          },
+          "feederProcesses": [
+            {
+              "id": "Cut and Kit",
+              "type": "5354-HRRI-CK Cut Kit",
+              "cell": "Ultrasonic Knife",
+              "feederLine": "Feeder 1"
+            },
+            {
+              "id": "Material Thaw",
+              "type": "5354-STAGE Stage Thaw",
+              "cell": "Heating Chamber",
+              "feederLine": "Feeder 2"
+            },
+            {
+              "id": "Charge Resin System",
+              "type": "5354-RESIN-PREP Charge Resin Sys",
+              "cell": "Resin Transfer System",
+              "feederLine": "Feeder 2"
+            }
+          ],
+          "line": "cell"
+        },
+        "id": 2487492352.60187,
+        "design": false,
+        "interfaceVariables": [
+          {
+            "name": "Part Length",
+            "unit": "m"
+          },
+          {
+            "name": "Part Width",
+            "unit": "m"
+          },
+          {
+            "name": "Part Mass",
+            "unit": "kg"
+          }
+        ]
+      }
+    ],
+    "scenario": "likely",
+    "version": "1.0.34"
+  },
+  "id": 248640269.8910335
+}

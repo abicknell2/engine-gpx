@@ -1,0 +1,1101 @@
+{
+  "id": 248640269.8910335,
+  "model": {
+    "components": [
+      {
+        "quantity": 1,
+        "source": {
+          "components": [],
+          "design": {
+            "interfaceVariables": [
+              {
+                "name": "Number of End Plates",
+                "unit": "count"
+              },
+              {
+                "name": "Beam Glue-up length",
+                "unit": "m"
+              },
+              {
+                "name": "MPP-Rib Fastener Count",
+                "unit": "count"
+              },
+              {
+                "name": "Rib Count",
+                "unit": "count"
+              },
+              {
+                "name": "Endplate Fastener Count",
+                "unit": "count"
+              }
+            ],
+            "selectedModule": 1921224127.0103192
+          },
+          "finance": {
+            "costOfCapital": 5,
+            "daysPerWeek": 4,
+            "durationUnit": "years",
+            "hrsPerShift": 8,
+            "rateUnit": "shift",
+            "shiftsPerDay": 1,
+            "weeksPerYear": 50
+          },
+          "manufacturing": {
+            "amortization": "duration",
+            "duration": 1,
+            "line": "cell",
+            "rate": null,
+            "rates": [],
+            "selectedModule": 1131122666.856792
+          },
+          "modelName": "Cassette (Non-Parametric)",
+          "modules": [
+            {
+              "design": false,
+              "id": 1131122666.856792,
+              "manufacturing": {
+                "cells": [
+                  {
+                    "name": "CNC Center",
+                    "noQueueing": ""
+                  },
+                  {
+                    "name": "Table #1",
+                    "noQueueing": true
+                  },
+                  {
+                    "name": "Table #2",
+                    "noQueueing": true
+                  },
+                  {
+                    "name": "Table #3",
+                    "noQueueing": true
+                  },
+                  {
+                    "name": "Table #4",
+                    "noQueueing": true
+                  }
+                ],
+                "cellsFromProcesses": false,
+                "costs": [],
+                "cvByProcess": false,
+                "exposedVariables": [
+                  {
+                    "category": "cells",
+                    "name": "CNC Center Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "type": "CNC Center"
+                  },
+                  {
+                    "category": "cells",
+                    "name": "Table #1 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "type": "Table #1"
+                  },
+                  {
+                    "category": "cells",
+                    "name": "Table #2 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "type": "Table #2"
+                  },
+                  {
+                    "category": "cells",
+                    "name": "Table #3 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "type": "Table #3"
+                  },
+                  {
+                    "category": "cells",
+                    "name": "Table #4 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "type": "Table #4"
+                  }
+                ],
+                "feederLines": [],
+                "feederProcesses": [],
+                "inputFormat": {
+                  "cells": [
+                    {
+                      "defaultValue": 1,
+                      "inputFormat": "table",
+                      "property": "Batch Size",
+                      "unit": "count"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Non-Recurring Cost",
+                      "unit": "$"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Recurring Cost",
+                      "unit": "$/month"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Floor Space",
+                      "unit": "m^2"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Head Count",
+                      "unit": "count"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Mean Operations to Failure",
+                      "unit": "count"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "MTTF",
+                      "unit": "min"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "MTTR",
+                      "unit": "min"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Uptime",
+                      "unit": "%"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Extra Shifts",
+                      "unit": "hr"
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "inputFormat": "constraint",
+                      "property": "Variable",
+                      "unit": "$"
+                    },
+                    {
+                      "inputFormat": "constraint",
+                      "property": "Recurring",
+                      "unit": "$/month"
+                    },
+                    {
+                      "inputFormat": "constraint",
+                      "property": "Non-Recurring",
+                      "unit": "$"
+                    }
+                  ],
+                  "feederLines": [
+                    {
+                      "defaultValue": 1,
+                      "inputFormat": "table",
+                      "property": "Quantity",
+                      "unit": ""
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Variable Cost",
+                      "unit": "$"
+                    }
+                  ],
+                  "processes": [
+                    {
+                      "inputFormat": "table",
+                      "property": "Time",
+                      "unit": "min"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Std. Dev.",
+                      "unit": "min"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "FPY",
+                      "unit": "%"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Head Count",
+                      "unit": "count"
+                    }
+                  ],
+                  "routes": [
+                    {
+                      "inputFormat": "table",
+                      "property": "% Diverted",
+                      "unit": "%"
+                    }
+                  ],
+                  "tools": [
+                    {
+                      "defaultValue": 1,
+                      "inputFormat": "table",
+                      "property": "Lot Size",
+                      "unit": "count"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Non-Recurring Cost",
+                      "unit": "$"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Recurring Cost",
+                      "unit": "$/month"
+                    },
+                    {
+                      "inputFormat": "table",
+                      "property": "Floor Space",
+                      "unit": "m^2"
+                    },
+                    {
+                      "inputFormat": "-",
+                      "property": "Uptime",
+                      "unit": "%"
+                    }
+                  ]
+                },
+                "line": "cell",
+                "processChain": [
+                  {
+                    "cell": "CNC Center",
+                    "id": "P020",
+                    "type": "Transport to Station"
+                  },
+                  {
+                    "cell": "CNC Center",
+                    "id": "P010",
+                    "type": "Mill outer dimensions"
+                  },
+                  {
+                    "cell": "Table #1",
+                    "id": "P070",
+                    "type": "Transport to Station"
+                  },
+                  {
+                    "cell": "Table #1",
+                    "id": "P030",
+                    "type": "Pick and Place 1st acoustic layer"
+                  },
+                  {
+                    "cell": "Table #1",
+                    "id": "P040",
+                    "type": "Fasten 1st acoustic layer"
+                  },
+                  {
+                    "cell": "Table #1",
+                    "id": "P050",
+                    "type": "Pick and Place 2nd acoustic layer"
+                  },
+                  {
+                    "cell": "Table #1",
+                    "id": "P060",
+                    "type": "Fasten second acoustic layer"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P080",
+                    "type": "Transport to Station"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P090",
+                    "type": "Place Ribs"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P0100",
+                    "type": "Exchange Gripper"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P0110",
+                    "type": "Glue Beams"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P0120",
+                    "type": "Exchange Gripper"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P0130",
+                    "type": "Fasten Ribs to MPP"
+                  },
+                  {
+                    "cell": "Table #2",
+                    "id": "P0140",
+                    "type": "Flip MPP"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0150",
+                    "type": "Transport to Station"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0160",
+                    "type": "Place End Plate"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0170",
+                    "type": "Exchange Gripper"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0180",
+                    "type": "Fasten End Plates"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0190",
+                    "type": "Exchange Gripper"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0200",
+                    "type": "Place and fasten 1st rockwool layer"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0210",
+                    "type": "Tilt Element"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0220",
+                    "type": "Manual Installation of HVAC - Fire Protection - Plumbing"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0230",
+                    "type": "Tilt Element"
+                  },
+                  {
+                    "cell": "Table #3",
+                    "id": "P0240",
+                    "type": "Place and fasten 2nd Rockwool Layer"
+                  },
+                  {
+                    "cell": "Table #4",
+                    "id": "P0250",
+                    "type": "Transport to Station"
+                  },
+                  {
+                    "cell": "Table #4",
+                    "id": "P0260",
+                    "type": "Install top layers"
+                  },
+                  {
+                    "cell": "Table #4",
+                    "id": "P0270",
+                    "type": "Flip MPP"
+                  },
+                  {
+                    "cell": "Table #4",
+                    "id": "P0280",
+                    "type": "Install Lifting Lugs"
+                  },
+                  {
+                    "cell": "Table #4",
+                    "id": "P0290",
+                    "type": "Remove Element"
+                  }
+                ],
+                "routes": [],
+                "secProcesses": [],
+                "tools": [],
+                "variables": [
+                  {
+                    "category": "all processes",
+                    "key": "All Processes CV // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "max": 0.25,
+                    "min": 0.1,
+                    "name": "All Processes CV",
+                    "property": "CV",
+                    "sign": "=",
+                    "unit": "count"
+                  },
+                  {
+                    "category": "cells",
+                    "key": "CNC Center Workstation Count // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "CNC Center Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "sign": "=",
+                    "type": "CNC Center",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #1 Workstation Count // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #1 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "sign": "=",
+                    "type": "Table #1",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #2 Workstation Count // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #2 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "sign": "=",
+                    "type": "Table #2",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #3 Workstation Count // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #3 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "sign": "=",
+                    "type": "Table #3",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #4 Workstation Count // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #4 Workstation Count",
+                    "needsType": true,
+                    "property": "Workstation Count",
+                    "sign": "=",
+                    "type": "Table #4",
+                    "unit": "count",
+                    "value": 1
+                  }
+                ],
+                "variablesSimple": [
+                  {
+                    "category": "processes",
+                    "key": "Mill outer dimensions Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Mill outer dimensions Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Mill outer dimensions",
+                    "unit": "min",
+                    "value": 12
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Transport to Station Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Transport to Station Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Transport to Station",
+                    "unit": "min",
+                    "value": 3
+                  },
+                  {
+                    "category": "cells",
+                    "key": "CNC Center Batch Size // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "CNC Center Batch Size",
+                    "property": "Batch Size",
+                    "sign": "=",
+                    "type": "CNC Center",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "CNC Center Non-Recurring Cost // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "CNC Center Non-Recurring Cost",
+                    "property": "Non-Recurring Cost",
+                    "sign": "=",
+                    "type": "CNC Center",
+                    "unit": "$",
+                    "value": 1000000
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #1 Batch Size // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #1 Batch Size",
+                    "property": "Batch Size",
+                    "sign": "=",
+                    "type": "Table #1",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #1 Non-Recurring Cost // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #1 Non-Recurring Cost",
+                    "property": "Non-Recurring Cost",
+                    "sign": "=",
+                    "type": "Table #1",
+                    "unit": "$",
+                    "value": 2400000
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #2 Batch Size // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #2 Batch Size",
+                    "property": "Batch Size",
+                    "sign": "=",
+                    "type": "Table #2",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #2 Non-Recurring Cost // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #2 Non-Recurring Cost",
+                    "property": "Non-Recurring Cost",
+                    "sign": "=",
+                    "type": "Table #2",
+                    "unit": "$",
+                    "value": 1200000
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #3 Batch Size // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #3 Batch Size",
+                    "property": "Batch Size",
+                    "sign": "=",
+                    "type": "Table #3",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #3 Non-Recurring Cost // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #3 Non-Recurring Cost",
+                    "property": "Non-Recurring Cost",
+                    "sign": "=",
+                    "type": "Table #3",
+                    "unit": "$",
+                    "value": 1200000
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #4 Batch Size // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #4 Batch Size",
+                    "property": "Batch Size",
+                    "sign": "=",
+                    "type": "Table #4",
+                    "unit": "count",
+                    "value": 1
+                  },
+                  {
+                    "category": "cells",
+                    "key": "Table #4 Non-Recurring Cost // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Table #4 Non-Recurring Cost",
+                    "property": "Non-Recurring Cost",
+                    "sign": "=",
+                    "type": "Table #4",
+                    "unit": "$",
+                    "value": 1200000
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Pick and Place 1st acoustic layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Pick and Place 1st acoustic layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Pick and Place 1st acoustic layer",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Fasten 1st acoustic layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Fasten 1st acoustic layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Fasten 1st acoustic layer",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Pick and Place 2nd acoustic layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Pick and Place 2nd acoustic layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Pick and Place 2nd acoustic layer",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Fasten second acoustic layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Fasten second acoustic layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Fasten second acoustic layer",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Place Ribs Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Place Ribs Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Place Ribs",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Exchange Gripper Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Exchange Gripper Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Exchange Gripper",
+                    "unit": "min",
+                    "value": 1
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Glue Beams Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Glue Beams Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Glue Beams",
+                    "unit": "min",
+                    "value": 1
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Fasten Ribs to MPP Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Fasten Ribs to MPP Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Fasten Ribs to MPP",
+                    "unit": "min",
+                    "value": 14.23
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Flip MPP Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Flip MPP Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Flip MPP",
+                    "unit": "min",
+                    "value": 4
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Place End Plate Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Place End Plate Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Place End Plate",
+                    "unit": "min",
+                    "value": 1
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Fasten End Plates Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Fasten End Plates Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Fasten End Plates",
+                    "unit": "min",
+                    "value": 5.37
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Place and fasten 1st rockwool layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Place and fasten 1st rockwool layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Place and fasten 1st rockwool layer",
+                    "unit": "min",
+                    "value": 2.5
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Tilt Element Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Tilt Element Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Tilt Element",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Manual Installation of HVAC - Fire Protection - Plumbing Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Manual Installation of HVAC - Fire Protection - Plumbing Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Manual Installation of HVAC - Fire Protection - Plumbing",
+                    "unit": "min",
+                    "value": 7.5
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Place and fasten 2nd Rockwool Layer Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Place and fasten 2nd Rockwool Layer Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Place and fasten 2nd Rockwool Layer",
+                    "unit": "min",
+                    "value": 3.83
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Install top layers Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Install top layers Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Install top layers",
+                    "unit": "min",
+                    "value": 15
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Install Lifting Lugs Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Install Lifting Lugs Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Install Lifting Lugs",
+                    "unit": "min",
+                    "value": 2
+                  },
+                  {
+                    "category": "processes",
+                    "key": "Remove Element Time // Cassette Automated (Non-Parametric) Assumption V24 210723",
+                    "name": "Remove Element Time",
+                    "property": "Time",
+                    "sign": "=",
+                    "type": "Remove Element",
+                    "unit": "min",
+                    "value": 4
+                  }
+                ]
+              },
+              "name": "Cassette Automated (Non-Parametric) Assumption V24 210723",
+              "type": "manufacturing"
+            },
+            {
+              "design": {
+                "variables": [
+                  {
+                    "key": "MPP-Rib Fastener Count // Cassette Residential 210723",
+                    "name": "MPP-Rib Fastener Count",
+                    "unit": "count",
+                    "value": 61
+                  },
+                  {
+                    "key": "Rib Count // Cassette Residential 210723",
+                    "name": "Rib Count",
+                    "unit": "count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Number of End Plates // Cassette Residential 210723",
+                    "name": "Number of End Plates",
+                    "unit": "count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Beam Glue-up length // Cassette Residential 210723",
+                    "name": "Beam Glue-up length",
+                    "unit": "m",
+                    "value": 6
+                  },
+                  {
+                    "key": "Endplate Fastener Count // Cassette Residential 210723",
+                    "name": "Endplate Fastener Count",
+                    "unit": "count",
+                    "value": 25
+                  }
+                ]
+              },
+              "id": 1921224127.0103192,
+              "interfaceVariables": [
+                {
+                  "name": "Number of End Plates",
+                  "unit": "count"
+                },
+                {
+                  "name": "Beam Glue-up length",
+                  "unit": "m"
+                },
+                {
+                  "name": "MPP-Rib Fastener Count",
+                  "unit": "count"
+                },
+                {
+                  "name": "Rib Count",
+                  "unit": "count"
+                },
+                {
+                  "name": "Endplate Fastener Count",
+                  "unit": "count"
+                }
+              ],
+              "manufacturing": false,
+              "name": "Cassette Residential 210723",
+              "type": "design"
+            }
+          ],
+          "scenario": "likely",
+          "type": ["custom", "bestworst"],
+          "version": "1.0.46"
+        },
+        "to": "P010"
+      }
+    ],
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "year",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rates": [],
+      "selectedModule": 5928378072.927785
+    },
+    "modelName": "Simplified Test Building (Dedicated)",
+    "modules": [
+      {
+        "id": 5928378072.927785,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "Assembly Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "exposedVariables": [
+            {
+              "category": "cells",
+              "name": "Assembly Cell Workstation Count",
+              "property": "Workstation Count",
+              "type": "Assembly Cell",
+              "unit": "count"
+            }
+          ],
+          "feederLines": [],
+          "feederProcesses": [],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "table",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "Assembly Cell",
+              "id": "P010",
+              "type": "Assembly"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [],
+          "variables": [
+            {
+              "category": "cells",
+              "key": "Assembly Cell Workstation Count // New Module",
+              "name": "Assembly Cell Workstation Count",
+              "property": "Workstation Count",
+              "sign": "=",
+              "type": "Assembly Cell",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "all processes",
+              "key": "All Processes CV // New Module",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 25
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "Assembly Cell Batch Size // New Module",
+              "name": "Assembly Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Assembly Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Assembly Time // New Module",
+              "name": "Assembly Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Assembly",
+              "unit": "min",
+              "value": 10
+            }
+          ]
+        },
+        "name": "New Module",
+        "type": "manufacturing"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["manufacturing", "assembly", "bestworst"],
+    "version": "1.0.45"
+  }
+}

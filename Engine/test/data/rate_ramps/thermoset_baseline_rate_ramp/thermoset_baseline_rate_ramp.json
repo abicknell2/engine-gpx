@@ -1,0 +1,833 @@
+{
+  "model": {
+    "type": ["custom", "bestworst"],
+    "modelName": "Thermoset Baseline Rate Ramp",
+    "design": {
+      "selectedModule": 3626999352.7545695,
+      "interfaceVariables": [
+        {
+          "name": "Part Diameter",
+          "unit": "m"
+        },
+        {
+          "name": "Stringer Count",
+          "unit": "count"
+        },
+        {
+          "name": "Part Length",
+          "unit": "m"
+        },
+        {
+          "name": "Part Mass",
+          "unit": "kg"
+        }
+      ]
+    },
+    "manufacturing": {
+      "line": "cell",
+      "amortization": "duration",
+      "duration": 5,
+      "selectedModule": 8663353807.475666,
+      "rate": 50,
+      "rates": []
+    },
+    "finance": {
+      "shiftsPerDay": 2,
+      "hrsPerShift": 7,
+      "daysPerWeek": 5,
+      "weeksPerYear": 50,
+      "costOfCapital": 5,
+      "rateUnit": "month",
+      "durationUnit": "years"
+    },
+    "modules": [
+      {
+        "name": "Thermoset AFP Autoclave",
+        "id": 8663353807.475666,
+        "type": "manufacturing",
+        "manufacturing": {
+          "processChain": [
+            {
+              "id": "P010",
+              "type": "Layup",
+              "cell": "Layup Cell"
+            },
+            {
+              "id": "P020",
+              "type": "Bagging",
+              "cell": "Bagging Cell"
+            },
+            {
+              "id": "P030",
+              "type": "Autoclave Cure",
+              "cell": "Autoclave Cure Cell"
+            },
+            {
+              "id": "P040",
+              "type": "Trim & Drill",
+              "cell": "Trim & Drill Cell"
+            },
+            {
+              "id": "P050",
+              "type": "Demold",
+              "cell": "Demold Cell"
+            },
+            {
+              "id": "P060",
+              "type": "Inspect Part",
+              "cell": "Inspect Part Cell"
+            }
+          ],
+          "cvByProcess": false,
+          "cellsFromProcesses": true,
+          "feederProcesses": [
+            {
+              "id": "F010",
+              "type": "Layup Stringer",
+              "cell": "Layup Stringer Cell",
+              "feederLine": "Stringer Feeder"
+            }
+          ],
+          "feederLines": [
+            {
+              "id": "Stringer Feeder",
+              "to": "P010"
+            }
+          ],
+          "secProcesses": [],
+          "routes": [],
+          "tools": [
+            {
+              "name": "Layup Tool",
+              "route": ["P010", "P020", "P030", "P040", "P050"]
+            },
+            {
+              "name": "Stringer Tool",
+              "route": ["F010", "P010"]
+            }
+          ],
+          "cells": [
+            {
+              "name": "Layup Cell"
+            },
+            {
+              "name": "Bagging Cell"
+            },
+            {
+              "name": "Autoclave Cure Cell"
+            },
+            {
+              "name": "Trim & Drill Cell"
+            },
+            {
+              "name": "Demold Cell"
+            },
+            {
+              "name": "Inspect Part Cell",
+              "noQueueing": false
+            },
+            {
+              "name": "Layup Stringer Cell"
+            }
+          ],
+          "costs": [
+            {
+              "name": "Material Cost",
+              "type": "Variable"
+            }
+          ],
+          "inputFormat": {
+            "processes": [
+              {
+                "property": "Time",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Std. Dev.",
+                "unit": "min",
+                "inputFormat": "table"
+              },
+              {
+                "property": "FPY",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "-"
+              }
+            ],
+            "cells": [
+              {
+                "property": "Batch Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Head Count",
+                "unit": "count",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Mean Operations to Failure",
+                "unit": "count",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTF",
+                "unit": "min",
+                "inputFormat": "-"
+              },
+              {
+                "property": "MTTR",
+                "unit": "min",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Extra Shifts",
+                "unit": "hr",
+                "inputFormat": "-"
+              }
+            ],
+            "tools": [
+              {
+                "property": "Lot Size",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              },
+              {
+                "property": "Non-Recurring Cost",
+                "unit": "$",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Recurring Cost",
+                "unit": "$/month",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Floor Space",
+                "unit": "m^2",
+                "inputFormat": "table"
+              },
+              {
+                "property": "Uptime",
+                "unit": "%",
+                "inputFormat": "-"
+              }
+            ],
+            "feederLines": [
+              {
+                "property": "Variable Cost",
+                "unit": "$",
+                "inputFormat": "-"
+              },
+              {
+                "property": "Quantity",
+                "unit": "count",
+                "inputFormat": "table",
+                "defaultValue": 1
+              }
+            ],
+            "routes": [
+              {
+                "property": "% Diverted",
+                "unit": "%",
+                "inputFormat": "table"
+              }
+            ],
+            "costs": [
+              {
+                "property": "Variable",
+                "unit": "$",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Recurring",
+                "unit": "$/month",
+                "inputFormat": "constraint"
+              },
+              {
+                "property": "Non-Recurring",
+                "unit": "$",
+                "inputFormat": "constraint"
+              }
+            ]
+          },
+          "variables": [
+            {
+              "name": "All Processes CV",
+              "category": "all processes",
+              "property": "CV",
+              "unit": "",
+              "sign": "=",
+              "key": "All Processes CV // Thermoset AFP Autoclave",
+              "min": 0.1,
+              "max": 0.3,
+              "value": 0.25
+            },
+            {
+              "name": "Layup Time",
+              "unit": "min",
+              "sign": ">=",
+              "type": "Layup",
+              "property": "Time",
+              "category": "processes",
+              "key": "Layup Time // Thermoset AFP Autoclave",
+              "math": true,
+              "value": ["Part Mass", "*", "Layup Rate", "^-1"],
+              "acyclic": false
+            },
+            {
+              "name": "Layup Rate",
+              "category": "custom",
+              "unit": "kg/min",
+              "sign": "=",
+              "key": "Layup Rate // Thermoset AFP Autoclave",
+              "min": 0.3,
+              "max": 0.75,
+              "value": 0.5
+            },
+            {
+              "name": "Stringer Feeder Quantity",
+              "unit": "",
+              "type": "Stringer Feeder",
+              "property": "Quantity",
+              "category": "feederLines",
+              "sign": "=",
+              "key": "Stringer Feeder Quantity // Thermoset AFP Autoclave",
+              "math": true,
+              "monomial": true,
+              "value": ["Part Diameter", "*", "stringer pitch", "^-1"],
+              "acyclic": true
+            },
+            {
+              "name": "stringer pitch",
+              "category": "custom",
+              "unit": "in",
+              "sign": "=",
+              "key": "stringer pitch // Thermoset AFP Autoclave",
+              "value": 2
+            },
+            {
+              "name": "Material Cost",
+              "unit": "$",
+              "type": "Material Cost",
+              "property": "Variable",
+              "category": "costs",
+              "sign": ">=",
+              "key": "Material Cost // Thermoset AFP Autoclave",
+              "math": true,
+              "value": ["Part Mass", "*", "8-276 Material Price"],
+              "acyclic": false
+            },
+            {
+              "name": "8-276 Material Price",
+              "category": "custom",
+              "unit": "$/lb",
+              "sign": "=",
+              "key": "8-276 Material Price // Thermoset AFP Autoclave",
+              "min": 35,
+              "max": 50,
+              "value": 50
+            },
+            {
+              "name": "Labor Variable Cost",
+              "category": "labor",
+              "property": "Cost",
+              "unit": "$/hr",
+              "sign": "=",
+              "key": "Labor Variable Cost // Thermoset AFP Autoclave",
+              "min": 80,
+              "max": 150,
+              "value": 100
+            }
+          ],
+          "variablesSimple": [
+            {
+              "name": "Layup Cell Batch Size",
+              "sign": "=",
+              "type": "Layup Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Layup Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Bagging Cell Batch Size",
+              "sign": "=",
+              "type": "Bagging Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Bagging Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Autoclave Cure Cell Batch Size",
+              "sign": "=",
+              "type": "Autoclave Cure Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 3,
+              "key": "Autoclave Cure Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Trim & Drill Cell Batch Size",
+              "sign": "=",
+              "type": "Trim & Drill Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Trim & Drill Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Demold Cell Batch Size",
+              "sign": "=",
+              "type": "Demold Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Demold Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Inspect Part Cell Batch Size",
+              "sign": "=",
+              "type": "Inspect Part Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Inspect Part Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Layup Cell Non-Recurring Cost",
+              "value": 500000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Layup Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Layup Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Bagging Cell Non-Recurring Cost",
+              "value": 25000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Bagging Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Bagging Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Autoclave Cure Cell Non-Recurring Cost",
+              "value": 1000000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Autoclave Cure Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Autoclave Cure Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Trim & Drill Cell Non-Recurring Cost",
+              "value": 250000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Trim & Drill Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Trim & Drill Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Demold Cell Non-Recurring Cost",
+              "value": 50000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Demold Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Demold Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Inspect Part Cell Non-Recurring Cost",
+              "value": 150000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Inspect Part Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Inspect Part Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Layup Tool Lot Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "Layup Tool",
+              "property": "Lot Size",
+              "category": "tools",
+              "key": "Layup Tool Lot Size // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Layup Tool Non-Recurring Cost",
+              "value": 50000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Layup Tool",
+              "property": "Non-Recurring Cost",
+              "category": "tools",
+              "key": "Layup Tool Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Layup Stringer Cell Batch Size",
+              "sign": "=",
+              "type": "Layup Stringer Cell",
+              "property": "Batch Size",
+              "category": "cells",
+              "value": 1,
+              "key": "Layup Stringer Cell Batch Size // Thermoset AFP Autoclave",
+              "unit": "count"
+            },
+            {
+              "name": "Layup Stringer Cell Non-Recurring Cost",
+              "value": 100000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Layup Stringer Cell",
+              "property": "Non-Recurring Cost",
+              "category": "cells",
+              "key": "Layup Stringer Cell Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Stringer Tool Lot Size",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "Stringer Tool",
+              "property": "Lot Size",
+              "category": "tools",
+              "key": "Stringer Tool Lot Size // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Stringer Tool Non-Recurring Cost",
+              "value": 5000,
+              "unit": "$",
+              "sign": "=",
+              "type": "Stringer Tool",
+              "property": "Non-Recurring Cost",
+              "category": "tools",
+              "key": "Stringer Tool Non-Recurring Cost // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Layup Cell Head Count",
+              "value": 2,
+              "unit": "count",
+              "sign": "=",
+              "type": "Layup Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Layup Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Bagging Cell Head Count",
+              "value": 4,
+              "unit": "count",
+              "sign": "=",
+              "type": "Bagging Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Bagging Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Autoclave Cure Cell Head Count",
+              "value": 2,
+              "unit": "count",
+              "sign": "=",
+              "type": "Autoclave Cure Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Autoclave Cure Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Trim & Drill Cell Head Count",
+              "value": 1,
+              "unit": "count",
+              "sign": "=",
+              "type": "Trim & Drill Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Trim & Drill Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Demold Cell Head Count",
+              "value": 3,
+              "unit": "count",
+              "sign": "=",
+              "type": "Demold Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Demold Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Inspect Part Cell Head Count",
+              "value": 2,
+              "unit": "count",
+              "sign": "=",
+              "type": "Inspect Part Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Inspect Part Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Layup Stringer Cell Head Count",
+              "value": 2,
+              "unit": "count",
+              "sign": "=",
+              "type": "Layup Stringer Cell",
+              "property": "Head Count",
+              "category": "cells",
+              "key": "Layup Stringer Cell Head Count // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Autoclave Cure Time",
+              "unit": "min",
+              "sign": "=",
+              "type": "Autoclave Cure",
+              "property": "Time",
+              "category": "processes",
+              "key": "Autoclave Cure Time // Thermoset AFP Autoclave",
+              "value": 500
+            },
+            {
+              "name": "Demold Time",
+              "unit": "min",
+              "sign": "=",
+              "type": "Demold",
+              "property": "Time",
+              "category": "processes",
+              "key": "Demold Time // Thermoset AFP Autoclave",
+              "value": 60
+            },
+            {
+              "name": "Inspect Part Time",
+              "unit": "min",
+              "sign": "=",
+              "type": "Inspect Part",
+              "property": "Time",
+              "category": "processes",
+              "key": "Inspect Part Time // Thermoset AFP Autoclave",
+              "value": 400
+            },
+            {
+              "name": "Layup Stringer Time",
+              "unit": "min",
+              "type": "Layup Stringer",
+              "property": "Time",
+              "category": "processes",
+              "sign": "=",
+              "key": "Layup Stringer Time // Thermoset AFP Autoclave",
+              "value": 30
+            },
+            {
+              "name": "Trim & Drill Time",
+              "value": 130,
+              "unit": "min",
+              "sign": "=",
+              "type": "Trim & Drill",
+              "property": "Time",
+              "category": "processes",
+              "key": "Trim & Drill Time // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Bagging Time",
+              "value": 200,
+              "unit": "min",
+              "sign": "=",
+              "type": "Bagging",
+              "property": "Time",
+              "category": "processes",
+              "key": "Bagging Time // Thermoset AFP Autoclave"
+            },
+            {
+              "name": "Stringer Feeder Quantity",
+              "sign": "=",
+              "type": "Stringer Feeder",
+              "property": "Quantity",
+              "category": "feederLines",
+              "value": 29.528,
+              "key": "Stringer Feeder Quantity // Thermoset AFP Autoclave"
+            }
+          ],
+          "exposedVariables": []
+        }
+      },
+      {
+        "name": "Fuselage Section",
+        "id": 3626999352.7545695,
+        "type": "design",
+        "design": {
+          "variables": [
+            {
+              "name": "Part Length",
+              "unit": "m",
+              "sign": "=",
+              "key": "Part Length // Fuselage Section",
+              "value": 7
+            },
+            {
+              "name": "Part Mass",
+              "unit": "kg",
+              "sign": "=",
+              "key": "Part Mass // Fuselage Section",
+              "value": 150
+            },
+            {
+              "name": "Part Diameter",
+              "unit": "m",
+              "sign": "=",
+              "key": "Part Diameter // Fuselage Section",
+              "value": 1.5
+            },
+            {
+              "name": "Stringer Count",
+              "unit": "count",
+              "sign": "=",
+              "key": "Stringer Count // Fuselage Section",
+              "value": 15
+            }
+          ],
+          "variablesSimple": []
+        }
+      }
+    ],
+    "scenario": "likely",
+    "version": "1.0.46"
+  },
+  "rateHike": {
+    "minRate": 38.25,
+    "maxRate": 83.97,
+    "resources": [
+      {
+        "category": "cells",
+        "name": "Layup Cell Workstation Count",
+        "type": "Layup Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Layup Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Bagging Cell Workstation Count",
+        "type": "Bagging Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Bagging Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Autoclave Cure Cell Workstation Count",
+        "type": "Autoclave Cure Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Autoclave Cure Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Trim & Drill Cell Workstation Count",
+        "type": "Trim & Drill Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Trim & Drill Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Demold Cell Workstation Count",
+        "type": "Demold Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Demold Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Inspect Part Cell Workstation Count",
+        "type": "Inspect Part Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Inspect Part Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "cells",
+        "name": "Layup Stringer Cell Workstation Count",
+        "type": "Layup Stringer Cell",
+        "property": "Workstation Count",
+        "unit": "count",
+        "key": "Layup Stringer Cell Workstation Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "tools",
+        "name": "Layup Tool Count",
+        "type": "Layup Tool",
+        "property": "Count",
+        "unit": "count",
+        "key": "Layup Tool Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      },
+      {
+        "category": "tools",
+        "name": "Stringer Tool Count",
+        "type": "Stringer Tool",
+        "property": "Count",
+        "unit": "count",
+        "key": "Stringer Tool Count // Thermoset AFP Autoclave",
+        "sign": "=",
+        "value": 1
+      }
+    ]
+  },
+  "id": 248640269.8910335
+}

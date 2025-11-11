@@ -1,0 +1,4396 @@
+{
+  "plot": [
+    {
+      "rate": 30.0,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3334.3459000185117
+    },
+    {
+      "rate": 30.505050505050505,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3279.1564500456384
+    },
+    {
+      "rate": 31.01010101010101,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3225.7647020262784
+    },
+    {
+      "rate": 31.515151515151516,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3174.084227981898
+    },
+    {
+      "rate": 32.02020202020202,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3124.034052803271
+    },
+    {
+      "rate": 32.525252525252526,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3075.5382308910616
+    },
+    {
+      "rate": 33.03030303030303,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3028.5254616367174
+    },
+    {
+      "rate": 33.535353535353536,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2982.9287396490704
+    },
+    {
+      "rate": 34.04040404040404,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2938.68503611803
+    },
+    {
+      "rate": 34.54545454545455,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2895.7350081288328
+    },
+    {
+      "rate": 35.05050505050505,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2854.0227331076244
+    },
+    {
+      "rate": 35.55555555555556,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2813.495465899518
+    },
+    {
+      "rate": 35.6,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3219.162
+    },
+    {
+      "rate": 35.60356,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3043.543
+    },
+    {
+      "rate": 36.06060606060606,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3005.1004768525836
+    },
+    {
+      "rate": 36.56565656565657,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2963.604642692966
+    },
+    {
+      "rate": 37.07070707070707,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2923.2394852134466
+    },
+    {
+      "rate": 37.57575757575758,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2883.95941261241
+    },
+    {
+      "rate": 38.08080808080808,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2845.721251751453
+    },
+    {
+      "rate": 38.58585858585859,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2808.4840898659136
+    },
+    {
+      "rate": 39.09090909090909,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2772.209128545893
+    },
+    {
+      "rate": 39.13,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3142.09
+    },
+    {
+      "rate": 39.133913,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2811.935
+    },
+    {
+      "rate": 39.5959595959596,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2778.876418664216
+    },
+    {
+      "rate": 40.101010101010104,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2743.8870667433184
+    },
+    {
+      "rate": 40.60606060606061,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2709.768096711
+    },
+    {
+      "rate": 41.111111111111114,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2676.4874306106794
+    },
+    {
+      "rate": 41.61616161616162,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2644.0145476681337
+    },
+    {
+      "rate": 42.01,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 3035.89
+    },
+    {
+      "rate": 42.014201,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2817.634
+    },
+    {
+      "rate": 42.121212121212125,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2810.1014996243807
+    },
+    {
+      "rate": 42.62626262626263,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2776.81423554377
+    },
+    {
+      "rate": 43.131313131313135,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2744.3065326828455
+    },
+    {
+      "rate": 43.63636363636364,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2712.5513229437015
+    },
+    {
+      "rate": 44.141414141414145,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2681.5227770429824
+    },
+    {
+      "rate": 44.64646464646465,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2651.1962344431836
+    },
+    {
+      "rate": 45.151515151515156,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2621.548137986558
+    },
+    {
+      "rate": 45.47,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 6.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2988.043
+    },
+    {
+      "rate": 45.474547,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2639.794
+    },
+    {
+      "rate": 45.65656565656566,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2629.0127663161393
+    },
+    {
+      "rate": 46.161616161616166,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2600.255561376364
+    },
+    {
+      "rate": 46.66666666666667,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2572.120806759961
+    },
+    {
+      "rate": 47.17171717171718,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2544.588509415857
+    },
+    {
+      "rate": 47.67676767676768,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2517.6395234561624
+    },
+    {
+      "rate": 48.18,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2914.776
+    },
+    {
+      "rate": 48.18181818181819,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 3.0
+        }
+      ],
+      "Total Unit Cost": 2491.255505755581
+    },
+    {
+      "rate": 48.184818,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2837.042
+    },
+    {
+      "rate": 48.68686868686869,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2807.818142166398
+    },
+    {
+      "rate": 49.1919191919192,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2778.997334382712
+    },
+    {
+      "rate": 49.6969696969697,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2750.762315375117
+    },
+    {
+      "rate": 50.20202020202021,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2723.09540540188
+    },
+    {
+      "rate": 50.70707070707071,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2695.9796290934482
+    },
+    {
+      "rate": 51.21212121212122,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2669.398680720094
+    },
+    {
+      "rate": 51.71717171717172,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2643.3368914946573
+    },
+    {
+      "rate": 52.22222222222223,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2617.779198772614
+    },
+    {
+      "rate": 52.727272727272734,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2592.711117022257
+    },
+    {
+      "rate": 53.23232323232324,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2568.118710447429
+    },
+    {
+      "rate": 53.737373737373744,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2543.988567154082
+    },
+    {
+      "rate": 54.24242424242424,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2520.3077747600532
+    },
+    {
+      "rate": 54.74747474747475,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2497.063897354844
+    },
+    {
+      "rate": 55.25252525252525,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2474.2449537230386
+    },
+    {
+      "rate": 55.75757575757576,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2451.83939675123
+    },
+    {
+      "rate": 55.82,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2814.537
+    },
+    {
+      "rate": 55.825582,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2598.051
+    },
+    {
+      "rate": 56.26262626262626,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2577.8991349520425
+    },
+    {
+      "rate": 56.76767676767677,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2554.969569475512
+    },
+    {
+      "rate": 57.27272727272727,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2532.4444055065032
+    },
+    {
+      "rate": 57.77777777777778,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2510.3130381103797
+    },
+    {
+      "rate": 58.282828282828284,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2488.5652299412254
+    },
+    {
+      "rate": 58.78787878787879,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2467.191095451953
+    },
+    {
+      "rate": 59.292929292929294,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2446.181085911391
+    },
+    {
+      "rate": 59.7979797979798,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2425.525975180636
+    },
+    {
+      "rate": 59.81,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 7.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2766.294
+    },
+    {
+      "rate": 59.815981,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2452.783
+    },
+    {
+      "rate": 60.303030303030305,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2432.8151109509863
+    },
+    {
+      "rate": 60.80808080808081,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2412.6137612586454
+    },
+    {
+      "rate": 61.313131313131315,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2392.7452179862767
+    },
+    {
+      "rate": 61.81818181818182,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2373.2013241137834
+    },
+    {
+      "rate": 62.323232323232325,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2353.9741870301477
+    },
+    {
+      "rate": 62.82828282828283,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2335.056167906055
+    },
+    {
+      "rate": 62.89,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2703.82
+    },
+    {
+      "rate": 62.896289,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2465.28
+    },
+    {
+      "rate": 63.333333333333336,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2447.981965627237
+    },
+    {
+      "rate": 63.83838383838384,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2428.619232759663
+    },
+    {
+      "rate": 64.34343434343435,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2409.56046744103
+    },
+    {
+      "rate": 64.84848484848484,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2390.798567625804
+    },
+    {
+      "rate": 65.35353535353536,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2372.3266508061747
+    },
+    {
+      "rate": 65.85858585858585,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2354.13804559421
+    },
+    {
+      "rate": 66.36363636363637,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2336.2262836883624
+    },
+    {
+      "rate": 66.79,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 8.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2670.612
+    },
+    {
+      "rate": 66.79667900000001,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2346.201
+    },
+    {
+      "rate": 66.86868686868686,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2343.481186900496
+    },
+    {
+      "rate": 67.37373737373738,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2325.9176176674823
+    },
+    {
+      "rate": 67.87878787878788,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2308.6154110718658
+    },
+    {
+      "rate": 68.3838383838384,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2291.568776213259
+    },
+    {
+      "rate": 68.88888888888889,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2274.7720920124034
+    },
+    {
+      "rate": 69.3939393939394,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2258.2199010313557
+    },
+    {
+      "rate": 69.73,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 4.0
+        }
+      ],
+      "Total Unit Cost": 2623.541
+    },
+    {
+      "rate": 69.736973,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2486.179
+    },
+    {
+      "rate": 69.8989898989899,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2480.3937677596896
+    },
+    {
+      "rate": 70.40404040404042,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2462.6043057736597
+    },
+    {
+      "rate": 70.9090909090909,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2445.0682549270327
+    },
+    {
+      "rate": 71.41414141414143,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2427.7802387458446
+    },
+    {
+      "rate": 71.91919191919192,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2410.735031780686
+    },
+    {
+      "rate": 72.42424242424244,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2393.927554340842
+    },
+    {
+      "rate": 72.92929292929293,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2377.3528674472577
+    },
+    {
+      "rate": 73.43434343434345,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2361.006167993749
+    },
+    {
+      "rate": 73.93939393939394,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2344.882784106546
+    },
+    {
+      "rate": 74.44444444444446,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2328.9781706927097
+    },
+    {
+      "rate": 74.94949494949495,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2313.2879051685486
+    },
+    {
+      "rate": 75.45454545454547,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2297.80768335957
+    },
+    {
+      "rate": 75.95959595959596,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2282.533315564009
+    },
+    {
+      "rate": 76.46464646464648,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2267.4607227723513
+    },
+    {
+      "rate": 76.96969696969697,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2252.585933035704
+    },
+    {
+      "rate": 77.47474747474749,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2237.905077976195
+    },
+    {
+      "rate": 77.97979797979798,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2223.4143894330027
+    },
+    {
+      "rate": 78.25,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2551.166
+    },
+    {
+      "rate": 78.257825,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 10.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2322.18
+    },
+    {
+      "rate": 78.48484848484848,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 10.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2315.2551303566
+    },
+    {
+      "rate": 78.98989898989899,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 10.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2300.4549536537925
+    },
+    {
+      "rate": 79.4949494949495,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 10.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2285.8428351047696
+    },
+    {
+      "rate": 80.0,
+      "resources": [
+        {
+          "category": "cells",
+          "name": "First process Cell Workstation Count",
+          "type": "First process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "First process Cell Workstation Count // New Module",
+          "sign": "=",
+          "value": 9.0
+        },
+        {
+          "category": "cells",
+          "name": "Second Process Cell Workstation Count",
+          "type": "Second Process Cell",
+          "property": "Workstation Count",
+          "unit": "count",
+          "key": "Second Process Cell Workstation Count",
+          "sign": "=",
+          "value": 10.0
+        },
+        {
+          "category": "tools",
+          "name": "Tooling Count",
+          "type": "Tooling",
+          "property": "Count",
+          "unit": "count",
+          "key": "Tooling Count // New Module",
+          "sign": "=",
+          "value": 5.0
+        }
+      ],
+      "Total Unit Cost": 2271.415213002073
+    }
+  ]
+}

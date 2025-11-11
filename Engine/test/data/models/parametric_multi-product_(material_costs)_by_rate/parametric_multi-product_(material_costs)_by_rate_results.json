@@ -1,0 +1,2341 @@
+{
+  "resultsIndex": [
+    {
+      "name": "Multi-Product Cells",
+      "value": "cellResults"
+    },
+    {
+      "name": "Manufacturing Processes",
+      "value": "processResults"
+    },
+    {
+      "name": "Process Time Stack-Ups",
+      "value": "processStacks"
+    },
+    {
+      "name": "Line Summary",
+      "value": "lineSummary"
+    },
+    {
+      "name": "Flow Time Distribution",
+      "value": "pdfpoints"
+    },
+    {
+      "name": "Time in Cell Detail",
+      "value": "timeInCellDetail"
+    },
+    {
+      "name": "Time in Cell Decomposed",
+      "value": "timeInCellDecomp"
+    },
+    {
+      "name": "Variable Cost Components",
+      "value": "variableCosts"
+    },
+    {
+      "name": "Recurring Cost Components",
+      "value": "recurringCosts"
+    },
+    {
+      "name": "Product Summary",
+      "value": "productSummary"
+    },
+    {
+      "name": "Shared Tooling",
+      "value": "tooling"
+    },
+    {
+      "name": "Product Results",
+      "value": "productResults"
+    },
+    {
+      "name": "Capital Cost Components",
+      "value": "costComponents"
+    },
+    {
+      "name": "System Total Costs",
+      "value": "totalCost"
+    },
+    {
+      "name": "System Summary By Product",
+      "value": "summaryByProduct"
+    },
+    {
+      "name": "All Variables",
+      "value": "allVariables"
+    }
+  ],
+  "cellResults": [
+    {
+      "name": "First Process Cell",
+      "utilization": 0.993,
+      "numWorkstations": 254.618,
+      "queueingTime": 4.983,
+      "queueingTimeUnit": "minute",
+      "arrivalCV": 0.25,
+      "departureCV": 0.25,
+      "wip": 261.147,
+      "sensitivityTime": 0.00025,
+      "wipQueue": 8.397,
+      "wipStation": 252.75
+    },
+    {
+      "name": "Parametric Process Cell",
+      "utilization": 0.997,
+      "numWorkstations": 844.657,
+      "queueingTime": 14.454,
+      "queueingTimeUnit": "minute",
+      "arrivalCV": 0.25,
+      "departureCV": 0.25,
+      "wip": 866.855,
+      "sensitivityTime": 0.00215,
+      "wipQueue": 24.355,
+      "wipStation": 842.5
+    }
+  ],
+  "processResults": [
+    {
+      "type": "First Process",
+      "name": "First Process",
+      "processTime": 2.5,
+      "stdev": 0.625,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 150.0
+      },
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "type": "Parametric Process",
+      "name": "Parametric Process",
+      "processTime": 8.333,
+      "stdev": 2.083,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 500.00000000057935
+      },
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "type": "First Process",
+      "name": "First Process",
+      "processTime": 2.5,
+      "stdev": 0.625,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 150.0
+      },
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "type": "Parametric Process",
+      "name": "Parametric Process",
+      "processTime": 8.333,
+      "stdev": 2.083,
+      "unit": "hr",
+      "breakdown": {
+        "primary": 500.00000000057935
+      },
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "processStacks": [],
+  "lineSummary": [
+    {
+      "name": "Average Production Rate",
+      "value": 1.1,
+      "unit": "count/hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 11.157,
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 12.273,
+      "unit": "count",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Aggregate Production Rate",
+      "value": 1.1,
+      "unit": "count/hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Standard Deviation of Aggregate Production Rate",
+      "value": 0.275,
+      "unit": "count/hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Average Production Rate",
+      "value": 100.0,
+      "unit": "count/hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Average Mainline Total Flow Time",
+      "value": 11.157,
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Total Mainline WIP Inventory",
+      "value": 1115.728,
+      "unit": "count",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Aggregate Production Rate",
+      "value": 100.0,
+      "unit": "count/hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Standard Deviation of Aggregate Production Rate",
+      "value": 25.0,
+      "unit": "count/hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "pdfpoints": [
+    {
+      "time": 0.0,
+      "probability": 0.0,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.203,
+      "probability": 2.3349599655980908e-32,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.406,
+      "probability": 2.2274887692680893e-25,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.609,
+      "probability": 2.2339036870094946e-21,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.813,
+      "probability": 1.351887448833271e-18,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.016,
+      "probability": 1.7565821347079807e-16,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.219,
+      "probability": 8.625382959195363e-15,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.422,
+      "probability": 2.163931846240013e-13,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.625,
+      "probability": 3.320805243565262e-12,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.828,
+      "probability": 3.5011052404463684e-11,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.032,
+      "probability": 2.745113212990907e-10,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.235,
+      "probability": 1.693819814270188e-9,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.438,
+      "probability": 8.575493335809063e-9,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.641,
+      "probability": 3.677108563758601e-8,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.844,
+      "probability": 1.3687156539961868e-7,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.047,
+      "probability": 4.509879067473084e-7,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.25,
+      "probability": 1.336293914490649e-6,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.454,
+      "probability": 3.6067799445790627e-6,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.657,
+      "probability": 8.962985185638529e-6,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.86,
+      "probability": 2.0691096744978953e-5,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.063,
+      "probability": 4.470917971295557e-5,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.266,
+      "probability": 9.101138589674212e-5,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.469,
+      "probability": 0.00017550624691162284,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.673,
+      "probability": 0.0003221643051518615,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.876,
+      "probability": 0.00056529274618811,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.079,
+      "probability": 0.0009516567704756059,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.282,
+      "probability": 0.0015420898538206723,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.485,
+      "probability": 0.002412198423102113,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.688,
+      "probability": 0.0036517865974831283,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.891,
+      "probability": 0.00536271039296192,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.095,
+      "probability": 0.007655013854970481,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.298,
+      "probability": 0.010641386544856102,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.501,
+      "probability": 0.014430188486881993,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.704,
+      "probability": 0.01911748627260018,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.907,
+      "probability": 0.024778704013123525,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.11,
+      "probability": 0.03146059177001985,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.314,
+      "probability": 0.03917423723558219,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.517,
+      "probability": 0.047889789730722124,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.72,
+      "probability": 0.05753343583074743,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.923,
+      "probability": 0.06798697915445884,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.126,
+      "probability": 0.07909015551414461,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.329,
+      "probability": 0.09064558409643596,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.532,
+      "probability": 0.10242604038347042,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.736,
+      "probability": 0.11418355822578878,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.939,
+      "probability": 0.1256597420929213,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.142,
+      "probability": 0.13659660431253326,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.345,
+      "probability": 0.14674723721735672,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.548,
+      "probability": 0.15588568136810024,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.751,
+      "probability": 0.16381544829555286,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.955,
+      "probability": 0.17037628621640385,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.158,
+      "probability": 0.17544892528833728,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.361,
+      "probability": 0.17895769087174138,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.564,
+      "probability": 0.18087101632600533,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.767,
+      "probability": 0.1812000110731682,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.97,
+      "probability": 0.17999533811184382,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.173,
+      "probability": 0.17734272417805813,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.377,
+      "probability": 0.17335746462520482,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.58,
+      "probability": 0.16817829563946088,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.783,
+      "probability": 0.16196099232020753,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.986,
+      "probability": 0.15487201736651177,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.189,
+      "probability": 0.14708249714071242,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.392,
+      "probability": 0.1387627452797698,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.596,
+      "probability": 0.130077493933968,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.799,
+      "probability": 0.12118193354389155,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.002,
+      "probability": 0.11221860732043201,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.205,
+      "probability": 0.10331515878552243,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.408,
+      "probability": 0.09458289141876117,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.611,
+      "probability": 0.08611606932438358,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.814,
+      "probability": 0.07799186684316392,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.018,
+      "probability": 0.07027086257580104,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.221,
+      "probability": 0.06299796835009046,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.424,
+      "probability": 0.056203685001390724,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.627,
+      "probability": 0.04990558308704941,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.83,
+      "probability": 0.044109916468993024,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.033,
+      "probability": 0.038813288814305937,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.236,
+      "probability": 0.034004306369863097,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.44,
+      "probability": 0.029665163935553324,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.643,
+      "probability": 0.025773124058836167,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.846,
+      "probability": 0.022301861562288323,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.049,
+      "probability": 0.019222656235005974,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.252,
+      "probability": 0.01650542566434557,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.455,
+      "probability": 0.014119597682493464,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.659,
+      "probability": 0.012034827781105694,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.862,
+      "probability": 0.010221571210386577,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.065,
+      "probability": 0.008651522481095167,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.268,
+      "probability": 0.007297936813388033,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.471,
+      "probability": 0.006135848921897602,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.674,
+      "probability": 0.0051422045875409725,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.877,
+      "probability": 0.004295919927783141,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.081,
+      "probability": 0.003577882305197412,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.284,
+      "probability": 0.002970905554313695,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.487,
+      "probability": 0.0024596507807252903,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.69,
+      "probability": 0.002030522492757059,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.893,
+      "probability": 0.0016715483411884535,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.096,
+      "probability": 0.0013722493231493054,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.3,
+      "probability": 0.0011235059915673984,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.503,
+      "probability": 0.000917425026047782,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.706,
+      "probability": 0.0007472094775327563,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.909,
+      "probability": 0.000607035100993298,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 20.112,
+      "probability": 0.0004919344342532472,
+      "unit": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.0,
+      "probability": 0.0,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.203,
+      "probability": 2.3338668393542778e-32,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.406,
+      "probability": 2.226666259888258e-25,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.609,
+      "probability": 2.2332061477010034e-21,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 0.813,
+      "probability": 1.3515191890405691e-18,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.016,
+      "probability": 1.756157115813045e-16,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.219,
+      "probability": 8.62350730055189e-15,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.422,
+      "probability": 2.1635054178546777e-13,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.625,
+      "probability": 3.3202085965550032e-12,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 1.828,
+      "probability": 3.500529059672454e-11,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.032,
+      "probability": 2.7446979252195166e-10,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.235,
+      "probability": 1.693583597224161e-9,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.438,
+      "probability": 8.57438844496895e-9,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.641,
+      "probability": 3.676670095325369e-8,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 2.844,
+      "probability": 1.3685644010044818e-7,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.047,
+      "probability": 4.5094167282544236e-7,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.25,
+      "probability": 1.3361667317788075e-6,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.454,
+      "probability": 3.6064610884583033e-6,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.657,
+      "probability": 8.962248978478686e-6,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 3.86,
+      "probability": 2.0689517539403424e-5,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.063,
+      "probability": 4.47060093202344e-5,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.266,
+      "probability": 9.100539146343441e-5,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.469,
+      "probability": 0.00017549551494697657,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.673,
+      "probability": 0.000322146027503188,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 4.876,
+      "probability": 0.0005652630146485614,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.079,
+      "probability": 0.0009516104161031218,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.282,
+      "probability": 0.0015420203724476683,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.485,
+      "probability": 0.0024120980278054646,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.688,
+      "probability": 0.0036516464307903636,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 5.891,
+      "probability": 0.0053625209164505725,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.095,
+      "probability": 0.007654765413245084,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.298,
+      "probability": 0.010641070077432743,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.501,
+      "probability": 0.014429796338749148,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.704,
+      "probability": 0.019117013035716116,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 6.907,
+      "probability": 0.02477814731984788,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.11,
+      "probability": 0.0314599529573795,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.314,
+      "probability": 0.039173521806887504,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.517,
+      "probability": 0.047889007557493576,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.72,
+      "probability": 0.05753260106112438,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 7.923,
+      "probability": 0.06798610982127949,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.126,
+      "probability": 0.07908927286342349,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.329,
+      "probability": 0.09064471168193154,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.532,
+      "probability": 0.10242520299266882,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.736,
+      "probability": 0.11418278071529799,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 8.939,
+      "probability": 0.12565904821601773,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.142,
+      "probability": 0.136596015618653,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.345,
+      "probability": 0.14674677209359366,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.548,
+      "probability": 0.15588535427785086,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.751,
+      "probability": 0.16381526925123283,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 9.954,
+      "probability": 0.1703762605037367,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.158,
+      "probability": 0.17544905344080108,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.361,
+      "probability": 0.17895796887706353,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.564,
+      "probability": 0.18087143603317102,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.767,
+      "probability": 0.18120056075887947,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 10.97,
+      "probability": 0.17999600315998943,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.173,
+      "probability": 0.177343487824427,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.377,
+      "probability": 0.17335830872163782,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.58,
+      "probability": 0.1681792013965392,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.783,
+      "probability": 0.16196194099434671,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 11.986,
+      "probability": 0.1548729908652872,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.189,
+      "probability": 0.14708347852856882,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.392,
+      "probability": 0.13876371917434185,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.595,
+      "probability": 0.13007844679063185,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 12.799,
+      "probability": 0.12118285383231345,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.002,
+      "probability": 0.11221948560182653,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.205,
+      "probability": 0.10331598770288439,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.408,
+      "probability": 0.09458366561449424,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.611,
+      "probability": 0.08611678530079565,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 13.814,
+      "probability": 0.077992522781189,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.018,
+      "probability": 0.07027145812654631,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.221,
+      "probability": 0.06299850441227832,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.424,
+      "probability": 0.05620416349595651,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.627,
+      "probability": 0.04990600673811623,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 14.83,
+      "probability": 0.04411028859835035,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.033,
+      "probability": 0.038813613154507924,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.236,
+      "probability": 0.03400458689923915,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.44,
+      "probability": 0.029665404736831404,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.643,
+      "probability": 0.025773329201722667,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 15.846,
+      "probability": 0.022302035009311976,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.049,
+      "probability": 0.01922280176913207,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.252,
+      "probability": 0.016505546836318597,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.455,
+      "probability": 0.014119697775536899,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.659,
+      "probability": 0.012034909790453236,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 16.862,
+      "probability": 0.01022163783511932,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.065,
+      "probability": 0.008651576125852897,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.268,
+      "probability": 0.007297979597716773,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.471,
+      "probability": 0.006135882695221176,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.674,
+      "probability": 0.005142230948010373,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 17.877,
+      "probability": 0.00429594024352535,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.081,
+      "probability": 0.0035778977367508266,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.284,
+      "probability": 0.0029709170772854164,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.487,
+      "probability": 0.0024596592079301517,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.69,
+      "probability": 0.0020305284952962044,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 18.893,
+      "probability": 0.0016715524680960751,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.096,
+      "probability": 0.0013722520193751515,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.3,
+      "probability": 0.0011235076141782579,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.503,
+      "probability": 0.0009174258586185619,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.706,
+      "probability": 0.0007472097427663036,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 19.909,
+      "probability": 0.0006070349716551873,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "time": 20.112,
+      "probability": 0.0004919340425408818,
+      "unit": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "timeInCellDetail": [
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.083,
+      "Processing Time": 2.5,
+      "Productivity": 96.785,
+      "Cell Name": "First Process Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.241,
+      "Processing Time": 8.333,
+      "Productivity": 97.19,
+      "Cell Name": "Parametric Process Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.083,
+      "Processing Time": 2.5,
+      "Productivity": 96.785,
+      "Cell Name": "First Process Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Waiting for Next Cell": 0.0,
+      "Queueing Before Cell": 0.241,
+      "Processing Time": 8.333,
+      "Productivity": 97.19,
+      "Cell Name": "Parametric Process Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "timeInCellDecomp": [
+    {
+      "Cell Name": "First Process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "First Process Cell",
+      "time": 0.083,
+      "type": "Queueing Before Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "First Process Cell",
+      "time": 2.5,
+      "type": "Processing Time",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 0.241,
+      "type": "Queueing Before Cell",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 8.333,
+      "type": "Processing Time",
+      "unit": "hr",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "First Process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "First Process Cell",
+      "time": 0.083,
+      "type": "Queueing Before Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "First Process Cell",
+      "time": 2.5,
+      "type": "Processing Time",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 0.0,
+      "type": "Waiting for Next Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 0.241,
+      "type": "Queueing Before Cell",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    },
+    {
+      "Cell Name": "Parametric Process Cell",
+      "time": 8.333,
+      "type": "Processing Time",
+      "unit": "hr",
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "variableCosts": [
+    {
+      "name": "Material Cost",
+      "value": 5512.0,
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "name": "Material Cost",
+      "value": 5512.0,
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "productSummary": [
+    {
+      "Part Flow Time": 11.157,
+      "Part Flow Time Units": "hour",
+      "Aggregate Rate": 1.1,
+      "Aggregate Rate Units": "count/hour",
+      "Average Turnaround Time": 11.2,
+      "Average Turnaround Time Units": "hour",
+      "productName": "Heavy Part",
+      "kitSplit": 1
+    },
+    {
+      "Part Flow Time": 11.157,
+      "Part Flow Time Units": "hour",
+      "Aggregate Rate": 100.0,
+      "Aggregate Rate Units": "count/hour",
+      "Average Turnaround Time": 11.2,
+      "Average Turnaround Time Units": "hour",
+      "productName": "Light Part",
+      "kitSplit": 1
+    }
+  ],
+  "productResults": [
+    {
+      "name": "Heavy Part",
+      "hourlyRate": 1.1,
+      "rateSensitivity": 0.011
+    },
+    {
+      "name": "Light Part",
+      "hourlyRate": 100.0,
+      "rateSensitivity": 0.989
+    }
+  ],
+  "costComponents": [
+    {
+      "name": "First Process Cell",
+      "value": 2546176.0
+    },
+    {
+      "name": "Parametric Process Cell",
+      "value": 21116413.0
+    }
+  ],
+  "recurringCosts": [],
+  "totalCost": {
+    "Total Non-Recurring Cost": 23662589.0
+  },
+  "cashflows": [
+    {
+      "cashflow": 9775025534.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    },
+    {
+      "cashflow": 41511.0,
+      "output": 29487.0
+    }
+  ],
+  "summaryByProduct": {
+    "Heavy Part | Part Flow Time": 11.157,
+    "Heavy Part | Part Flow Time Units": "hour",
+    "Heavy Part | Aggregate Rate": 1.1,
+    "Heavy Part | Aggregate Rate Units": "count/hour",
+    "Heavy Part | Average Turnaround Time": 11.2,
+    "Heavy Part | Average Turnaround Time Units": "hour",
+    "Heavy Part | kitSplit": 1,
+    "Light Part | Part Flow Time": 11.157,
+    "Light Part | Part Flow Time Units": "hour",
+    "Light Part | Aggregate Rate": 100.0,
+    "Light Part | Aggregate Rate Units": "count/hour",
+    "Light Part | Average Turnaround Time": 11.2,
+    "Light Part | Average Turnaround Time Units": "hour",
+    "Light Part | kitSplit": 1
+  },
+  "allVariables": [
+    {
+      "name": "First Process Cell Queueing Time",
+      "value": 4.983,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First Process Cell Total Utilization",
+      "value": 0.993,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "First Process Cell Workstations",
+      "value": 254.618,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Heavy Part | Aggregate Production Rate",
+      "value": 1.1,
+      "unit": "count/hour",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Heavy Part | All Processes CV",
+      "value": 25.0,
+      "unit": "%",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 1e-5,
+      "marginalCost": 0.028,
+      "marginalCostUnit": "USD / 10.0 %"
+    },
+    {
+      "name": "Heavy Part | Average Mainline Total Flow Time",
+      "value": 669.42,
+      "unit": "minutes",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Heavy Part | Average Production Rate",
+      "value": 1.1,
+      "unit": "count/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.01088,
+      "marginalCost": 39.017,
+      "marginalCostUnit": "USD / count/hour"
+    },
+    {
+      "name": "Heavy Part | Average Turnaround Time",
+      "value": 672.0,
+      "unit": "minutes",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Heavy Part | First Process Cell Non-Recurring Cost",
+      "value": 10000.0,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00026,
+      "marginalCost": 0.014,
+      "marginalCostUnit": "USD / 100.0 USD"
+    },
+    {
+      "name": "Heavy Part | First Process Time",
+      "value": 150.0,
+      "unit": "minute",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00032,
+      "marginalCost": 0.012,
+      "marginalCostUnit": "USD / minute"
+    },
+    {
+      "name": "Heavy Part | Material Cost",
+      "value": 5511.557,
+      "unit": "$",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Heavy Part | Parametric Process Cell Non-Recurring Cost",
+      "value": 25000.0,
+      "unit": "$",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00216,
+      "marginalCost": 0.048,
+      "marginalCostUnit": "USD / 100.0 USD"
+    },
+    {
+      "name": "Heavy Part | Parametric Process Time",
+      "value": 500.0,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Heavy Part | Part Mass",
+      "value": 50.0,
+      "unit": "kilogram",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.99993,
+      "marginalCost": 110.519,
+      "marginalCostUnit": "USD / kilogram"
+    },
+    {
+      "name": "Heavy Part | Process Rate",
+      "value": 10.0,
+      "unit": "minute/kilogram",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.00235,
+      "marginalCost": 1.238,
+      "marginalCostUnit": "USD / minute/kilogram"
+    },
+    {
+      "name": "Heavy Part | Standard Deviation of Aggregate Production Rate",
+      "value": 0.275,
+      "unit": "count/hour",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Heavy Part | Total Mainline WIP Inventory",
+      "value": 12.273,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Heavy Part | material price",
+      "value": 50.0,
+      "unit": "$/pound",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.99758,
+      "marginalCost": 110.257,
+      "marginalCostUnit": "USD / $/pound"
+    },
+    {
+      "name": "Light Part | Aggregate Production Rate",
+      "value": 100.0,
+      "unit": "count/hour",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Light Part | Average Mainline Total Flow Time",
+      "value": 669.42,
+      "unit": "minutes",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Light Part | Average Production Rate",
+      "value": 100.0,
+      "unit": "count/hour",
+      "source": "From Assumption",
+      "tags": [],
+      "sensitivity": 0.98911,
+      "marginalCost": 54.659,
+      "marginalCostUnit": "USD / count/hour"
+    },
+    {
+      "name": "Light Part | Average Turnaround Time",
+      "value": 672.0,
+      "unit": "minutes",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Light Part | Standard Deviation of Aggregate Production Rate",
+      "value": 25.0,
+      "unit": "count/hour",
+      "sensitivity": 0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Light Part | Total Mainline WIP Inventory",
+      "value": 1115.728,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "category": [],
+      "name": "Line Total Headcount",
+      "sensitivity": 0.0,
+      "unit": "count",
+      "value": 0
+    },
+    {
+      "name": "Parametric Process Cell Queueing Time",
+      "value": 14.454,
+      "unit": "minute",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Parametric Process Cell Total Utilization",
+      "value": 0.997,
+      "unit": "",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Parametric Process Cell Workstations",
+      "value": 844.657,
+      "unit": "count",
+      "source": "Calculated Value",
+      "tags": []
+    },
+    {
+      "name": "Total Non-Recurring Cost",
+      "value": 23662589.0,
+      "unit": "$",
+      "sensitivity": 0.0,
+      "source": "Calculated Value",
+      "category": []
+    },
+    {
+      "name": "Heavy Part | Aggregate Production Rate",
+      "value": 1.1,
+      "unit": "count/hour",
+      "sensitivity": 0.0,
+      "source": "Calculated Value"
+    },
+    {
+      "name": "Light Part | Aggregate Production Rate",
+      "value": 100.0,
+      "unit": "count/hour",
+      "sensitivity": 0.0,
+      "source": "Calculated Value"
+    },
+    {
+      "name": "Average Unit Cost",
+      "value": 5526.339,
+      "unit": "$",
+      "sensitivity": 0.0,
+      "source": "Calculated Value"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+[style]
+based_on_style = pep8
+column_limit = 120
+indent_width = 4
+spaces_before_comment = 2
+split_before_expression_after_opening_paren = true
+split_before_first_argument = true
+split_before_dict_set_generator = false
+split_complex_comprehension = true
+dedent_closing_brackets = true
+coalesce_brackets = true
+allow_multiline_dictionary_keys = true
+split_before_closing_bracket = true
+allow_multiline_lambdas = true
+indent_closing_brackets = false
+split_before_logical_operator = true
+split_before_arithmetic_operator = true
+arithmetic_precedence_indication = false
+
+[filter]
+exclude = pavement.py

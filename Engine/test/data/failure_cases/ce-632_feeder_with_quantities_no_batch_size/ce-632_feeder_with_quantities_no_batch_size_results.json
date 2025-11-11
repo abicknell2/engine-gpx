@@ -1,0 +1,5 @@
+{
+  "errors": [
+    "Quantity for Feeder Line ID 'Feeder' is in `1 kilogram`, but one or more cell rates use incompatible units. Set the batch size for the associated cells to compatible units (e.g. `1 kilogram`)"
+  ]
+}

@@ -1,0 +1,43 @@
+# Jupyter noteboks
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# vim
+*.swp
+
+# ignore logs
+logs/
+
+.venv*
+.mypy_cache
+.mypy_current.txt
+.flake8_current.txt
+node_modules
+package-lock.json
+
+.coverage
+.coveragerc
+htmlcov
+htmlcov
+
+ad-1.3.2-py3-none-any.whl
+gpx-zipped.tar.gz
+logs
+setuptools-80.8.0-py3-none-any.whl
+report.json
+test/data/json_data
+<<<<<<< HEAD
+tmp
+**/Zone.Identifier
+**/*:Zone.Identifier
+**/Zone.Identifier*
+**/*:Zone.Identifier*
+=======
+:Zone.Identifier
+tmp
+Zone.Identifier
+.json:Zone.Identifier
+>>>>>>> 669-model-infeasible-when-using-rate-based-variant-splits-v2

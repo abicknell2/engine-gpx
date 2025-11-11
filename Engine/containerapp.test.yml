@@ -1,0 +1,30 @@
+properties:
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8080
+    registries:
+      - server: lltest.azurecr.io
+        identity: system
+  template:
+    revisionSuffix: <RevisionSuffix> 
+    containers:
+      - name: main
+        image: lltest.azurecr.io/test-solve-engine:<TAG>
+        resources:
+          cpu: 2.0
+          memory: 4.0Gi
+        env:
+          - name: COP_EXTERN_LOGIN
+            value: "1"
+  scale:
+    minReplicas: 1
+    maxReplicas: 10
+    rules:
+      - name: http-scaling
+        custom:
+          type: http
+          metadata:
+            concurrentRequests: "1"
+  identity:
+    type: SystemAssigned

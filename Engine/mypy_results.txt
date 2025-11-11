@@ -1,0 +1,485 @@
+api/acyclic_interpreter.py: note: In function "make_parametric_constraint":
+api/acyclic_interpreter.py:91:29: error: Incompatible types in assignment (expression has type "float", variable has type "str")  [assignment]
+api/translation.py: note: In function "param_to_var":
+api/translation.py:47:5: error: Property "gpxObject" defined in "Parameter" is read-only  [misc]
+utils/types/data.py: note: In function "__repr__":
+utils/types/data.py:245:9: error: Function is missing a type annotation  [no-untyped-def]
+utils/types/shared.py:54:11: error: "list" expects 1 type argument, but 2 given  [type-arg]
+utils/types/shared.py:55:55: error: "list" expects 1 type argument, but 2 given  [type-arg]
+utils/types/shared.py:56:57: error: "list" expects 1 type argument, but 2 given  [type-arg]
+utils/types/shared.py:57:35: error: "list" expects 1 type argument, but 2 given  [type-arg]
+utils/types/shared.py:58:35: error: "list" expects 1 type argument, but 2 given  [type-arg]
+utils/types/shared.py:60:65: error: "list" expects 1 type argument, but 2 given  [type-arg]
+api/uncertainty_generator.py: note: In function "gen_uvars":
+api/uncertainty_generator.py:317:22: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive/solve_strategies.py: note: In member "solve" of class "_ContextLike":
+api/interactive/solve_strategies.py:10:5: error: Function is missing a return type annotation  [no-untyped-def]
+api/interactive/solve_strategies.py: note: In member "solve" of class "SolveStrategy":
+api/interactive/solve_strategies.py:25:5: error: Function is missing a return type annotation  [no-untyped-def]
+api/interactive/solve_strategies.py: note: In member "solve" of class "BasicSolveStrategy":
+api/interactive/solve_strategies.py:38:5: error: Function is missing a return type annotation  [no-untyped-def]
+api/interactive/solve_strategies.py: note: In member "solve" of class "TradeSweepStrategy":
+api/interactive/solve_strategies.py:54:5: error: Function is missing a return type annotation  [no-untyped-def]
+api/interactive/gpx_builder.py: note: In member "build" of class "GpxModelBuilder":
+api/interactive/gpx_builder.py:23:9: error: "InteractiveModel" has no attribute "gpx_constraints"  [attr-defined]
+api/interactive/gpx_builder.py:24:9: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+api/interactive/gpx_builder.py:64:21: error: "InteractiveModel" has no attribute "gpx_constraints"  [attr-defined]
+api/interactive/gpx_builder.py:65:21: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+api/interactive/gpx_builder.py:69:43: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+api/interactive/gpx_builder.py:95:26: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+utils/result_gens_helpers.py:248:1: error: Name "combine_results" already defined on line 89  [no-redef]
+utils/result_gens_helpers.py: note: In function "combine_results":
+utils/result_gens_helpers.py:277:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, float | str | floating[_16Bit] | int | costResult]]"  [arg-type]
+utils/result_gens_helpers.py:277:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, float | float64 | int | str]]"  [arg-type]
+utils/result_gens_helpers.py:277:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, dict[str, AcceptedTypes] | str | int]]"  [arg-type]
+utils/result_gens_helpers.py:281:50: error: Argument 1 to "append" of "list" has incompatible type "dict[str, float | float64 | int | str]"; expected "dict[str, float | str | floating[_16Bit] | int | costResult]"  [arg-type]
+utils/result_gens_helpers.py:281:50: note: "Dict" is invariant -- see https://mypy.readthedocs.io/en/stable/common_issues.html#variance
+utils/result_gens_helpers.py:281:50: note: Consider using "Mapping" instead, which is covariant in the value type
+utils/result_gens_helpers.py:281:50: error: Argument 1 to "append" of "list" has incompatible type "dict[str, float | float64 | int | str]"; expected "dict[str, dict[str, AcceptedTypes] | str | int]"  [arg-type]
+utils/result_gens_helpers.py:284:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, float | str | floating[_16Bit] | int | costResult]]"  [arg-type]
+utils/result_gens_helpers.py:284:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, float | float64 | int | str]]"  [arg-type]
+utils/result_gens_helpers.py:284:50: error: Argument 1 to "extend" of "list" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | list[Any] | list[dict[str, float | float64 | int | str]] | list[dict[str, dict[str, AcceptedTypes] | str | int]]"; expected "Iterable[dict[str, dict[str, AcceptedTypes] | str | int]]"  [arg-type]
+utils/result_gens_helpers.py:288:50: error: Argument 1 to "append" of "list" has incompatible type "dict[str, float | float64 | int | str]"; expected "dict[str, float | str | floating[_16Bit] | int | costResult]"  [arg-type]
+utils/result_gens_helpers.py:288:50: note: "Dict" is invariant -- see https://mypy.readthedocs.io/en/stable/common_issues.html#variance
+utils/result_gens_helpers.py:288:50: note: Consider using "Mapping" instead, which is covariant in the value type
+utils/result_gens_helpers.py:288:50: error: Argument 1 to "append" of "list" has incompatible type "dict[str, float | float64 | int | str]"; expected "dict[str, dict[str, AcceptedTypes] | str | int]"  [arg-type]
+utils/result_gens_helpers.py: note: In function "obj_from_var":
+utils/result_gens_helpers.py:347:36: error: Argument 1 to "float64" has incompatible type "Number"; expected "SupportsFloat | SupportsIndex | str | bytes | None"  [arg-type]
+utils/result_gens_helpers.py: note: In function "process_varcosts":
+utils/result_gens_helpers.py:368:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:368:51: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "process_labcosts":
+utils/result_gens_helpers.py:387:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:387:51: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py: note: In function "process_invholdcost":
+utils/result_gens_helpers.py:406:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:406:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "process_recurcosts":
+utils/result_gens_helpers.py:423:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:423:56: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "process_cell_costs":
+utils/result_gens_helpers.py:442:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:442:55: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "process_fs_cost":
+utils/result_gens_helpers.py:462:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:462:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "process_nr_cell_costs":
+utils/result_gens_helpers.py:479:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "process_nr_results_dict":
+utils/result_gens_helpers.py:517:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:518:32: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_cost_breakout_list":
+utils/result_gens_helpers.py:535:1: error: Function is missing a return type annotation  [no-untyped-def]
+utils/result_gens_helpers.py:535:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "build_labor_cost_entries":
+utils/result_gens_helpers.py:551:59: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:551:73: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "collect_labor_cost_vars":
+utils/result_gens_helpers.py:566:39: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:566:48: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "sort_labor_entries":
+utils/result_gens_helpers.py:578:38: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_cell_totals":
+utils/result_gens_helpers.py:585:54: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:585:79: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_cell_auxiliary":
+utils/result_gens_helpers.py:601:39: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_system_totals":
+utils/result_gens_helpers.py:622:40: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_system_auxiliary":
+utils/result_gens_helpers.py:636:11: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_qna_wip":
+utils/result_gens_helpers.py:660:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:660:46: error: Missing type parameters for generic type "tuple"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_qna_cell_result_dict":
+utils/result_gens_helpers.py:680:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:682:6: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_qna_collect_vars":
+utils/result_gens_helpers.py:721:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:721:49: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_accumulated_flow":
+utils/result_gens_helpers.py:734:49: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_mcell_wip":
+utils/result_gens_helpers.py:748:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:748:28: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_mcell_cell_result_dict":
+utils/result_gens_helpers.py:757:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:758:10: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:759:6: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_mcell_collect_vars":
+utils/result_gens_helpers.py:790:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:790:49: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_product_summary":
+utils/result_gens_helpers.py:801:66: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "flatten_product_summaries":
+utils/result_gens_helpers.py:816:69: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:833:39: error: Invalid index type "int" for "dict[str, float | str]"; expected type "str"  [index]
+utils/result_gens_helpers.py:833:39: error: Invalid index type "int" for "dict[str, AcceptedTypes]"; expected type "str"  [index]
+utils/result_gens_helpers.py: note: In function "build_tooling_result":
+utils/result_gens_helpers.py:861:87: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_tooling_collect":
+utils/result_gens_helpers.py:877:70: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_tooling_aux":
+utils/result_gens_helpers.py:889:84: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "process_total_cost":
+utils/result_gens_helpers.py:904:70: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_mcclass_result_dict":
+utils/result_gens_helpers.py:928:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:928:103: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_mcclass_collect_vars":
+utils/result_gens_helpers.py:960:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:960:51: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_offshift_points":
+utils/result_gens_helpers.py:971:104: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_offshift_collect":
+utils/result_gens_helpers.py:1016:61: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_process_result_entry":
+utils/result_gens_helpers.py:1025:6: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_process_collect":
+utils/result_gens_helpers.py:1062:74: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_line_summary":
+utils/result_gens_helpers.py:1070:15: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1071:6: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1076:5: error: Need type annotation for "summary" (hint: "summary: list[<type>] = ...")  [var-annotated]
+utils/result_gens_helpers.py: note: In function "compute_flow_time":
+utils/result_gens_helpers.py:1083:33: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1092:21: error: "dict[Any, Any]" not callable  [operator]
+utils/result_gens_helpers.py: note: In function "compute_flow_distribution":
+utils/result_gens_helpers.py:1101:41: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1102:61: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1102:67: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py: note: In function "assign_flow_distribution":
+utils/result_gens_helpers.py:1117:37: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1117:55: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_floor_space_summary":
+utils/result_gens_helpers.py:1167:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+utils/result_gens_helpers.py:1167:85: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "update_cellresults_with_floor_space":
+utils/result_gens_helpers.py:1181:43: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_tool_utilization":
+utils/result_gens_helpers.py:1195:1: error: Function is missing a type annotation  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "build_tool_result_entry":
+utils/result_gens_helpers.py:1208:1: error: Function is missing a type annotation  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "build_tool_aux_entry":
+utils/result_gens_helpers.py:1225:1: error: Function is missing a type annotation  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "update_tool_collect":
+utils/result_gens_helpers.py:1240:1: error: Function is missing a type annotation  [no-untyped-def]
+utils/result_gens_helpers.py: note: In function "get_process_location":
+utils/result_gens_helpers.py:1250:40: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1250:73: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "get_feeders_feed_locs":
+utils/result_gens_helpers.py:1263:41: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1263:50: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_feeder_downstreams":
+utils/result_gens_helpers.py:1272:47: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "compute_feeder_flows":
+utils/result_gens_helpers.py:1296:34: error: Function "builtins.any" is not valid as a type  [valid-type]
+utils/result_gens_helpers.py:1296:34: note: Perhaps you meant "typing.Any" instead of "any"?
+utils/result_gens_helpers.py:1296:57: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1296:77: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1296:86: error: Missing type parameters for generic type "tuple"  [type-arg]
+utils/result_gens_helpers.py:1322:23: error: any? not callable  [misc]
+utils/result_gens_helpers.py:1327:21: error: No overload variant of "int" matches argument type "Number"  [call-overload]
+utils/result_gens_helpers.py:1327:21: note: Possible overload variants:
+utils/result_gens_helpers.py:1327:21: note:     def __new__(cls, str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+utils/result_gens_helpers.py:1327:21: note:     def __new__(cls, str | bytes | bytearray, /, base: SupportsIndex) -> int
+utils/result_gens_helpers.py:1329:21: error: any? not callable  [misc]
+utils/result_gens_helpers.py:1331:9: error: Need type annotation for "ds_qty" (hint: "ds_qty: list[<type>] = ...")  [var-annotated]
+utils/result_gens_helpers.py:1336:27: error: any? not callable  [misc]
+utils/result_gens_helpers.py: note: In function "compute_local_offsets":
+utils/result_gens_helpers.py:1344:13: error: Function "builtins.any" is not valid as a type  [valid-type]
+utils/result_gens_helpers.py:1344:13: note: Perhaps you meant "typing.Any" instead of "any"?
+utils/result_gens_helpers.py:1344:32: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1344:53: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1345:22: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1345:114: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1346:6: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1364:32: error: any? not callable  [misc]
+utils/result_gens_helpers.py:1376:32: error: any? not callable  [misc]
+utils/result_gens_helpers.py:1381:27: error: any? not callable  [misc]
+utils/result_gens_helpers.py: note: In function "compute_total_offsets":
+utils/result_gens_helpers.py:1389:46: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py: note: In function "build_feeder_line_results":
+utils/result_gens_helpers.py:1402:19: error: Missing type parameters for generic type "list"  [type-arg]
+utils/result_gens_helpers.py:1402:37: error: Missing type parameters for generic type "dict"  [type-arg]
+utils/result_gens_helpers.py:1403:6: error: Missing type parameters for generic type "list"  [type-arg]
+utils/interactive_helpers.py: note: In function "_currency_convert":
+utils/interactive_helpers.py:27:5: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+utils/interactive_helpers.py:28:25: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+utils/interactive_helpers.py: note: In function "_convert_units_for_display":
+utils/interactive_helpers.py:36:12: error: Incompatible return value type (got "str | int | float | ProductionFinance | Any | tuple[AcceptedTypes] | list[AcceptedTypes] | dict[str, AcceptedTypes] | None", expected "dict[str, AcceptedTypes]")  [return-value]
+utils/interactive_helpers.py:36:38: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+utils/interactive_helpers.py: note: In function "sanitise_solution":
+utils/interactive_helpers.py:40:5: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+utils/interactive_helpers.py:41:5: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+utils/interactive_helpers.py:42:12: error: "dict[str, AcceptedTypes]" has no attribute "solutions"  [attr-defined]
+api/result_generators/celltimes.py: note: In member "update_cellresults" of class "CellTimes":
+api/result_generators/celltimes.py:133:34: error: Value expression in dictionary comprehension has incompatible type "dict[str, float | str | floating[_16Bit] | int | costResult] | dict[Any, Any] | dict[str, float | float64 | int | str] | dict[str, dict[str, AcceptedTypes] | str | int]"; expected type "dict[str, float | float64 | str]"  [misc]
+api/module_types/module_type.py: note: In member "make_gpx_vars" of class "ModuleType":
+api/module_types/module_type.py:192:13: error: "Parameter" has no attribute "gpx_varkey"  [attr-defined]
+api/module_types/module_type.py: note: In member "get_acyclic_constraints" of class "ModuleType":
+api/module_types/module_type.py:271:41: error: Argument "inputconstraint" to "make_parametric_constraint" has incompatible type "dict[str, int | str | float | bool | float64]"; expected "dict[str, bool | int | list[str] | str]"  [arg-type]
+api/module_types/module_type.py:274:39: error: Argument "substitutions" to "make_parametric_constraint" has incompatible type "dict[str, tuple[AcceptedTypes, AcceptedTypes]] | None"; expected "dict[str, tuple[float, str]]"  [arg-type]
+api/module_translation.py: note: In function "manufacturing_module":
+api/module_translation.py:169:29: error: No overload variant of "__getitem__" of "list" matches argument type "str"  [call-overload]
+api/module_translation.py:169:29: note: Possible overload variants:
+api/module_translation.py:169:29: note:     def __getitem__(self, SupportsIndex, /) -> dict[str, str]
+api/module_translation.py:169:29: note:     def __getitem__(self, slice[Any, Any, Any], /) -> list[dict[str, str]]
+api/module_translation.py:187:66: error: Argument 3 to "create_offshifts" has incompatible type "list[dict[str, int | str]]"; expected "list[dict[str, str]]"  [arg-type]
+api/module_translation.py:208:14: error: Argument 1 to <set> has incompatible type "*list[str | int | float | ProductionFinance | Any | tuple[AcceptedTypes] | list[AcceptedTypes] | dict[str, AcceptedTypes] | None]"; expected "str"  [arg-type]
+api/module_translation.py:235:14: error: Argument 1 to <set> has incompatible type "*list[str | int | float | ProductionFinance | Any | tuple[AcceptedTypes] | list[AcceptedTypes] | dict[str, AcceptedTypes] | None]"; expected "str"  [arg-type]
+api/module_translation.py:242:30: error: Incompatible types in assignment (expression has type "dict[str, list[dict[str, str]]]", variable has type "dict[str, list[str]]")  [assignment]
+api/module_translation.py:242:54: error: Argument 1 to "group_processes_by_cell" has incompatible type "list[dict[str, AcceptedTypes]]"; expected "list[dict[str, str]]"  [arg-type]
+api/module_translation.py:249:38: error: Invalid index type "str" for "str"; expected type "SupportsIndex | slice[Any, Any, Any]"  [index]
+api/module_translation.py:300:30: error: Incompatible types in assignment (expression has type "AcceptedTypes", variable has type "str")  [assignment]
+api/module_translation.py:365:81: error: Argument 3 to "create_offshifts" has incompatible type "list[dict[str, int | str]]"; expected "list[dict[str, str]]"  [arg-type]
+api/module_translation.py:376:82: error: Argument 1 to "get_cell_id_of_process" of "Manufacturing" has incompatible type "str | int | float | bool | ProductionFinance | <8 more items> | None"; expected "str"  [arg-type]
+api/module_translation.py:403:34: error: Invalid index type "str | int | float | bool | ProductionFinance | <8 more items> | None" for "dict[str, Any]"; expected type "str"  [index]
+api/module_translation.py:434:34: error: Invalid index type "str | int | float | bool | ProductionFinance | <8 more items> | None" for "dict[str, Any]"; expected type "str"  [index]
+api/module_translation.py:504:33: error: Argument "filter_property" to "find_gpx_variable" of "ModuleType" has incompatible type "str | int | float | ProductionFinance | Any | tuple[AcceptedTypes] | list[AcceptedTypes] | dict[str, AcceptedTypes] | None"; expected "str | list[str] | None"  [arg-type]
+api/module_translation.py: note: In function "old_add_parallel_capacity":
+api/module_translation.py:1319:41: error: Incompatible types in assignment (expression has type "tuple[float | None, str]", target has type "tuple[float, str]")  [assignment]
+api/result_generators/product_summary.py: note: In member "update_summary" of class "ProductSummary":
+api/result_generators/product_summary.py:37:36: error: Invalid index type "int" for "dict[str, float | str]"; expected type "str"  [index]
+api/result_generators/product_summary.py:37:36: error: Invalid index type "int" for "dict[str, AcceptedTypes]"; expected type "str"  [index]
+api/result_generators/process_results.py: note: In member "__init__" of class "ProcessResults":
+api/result_generators/process_results.py:29:9: error: Need type annotation for "stacks" (hint: "stacks: list[<type>] = ...")  [var-annotated]
+api/result_generators/non_recurring_cost_results.py: note: In member "__init__" of class "NRCostResults":
+api/result_generators/non_recurring_cost_results.py:25:17: error: Name "Manufacturing" is not defined  [name-defined]
+api/result_generators/non_recurring_cost_results.py:26:31: error: Name "CellResults" is not defined  [name-defined]
+api/result_generators/mc_class_results.py: note: In member "__init__" of class "MCClassResults":
+api/result_generators/mc_class_results.py:34:23: error: Missing type parameters for generic type "dict"  [type-arg]
+api/result_generators/m_cell_results.py: note: In member "__init__" of class "MCellResults":
+api/result_generators/m_cell_results.py:28:23: error: Missing type parameters for generic type "dict"  [type-arg]
+api/result_generators/labor_costs.py: note: In member "__init__" of class "LaborCost":
+api/result_generators/labor_costs.py:26:45: error: Incompatible default for argument "cellresults" (default has type "None", argument has type "list[dict[str, float | float64 | int | str]]")  [assignment]
+api/result_generators/labor_costs.py:26:45: note: PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True
+api/result_generators/labor_costs.py:26:45: note: Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase
+api/result_generators/labor_costs.py:46:65: error: Argument 1 to "sort_labor_entries" has incompatible type "list[dict[str, float | str | floating[_16Bit] | int | costResult]] | Any | list[dict[str, float | float64 | int | str]] | dict[str, float | str] | list[dict[str, dict[str, AcceptedTypes] | str | int]] | dict[str, AcceptedTypes]"; expected "list[dict[Any, Any]]"  [arg-type]
+api/result_generators/labor_costs.py: note: In member "update_cell_results" of class "LaborCost":
+api/result_generators/labor_costs.py:77:18: error: "list[dict[str, float | float64 | int | str]]" has no attribute "cell_results"  [attr-defined]
+api/module_types/production_finance.py: note: In member "__init__" of class "ProductionFinance":
+api/module_types/production_finance.py:64:41: error: Name "AssemblySystem" is not defined  [name-defined]
+api/module_types/production_finance.py:64:89: error: Name "Design" is not defined  [name-defined]
+api/result_generators/total_cost_results.py: note: In member "__init__" of class "TotalCostResults":
+api/result_generators/total_cost_results.py:117:17: error: Dict entry 1 has incompatible type "str": "float"; expected "str": "dict[str, AcceptedTypes] | str | int"  [dict-item]
+api/result_generators/total_cost_results.py:126:21: error: Dict entry 1 has incompatible type "str": "float"; expected "str": "dict[str, AcceptedTypes] | str | int"  [dict-item]
+api/result_generators/total_cost_results.py:133:17: error: Dict entry 1 has incompatible type "str": "float"; expected "str": "dict[str, AcceptedTypes] | str | int"  [dict-item]
+api/module_types/design.py: note: In member "__init__" of class "Design":
+api/module_types/design.py:28:5: error: Function is missing a type annotation  [no-untyped-def]
+api/module_types/design.py: note: In member "_dicttoobject" of class "Design":
+api/module_types/design.py:34:5: error: Function is missing a type annotation  [no-untyped-def]
+api/module_types/design.py: note: In member "gpx_dynamic_constraints" of class "Design":
+api/module_types/design.py:44:5: error: Function is missing a type annotation  [no-untyped-def]
+api/module_types/design.py: note: In member "gpx_constraints" of class "Design":
+api/module_types/design.py:47:5: error: Function is missing a type annotation  [no-untyped-def]
+api/context/solution_context.py: note: In member "get_gpx_model" of class "SolutionContext":
+api/context/solution_context.py:61:15: error: "InteractiveModel" has no attribute "gpx_constraints"  [attr-defined]
+api/context/solution_context.py: note: In member "update_substitutions" of class "SolutionContext":
+api/context/solution_context.py:82:9: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+api/context/solution_context.py: note: In member "make_solutions" of class "SolutionContext":
+api/context/solution_context.py:124:9: error: Need type annotation for "result_gens" (hint: "result_gens: list[<type>] = ...")  [var-annotated]
+api/context/solution_context.py:148:32: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/solution_context.py:165:24: error: Missing type parameters for generic type "dict"  [type-arg]
+api/module_types/manufacturing.py: note: In member "gpx_constraints" of class "Manufacturing":
+api/module_types/manufacturing.py:238:13: error: Argument 2 to "build_constraint_set" has incompatible type "list[dict[str, int | str | float | bool | float64]]"; expected "list[dict[str, int | str]]"  [arg-type]
+api/module_types/manufacturing.py: note: In member "get_results" of class "Manufacturing":
+api/module_types/manufacturing.py:510:106: error: Argument "cellresults" to "LaborCost" has incompatible type "CellResults"; expected "list[dict[str, float | float64 | int | str]]"  [arg-type]
+api/module_types/manufacturing.py:518:17: error: Key expression in dictionary comprehension has incompatible type "dict[str, int | str]"; expected type "str"  [misc]
+api/context/uncertain.py: note: In member "make_solutions" of class "Uncertain":
+api/context/uncertain.py:197:58: error: Invalid index type "str | Any | int | float | ProductionFinance | tuple[AcceptedTypes] | list[AcceptedTypes] | dict[str, AcceptedTypes]" for "dict[str, Any]"; expected type "str"  [index]
+api/context/uncertain.py:202:39: error: Argument 1 to "float64" has incompatible type "float | str | list[float] | list[dict[str, float]]"; expected "SupportsFloat | SupportsIndex | str | bytes | None"  [arg-type]
+api/context/uncertain.py:280:47: error: Argument 1 to "update" of "MutableMapping" has incompatible type "list[dict[str, float64]] | dict[str, list[dict[str, float64]] | dict[str, float64]]"; expected "SupportsKeysAndGetItem[str, Any]"  [arg-type]
+api/context/uncertain.py:309:34: error: No overload variant of "__getitem__" of "list" matches argument type "str"  [call-overload]
+api/context/uncertain.py:309:34: note: Possible overload variants:
+api/context/uncertain.py:309:34: note:     def __getitem__(self, SupportsIndex, /) -> dict[str, float64]
+api/context/uncertain.py:309:34: note:     def __getitem__(self, slice[Any, Any, Any], /) -> list[dict[str, float64]]
+api/context/min_unit_cost.py: note: In member "get_cost" of class "MinUnitCost":
+api/context/min_unit_cost.py:16:16: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/min_unit_cost.py: note: In member "get_substitutions" of class "MinUnitCost":
+api/context/min_unit_cost.py:24:21: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/min_unit_cost.py:25:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/min_unit_cost.py: note: In member "get_disc_target_var" of class "MinUnitCost":
+api/context/min_unit_cost.py:81:16: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/ramp.py: note: In member "ramp_initialize" of class "rampContext":
+api/context/ramp.py:94:54: error: Argument 1 to "build_uikey_gpx_map" has incompatible type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules"; expected "dict[str, object]"  [arg-type]
+api/context/ramp.py: note: In member "_finance_module" of class "rampContext":
+api/context/ramp.py:131:40: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/ramp.py: note: In member "_mfg_module" of class "rampContext":
+api/context/ramp.py:136:36: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/ramp.py: note: In member "_get_ratevarkey" of class "rampContext":
+api/context/ramp.py:314:12: error: Unsupported right operand type for in ("dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules")  [operator]
+api/context/ramp.py:315:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/ramp.py: note: In member "_get_finmod" of class "rampContext":
+api/context/ramp.py:324:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/context/ramp.py:324:20: error: Incompatible return value type (got "Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem | Any", expected "ProductionFinance | Manufacturing")  [return-value]
+api/context/ramp.py: note: In member "make_solutions" of class "rampContext":
+api/context/ramp.py:430:20: error: Name "np.NDArray" is not defined  [name-defined]
+api/context/ramp.py:508:33: error: Argument 1 to "linspace" has incompatible type "float | None"; expected "_SupportsArray[dtype[numpy.bool[builtins.bool]] | dtype[integer[Any]] | dtype[floating[Any]]] | _NestedSequence[_SupportsArray[dtype[numpy.bool[builtins.bool]] | dtype[integer[Any]] | dtype[floating[Any]]]] | builtins.bool | int | float | _NestedSequence[builtins.bool | int | float]"  [arg-type]
+api/context/ramp.py:546:38: error: Incompatible types in assignment (expression has type "list[dict[Hashable, Any]]", variable has type "dict[str, Any]")  [assignment]
+api/context/ramp.py:547:16: error: Incompatible return value type (got "list[dict[Hashable, Any]]", expected "dict[str, Any]")  [return-value]
+api/context/ramp.py: note: In member "_get_solution_points" of class "rampContext":
+api/context/ramp.py:592:23: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/factories/context_factory.py: note: In function "make_context":
+api/factories/context_factory.py:7:1: error: Function is missing a return type annotation  [no-untyped-def]
+api/factories/context_factory.py:9:28: error: Argument 1 to "MinUnitCost" has incompatible type "str | int | float | bool | ProductionFinance | <8 more items> | None"; expected "InteractiveModel"  [arg-type]
+api/factories/context_factory.py:11:26: error: Argument 1 to "Uncertain" has incompatible type "str | int | float | bool | ProductionFinance | <8 more items> | None"; expected "InteractiveModel"  [arg-type]
+api/factories/context_factory.py:13:28: error: Argument 1 to "rampContext" has incompatible type "str | int | float | bool | ProductionFinance | <8 more items> | None"; expected "InteractiveModel"  [arg-type]
+api/factories/context_factory.py:14:24: error: Argument 1 to "MinUnitCost" has incompatible type "str | int | float | bool | ProductionFinance | <8 more items> | None"; expected "InteractiveModel"  [arg-type]
+api/interactive/model.py: note: In member "_trade_sweep" of class "InteractiveModel":
+api/interactive/model.py:299:21: error: Value of type "None" is not indexable  [index]
+api/interactive/model.py: note: In member "create_results" of class "InteractiveModel":
+api/interactive/model.py:352:44: error: Argument 1 to "sanitise_solution" has incompatible type "InteractiveModel"; expected "dict[str, AcceptedTypes]"  [arg-type]
+api/assembly.py: note: In member "__init__" of class "AssemblySystem":
+api/assembly.py:42:5: error: Function is missing a type annotation  [no-untyped-def]
+api/assembly.py: note: In member "_dicttoobject" of class "AssemblySystem":
+api/assembly.py:100:5: error: Function is missing a type annotation  [no-untyped-def]
+api/assembly.py: note: In member "gpx_translate" of class "AssemblySystem":
+api/assembly.py:104:5: error: Function is missing a return type annotation  [no-untyped-def]
+api/assembly.py:104:5: note: Use "-> None" if function does not return a value
+api/assembly.py: note: In member "make_gpx_vars" of class "AssemblySystem":
+api/assembly.py:125:5: error: Signature of "make_gpx_vars" incompatible with supertype "ModuleType"  [override]
+api/assembly.py:125:5: note:      Superclass:
+api/assembly.py:125:5: note:          def make_gpx_vars(self, bykey: bool = ..., byname: bool = ..., **kwargs: AcceptedTypes) -> None
+api/assembly.py:125:5: note:      Subclass:
+api/assembly.py:125:5: note:          def make_gpx_vars(self) -> None
+api/assembly.py: note: In member "gpx_constraints" of class "AssemblySystem":
+api/assembly.py:133:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py: note: In member "_update_mfg_link" of class "AssemblySystem":
+api/assembly.py:149:9: error: "ModuleType" has no attribute "assembly_module"  [attr-defined]
+api/assembly.py: note: In member "get_variable_cost" of class "AssemblySystem":
+api/assembly.py:152:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:157:20: error: Incompatible return value type (got "dict[str, Any]", expected "list[Any]")  [return-value]
+api/assembly.py: note: In member "get_separated_costs" of class "AssemblySystem":
+api/assembly.py:161:5: error: Function is missing a type annotation  [no-untyped-def]
+api/assembly.py: note: In member "get_results" of class "AssemblySystem":
+api/assembly.py:187:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:187:5: error: Signature of "get_results" incompatible with supertype "ModuleType"  [override]
+api/assembly.py:187:5: note:      Superclass:
+api/assembly.py:187:5: note:          def get_results(self, sol: Any, suppressres_override: bool = ..., **kwargs: dict[str, AcceptedTypes]) -> list[ResultGenerator]
+api/assembly.py:187:5: note:      Subclass:
+api/assembly.py:187:5: note:          def get_results(self, sol: Any) -> list[ResultGenerator]
+api/assembly.py: note: In member "get_hierarchy" of class "AssemblySystem":
+api/assembly.py:192:32: error: Missing type parameters for generic type "Dict"  [type-arg]
+api/assembly.py: note: In member "__init__" of class "AssemblyComponent":
+api/assembly.py:204:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:205:9: error: Need type annotation for "source" (hint: "source: dict[<type>, <type>] = ...")  [var-annotated]
+api/assembly.py: note: In member "_dicttoobject" of class "AssemblyComponent":
+api/assembly.py:254:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py: note: In member "make_gpx_vars" of class "AssemblyComponent":
+api/assembly.py:258:5: error: Signature of "make_gpx_vars" incompatible with supertype "ModuleType"  [override]
+api/assembly.py:258:5: note:      Superclass:
+api/assembly.py:258:5: note:          def make_gpx_vars(self, bykey: bool = ..., byname: bool = ..., **kwargs: AcceptedTypes) -> None
+api/assembly.py:258:5: note:      Subclass:
+api/assembly.py:258:5: note:          def make_gpx_vars(self) -> None
+api/assembly.py: note: In member "gpx_translate" of class "AssemblyComponent":
+api/assembly.py:275:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:284:21: error: Value of type "Any | None" is not indexable  [index]
+api/assembly.py:301:32: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/assembly.py: note: In member "get_results" of class "AssemblyComponent":
+api/assembly.py:311:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:311:5: error: Signature of "get_results" incompatible with supertype "ModuleType"  [override]
+api/assembly.py:311:5: note:      Superclass:
+api/assembly.py:311:5: note:          def get_results(self, sol: Any, suppressres_override: bool = ..., **kwargs: dict[str, AcceptedTypes]) -> list[ResultGenerator]
+api/assembly.py:311:5: note:      Subclass:
+api/assembly.py:311:5: note:          def get_results(self, sol: Any) -> list[ResultGenerator]
+api/assembly.py:314:9: error: Need type annotation for "resgens" (hint: "resgens: list[<type>] = ...")  [var-annotated]
+api/assembly.py: note: In member "gpx_constraints" of class "AssemblyComponent":
+api/assembly.py:325:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:327:9: error: Need type annotation for "constr" (hint: "constr: list[<type>] = ...")  [var-annotated]
+api/assembly.py: note: In member "get_child_components" of class "AssemblyComponent":
+api/assembly.py:334:39: error: Missing type parameters for generic type "Dict"  [type-arg]
+api/assembly.py:341:26: error: No overload variant of "__getitem__" of "list" matches argument type "str"  [call-overload]
+api/assembly.py:341:26: note: Possible overload variants:
+api/assembly.py:341:26: note:     def __getitem__(self, SupportsIndex, /) -> Any
+api/assembly.py:341:26: note:     def __getitem__(self, slice[Any, Any, Any], /) -> list[Any]
+api/assembly.py: note: In member "_update_var_names" of class "AssemblyComponent":
+api/assembly.py:349:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py: note: In member "__init__" of class "AssemComponentResult":
+api/assembly.py:367:5: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:371:40: error: Incompatible default for argument "assem_module" (default has type "None", argument has type "AssemblySystem")  [assignment]
+api/assembly.py:371:40: note: PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True
+api/assembly.py:371:40: note: Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase
+api/assembly.py:383:13: error: Need type annotation for "result_dict" (hint: "result_dict: dict[<type>, <type>] = ...")  [var-annotated]
+api/assembly.py:386:36: error: Argument 1 to "update" of "MutableMapping" has incompatible type "ResultsDict | ResultsList | list[dict[str, str]] | dict[str, Any]"; expected "SupportsKeysAndGetItem[Any, Any]"  [arg-type]
+api/assembly.py:386:57: error: No overload variant of "__getitem__" of "tuple" matches argument type "str"  [call-overload]
+api/assembly.py:386:57: note: Possible overload variants:
+api/assembly.py:386:57: note:     def __getitem__(self, SupportsIndex, /) -> Results | list[dict[str, str]] | dict[str, Any]
+api/assembly.py:386:57: note:     def __getitem__(self, slice[Any, Any, Any], /) -> tuple[Results | list[dict[str, str]] | dict[str, Any], ...]
+api/assembly.py: note: In function "rollup":
+api/assembly.py:458:1: error: Function is missing a return type annotation  [no-untyped-def]
+api/assembly.py:458:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+api/assembly.py:459:24: error: Missing type parameters for generic type "list"  [type-arg]
+api/interactive_generators.py: note: In function "createModelFromDict":
+api/interactive_generators.py:64:24: error: Incompatible types in assignment (expression has type "float | None", variable has type "float")  [assignment]
+api/interactive_generators.py:72:30: error: Incompatible types in assignment (expression has type "utils.types.data.Design", variable has type "api.module_types.design.Design | None")  [assignment]
+api/interactive_generators.py:94:73: error: Dict entry 1 has incompatible type "str": "utils.types.data.Design"; expected "str": "ProductionFinance | Manufacturing | api.module_types.design.Design"  [dict-item]
+api/interactive_generators.py:103:34: error: Incompatible types in assignment (expression has type "dict[str, ProductionFinance | Manufacturing | utils.types.data.Design | AssemblySystem]", variable has type "dict[str, Multiproduct | ProductionFinance | Manufacturing | api.module_types.design.Design | AssemblySystem] | ModelModules")  [assignment]
+api/interactive_generators.py:115:26: error: Incompatible types in assignment (expression has type "dict[str, Multiproduct | ProductionFinance | Manufacturing | api.module_types.design.Design | AssemblySystem] | ModelModules", variable has type "dict[str, ProductionFinance | Manufacturing | utils.types.data.Design | AssemblySystem]")  [assignment]
+api/interactive_generators.py:116:45: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:117:9: error: "Manufacturing" has no attribute "rateramp"  [attr-defined]
+api/interactive_generators.py:118:9: error: Unsupported target for indexed assignment ("dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules")  [index]
+api/interactive_generators.py:125:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:130:9: error: Unsupported target for indexed assignment ("dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules")  [index]
+api/interactive_generators.py:139:23: error: Incompatible types in assignment (expression has type "Any | None", variable has type "float")  [assignment]
+api/interactive_generators.py:153:39: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:174:9: error: Unsupported target for indexed assignment ("dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules")  [index]
+api/interactive_generators.py:178:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:180:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:189:13: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:196:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:197:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:205:8: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:207:12: error: Unsupported right operand type for in ("dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules")  [operator]
+api/interactive_generators.py:210:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/interactive_generators.py:212:9: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In function "create_from_dict":
+api/multiproduct.py:102:25: error: Argument 1 to "RateRamp" has incompatible type "tuple[Any, ...] | list[Any]"; expected "list[dict[str, float]]"  [arg-type]
+api/multiproduct.py:103:9: error: "Multiproduct" has no attribute "rateramp"  [attr-defined]
+api/multiproduct.py:104:9: error: "Multiproduct" has no attribute "rateramp"  [attr-defined]
+api/multiproduct.py:106:41: error: "Multiproduct" has no attribute "rateramp"  [attr-defined]
+api/multiproduct.py:108:9: error: "Multiproduct" has no attribute "rateramp"  [attr-defined]
+api/multiproduct.py: note: In member "__init__" of class "Multiproduct":
+api/multiproduct.py:343:39: error: Argument 1 to "update" of "MutableMapping" has incompatible type "dict[str, tuple[AcceptedTypes, AcceptedTypes]]"; expected "SupportsKeysAndGetItem[str, tuple[float, str]]"  [arg-type]
+api/multiproduct.py:343:65: error: "InteractiveModel" has no attribute "_substitutions_"  [attr-defined]
+api/multiproduct.py: note: In member "_dicttoobject" of class "Multiproduct":
+api/multiproduct.py:423:45: error: Incompatible types in assignment (expression has type "tuple[float | None, str]", target has type "tuple[float, str]")  [assignment]
+api/multiproduct.py: note: In member "gpx_translate" of class "Multiproduct":
+api/multiproduct.py:504:19: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:531:23: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:576:28: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:602:42: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:624:42: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:649:23: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:659:23: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In member "gpx_constraints" of class "Multiproduct":
+api/multiproduct.py:732:9: error: Need type annotation for "constr" (hint: "constr: list[<type>] = ...")  [var-annotated]
+api/multiproduct.py: note: In member "_vars_from_shared" of class "Multiproduct":
+api/multiproduct.py:830:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In member "get_results" of class "Multiproduct":
+api/multiproduct.py:879:19: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:925:30: error: Argument "labcosts" to "VarCostResults" has incompatible type "LaborCost"; expected "list[Any]"  [arg-type]
+api/multiproduct.py:990:54: error: Incompatible types in assignment (expression has type "dict[str, Results | list[dict[str, str]] | dict[str, Any]] | tuple[Results, list[dict[str, str]], dict[str, Any]]", variable has type "ResultGenerator")  [assignment]
+api/multiproduct.py: note: In member "get_substitutions" of class "MultiproductContext":
+api/multiproduct.py:1104:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:1105:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In member "make_gpx_constraints" of class "MultiproductContext":
+api/multiproduct.py:1198:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:1206:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:1207:18: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In member "make_solutions" of class "MultiproductContext":
+api/multiproduct.py:1258:20: error: "None" not callable  [misc]
+api/multiproduct.py: note: In member "old_get_cost" of class "MultiproductContext":
+api/multiproduct.py:1275:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:1283:21: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py:1284:19: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules | Any" is not indexable  [index]
+api/multiproduct.py: note: In member "solve" of class "MultiproductContext":
+api/multiproduct.py:1308:20: error: Value of type "dict[str, Multiproduct | ProductionFinance | Manufacturing | Design | AssemblySystem] | ModelModules" is not indexable  [index]
+api/multiproduct.py: note: In function "multi_product_risk_results":
+api/multiproduct.py:1329:8: error: Function "has_uncertainty" could always be true in boolean context  [truthy-function]
+test/test_parameter_repr.py: note: In function "test_parameter_repr_roundtrip":
+test/test_parameter_repr.py:8:1: error: Function is missing a return type annotation  [no-untyped-def]
+test/test_parameter_repr.py:8:1: note: Use "-> None" if function does not return a value
+api/result_generators/mc_tool_results.py: note: In member "__init__" of class "MCToolResults":
+api/result_generators/mc_tool_results.py:16:23: error: Missing type parameters for generic type "dict"  [type-arg]
+Found 302 errors in 33 files (checked 88 source files)

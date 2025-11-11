@@ -1,0 +1,78 @@
+TEST_MODEL_JSON = """
+{
+   "model":{
+      "type":"fuselage",
+      "partName":"Section 1",
+      "design":{
+         "parameters":[
+            {
+               "name":"Length",
+               "unit":"m",
+               "value":10,
+               "source":"From assumption"
+            },
+            {
+               "name":"Diameter",
+               "unit":"m",
+               "value":6,
+               "source":"From optimized value"
+            }
+         ],
+         "plyBook":{
+            "stack":[
+               [
+                  {
+                     "value":0
+                  },
+                  {
+                     "value":0
+                  }
+               ],
+               [
+                  {
+                     "value":0
+                  },
+                  {
+                     "value":0
+                  }
+               ]
+            ],
+            "length":[
+               [
+                  {
+                     "value":0
+                  }
+               ],
+               [
+                  {
+                     "value":0
+                  }
+               ]
+            ],
+            "width":[
+               [
+                  {
+                     "value":0
+                  },
+                  {
+                     "value":0
+                  }
+               ]
+            ]
+         }
+      },
+      "manufacturing":{
+         "process":"Prepreg",
+         "quantity":1000,
+         "rate":30,
+         "line":"cell",
+         "processChain":[
+
+         ],
+         "cells":[
+
+         ]
+      }
+   }
+}
+"""

@@ -1,0 +1,405 @@
+{
+  "id": 248640269.8910335,
+  "model": {
+    "finance": {
+      "costOfCapital": 10,
+      "daysPerWeek": 5,
+      "durationUnit": "years",
+      "hrsPerShift": 7,
+      "rateUnit": "month",
+      "shiftsPerDay": 2,
+      "weeksPerYear": 50
+    },
+    "manufacturing": {
+      "amortization": "duration",
+      "duration": 5,
+      "line": "cell",
+      "quantity": 1000,
+      "rate": 10001,
+      "rates": [],
+      "selectedModule": 6357644065.136303
+    },
+    "modelName": "CE-623 feeder line into secondary process",
+    "modules": [
+      {
+        "id": 6357644065.136303,
+        "manufacturing": {
+          "cells": [
+            {
+              "name": "First process Cell"
+            },
+            {
+              "name": "Second Process Cell"
+            },
+            {
+              "name": "First Feeder Cell"
+            },
+            {
+              "name": "Second Feeder Cell"
+            }
+          ],
+          "cellsFromProcesses": true,
+          "costs": [],
+          "cvByProcess": false,
+          "exposedVariables": [],
+          "feederLines": [
+            {
+              "id": "Feederline",
+              "to": "P010"
+            }
+          ],
+          "feederProcesses": [
+            {
+              "cell": "First Feeder Cell",
+              "feederLine": "Feederline",
+              "id": "F010",
+              "type": "First Feeder"
+            },
+            {
+              "cell": "Second Feeder Cell",
+              "feederLine": "Feederline",
+              "id": "F020",
+              "type": "Second Feeder"
+            }
+          ],
+          "inputFormat": {
+            "cells": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Batch Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Mean Operations to Failure",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTF",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "MTTR",
+                "unit": "hr"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Extra Shifts",
+                "unit": "hr"
+              }
+            ],
+            "costs": [
+              {
+                "inputFormat": "constraint",
+                "property": "Variable",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Recurring",
+                "unit": "$/month"
+              },
+              {
+                "inputFormat": "constraint",
+                "property": "Non-Recurring",
+                "unit": "$"
+              }
+            ],
+            "feederLines": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Quantity",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Variable Cost",
+                "unit": "$"
+              }
+            ],
+            "processes": [
+              {
+                "inputFormat": "table",
+                "property": "Time",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Std. Dev.",
+                "unit": "min"
+              },
+              {
+                "inputFormat": "-",
+                "property": "FPY",
+                "unit": "%"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Head Count",
+                "unit": "count"
+              }
+            ],
+            "routes": [
+              {
+                "inputFormat": "table",
+                "property": "% Diverted",
+                "unit": "%"
+              }
+            ],
+            "tools": [
+              {
+                "defaultValue": 1,
+                "inputFormat": "table",
+                "property": "Lot Size",
+                "unit": "count"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Non-Recurring Cost",
+                "unit": "$"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Recurring Cost",
+                "unit": "$/hr"
+              },
+              {
+                "inputFormat": "table",
+                "property": "Floor Space",
+                "unit": "m^2"
+              },
+              {
+                "inputFormat": "-",
+                "property": "Uptime",
+                "unit": "%"
+              }
+            ]
+          },
+          "processChain": [
+            {
+              "cell": "First process Cell",
+              "id": "P010",
+              "type": "First process"
+            },
+            {
+              "cell": "Second Process Cell",
+              "id": "P020",
+              "type": "Second Process"
+            }
+          ],
+          "routes": [],
+          "secProcesses": [],
+          "tools": [
+            {
+              "name": "Tooling",
+              "route": ["P010", "-", "P020"]
+            }
+          ],
+          "variables": [
+            {
+              "category": "all processes",
+              "key": "All Processes CV // New Module",
+              "name": "All Processes CV",
+              "property": "CV",
+              "sign": "=",
+              "unit": "%",
+              "value": 25
+            }
+          ],
+          "variablesSimple": [
+            {
+              "category": "cells",
+              "key": "First process Cell Batch Size // New Module",
+              "name": "First process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "First process Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "First process Time // New Module",
+              "name": "First process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "First process",
+              "unit": "min",
+              "value": 100
+            },
+            {
+              "category": "cells",
+              "key": "Second Process Cell Batch Size // New Module",
+              "name": "Second Process Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Second Process Time // New Module",
+              "name": "Second Process Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Second Process",
+              "unit": "min",
+              "value": 150
+            },
+            {
+              "category": "cells",
+              "key": "First process Cell Non-Recurring Cost // New Module",
+              "name": "First process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "First process Cell",
+              "unit": "$",
+              "value": 100000
+            },
+            {
+              "category": "cells",
+              "key": "First process Cell Recurring Cost // New Module",
+              "name": "First process Cell Recurring Cost",
+              "property": "Recurring Cost",
+              "sign": "=",
+              "type": "First process Cell",
+              "unit": "$/hr",
+              "value": 10
+            },
+            {
+              "category": "cells",
+              "key": "Second Process Cell Non-Recurring Cost // New Module",
+              "name": "Second Process Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Second Process Cell",
+              "unit": "$",
+              "value": 500000
+            },
+            {
+              "category": "tools",
+              "key": "Tooling Lot Size // New Module",
+              "name": "Tooling Lot Size",
+              "property": "Lot Size",
+              "sign": "=",
+              "type": "Tooling",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "tools",
+              "key": "Tooling Non-Recurring Cost // New Module",
+              "name": "Tooling Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Tooling",
+              "unit": "$",
+              "value": 1000000
+            },
+            {
+              "category": "feederLines",
+              "key": "Feederline Quantity // New Module",
+              "name": "Feederline Quantity",
+              "property": "Quantity",
+              "sign": "=",
+              "type": "Feederline",
+              "unit": "count",
+              "value": 1
+            },
+            {
+              "category": "cells",
+              "key": "First Feeder Cell Batch Size // New Module",
+              "name": "First Feeder Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "First Feeder Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "First Feeder Time // New Module",
+              "name": "First Feeder Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "First Feeder",
+              "unit": "min",
+              "value": 25
+            },
+            {
+              "category": "cells",
+              "key": "Second Feeder Cell Batch Size // New Module",
+              "name": "Second Feeder Cell Batch Size",
+              "property": "Batch Size",
+              "sign": "=",
+              "type": "Second Feeder Cell",
+              "value": 1
+            },
+            {
+              "category": "processes",
+              "key": "Second Feeder Time // New Module",
+              "name": "Second Feeder Time",
+              "property": "Time",
+              "sign": "=",
+              "type": "Second Feeder",
+              "unit": "min",
+              "value": 17
+            },
+            {
+              "category": "cells",
+              "key": "First Feeder Cell Non-Recurring Cost // New Module",
+              "name": "First Feeder Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "First Feeder Cell",
+              "unit": "$",
+              "value": 125000
+            },
+            {
+              "category": "cells",
+              "key": "Second Feeder Cell Non-Recurring Cost // New Module",
+              "name": "Second Feeder Cell Non-Recurring Cost",
+              "property": "Non-Recurring Cost",
+              "sign": "=",
+              "type": "Second Feeder Cell",
+              "unit": "$",
+              "value": 500000
+            }
+          ]
+        },
+        "name": "New Module",
+        "type": "manufacturing"
+      }
+    ],
+    "scenario": "likely",
+    "type": ["operations"],
+    "version": "1.0.47"
+  }
+}

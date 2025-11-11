@@ -1,0 +1,912 @@
+{
+    "model": {
+        "modelName": "Parametric Multi-Product (material costs) by split",
+        "type": "system",
+        "line": "cell",
+        "mixType": "concurrent",
+        "products": [
+            {
+                "source": {
+                    "type": [
+                        "custom"
+                    ],
+                    "modelName": "Heavy Part",
+                    "design": {
+                        "parameters": [],
+                        "plyBook": {
+                            "stack": [
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ],
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ],
+                            "length": [
+                                [
+                                    {
+                                        "value": 0
+                                    }
+                                ],
+                                [
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ],
+                            "width": [
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ]
+                        },
+                        "selectedModule": 5374730861.076102,
+                        "interfaceVariables": [
+                            {
+                                "name": "Part Mass",
+                                "unit": "kg"
+                            }
+                        ]
+                    },
+                    "manufacturing": {
+                        "line": "cell",
+                        "rate": 1.1,
+                        "amortization": "duration",
+                        "duration": 5,
+                        "quantity": 1000,
+                        "selectedModule": 3200868160.539758,
+                        "partsPer": 1.8,
+                        "rates": []
+                    },
+                    "finance": {
+                        "shiftsPerDay": 2,
+                        "hrsPerShift": 7,
+                        "daysPerWeek": 5,
+                        "weeksPerYear": 50,
+                        "costOfCapital": 10,
+                        "rateUnit": "hour",
+                        "durationUnit": "years"
+                    },
+                    "modules": [
+                        {
+                            "name": "New Manufacturing Module",
+                            "id": 3200868160.539758,
+                            "type": "manufacturing",
+                            "manufacturing": {
+                                "processChain": [
+                                    {
+                                        "id": "P010",
+                                        "type": "First Process",
+                                        "cell": "First Process Cell"
+                                    },
+                                    {
+                                        "id": "P020",
+                                        "type": "Parametric Process",
+                                        "cell": "Parametric Process Cell"
+                                    }
+                                ],
+                                "cvByProcess": false,
+                                "cellsFromProcesses": true,
+                                "feederProcesses": [],
+                                "feederLines": [],
+                                "secProcesses": [],
+                                "routes": [],
+                                "tools": [],
+                                "cells": [
+                                    {
+                                        "name": "First Process Cell"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell"
+                                    }
+                                ],
+                                "costs": [
+                                    {
+                                        "name": "Material Cost",
+                                        "type": "Variable"
+                                    }
+                                ],
+                                "inputFormat": {
+                                    "processes": [
+                                        {
+                                            "property": "Time",
+                                            "unit": "min",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Std. Dev.",
+                                            "unit": "min",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "FPY",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "cells": [
+                                        {
+                                            "property": "Batch Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Mean Operations to Failure",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTF",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTR",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Extra Shifts",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "tools": [
+                                        {
+                                            "property": "Lot Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "feederLines": [
+                                        {
+                                            "property": "Quantity",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Variable Cost",
+                                            "unit": "$",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "routes": [
+                                        {
+                                            "property": "% Diverted",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        }
+                                    ],
+                                    "costs": [
+                                        {
+                                            "property": "Variable",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Recurring",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ],
+                                    "laborTypes": [
+                                        {
+                                            "property": "Direct Variable",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Direct Pooled",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Fixed Indirect",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ]
+                                },
+                                "variables": [
+                                    {
+                                        "name": "All Processes CV",
+                                        "category": "all processes",
+                                        "property": "CV",
+                                        "unit": "%",
+                                        "value": 25,
+                                        "sign": "=",
+                                        "key": "All Processes CV // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Time",
+                                        "unit": "min",
+                                        "sign": ">=",
+                                        "type": "Parametric Process",
+                                        "property": "Time",
+                                        "category": "processes",
+                                        "key": "Parametric Process Time // New Manufacturing Module",
+                                        "value": [
+                                            "Part Mass",
+                                            "*",
+                                            "Process Rate"
+                                        ],
+                                        "math": true,
+                                        "acyclic": false
+                                    },
+                                    {
+                                        "name": "Process Rate",
+                                        "category": "custom",
+                                        "sign": "=",
+                                        "key": "Process Rate // New Manufacturing Module",
+                                        "value": 10,
+                                        "unit": "min/kg"
+                                    },
+                                    {
+                                        "name": "Material Cost",
+                                        "unit": "$",
+                                        "type": "Material Cost",
+                                        "property": "Variable",
+                                        "category": "costs",
+                                        "sign": ">=",
+                                        "key": "Material Cost // New Manufacturing Module",
+                                        "value": [
+                                            "Part Mass",
+                                            "*",
+                                            "material price"
+                                        ],
+                                        "math": true,
+                                        "acyclic": false
+                                    },
+                                    {
+                                        "name": "material price",
+                                        "category": "custom",
+                                        "sign": "=",
+                                        "key": "material price // New Manufacturing Module",
+                                        "value": 50,
+                                        "unit": "$/lb"
+                                    }
+                                ],
+                                "variablesSimple": [
+                                    {
+                                        "name": "First Process Cell Batch Size",
+                                        "sign": "=",
+                                        "type": "First Process Cell",
+                                        "property": "Batch Size",
+                                        "category": "cells",
+                                        "value": 1,
+                                        "key": "First Process Cell Batch Size // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "First Process Time",
+                                        "value": 150,
+                                        "unit": "min",
+                                        "sign": "=",
+                                        "type": "First Process",
+                                        "property": "Time",
+                                        "category": "processes",
+                                        "key": "First Process Time // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell Batch Size",
+                                        "sign": "=",
+                                        "type": "Parametric Process Cell",
+                                        "property": "Batch Size",
+                                        "category": "cells",
+                                        "value": 1,
+                                        "key": "Parametric Process Cell Batch Size // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "First Process Cell Non-Recurring Cost",
+                                        "value": 10000,
+                                        "unit": "$",
+                                        "sign": "=",
+                                        "type": "First Process Cell",
+                                        "property": "Non-Recurring Cost",
+                                        "category": "cells",
+                                        "key": "First Process Cell Non-Recurring Cost // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell Non-Recurring Cost",
+                                        "value": 25000,
+                                        "unit": "$",
+                                        "sign": "=",
+                                        "type": "Parametric Process Cell",
+                                        "property": "Non-Recurring Cost",
+                                        "category": "cells",
+                                        "key": "Parametric Process Cell Non-Recurring Cost // New Manufacturing Module"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 5374730861.076102,
+                            "name": "New Design Module",
+                            "type": "design",
+                            "design": {
+                                "variables": [
+                                    {
+                                        "name": "Part Mass",
+                                        "unit": "kg",
+                                        "sign": "=",
+                                        "key": "Part Mass // New Design Module",
+                                        "category": "custom",
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "scenario": "likely",
+                    "version": "1.0.44"
+                }
+            },
+            {
+                "source": {
+                    "type": [
+                        "custom"
+                    ],
+                    "modelName": "Light Part",
+                    "design": {
+                        "parameters": [],
+                        "plyBook": {
+                            "stack": [
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ],
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ],
+                            "length": [
+                                [
+                                    {
+                                        "value": 0
+                                    }
+                                ],
+                                [
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ],
+                            "width": [
+                                [
+                                    {
+                                        "value": 0
+                                    },
+                                    {
+                                        "value": 0
+                                    }
+                                ]
+                            ]
+                        },
+                        "selectedModule": 5374730861.076102,
+                        "interfaceVariables": [
+                            {
+                                "name": "Part Mass",
+                                "unit": "kg"
+                            }
+                        ]
+                    },
+                    "manufacturing": {
+                        "line": "cell",
+                        "rate": 100,
+                        "amortization": "duration",
+                        "duration": 5,
+                        "quantity": 1000,
+                        "selectedModule": 3200868160.539758,
+                        "partsPer": 0.2,
+                        "rates": []
+                    },
+                    "finance": {
+                        "shiftsPerDay": 2,
+                        "hrsPerShift": 7,
+                        "daysPerWeek": 5,
+                        "weeksPerYear": 50,
+                        "costOfCapital": 10,
+                        "rateUnit": "month",
+                        "durationUnit": "years"
+                    },
+                    "modules": [
+                        {
+                            "name": "New Manufacturing Module",
+                            "id": 3200868160.539758,
+                            "type": "manufacturing",
+                            "manufacturing": {
+                                "processChain": [
+                                    {
+                                        "id": "P010",
+                                        "type": "First Process",
+                                        "cell": "First Process Cell"
+                                    },
+                                    {
+                                        "id": "P020",
+                                        "type": "Parametric Process",
+                                        "cell": "Parametric Process Cell"
+                                    }
+                                ],
+                                "cvByProcess": false,
+                                "cellsFromProcesses": true,
+                                "feederProcesses": [],
+                                "feederLines": [],
+                                "secProcesses": [],
+                                "routes": [],
+                                "tools": [],
+                                "cells": [
+                                    {
+                                        "name": "First Process Cell"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell"
+                                    }
+                                ],
+                                "costs": [
+                                    {
+                                        "name": "Material Cost",
+                                        "type": "Variable"
+                                    }
+                                ],
+                                "inputFormat": {
+                                    "processes": [
+                                        {
+                                            "property": "Time",
+                                            "unit": "min",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Std. Dev.",
+                                            "unit": "min",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "FPY",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "cells": [
+                                        {
+                                            "property": "Batch Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Mean Operations to Failure",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTF",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTR",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Extra Shifts",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "tools": [
+                                        {
+                                            "property": "Lot Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "feederLines": [
+                                        {
+                                            "property": "Quantity",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Variable Cost",
+                                            "unit": "$",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "routes": [
+                                        {
+                                            "property": "% Diverted",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        }
+                                    ],
+                                    "costs": [
+                                        {
+                                            "property": "Variable",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Recurring",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ],
+                                    "laborTypes": [
+                                        {
+                                            "property": "Direct Variable",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Direct Pooled",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Fixed Indirect",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ]
+                                },
+                                "variables": [
+                                    {
+                                        "name": "All Processes CV",
+                                        "category": "all processes",
+                                        "property": "CV",
+                                        "unit": "%",
+                                        "value": 25,
+                                        "sign": "=",
+                                        "key": "All Processes CV // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Time",
+                                        "unit": "min",
+                                        "sign": ">=",
+                                        "type": "Parametric Process",
+                                        "property": "Time",
+                                        "category": "processes",
+                                        "key": "Parametric Process Time // New Manufacturing Module",
+                                        "value": [
+                                            "Part Mass",
+                                            "*",
+                                            "Process Rate"
+                                        ],
+                                        "math": true,
+                                        "acyclic": false
+                                    },
+                                    {
+                                        "name": "Process Rate",
+                                        "category": "custom",
+                                        "sign": "=",
+                                        "key": "Process Rate // New Manufacturing Module",
+                                        "value": 10,
+                                        "unit": "min/kg"
+                                    },
+                                    {
+                                        "name": "Material Cost",
+                                        "unit": "$",
+                                        "type": "Material Cost",
+                                        "property": "Variable",
+                                        "category": "costs",
+                                        "sign": ">=",
+                                        "key": "Material Cost // New Manufacturing Module",
+                                        "value": [
+                                            "Part Mass",
+                                            "*",
+                                            "material price"
+                                        ],
+                                        "math": true,
+                                        "acyclic": false
+                                    },
+                                    {
+                                        "name": "material price",
+                                        "category": "custom",
+                                        "sign": "=",
+                                        "key": "material price // New Manufacturing Module",
+                                        "value": 50,
+                                        "unit": "$/lb"
+                                    }
+                                ],
+                                "variablesSimple": [
+                                    {
+                                        "name": "First Process Cell Batch Size",
+                                        "sign": "=",
+                                        "type": "First Process Cell",
+                                        "property": "Batch Size",
+                                        "category": "cells",
+                                        "value": 1,
+                                        "key": "First Process Cell Batch Size // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "First Process Time",
+                                        "value": 150,
+                                        "unit": "min",
+                                        "sign": "=",
+                                        "type": "First Process",
+                                        "property": "Time",
+                                        "category": "processes",
+                                        "key": "First Process Time // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell Batch Size",
+                                        "sign": "=",
+                                        "type": "Parametric Process Cell",
+                                        "property": "Batch Size",
+                                        "category": "cells",
+                                        "value": 1,
+                                        "key": "Parametric Process Cell Batch Size // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "First Process Cell Non-Recurring Cost",
+                                        "value": 10000,
+                                        "unit": "$",
+                                        "sign": "=",
+                                        "type": "First Process Cell",
+                                        "property": "Non-Recurring Cost",
+                                        "category": "cells",
+                                        "key": "First Process Cell Non-Recurring Cost // New Manufacturing Module"
+                                    },
+                                    {
+                                        "name": "Parametric Process Cell Non-Recurring Cost",
+                                        "value": 25000,
+                                        "unit": "$",
+                                        "sign": "=",
+                                        "type": "Parametric Process Cell",
+                                        "property": "Non-Recurring Cost",
+                                        "category": "cells",
+                                        "key": "Parametric Process Cell Non-Recurring Cost // New Manufacturing Module"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 5374730861.076102,
+                            "name": "New Design Module",
+                            "type": "design",
+                            "design": {
+                                "variables": [
+                                    {
+                                        "name": "Part Mass",
+                                        "unit": "kg",
+                                        "sign": "=",
+                                        "key": "Part Mass // New Design Module",
+                                        "category": "custom",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "scenario": "likely",
+                    "version": "1.0.44"
+                }
+            }
+        ],
+        "bySplit": true,
+        "byKit": true,
+        "rate": 2,
+        "rates": [],
+        "cells": [
+            {
+                "name": "First Process Cell",
+                "usedBy": [
+                    "Heavy Part",
+                    "Light Part"
+                ]
+            },
+            {
+                "name": "Parametric Process Cell",
+                "usedBy": [
+                    "Heavy Part",
+                    "Light Part"
+                ]
+            }
+        ],
+        "tools": [],
+        "finance": {
+            "shiftsPerDay": 2,
+            "hrsPerShift": 7,
+            "daysPerWeek": 5,
+            "weeksPerYear": 50,
+            "costOfCapital": 10,
+            "rateUnit": "hour",
+            "durationUnit": "years"
+        },
+        "duration": 5,
+        "quantity": 1000,
+        "amortization": "duration",
+        "scenario": "likely",
+        "version": "1.0.53"
+    },
+    "id": 248640269.8910335
+}

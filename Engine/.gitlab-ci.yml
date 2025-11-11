@@ -1,0 +1,271 @@
+stages:
+  - security
+  - test
+  - unit_tests
+  - unit_tests_models
+  - dependency_updates
+
+variables:
+  PYTHONPATH: "$CI_PROJECT_DIR"
+  GPX_PROJECT_ID: 17278442
+  GITLAB_ADVANCED_SAST_ENABLED: "true"
+  AST_ENABLE_MR_PIPELINES: "true"
+  
+bandit:
+  stage: security
+  image: python:3.13-slim
+  before_script:
+    - pip install --upgrade pip
+    - pip install bandit
+  script:
+    - bandit -r . --severity-level medium --confidence-level medium -c bandit.yml
+  only:
+    - merge_requests
+  when: manual
+  allow_failure: false
+
+unit_tests:
+  stage: unit_tests
+  image: python:3.13-slim
+
+  # before_script
+  before_script:
+    # install git, curl, jq
+    - apt-get update && apt-get install -y git curl jq
+    
+    - |
+      cat > ~/.netrc <<EOF
+      machine gitlab.com
+        login gitlab-ci-token
+        password $CI_JOB_TOKEN
+      EOF
+
+    - chmod 600 ~/.netrc
+    - pip install --upgrade pip
+
+    # now install the rest of your dependencies
+    - pip install -r requirements.txt
+    - pip install -r additional-requirements.txt
+
+    # and pytest itself
+    - pip install pytest
+
+    # fetch the MR JSON and dump it for debugging
+    - |
+      echo "→ MR on engine (project $CI_PROJECT_ID, IID $CI_MERGE_REQUEST_IID)"
+      MR_JSON=$(curl -s \
+        --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+        "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/merge_requests/$CI_MERGE_REQUEST_IID")
+      echo "---- MR JSON start ----"
+      echo "$MR_JSON" | jq .
+      echo "---- MR JSON end   ----"
+
+    # extract the description→GPX-branch for debug
+    - |
+      GPX_BRANCH=$(echo "$MR_JSON" \
+      | jq -r '.description // ""' \
+      | sed -n 's/^GPX-branch:[[:space:]]*\(.*\)/\1/p')
+
+      # fallback to 'master' if empty
+      GPX_BRANCH=${GPX_BRANCH:-master}
+      echo "→ raw GPX-branch from description: '$GPX_BRANCH'"
+
+    # walk up its MR chain until we find a branch that still exists (or master)
+    - |
+      resolve_branch() {
+        local branch=$1
+        while true; do
+          # does the branch still exist?
+          if curl -sf \
+              --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+              "https://gitlab.com/api/v4/projects/$GPX_PROJECT_ID/repository/branches/$branch" \
+              > /dev/null; then
+            echo "$branch"
+            return
+          fi
+
+          # otherwise follow the merge‑chain upward
+          response=$(
+            curl -s \
+              --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+              "https://gitlab.com/api/v4/projects/$GPX_PROJECT_ID/merge_requests?\source_branch=$branch&state=merged&order_by=updated_at&sort=desc&per_page=1"
+          )
+          branch=$(echo "$response" | jq -r '.[0].target_branch // empty')
+          [[ -n "$branch" ]] || { echo master; return; }
+        done
+      }
+
+      GPX_RESOLVED=$(resolve_branch "$GPX_BRANCH")
+      echo "$GPX_RESOLVED" > gpx_branch.txt     # ← save for after_script
+      echo "✅ Resolved GPX branch → $GPX_RESOLVED"
+
+    # now install the desired GPX branch
+    - pip install "git+https://gitlab.com/advancedanalytics/refactor/gpx.git@$GPX_RESOLVED#egg=gpx"
+
+  # script
+  script:
+    - pytest -x test/ --ignore=test/test_regen_models.py --ignore=test/test_models.py --ignore=test/test_discrete_models.py
+
+  # after_script
+  # Runs whether the job succeeds or fails; CI_JOB_STATUS tells us the result.
+  after_script:
+    - |
+      GPX_RESOLVED=$(cat gpx_branch.txt 2>/dev/null || echo "UNKNOWN")
+      echo ""
+      echo "┌───────────────────────────────┐"
+      echo "│         TEST SUMMARY          │"
+      echo "└───────────────────────────────┘"
+      printf "Engine branch : %s\n"  "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME:-$CI_COMMIT_REF_NAME}"
+      printf "GPX branch    : %s\n"  "$GPX_RESOLVED"
+      printf "Job result    : %s\n"  "$CI_JOB_STATUS"
+      echo "─────────────────────────────────"
+
+  only:
+    - merge_requests
+  when: manual
+  allow_failure: false
+
+
+unit_tests_models:
+  stage: unit_tests_models
+  image: python:3.13-slim
+
+  before_script:
+    # install git, curl, jq
+    - apt-get update && apt-get install -y git curl jq tar
+
+    - |
+      cat > ~/.netrc <<EOF
+      machine gitlab.com
+        login gitlab-ci-token
+        password $CI_JOB_TOKEN
+      EOF
+
+    - chmod 600 ~/.netrc
+    - pip install --upgrade pip
+
+    # now install the rest of your dependencies
+    - pip install -r requirements.txt
+    - pip install -r additional-requirements.txt
+
+    # and pytest itself
+    - pip install pytest
+
+    # fetch the MR JSON and dump it for debugging
+    - |
+      echo "→ MR on engine (project $CI_PROJECT_ID, IID $CI_MERGE_REQUEST_IID)"
+      MR_JSON=$(curl -s \
+        --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+        "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/merge_requests/$CI_MERGE_REQUEST_IID")
+      echo "---- MR JSON start ----"
+      echo "$MR_JSON" | jq .
+      echo "---- MR JSON end   ----"
+
+    # extract the description→GPX-branch for debug
+    - |
+      GPX_BRANCH=$(echo "$MR_JSON" \
+      | jq -r '.description // ""' \
+      | sed -n 's/^GPX-branch:[[:space:]]*\(.*\)/\1/p')
+      GPX_BRANCH=${GPX_BRANCH:-master}
+      echo "→ raw GPX-branch from description: '$GPX_BRANCH'"
+
+    # walk up its MR chain until we find a branch that still exists (or master)
+    - |
+      resolve_branch() {
+        local branch=$1
+        while true; do
+          if curl -sf \
+              --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+              "https://gitlab.com/api/v4/projects/$GPX_PROJECT_ID/repository/branches/$branch" \
+              > /dev/null; then
+            echo "$branch"
+            return
+          fi
+          response=$(
+            curl -s \
+              --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+              "https://gitlab.com/api/v4/projects/$GPX_PROJECT_ID/merge_requests?\source_branch=$branch&state=merged&order_by=updated_at&sort=desc&per_page=1"
+          )
+          branch=$(echo "$response" | jq -r '.[0].target_branch // empty')
+          [[ -n "$branch" ]] || { echo master; return; }
+        done
+      }
+
+      GPX_RESOLVED=$(resolve_branch "$GPX_BRANCH")
+      echo "$GPX_RESOLVED" > gpx_branch.txt     # ← save for after_script
+      echo "✅ Resolved GPX branch → $GPX_RESOLVED"
+
+    # now install the desired GPX branch
+    - pip install "git+https://gitlab.com/advancedanalytics/refactor/gpx.git@$GPX_RESOLVED#egg=gpx"
+
+    # ───────────── NEW: optional override for models via TEST_MODEL_BRANCH ─────────────
+    - |
+      TEST_MODEL_BRANCH=$(echo "$MR_JSON" \
+        | jq -r '.description // ""' \
+        | sed -n 's/^TEST_MODEL_BRANCH:[[:space:]]*\(.*\)/\1/p' \
+        | sed 's/[[:space:]]*$//')
+      if [[ -n "$TEST_MODEL_BRANCH" ]]; then
+        echo "→ Requested TEST_MODEL_BRANCH: '$TEST_MODEL_BRANCH'"
+        # verify branch exists in this project
+        if curl -sf \
+            --header "PRIVATE-TOKEN: $GITLAB_MR_READ_TOKEN" \
+            "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/repository/branches/$TEST_MODEL_BRANCH" \
+            > /dev/null; then
+          echo "✅ Branch exists, fetching models directory"
+          git fetch --no-tags origin "$TEST_MODEL_BRANCH"
+          TMP_MODELS_DIR=/tmp/models_override
+          rm -rf "$TMP_MODELS_DIR" && mkdir -p "$TMP_MODELS_DIR"
+          if git archive --format=tar "origin/$TEST_MODEL_BRANCH" "test/data/models" | tar -x -C "$TMP_MODELS_DIR"; then
+            export TEST_MODELS_DIR="$TMP_MODELS_DIR/test/data/models"
+            export MODELS_SOURCE="branch:$TEST_MODEL_BRANCH"
+            echo "✅ Using models from $TEST_MODEL_BRANCH → $TEST_MODELS_DIR"
+          else
+            echo "⚠️ Could not extract test/data/models from $TEST_MODEL_BRANCH; falling back to local."
+            export MODELS_SOURCE="local"
+          fi
+        else
+          echo "⚠️ TEST_MODEL_BRANCH '$TEST_MODEL_BRANCH' not found in project $CI_PROJECT_ID; falling back to local."
+          export MODELS_SOURCE="local"
+        fi
+      else
+        echo "→ No TEST_MODEL_BRANCH specified; using local test/data/models."
+        export MODELS_SOURCE="local"
+      fi
+    # ──────────────────────────────────────────────────────────────────────────────────
+
+  script:
+    - pytest -x test/test_models.py
+
+  after_script:
+    - |
+      GPX_RESOLVED=$(cat gpx_branch.txt 2>/dev/null || echo "UNKNOWN")
+      echo ""
+      echo "┌───────────────────────────────┐"
+      echo "│         TEST SUMMARY          │"
+      echo "└───────────────────────────────┘"
+      printf "Engine branch : %s\n"  "${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME:-$CI_COMMIT_REF_NAME}"
+      printf "GPX branch    : %s\n"  "$GPX_RESOLVED"
+      printf "Models source : %s\n"  "${MODELS_SOURCE:-local}"
+      printf "Job result    : %s\n"  "$CI_JOB_STATUS"
+      echo "─────────────────────────────────"
+
+  only:
+    - merge_requests
+  when: manual
+  allow_failure: false
+
+
+renovate:
+  stage: dependency_updates
+  image: renovate/renovate:latest
+  script:
+    - renovate
+  variables:
+    RENOVATE_PLATFORM: "gitlab"
+    RENOVATE_TOKEN: "$RENOVATE_GITLAB_TOKEN"
+    RENOVATE_ENDPOINT: "https://gitlab.com/api/v4"
+  only:
+    - schedules
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml

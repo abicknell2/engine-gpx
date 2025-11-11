@@ -1,0 +1,7 @@
+# bandit.yaml
+skips:
+  - B101
+severity:
+  - MEDIUM
+confidence:
+  - MEDIUM
