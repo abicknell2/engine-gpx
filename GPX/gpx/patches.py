@@ -1,5 +1,16 @@
 """Runtime patches for third-party libraries used by GPX."""
 
+# Hey team — just wanted to document what changed here because it's the fix for
+# the zero-division crash we kept seeing in the discrete solver. GPkit's
+# ``PosynomialInequality.sens_from_dual`` routine divides by the constant
+# coefficient of a constraint when it back-substitutes dual values. That works
+# fine until the constraint is effectively constant (coefficient ~= 0), at which
+# point the division blows up and the entire solve fails. I've copied the core
+# routine so that we can short-circuit the constant-term contribution whenever
+# the coefficient is zero-ish. Everything else remains identical to the upstream
+# implementation, so sensitivities are unchanged for normal cases, and the
+# solver can now march on safely when the constant term disappears.
+
 from __future__ import annotations
 
 import logging
