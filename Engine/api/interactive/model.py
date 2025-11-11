@@ -349,11 +349,10 @@ class InteractiveModel:
             else:
                 raise ValueError("Could not generate results") from e
 
-        # run the trade study
+        # run the trade study if requested
         if self.trade_study:
             self._trade_sweep()
             self._trade_results()
-            return None  # _trade_results only ever returned None
 
         # TODO: move the uncertainty to here?
 
@@ -364,6 +363,7 @@ class InteractiveModel:
         self.solutions = self.fix_numpy_types(self.solutions)
         self.solutions = sanitise_solution(self)
         self.process_currency_values()
+
         return sol
 
     def fix_numpy_types(self, obj):
@@ -379,6 +379,8 @@ class InteractiveModel:
             return int(obj)
         elif isinstance(obj, np.floating):
             return float(obj)
+        elif isinstance(obj, np.bool_):
+            return bool(obj)
         return obj
 
     def convert_units_for_display(self) -> None:

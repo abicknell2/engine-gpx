@@ -156,6 +156,15 @@ def multi_product(inputdict: dict[str, AcceptedTypes]) -> dict[str, Model]:
     # update the solution if it is from variants
     interaction.create_results()
 
+    gpx_model = getattr(interaction, "gpx_model", None)
+    solution = getattr(gpx_model, "solution", None) if gpx_model is not None else None
+    if solution is not None:
+        try:
+            print("GPX solution table:")
+            print(solution.table())
+        except Exception:  # pragma: no cover - diagnostic aid only
+            logging.exception("Failed to print GPX solution table")
+
     if interaction.trade_study:
         return interaction.solutions
 
