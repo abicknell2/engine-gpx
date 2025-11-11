@@ -5,7 +5,7 @@ from gpkit import VarKey, ureg
 from gpx.dag.parametric import ParametricConstraint, ParametricVariable
 
 
-def test_parametric_constraint_reports_plain_number_error():
+def test_parametric_constraint_converts_plain_numbers_to_output_units():
     constraint = ParametricConstraint(constraint_as_list=[229000.0], inputvars={})
     output = ParametricVariable(
         name="Avg Panel Mass",
@@ -14,14 +14,10 @@ def test_parametric_constraint_reports_plain_number_error():
     )
     constraint.update_output_var(output)
 
-    with pytest.raises(ValueError) as excinfo:
-        constraint.evaluate()
+    constraint.evaluate()
 
-    message = str(excinfo.value)
-    assert "Avg Panel Mass" in message
-    assert "plain float" in message
-    assert "229000.0" in message
-    assert "expected 'lb'" in message
+    assert output.qty.magnitude == pytest.approx(229000.0)
+    assert output.qty.units == ureg("lb")
 
 
 def test_parametric_constraint_allows_dimensionless_output():
@@ -47,4 +43,4 @@ def test_parametric_constraint_allows_dimensionless_output():
     constraint.evaluate()
 
     assert output.qty.magnitude == pytest.approx(6.0)
-    assert str(output.qty.units) == "dimensionless"
+    assert output.qty.units == ureg.dimensionless
