@@ -1,0 +1,775 @@
+{
+    "model": {
+        "type": [
+            "custom"
+        ],
+        "modelName": "CE-634 float to",
+        "design": {
+            "selectedModule": 9244609202.32234,
+            "interfaceVariables": [
+                {
+                    "name": "12100-1101A Sideshell Weldment -- Module Mass",
+                    "unit": "lb"
+                },
+                {
+                    "name": "12000-1101A Top Shell Weldment -- Module Mass",
+                    "unit": "lb"
+                },
+                {
+                    "name": "111110-1101A Bottom Shell Generic FSW Assy Machined -- Module Mass",
+                    "unit": "lb"
+                },
+                {
+                    "name": "11000-1101A Mid-Body Module Open Tankgage Weldment -- Module Mass",
+                    "unit": "lb"
+                }
+            ]
+        },
+        "manufacturing": {
+            "line": "cell",
+            "rate": 100,
+            "amortization": "duration",
+            "duration": 5,
+            "quantity": 1000,
+            "selectedModule": 6104946481.946376,
+            "partsPer": 10,
+            "rates": []
+        },
+        "finance": {
+            "shiftsPerDay": 2,
+            "hrsPerShift": 10,
+            "daysPerWeek": 7,
+            "weeksPerYear": 50,
+            "costOfCapital": 10,
+            "rateUnit": "year",
+            "durationUnit": "years",
+            "kitName": "Vessel",
+            "discretizedResources": true
+        },
+        "modules": [
+            {
+                "name": "Modular AL Automated Manufacturing T0 R0-1",
+                "id": 6104946481.946376,
+                "type": "manufacturing",
+                "manufacturing": {
+                    "processChain": [
+                        {
+                            "id": "P010",
+                            "type": "Module Assembly",
+                            "cell": "Module Assembly Station"
+                        }
+                    ],
+                    "cvByProcess": false,
+                    "cellsFromProcesses": false,
+                    "feederProcesses": [
+                        {
+                            "id": "F010",
+                            "type": "Small Parts Weld",
+                            "cell": "Automation Manufacturing Station",
+                            "feederLine": "11000-1101A Mid-Body Module Open Tankgage Weldment,"
+                        },
+                        {
+                            "id": "F020",
+                            "type": "Lower Tankage Integration",
+                            "cell": "Automated Integration Station",
+                            "feederLine": "11000-1101A Mid-Body Module Open Tankgage Weldment,"
+                        },
+                        {
+                            "id": "F030",
+                            "type": "Panel SubModule",
+                            "cell": "Automation Manufacturing Station",
+                            "feederLine": "12000-1101A Top Shell Weldment"
+                        },
+                        {
+                            "id": "F040",
+                            "type": "Top Shell Integration",
+                            "cell": "Automated Integration Station",
+                            "feederLine": "12000-1101A Top Shell Weldment"
+                        }
+                    ],
+                    "feederLines": [
+                        {
+                            "id": "11000-1101A Mid-Body Module Open Tankgage Weldment,",
+                            "to": "P010"
+                        },
+                        {
+                            "id": "12000-1101A Top Shell Weldment",
+                            "to": "P010"
+                        },
+                        {
+                            "id": "11111-110XA Bottom Shell FSW Assy Machined",
+                            "to": "F010"
+                        },
+                        {
+                            "id": "12110-1101A Sideshell Starboard FSW Assy Machined",
+                            "to": "F030"
+                        }
+                    ],
+                    "secProcesses": [],
+                    "routes": [],
+                    "tools": [],
+                    "cells": [
+                        {
+                            "name": "Module Assembly Station"
+                        },
+                        {
+                            "name": "Automation Manufacturing Station",
+                            "noQueueing": ""
+                        },
+                        {
+                            "name": "Automated Integration Station",
+                            "noQueueing": ""
+                        }
+                    ],
+                    "costs": [
+                        {
+                            "name": "AL Raw Material",
+                            "type": "Variable"
+                        },
+                        {
+                            "name": "AL Extrusion",
+                            "type": "Variable"
+                        },
+                        {
+                            "name": "Panel FSW",
+                            "type": "Variable"
+                        },
+                        {
+                            "name": "Panel Machining",
+                            "type": "Variable"
+                        }
+                    ],
+                    "inputFormat": {
+                        "processes": [
+                            {
+                                "property": "Time",
+                                "unit": "hr",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Std. Dev.",
+                                "unit": "min",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "FPY",
+                                "unit": "%",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Head Count",
+                                "unit": "count",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Labor Rate",
+                                "unit": "$/hr",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Labor Rate",
+                                "unit": "$/hr",
+                                "inputFormat": "-"
+                            }
+                        ],
+                        "cells": [
+                            {
+                                "property": "Batch Size",
+                                "unit": "count",
+                                "inputFormat": "table",
+                                "defaultValue": 1
+                            },
+                            {
+                                "property": "Non-Recurring Cost",
+                                "unit": "$",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Recurring Cost",
+                                "unit": "$/hr",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Floor Space",
+                                "unit": "m^2",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Head Count",
+                                "unit": "count",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Labor Rate",
+                                "unit": "$/hr",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Mean Operations to Failure",
+                                "unit": "count",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "MTTF",
+                                "unit": "hr",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "MTTR",
+                                "unit": "hr",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Uptime",
+                                "unit": "%",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Extra Shifts",
+                                "unit": "hr",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Useful Life",
+                                "unit": "years",
+                                "inputFormat": "-"
+                            }
+                        ],
+                        "tools": [
+                            {
+                                "property": "Lot Size",
+                                "unit": "count",
+                                "inputFormat": "table",
+                                "defaultValue": 1
+                            },
+                            {
+                                "property": "Non-Recurring Cost",
+                                "unit": "$",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Recurring Cost",
+                                "unit": "$/hr",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Floor Space",
+                                "unit": "m^2",
+                                "inputFormat": "table"
+                            },
+                            {
+                                "property": "Uptime",
+                                "unit": "%",
+                                "inputFormat": "-"
+                            },
+                            {
+                                "property": "Useful Life",
+                                "unit": "years",
+                                "inputFormat": "-"
+                            }
+                        ],
+                        "feederLines": [
+                            {
+                                "property": "Quantity",
+                                "unit": "count",
+                                "inputFormat": "table",
+                                "defaultValue": 1
+                            },
+                            {
+                                "property": "Variable Cost",
+                                "unit": "$",
+                                "inputFormat": "constraint"
+                            }
+                        ],
+                        "routes": [
+                            {
+                                "property": "% Diverted",
+                                "unit": "%",
+                                "inputFormat": "table"
+                            }
+                        ],
+                        "costs": [
+                            {
+                                "property": "Variable",
+                                "unit": "$",
+                                "inputFormat": "constraint"
+                            },
+                            {
+                                "property": "Recurring",
+                                "unit": "$/month",
+                                "inputFormat": "constraint"
+                            },
+                            {
+                                "property": "Non-Recurring",
+                                "unit": "$",
+                                "inputFormat": "constraint"
+                            }
+                        ],
+                        "laborTypes": [
+                            {
+                                "property": "Direct Variable",
+                                "unit": "$/hr",
+                                "inputFormat": "constraint"
+                            },
+                            {
+                                "property": "Direct Pooled",
+                                "unit": "$/hr",
+                                "inputFormat": "constraint"
+                            },
+                            {
+                                "property": "Fixed Indirect",
+                                "unit": "$/month",
+                                "inputFormat": "constraint"
+                            },
+                            {
+                                "property": "Non-Recurring",
+                                "unit": "$",
+                                "inputFormat": "constraint"
+                            }
+                        ]
+                    },
+                    "variables": [
+                        {
+                            "name": "All Processes CV",
+                            "category": "all processes",
+                            "property": "CV",
+                            "unit": "%",
+                            "value": 25,
+                            "sign": "=",
+                            "key": "All Processes CV // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Automated Weld Rate",
+                            "unit": "m/hr",
+                            "sign": "=",
+                            "key": "Automated Weld Rate // Modular AL Automated Manufacturing T0 R0-1",
+                            "category": "custom",
+                            "value": 38.1
+                        },
+                        {
+                            "name": "Automated Inspection Rate",
+                            "unit": "m/hr",
+                            "sign": "=",
+                            "key": "Automated Inspection Rate // Modular AL Automated Manufacturing T0 R0-1",
+                            "category": "custom",
+                            "value": 195
+                        },
+                        {
+                            "name": "11111-110XA Bottom Shell FSW Assy Machined Variable Cost",
+                            "value": [
+                                "111110-1101A Bottom Shell Generic FSW Assy Machined -- Module Mass",
+                                "*",
+                                "11111 Total Cost Weight Scale"
+                            ],
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "11111-110XA Bottom Shell FSW Assy Machined",
+                            "property": "Variable Cost",
+                            "category": "feederLines",
+                            "key": "11111-110XA Bottom Shell FSW Assy Machined Variable Cost // Modular AL Automated Manufacturing T0 R0-1",
+                            "math": true,
+                            "monomial": true,
+                            "acyclic": true
+                        },
+                        {
+                            "name": "11000-1101A Mid-Body Module Open Tankgage Weldment Variable Cost",
+                            "value": [
+                                "11000-1101A Mid-Body Module Open Tankgage Weldment -- Module Mass",
+                                "*",
+                                "11000 Total Cost Weight Scale"
+                            ],
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "11000-1101A Mid-Body Module Open Tankgage Weldment,",
+                            "property": "Variable Cost",
+                            "category": "feederLines",
+                            "key": "11000-1101A Mid-Body Module Open Tankgage Weldment Variable Cost // Modular AL Automated Manufacturing T0 R0-1",
+                            "math": true,
+                            "monomial": true,
+                            "acyclic": true
+                        },
+                        {
+                            "name": "12110-1101A Sideshell Starboard FSW Assy Machined Variable Cost",
+                            "value": [
+                                "12100-1101A Sideshell Weldment -- Module Mass",
+                                "*",
+                                "12100 Total Cost Weight Scale"
+                            ],
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "12110-1101A Sideshell Starboard FSW Assy Machined",
+                            "property": "Variable Cost",
+                            "category": "feederLines",
+                            "key": "12110-1101A Sideshell Starboard FSW Assy Machined Variable Cost // Modular AL Automated Manufacturing T0 R0-1",
+                            "math": true,
+                            "monomial": true,
+                            "acyclic": true
+                        },
+                        {
+                            "name": "12000-1101A Top Shell Weldment Variable Cost",
+                            "value": [
+                                "12000-1101A Top Shell Weldment -- Module Mass",
+                                "*",
+                                "12000 Total Cost Weight Scale"
+                            ],
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "12000-1101A Top Shell Weldment",
+                            "property": "Variable Cost",
+                            "category": "feederLines",
+                            "key": "12000-1101A Top Shell Weldment Variable Cost // Modular AL Automated Manufacturing T0 R0-1",
+                            "math": true,
+                            "monomial": true,
+                            "acyclic": true
+                        },
+                        {
+                            "name": "12100 Total Cost Weight Scale",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "12100 Total Cost Weight Scale // Modular AL Automated Manufacturing T0 R0-1",
+                            "value": 13.63,
+                            "unit": "$/lb"
+                        },
+                        {
+                            "name": "12000 Total Cost Weight Scale",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "12000 Total Cost Weight Scale // Modular AL Automated Manufacturing T0 R0-1",
+                            "value": 16.9,
+                            "unit": "$/lb"
+                        },
+                        {
+                            "name": "11000 Total Cost Weight Scale",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "11000 Total Cost Weight Scale // Modular AL Automated Manufacturing T0 R0-1",
+                            "value": 10.34,
+                            "unit": "$/lb"
+                        },
+                        {
+                            "name": "11111 Total Cost Weight Scale",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "11111 Total Cost Weight Scale // Modular AL Automated Manufacturing T0 R0-1",
+                            "value": 10.32,
+                            "unit": "$/lb"
+                        }
+                    ],
+                    "variablesSimple": [
+                        {
+                            "name": "Module Assembly Station Batch Size",
+                            "sign": "=",
+                            "type": "Module Assembly Station",
+                            "property": "Batch Size",
+                            "category": "cells",
+                            "value": 1,
+                            "key": "Module Assembly Station Batch Size // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Automation Manufacturing Station Batch Size",
+                            "value": 1,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "Automation Manufacturing Station",
+                            "property": "Batch Size",
+                            "category": "cells",
+                            "key": "Automation Manufacturing Station Batch Size // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Automated Integration Station Batch Size",
+                            "value": 1,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "Automated Integration Station",
+                            "property": "Batch Size",
+                            "category": "cells",
+                            "key": "Automated Integration Station Batch Size // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "11000-1101A Mid-Body Module Open Tankgage Weldment Quantity",
+                            "value": 1,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "11000-1101A Mid-Body Module Open Tankgage Weldment,",
+                            "property": "Quantity",
+                            "category": "feederLines",
+                            "key": "11000-1101A Mid-Body Module Open Tankgage Weldment Quantity // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "12000-1101A Top Shell Weldment Quantity",
+                            "value": 1,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "12000-1101A Top Shell Weldment",
+                            "property": "Quantity",
+                            "category": "feederLines",
+                            "key": "12000-1101A Top Shell Weldment Quantity // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Small Parts Weld Time",
+                            "value": 13,
+                            "unit": "hr",
+                            "sign": "=",
+                            "type": "Small Parts Weld",
+                            "property": "Time",
+                            "category": "processes",
+                            "key": "Small Parts Weld Time // Modular AL Automated Manufacturing T0 R0-1",
+                            "tags": [
+                                "linearflow_timestudy_250508"
+                            ]
+                        },
+                        {
+                            "name": "Lower Tankage Integration Time",
+                            "value": 47.5,
+                            "unit": "hr",
+                            "sign": "=",
+                            "type": "Lower Tankage Integration",
+                            "property": "Time",
+                            "category": "processes",
+                            "key": "Lower Tankage Integration Time // Modular AL Automated Manufacturing T0 R0-1",
+                            "tags": [
+                                "linearflow_timestudy_250508"
+                            ]
+                        },
+                        {
+                            "name": "Panel SubModule Time",
+                            "value": 21.5,
+                            "unit": "hr",
+                            "sign": "=",
+                            "type": "Panel SubModule",
+                            "property": "Time",
+                            "category": "processes",
+                            "key": "Panel SubModule Time // Modular AL Automated Manufacturing T0 R0-1",
+                            "tags": [
+                                "linearflow_timestudy_250508"
+                            ]
+                        },
+                        {
+                            "name": "Top Shell Integration Time",
+                            "value": 10,
+                            "unit": "hr",
+                            "sign": "=",
+                            "type": "Top Shell Integration",
+                            "property": "Time",
+                            "category": "processes",
+                            "key": "Top Shell Integration Time // Modular AL Automated Manufacturing T0 R0-1",
+                            "tags": [
+                                "linearflow_timestudy_250508"
+                            ]
+                        },
+                        {
+                            "name": "11111-110XA Bottom Shell FSW Assy Machined Quantity",
+                            "value": 2,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "11111-110XA Bottom Shell FSW Assy Machined",
+                            "property": "Quantity",
+                            "category": "feederLines",
+                            "key": "11111-110XA Bottom Shell FSW Assy Machined Quantity // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Module Assembly Station Non-Recurring Cost",
+                            "value": 2000000,
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "Module Assembly Station",
+                            "property": "Non-Recurring Cost",
+                            "category": "cells",
+                            "key": "Module Assembly Station Non-Recurring Cost // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Automation Manufacturing Station Non-Recurring Cost",
+                            "value": 2000000,
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "Automation Manufacturing Station",
+                            "property": "Non-Recurring Cost",
+                            "category": "cells",
+                            "key": "Automation Manufacturing Station Non-Recurring Cost // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Automated Integration Station Non-Recurring Cost",
+                            "value": 2000000,
+                            "unit": "$",
+                            "sign": "=",
+                            "type": "Automated Integration Station",
+                            "property": "Non-Recurring Cost",
+                            "category": "cells",
+                            "key": "Automated Integration Station Non-Recurring Cost // Modular AL Automated Manufacturing T0 R0-1"
+                        },
+                        {
+                            "name": "Module Assembly Time",
+                            "value": 100,
+                            "unit": "hr",
+                            "sign": "=",
+                            "type": "Module Assembly",
+                            "property": "Time",
+                            "category": "processes",
+                            "key": "Module Assembly Time // Modular AL Automated Manufacturing T0 R0-1",
+                            "tags": [
+                                "linearflow_timestudy_250508"
+                            ]
+                        },
+                        {
+                            "name": "12110-1101A Sideshell Starboard FSW Assy Machined Quantity",
+                            "value": 2,
+                            "unit": "count",
+                            "sign": "=",
+                            "type": "12110-1101A Sideshell Starboard FSW Assy Machined",
+                            "property": "Quantity",
+                            "category": "feederLines",
+                            "key": "12110-1101A Sideshell Starboard FSW Assy Machined Quantity // Modular AL Automated Manufacturing T0 R0-1"
+                        }
+                    ],
+                    "exposedVariables": []
+                }
+            },
+            {
+                "name": "10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                "type": "design",
+                "design": {
+                    "variables": [
+                        {
+                            "name": "Module Section Length",
+                            "unit": "ft",
+                            "sign": "=",
+                            "key": "Module Section Length // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 16,
+                            "tags": [
+                                "Extrusion_Count.xlsx"
+                            ]
+                        },
+                        {
+                            "name": "Module Mass",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "Module Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": [
+                                "Avg Panel Mass",
+                                "*",
+                                "Panels per Module"
+                            ],
+                            "math": true,
+                            "monomial": true,
+                            "acyclic": true
+                        },
+                        {
+                            "name": "Panels per Module",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "Panels per Module // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "value": 13,
+                            "unit": "count",
+                            "tags": [
+                                "Daniel Email"
+                            ]
+                        },
+                        {
+                            "name": "Avg Panel Mass",
+                            "category": "custom",
+                            "sign": "=",
+                            "key": "Avg Panel Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "value": [
+                                "Total Mass of Panels",
+                                "*",
+                                "13",
+                                "^-1"
+                            ],
+                            "math": true,
+                            "monomial": true,
+                            "unit": "lb",
+                            "tags": [
+                                "Daniel Email"
+                            ],
+                            "acyclic": true
+                        },
+                        {
+                            "name": "Total FSW Inches",
+                            "unit": "in",
+                            "sign": "=",
+                            "key": "Total FSW Inches // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom"
+                        },
+                        {
+                            "name": "12100-1101A Sideshell Weldment -- Module Mass",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "12100-1101A Sideshell Weldment -- Module Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 1586.89,
+                            "tags": [
+                                "AL-Modular Panels BOM 250529"
+                            ]
+                        },
+                        {
+                            "name": "12000-1101A Top Shell Weldment -- Module Mass",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "12000-1101A Top Shell Weldment -- Module Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 5575.96,
+                            "tags": [
+                                "AL-Modular Panels BOM 250529"
+                            ]
+                        },
+                        {
+                            "name": "111110-1101A Bottom Shell Generic FSW Assy Machined -- Module Mass",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "111110-1101A Bottom Shell Generic FSW Assy Machined -- Module Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 1983.35,
+                            "tags": [
+                                "AL-Modular Panels BOM 250529"
+                            ]
+                        },
+                        {
+                            "name": "11000-1101A Mid-Body Module Open Tankgage Weldment -- Module Mass",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "11000-1101A Mid-Body Module Open Tankgage Weldment -- Module Mass // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 3509.59,
+                            "tags": [
+                                "AL-Modular Panels BOM 250529"
+                            ]
+                        },
+                        {
+                            "name": "Total Mass of Panels",
+                            "unit": "lb",
+                            "sign": "=",
+                            "key": "Total Mass of Panels // 10000-1101A Mid-Body Module Protovessel -- T1 R0",
+                            "category": "custom",
+                            "value": 229000
+                        }
+                    ],
+                    "variablesSimple": []
+                },
+                "interfaceVariables": [
+                    {
+                        "name": "12100-1101A Sideshell Weldment -- Module Mass",
+                        "unit": "lb"
+                    },
+                    {
+                        "name": "12000-1101A Top Shell Weldment -- Module Mass",
+                        "unit": "lb"
+                    },
+                    {
+                        "name": "111110-1101A Bottom Shell Generic FSW Assy Machined -- Module Mass",
+                        "unit": "lb"
+                    },
+                    {
+                        "name": "11000-1101A Mid-Body Module Open Tankgage Weldment -- Module Mass",
+                        "unit": "lb"
+                    }
+                ],
+                "id": 9244609202.32234
+            }
+        ],
+        "scenario": "likely",
+        "version": "1.0.53"
+    },
+    "id": 248640269.8910335
+}
