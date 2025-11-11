@@ -17,14 +17,24 @@ from test.shared_functions import (
 )
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
-REPO_ROOT = os.path.dirname(current_dir)
-DATA_DIR = os.path.join(REPO_ROOT, "test", "data", "models")
+engine_root = os.path.dirname(current_dir)
+repo_root = os.path.dirname(engine_root)
+
+MODEL_DIRECTORIES = [
+    os.path.join(engine_root, "test", "data", "models"),
+    os.path.join(repo_root, "models to test"),
+]
+
+MODEL_DIRECTORIES = [
+    os.path.abspath(path) for path in MODEL_DIRECTORIES if os.path.isdir(path)
+]
 
 
 @pytest.fixture(scope="function", autouse=True)
-def setup_data_directory() -> Generator[None, None, None]:
-    """Ensure DATA_DIR exists before tests."""
-    ensure_data_directory_exists(DATA_DIR)
+def setup_data_directories() -> Generator[None, None, None]:
+    """Ensure all model directories exist before tests."""
+    for model_dir in MODEL_DIRECTORIES:
+        ensure_data_directory_exists(model_dir)
     yield
 
 
@@ -76,9 +86,16 @@ def _case_id(param) -> str:
     return os.path.splitext(base)[0]
 
 
+def _collect_test_cases() -> list[tuple[str, str]]:
+    cases: list[tuple[str, str]] = []
+    for model_dir in MODEL_DIRECTORIES:
+        cases.extend(discover_test_cases(model_dir))
+    return cases
+
+
 @pytest.mark.parametrize(
     ("input_json", "_expected_json"),
-    discover_test_cases(DATA_DIR),
+    _collect_test_cases(),
     ids=_case_id,
 )
 def test_models_solve_only(

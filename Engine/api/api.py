@@ -9,6 +9,11 @@ from threading import Thread
 import time
 from typing import Generator, cast
 
+try:
+    import numpy as np  # type: ignore[import-not-found]
+except ModuleNotFoundError:  # pragma: no cover - numpy is available in prod but optional in tests
+    np = None  # type: ignore[assignment]
+
 from flask import (Flask, Response, has_request_context, jsonify, redirect, request)
 from flask_httpauth import HTTPBasicAuth
 import requests
@@ -401,16 +406,34 @@ def threaded_solve() -> Response:
             # resp = pipeline.get()
             resp = th.ret
 
-        if save_model_data_for_tests:
-            save_data(json.dumps(resp), model_name, "output")
+        serializable_resp = ensure_json_serializable(resp)
 
-        logging.debug("FRONTEND_ERROR: %s", resp.get("errors", 'No Errors'))
-        yield json.dumps(resp)
+        if save_model_data_for_tests:
+            save_data(json.dumps(serializable_resp), model_name, "output")
+
+        logging.debug("FRONTEND_ERROR: %s", serializable_resp.get("errors", 'No Errors'))
+        yield json.dumps(serializable_resp)
 
     resp: Response = Response(gen(pipeline), mimetype="application/json")
     # resp = Response(gen(), mimetype='application/json')
     resp.headers["X-Accel-Buffering"] = "no"
     return resp
+
+
+def ensure_json_serializable(data: AcceptedTypes) -> AcceptedTypes:
+    """Recursively convert values that `json.dumps` cannot handle."""
+    if isinstance(data, dict):
+        return {k: ensure_json_serializable(v) for k, v in data.items()}
+    if isinstance(data, list):
+        return [ensure_json_serializable(item) for item in data]
+    if isinstance(data, tuple):
+        return [ensure_json_serializable(item) for item in data]
+    if np is not None:
+        if isinstance(data, np.generic):  # type: ignore[attr-defined]
+            return data.item()
+        if isinstance(data, np.ndarray):  # type: ignore[attr-defined]
+            return data.tolist()
+    return data
 
 
 def save_data(data: str, model_name: str, data_type: str) -> None:
@@ -431,6 +454,7 @@ def save_data(data: str, model_name: str, data_type: str) -> None:
         # Ensure the data is properly formatted JSON
         if isinstance(data, str):
             data = json.loads(data)
+        data = ensure_json_serializable(data)
     except json.JSONDecodeError as e:
         logger.error(f"Failed to decode JSON data: {e}")
         raise
