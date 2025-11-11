@@ -170,16 +170,26 @@ class ParametricConstraint:
         target_unit = self.outputvar.unit
 
         # evaluate with pint quantites
+        constraint_name = self.outputvar.name
         try:
             qty_result = self.func(**qty_inputs)
-            if not hasattr(qty_result, "to"):
-                error = self._unitless_summary(self.constraint, qty_inputs, target_unit)
-                raise AttributeError(error)
-            self.outputvar.qty = qty_result.to(target_unit)
-        except (AttributeError, pint.DimensionalityError) as e:
-            # there is an issue converting to the output unit
-            constraint_name = self.outputvar.name
-            raise ValueError(f'{e} in constraint {constraint_name}') from e
+        except Exception as exc:
+            raise ValueError(f"{exc} in constraint {constraint_name}") from exc
+
+        if hasattr(qty_result, "to"):
+            try:
+                if target_unit:
+                    self.outputvar.qty = qty_result.to(target_unit)
+                else:
+                    self.outputvar.qty = qty_result
+            except pint.DimensionalityError as exc:
+                raise ValueError(f"{exc} in constraint {constraint_name}") from exc
+        else:
+            error = self._unitless_summary(self.constraint, qty_inputs, target_unit)
+            typename = type(qty_result).__name__
+            raise ValueError(
+                f"Constraint {constraint_name} evaluated to a plain {typename}. {error}"
+            )
 
         # evaluate with adnumbers
         self.outputvar.adnum = self.func(**adnum_inputs)
@@ -214,8 +224,12 @@ class ParametricConstraint:
         if unknown_tokens:
             bits.append("Unrecognised tokens: " + ", ".join(unknown_tokens))
 
-        detail = "; ".join(bits) or "no units on result"
-        return f"{detail} (expects “{target_unit}”)."
+        expected_unit = target_unit or "dimensionless"
+        detail = "; ".join(bits) or "Result has no units"
+        return (
+            f"{detail} (expected '{expected_unit}'). "
+            "Add explicit units to numeric literals or refer to other variables with units."
+        )
 
 
 class ParametricInputs:
