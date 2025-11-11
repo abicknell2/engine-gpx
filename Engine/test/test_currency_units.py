@@ -8,7 +8,6 @@ from flask import Response
 from flask.testing import FlaskClient
 import pint
 import pytest
-import requests
 
 # isort: off
 import gpx.custom_units  # noqa: F401
@@ -37,10 +36,8 @@ def load_model_data(file_name: str) -> dict:
 
 # helper - pull the same rates that were loaded into the module (for independent checks)
 def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
-    url = f"https://api.frankfurter.app/latest?base={base}"
-    r = requests.get(url, timeout=5)
-    r.raise_for_status()
-    rates = r.json()["rates"]
+    rates = gpx.custom_units.fetch_exchange_rates(base)
+    rates = dict(rates)
     rates[base] = 1.0
     return rates
 
