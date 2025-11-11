@@ -18,6 +18,7 @@ Example Use
 import bootstrapped.bootstrap as bs
 import bootstrapped.stats_functions as bs_stats
 from gpkit import Variable
+from gpkit.exceptions import Infeasible, UnknownInfeasible
 import numpy as np
 
 import gpx.uncertainty.distributions
@@ -318,11 +319,19 @@ class UncertainModel(object):
             raise Exception('Solution case not found: ' + str(case))
 
         # update the substitutions based on the case
-        subs = {v.var: v.subs_as_tuple(sens=self.base_senss)[case_idx] for v in self.uncertainvars}
-        # pass subsitutions to the model
-        # self.gpmodel.substitutions.update(subs)
+        substitution_options = {
+            v: v.subs_as_tuple(sens=self.base_senss)
+            for v in self.uncertainvars
+        }
+        subs = {
+            v.var: substitution_options[v][case_idx]
+            for v in self.uncertainvars
+        }
+
+        if case_idx == 0:
+            return self._solve_best_case_with_retries(subs, substitution_options, **kwargs)
+
         self.gpmodel.update_substitutions(subs)
-        # solve the model for the selected case
         return self.gpmodel.solve(**kwargs)
 
     def get_best_case(self, **kwargs):
@@ -346,6 +355,91 @@ class UncertainModel(object):
         except AttributeError:
             self._likely_case = self.solve_case(case='likely', **kwargs)
             return self._likely_case
+
+    def _solve_best_case_with_retries(self, subs, substitution_options, **kwargs):
+        """Solve the best-case scenario, backing off CV targets if infeasible."""
+
+        cv_infos = []
+        self.best_case_cv_backoff = None
+        for uv, (best_val, likely_val, _worst_val) in substitution_options.items():
+            if not self._is_cv_variable(uv.var):
+                continue
+            try:
+                delta = likely_val - best_val
+            except TypeError:
+                continue
+
+            delta_mag = self._magnitude(delta)
+            if np.isclose(delta_mag, 0.0):
+                continue
+
+            cv_infos.append(
+                {
+                    'var': uv.var,
+                    'best': best_val,
+                    'delta': delta,
+                }
+            )
+
+        # Always attempt the direct solve first. If it works, return immediately.
+        candidate_steps = self._best_case_candidate_steps(len(cv_infos))
+        last_error = None
+        final_solution = None
+        for alpha in candidate_steps:
+            trial_subs = dict(subs)
+            if cv_infos:
+                for info in cv_infos:
+                    trial_subs[info['var']] = info['best'] + info['delta'] * alpha
+
+            self.gpmodel.update_substitutions(trial_subs)
+            try:
+                final_solution = self.gpmodel.solve(**kwargs)
+                if cv_infos and alpha:
+                    self.best_case_cv_backoff = {
+                        'alpha': alpha,
+                        'variables': {
+                            str(info['var'].key): trial_subs[info['var']]
+                            for info in cv_infos
+                        },
+                    }
+                return final_solution
+            except Exception as err:
+                if isinstance(err, (UnknownInfeasible, Infeasible)) or 'infeasible' in str(err).lower():
+                    last_error = err
+                    continue
+                raise
+
+        # Restore the original best-case substitutions before surfacing the error.
+        self.gpmodel.update_substitutions(subs)
+
+        if last_error is not None:
+            raise last_error
+
+        # If we get here there were no CV variables to adjust, so this mirrors
+        # the original best-case solve behaviour.
+        return final_solution
+
+    @staticmethod
+    def _best_case_candidate_steps(cv_count, steps=10):
+        if not cv_count:
+            return [0.0]
+        return np.linspace(0.0, 1.0, steps + 1)
+
+    @staticmethod
+    def _is_cv_variable(var):
+        key = getattr(var, 'key', None)
+        if key is None:
+            return False
+        descr = getattr(key, 'descr', {})
+        if not isinstance(descr, dict):
+            return False
+        return descr.get('name') == 'cv'
+
+    @staticmethod
+    def _magnitude(value):
+        if hasattr(value, 'magnitude'):
+            return float(value.magnitude)
+        return float(value)
 
 
 def sweep_samples(model, sweepvars, samples=10):

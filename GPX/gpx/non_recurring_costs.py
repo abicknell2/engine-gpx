@@ -48,7 +48,14 @@ class ConwipToolingCost(Cost):
     at the cell which begins the tooling loop
     '''
 
-    def setup(self, conwip_tool, tool_cost, default_currency: str):
+    def setup(
+        self,
+        conwip_tool,
+        tool_cost,
+        default_currency: str,
+        useful_life=None,
+        renewal_cost=None,
+    ):
         '''
         Arguments 
         ---------
@@ -60,6 +67,9 @@ class ConwipToolingCost(Cost):
         super().setup(default_currency=default_currency)
 
         self.variableCost = 0
+
+        self.useful_life = useful_life
+        self.renewal_cost = renewal_cost
 
         if tool_cost is None:
             self.toolCost = Variable('cost_{tool}', default_currency, 'Cost of a tool')

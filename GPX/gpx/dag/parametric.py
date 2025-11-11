@@ -171,8 +171,12 @@ class ParametricConstraint:
 
         # evaluate with pint quantites
         try:
-            self.outputvar.qty = self.func(**qty_inputs).to(target_unit)
-        except pint.DimensionalityError as e:
+            qty_result = self.func(**qty_inputs)
+            if not hasattr(qty_result, "to"):
+                error = self._unitless_summary(self.constraint, qty_inputs, target_unit)
+                raise AttributeError(error)
+            self.outputvar.qty = qty_result.to(target_unit)
+        except (AttributeError, pint.DimensionalityError) as e:
             # there is an issue converting to the output unit
             constraint_name = self.outputvar.name
             raise ValueError(f'{e} in constraint {constraint_name}') from e
@@ -188,6 +192,30 @@ class ParametricConstraint:
         'update the outputvar variable'
         self.outputvar = outputvar
         outputvar.defining_constraint = self
+
+    def _unitless_summary(self, expr: list, known_vars: dict[str, object], target_unit) -> str:
+        """
+        Build a short hint when the RHS ended up dimension-less.
+
+        • lists any numeric literals that have no units
+        • lists any tokens that look like numbers or unknown variables
+        """
+        naked_literals = [str(t) for t in expr if isinstance(t, numbers.Number)]
+        unknown_tokens = [
+            str(t) for t in expr
+            if isinstance(t, str)
+            and t not in known_vars           # not a recognised variable
+            and t not in TOKEN_PRECEDENCE     # not an operator
+        ]
+
+        bits = []
+        if naked_literals:
+            bits.append("Literals without units: " + ", ".join(naked_literals))
+        if unknown_tokens:
+            bits.append("Unrecognised tokens: " + ", ".join(unknown_tokens))
+
+        detail = "; ".join(bits) or "no units on result"
+        return f"{detail} (expects “{target_unit}”)."
 
 
 class ParametricInputs:
