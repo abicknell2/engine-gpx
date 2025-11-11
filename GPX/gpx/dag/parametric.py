@@ -170,16 +170,25 @@ class ParametricConstraint:
         target_unit = self.outputvar.unit
 
         # evaluate with pint quantites
+        constraint_name = self.outputvar.name
         try:
             qty_result = self.func(**qty_inputs)
-            if not hasattr(qty_result, "to"):
-                error = self._unitless_summary(self.constraint, qty_inputs, target_unit)
-                raise AttributeError(error)
-            self.outputvar.qty = qty_result.to(target_unit)
-        except (AttributeError, pint.DimensionalityError) as e:
-            # there is an issue converting to the output unit
-            constraint_name = self.outputvar.name
-            raise ValueError(f'{e} in constraint {constraint_name}') from e
+        except Exception as exc:
+            raise ValueError(f"{exc} in constraint {constraint_name}") from exc
+
+        if not hasattr(qty_result, "to"):
+            if target_unit:
+                qty_result = qty_result * ureg(target_unit)
+            else:
+                qty_result = qty_result * ureg.dimensionless
+
+        try:
+            if target_unit:
+                self.outputvar.qty = qty_result.to(target_unit)
+            else:
+                self.outputvar.qty = qty_result
+        except pint.DimensionalityError as exc:
+            raise ValueError(f"{exc} in constraint {constraint_name}") from exc
 
         # evaluate with adnumbers
         self.outputvar.adnum = self.func(**adnum_inputs)

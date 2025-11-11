@@ -57,8 +57,4 @@ def apply_patches() -> None:
     PosynomialInequality.sens_from_dual = _safe_sens_from_dual  # type: ignore[assignment]
 
 
-<<<<<<< HEAD
 apply_patches()
-=======
-apply_patches()
->>>>>>> main
