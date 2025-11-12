@@ -6,7 +6,7 @@ import importlib.util
 import logging
 import math
 from operator import itemgetter
-from typing import TYPE_CHECKING, Optional, Union
+from typing import TYPE_CHECKING, Iterable, Optional, Union
 
 import gpkit
 from gpkit.exceptions import UnknownInfeasible
@@ -110,6 +110,7 @@ class Model(gpkit.Model):
         solve_orig=True,  # only matters when new cost is defined
         preserve_input_qty=True,  # if there is input on the quantity, respect
         relax_targets_on_infeasible: bool = False,
+        extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
         **kwargs,
     ) -> object:
         '''Solve the discrete model when individual product rates are targets.'''
@@ -126,6 +127,7 @@ class Model(gpkit.Model):
             solve_orig=solve_orig,
             preserve_input_qty=preserve_input_qty,
             relax_targets_on_infeasible=relax_targets_on_infeasible,
+            extra_relaxation_vars=extra_relaxation_vars,
             **kwargs,
         )
 
@@ -140,6 +142,7 @@ class Model(gpkit.Model):
         solve_orig=True,
         preserve_input_qty=True,
         relax_targets_on_infeasible: bool = False,
+        extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
         **kwargs,
     ) -> object:
         '''Common implementation for discrete solves.'''
@@ -235,6 +238,12 @@ class Model(gpkit.Model):
         target_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
         for target_var in target_map:
             target_substitutions[target_var] = _pop_target_sub(target_var)
+
+        extra_relaxation_vars = [var for var in (extra_relaxation_vars or []) if var not in target_map]
+        extra_relax_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
+
+        for relax_var in extra_relaxation_vars:
+            extra_relax_substitutions[relax_var] = _pop_target_sub(relax_var)
 
         # allow callers to loosen rounding if needed
         tolerance = kwargs.pop('rounding_tolerance', 1e-6)
@@ -499,6 +508,16 @@ class Model(gpkit.Model):
                         pass
                 else:
                     self.substitutions[key] = fallback
+            else:
+                self.substitutions[key] = prior
+
+        for var, (sub_key, prior) in extra_relax_substitutions.items():
+            key = sub_key or var
+            if prior is missing:
+                try:
+                    del self.substitutions[key]
+                except KeyError:
+                    pass
             else:
                 self.substitutions[key] = prior
 
