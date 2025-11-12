@@ -109,6 +109,7 @@ class Model(gpkit.Model):
         sensitivity_strategy: str = 'min',  # 'min' | 'max'
         solve_orig=True,  # only matters when new cost is defined
         preserve_input_qty=True,  # if there is input on the quantity, respect
+        relax_targets_on_infeasible: bool = False,
         **kwargs,
     ) -> object:
         '''Solve the discrete model when individual product rates are targets.'''
@@ -124,6 +125,7 @@ class Model(gpkit.Model):
             sensitivity_strategy=sensitivity_strategy,
             solve_orig=solve_orig,
             preserve_input_qty=preserve_input_qty,
+            relax_targets_on_infeasible=relax_targets_on_infeasible,
             **kwargs,
         )
 
@@ -137,6 +139,7 @@ class Model(gpkit.Model):
         sensitivity_strategy: str = 'min',
         solve_orig=True,
         preserve_input_qty=True,
+        relax_targets_on_infeasible: bool = False,
         **kwargs,
     ) -> object:
         '''Common implementation for discrete solves.'''
@@ -215,6 +218,7 @@ class Model(gpkit.Model):
             orig_cost = None
 
         missing = object()
+        targets_relaxed = False
 
         def _pop_target_sub(var: gpkit.Variable) -> tuple[object | None, object]:
             if var in self.substitutions:
@@ -299,57 +303,77 @@ class Model(gpkit.Model):
                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                     )
 
-                    # only reach this path when other constraints still bite after lifting rates
-                    # limit the number of safeguarded bumps so we stop after a fair sweep
-                    max_adjustments = max(len(adjustable_resources), 1) * 10
-                    # track how many bumps have been attempted
-                    adjustments = 0
-                    last_feasibility_bump: dict[str, object] | None = None
-                    # run a guarded round robin only when genuine infeasibility remains
-                    while True:
+                    if relax_targets_on_infeasible and not targets_relaxed and target_map:
+                        logging.debug(
+                            "Relaxing discrete rate targets to allow throughput to float with fixed counts",
+                        )
+                        for var in list(target_map.keys()):
+                            target_map[var] = None
+                            sub_key, _ = target_substitutions.get(var, (None, missing))
+                            target_substitutions[var] = (sub_key, missing)
+                        targets_relaxed = True
+
                         try:
-                            # re-test after any safeguarded bump
                             cur_solution = self.solve(**kwargs)
-                            if last_feasibility_bump:
-                                self.last_discrete_feasibility_bump = last_feasibility_bump
-                                resource_label = last_feasibility_bump.get("resource")
-                                log_suffix = (
-                                    f" (resource {resource_label})" if resource_label else ""
-                                )
-                                logging.debug(
-                                    "Discrete feasibility restored after bumping %s to %s%s",
-                                    last_feasibility_bump["variable"],
-                                    last_feasibility_bump["final"],
-                                    log_suffix,
-                                )
-                            break
                         except UnknownInfeasible:
                             logging.debug(
-                                "Discrete solve still infeasible after safeguarded bump %s: %s",
-                                adjustments + 1,
-                                {
-                                    str(dr.key): start_dict[dr]
-                                    for dr in adjustable_resources
-                                },
+                                "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
                             )
-                            if adjustments >= max_adjustments:
-                                self.last_discrete_feasibility_bump = None
-                                raise
-                            dr = adjustable_resources[
-                                adjustments % len(adjustable_resources)
-                            ]
-                            # increase the current cell in turn as a last resort
-                            start_dict[dr] = start_dict.get(dr, 0) + 1
-                            self.substitutions[dr] = start_dict[dr]
-                            resource = resource_lookup.get(dr)
-                            resource_label = _resource_label(resource)
-                            last_feasibility_bump = {
-                                "variable": str(dr.key),
-                                "resource": resource_label,
-                                "initial": start_dict[dr] - 1,
-                                "final": start_dict[dr],
-                            }
-                            adjustments += 1
+                            targets_relaxed = False
+
+                    if not targets_relaxed:
+
+                        # only reach this path when other constraints still bite after lifting rates
+                        # limit the number of safeguarded bumps so we stop after a fair sweep
+                        max_adjustments = max(len(adjustable_resources), 1) * 10
+                        # track how many bumps have been attempted
+                        adjustments = 0
+                        last_feasibility_bump: dict[str, object] | None = None
+                        # run a guarded round robin only when genuine infeasibility remains
+                        while True:
+                            try:
+                                # re-test after any safeguarded bump
+                                cur_solution = self.solve(**kwargs)
+                                if last_feasibility_bump:
+                                    self.last_discrete_feasibility_bump = last_feasibility_bump
+                                    resource_label = last_feasibility_bump.get("resource")
+                                    log_suffix = (
+                                        f" (resource {resource_label})" if resource_label else ""
+                                    )
+                                    logging.debug(
+                                        "Discrete feasibility restored after bumping %s to %s%s",
+                                        last_feasibility_bump["variable"],
+                                        last_feasibility_bump["final"],
+                                        log_suffix,
+                                    )
+                                break
+                            except UnknownInfeasible:
+                                logging.debug(
+                                    "Discrete solve still infeasible after safeguarded bump %s: %s",
+                                    adjustments + 1,
+                                    {
+                                        str(dr.key): start_dict[dr]
+                                        for dr in adjustable_resources
+                                    },
+                                )
+                                if adjustments >= max_adjustments:
+                                    self.last_discrete_feasibility_bump = None
+                                    raise
+                                dr = adjustable_resources[
+                                    adjustments % len(adjustable_resources)
+                                ]
+                                # increase the current cell in turn as a last resort
+                                start_dict[dr] = start_dict.get(dr, 0) + 1
+                                self.substitutions[dr] = start_dict[dr]
+                                resource = resource_lookup.get(dr)
+                                resource_label = _resource_label(resource)
+                                last_feasibility_bump = {
+                                    "variable": str(dr.key),
+                                    "resource": resource_label,
+                                    "initial": start_dict[dr] - 1,
+                                    "final": start_dict[dr],
+                                }
+                                adjustments += 1
 
             target_strategy_flag = 1 if target_strategy == 'above' else -1
 

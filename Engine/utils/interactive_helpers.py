@@ -109,6 +109,7 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
             discrete_resources=rescs,
             target_dict=target_dict,
             solve_orig=solve_orig,
+            relax_targets_on_infeasible=True,
         )
 
     # set up the discrete solve

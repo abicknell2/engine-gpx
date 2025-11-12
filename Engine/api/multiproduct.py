@@ -715,14 +715,40 @@ class Multiproduct(ModuleType):
 
             if not self.by_split:
                 base_rate = self.prod_rates.get(pname)
-                if base_rate is not None:
-                    try:
-                        lam_units = getattr(mclass.lam, "units", gpkit.units("count/hr"))
-                        lb_quantity = base_rate.to(lam_units) if hasattr(base_rate, "to") else base_rate * lam_units
-                        if hasattr(lb_quantity, "magnitude") and lb_quantity.magnitude > 0:
-                            aux_constraints.append(mclass.lam >= lb_quantity)
-                    except Exception:
-                        logging.debug("Failed to apply class-rate floor for %s", pname, exc_info=True)
+                try:
+                    lam_units = getattr(mclass.lam, "units", gpkit.units("count/hr"))
+                except Exception:
+                    lam_units = gpkit.units("count/hr")
+
+                # Keep each lambda strictly positive without re-imposing the full
+                # baseline rate. Scale the bound down aggressively so discrete
+                # rounding is free to reduce throughput when capacity tightens.
+                rate_floor = None
+                try:
+                    base_quantity = None
+                    if base_rate is not None:
+                        if hasattr(base_rate, "to"):
+                            base_quantity = base_rate.to(lam_units)
+                        else:
+                            base_quantity = base_rate * lam_units
+
+                    if base_quantity is not None:
+                        try:
+                            base_mag = float(getattr(base_quantity, "magnitude", base_quantity))
+                        except Exception:
+                            base_mag = None
+                    else:
+                        base_mag = None
+
+                    min_floor_mag = 1e-9
+                    scaled_floor_mag = (base_mag * 1e-6) if (base_mag and base_mag > 0) else None
+                    floor_mag = max(filter(lambda v: v is not None, [scaled_floor_mag, min_floor_mag]))
+                    rate_floor = floor_mag * lam_units
+                except Exception:
+                    logging.debug("Failed to derive relaxed rate floor for %s", pname, exc_info=True)
+
+                if rate_floor is not None:
+                    aux_constraints.append(mclass.lam >= rate_floor)
 
             # update the rates for the secondary cells
             for c in mfg.gpxObject.get("secondaryCells", {}).values():
