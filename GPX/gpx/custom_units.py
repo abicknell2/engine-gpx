@@ -1,9 +1,11 @@
+import logging
 import math
 from functools import lru_cache
 
 from gpkit.units import ureg
 import pint
 import requests
+from requests import RequestException
 
 INITIALISED_FX_BASES: set[str] = set()
 
@@ -44,8 +46,16 @@ def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
         Mapping base->code (e.g., {'GBP': 0.77}) meaning 1 {base} = rate {code}.
     """
     url = f"https://api.frankfurter.app/latest?base={base}"
-    r = requests.get(url, timeout=5)
-    r.raise_for_status()
+    try:
+        r = requests.get(url, timeout=5)
+        r.raise_for_status()
+    except RequestException as exc:
+        logging.getLogger(__name__).warning(
+            "Falling back to cached FX rates for base %s after request failure: %s",
+            base,
+            exc,
+        )
+        return dict(CURRENT_RATES_BY_BASE.get(base, {}))
     return dict(r.json()["rates"])  # base->code
 
 
@@ -78,7 +88,8 @@ def refresh_fx_rates(base: str = "USD") -> dict[str, float]:
         if rate and not math.isnan(rate)
     }
     ureg._contexts.pop("FX", None)  # remove stale context
-    ureg.add_context(make_fx_context(flipped, base))
+    if flipped:
+        ureg.add_context(make_fx_context(flipped, base))
     CURRENT_RATES_BY_BASE[base] = dict(flipped)  # store a copy
     return flipped
 
