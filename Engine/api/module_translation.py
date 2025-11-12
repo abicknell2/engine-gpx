@@ -1089,7 +1089,11 @@ def manufacturing_module(
                 module.assembly_module.get_finance_constraints(unitcost.horizon, invholding.holdingRate),
             )
 
-        gpx_cell_names: list[str] = [f"{name} : {str(cell).split('\n')[0]}" for name, cell in all_gpx_cells.items()]
+        gpx_cell_names: list[str] = []
+        for name, cell in all_gpx_cells.items():
+            cell_str = str(cell)
+            first_line = cell_str.split("\n", 1)[0]
+            gpx_cell_names.append(f"{name} : {first_line}")
 
         # save the cell names to the object
 
