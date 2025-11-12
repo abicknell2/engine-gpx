@@ -86,6 +86,31 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
     else:
         solve_orig = True
 
+    system_module = interaction.active_modules.get("system") if hasattr(interaction, "active_modules") else None
+    target_dict: dict[object, float | int | None] = {}
+
+    if system_module and getattr(system_module, "by_split", True) is False:
+        mcclasses = getattr(system_module, "mcclasses", {})
+        if isinstance(mcclasses, dict):
+            for mclass in mcclasses.values():
+                rate_var = getattr(mclass, "lam", None)
+                if rate_var is None:
+                    continue
+                target_val = interaction.gpx_model.substitutions.get(rate_var)
+                if target_val is None:
+                    vkey = getattr(rate_var, "key", None)
+                    if vkey is not None:
+                        target_val = interaction.gpx_model.substitutions.get(vkey)
+                if target_val is not None:
+                    target_dict[rate_var] = target_val
+
+    if target_dict:
+        return interaction.gpx_model.by_rate_discretesolve(
+            discrete_resources=rescs,
+            target_dict=target_dict,
+            solve_orig=solve_orig,
+        )
+
     # set up the discrete solve
     return interaction.gpx_model.discretesolve(
         discrete_resources=rescs,

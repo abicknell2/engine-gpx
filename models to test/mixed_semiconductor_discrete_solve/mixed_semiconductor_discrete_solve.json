@@ -1,0 +1,3474 @@
+{
+    "model": {
+        "modelName": "Mixed Semiconductor discrete solve",
+        "type": "system",
+        "line": "cell",
+        "mixType": "concurrent",
+        "products": [
+            {
+                "source": {
+                    "type": [
+                        "manufacturing"
+                    ],
+                    "modelName": "Piezo MUMPs ITER-02",
+                    "manufacturing": {
+                        "line": "cell",
+                        "rate": 475,
+                        "amortization": "duration",
+                        "duration": 5,
+                        "quantity": 1000,
+                        "selectedModule": 1007521573.6381549,
+                        "rates": []
+                    },
+                    "finance": {
+                        "shiftsPerDay": 2,
+                        "hrsPerShift": 7,
+                        "daysPerWeek": 5,
+                        "weeksPerYear": 50,
+                        "costOfCapital": 10,
+                        "rateUnit": "month",
+                        "durationUnit": "years"
+                    },
+                    "modules": [
+                        {
+                            "name": "Piezo MUMPs R02",
+                            "type": "manufacturing",
+                            "manufacturing": {
+                                "processChain": [
+                                    {
+                                        "id": "P010",
+                                        "type": "Clean_RCA",
+                                        "cell": "W_Cln_Stn"
+                                    },
+                                    {
+                                        "id": "P020",
+                                        "type": "CVD_PSG",
+                                        "cell": "C_PSG"
+                                    },
+                                    {
+                                        "id": "P030",
+                                        "type": "Anneal_PSG",
+                                        "cell": "H_RTA"
+                                    },
+                                    {
+                                        "id": "P040",
+                                        "type": "Wet_Etch_PSG",
+                                        "cell": "W_HF_Stn"
+                                    },
+                                    {
+                                        "id": "P050",
+                                        "type": "Clean_PreDiff",
+                                        "cell": "W_Cln_Stn"
+                                    },
+                                    {
+                                        "id": "P060",
+                                        "type": "Wet_Oxidation",
+                                        "cell": "H_Ox_Wet"
+                                    },
+                                    {
+                                        "id": "P070",
+                                        "type": "Measure_Film",
+                                        "cell": "M_Meas_Film"
+                                    },
+                                    {
+                                        "id": "P080",
+                                        "type": "Litho_Pos_Thin",
+                                        "cell": "L_Align"
+                                    },
+                                    {
+                                        "id": "P090",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0100",
+                                        "type": "Wet_Etch_Ox",
+                                        "cell": "W_HF_Stn"
+                                    },
+                                    {
+                                        "id": "P0110",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash"
+                                    },
+                                    {
+                                        "id": "P0120",
+                                        "type": "Sputter_AlN",
+                                        "cell": "P_Sputter"
+                                    },
+                                    {
+                                        "id": "P0130",
+                                        "type": "Measure_Film",
+                                        "cell": "M_Meas_Film"
+                                    },
+                                    {
+                                        "id": "P0140",
+                                        "type": "Litho_Pos_Thin",
+                                        "cell": "L_Align"
+                                    },
+                                    {
+                                        "id": "P0150",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0160",
+                                        "type": "Wet_Etch_AlN",
+                                        "cell": "W_ABH"
+                                    },
+                                    {
+                                        "id": "P0170",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0180",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash"
+                                    },
+                                    {
+                                        "id": "P0190",
+                                        "type": "Litho_Neg_Lift",
+                                        "cell": "L_Align"
+                                    },
+                                    {
+                                        "id": "P0200",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0210",
+                                        "type": "EB_Evap_CrAl",
+                                        "cell": "P_EB_Evap"
+                                    },
+                                    {
+                                        "id": "P0220",
+                                        "type": "Wet_Strip_PR",
+                                        "cell": "W_Strip"
+                                    },
+                                    {
+                                        "id": "P0230",
+                                        "type": "Measure_SO_SR",
+                                        "cell": "M_Probe"
+                                    },
+                                    {
+                                        "id": "P0240",
+                                        "type": "Litho_Pos_Thick",
+                                        "cell": "L_Align"
+                                    },
+                                    {
+                                        "id": "P0250",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0260",
+                                        "type": "RIE_Ox",
+                                        "cell": "E_RIE"
+                                    },
+                                    {
+                                        "id": "P0270",
+                                        "type": "DRIE_STE",
+                                        "cell": "E_DRIE"
+                                    },
+                                    {
+                                        "id": "P0280",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0290",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash"
+                                    },
+                                    {
+                                        "id": "P0300",
+                                        "type": "Spin_Coat_PI",
+                                        "cell": "L_Spin"
+                                    },
+                                    {
+                                        "id": "P0310",
+                                        "type": "Cure_PI",
+                                        "cell": "H_Oven"
+                                    },
+                                    {
+                                        "id": "P0320",
+                                        "type": "Litho_Pos_Thick",
+                                        "cell": "L_Align"
+                                    },
+                                    {
+                                        "id": "P0330",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0340",
+                                        "type": "RIE_Ox",
+                                        "cell": "E_RIE"
+                                    },
+                                    {
+                                        "id": "P0350",
+                                        "type": "DRIE_DTE",
+                                        "cell": "E_DRIE"
+                                    },
+                                    {
+                                        "id": "P0360",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0370",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash"
+                                    },
+                                    {
+                                        "id": "P0380",
+                                        "type": "Wet_Etch_Ox",
+                                        "cell": "W_HF_Stn"
+                                    },
+                                    {
+                                        "id": "P0390",
+                                        "type": "RIE_PI",
+                                        "cell": "E_Ash"
+                                    },
+                                    {
+                                        "id": "P0400",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "id": "P0410",
+                                        "type": "Inspection_Final",
+                                        "cell": "M_Insp_Mic"
+                                    }
+                                ],
+                                "feederProcesses": [],
+                                "feederLines": [],
+                                "secProcesses": [],
+                                "routes": [],
+                                "tools": [],
+                                "cells": [
+                                    {
+                                        "name": "W_Cln_Stn"
+                                    },
+                                    {
+                                        "name": "C_PSG"
+                                    },
+                                    {
+                                        "name": "H_RTA"
+                                    },
+                                    {
+                                        "name": "W_HF_Stn"
+                                    },
+                                    {
+                                        "name": "H_Ox_Wet"
+                                    },
+                                    {
+                                        "name": "M_Meas_Film"
+                                    },
+                                    {
+                                        "name": "L_Align"
+                                    },
+                                    {
+                                        "name": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "name": "E_Ash"
+                                    },
+                                    {
+                                        "name": "P_Sputter"
+                                    },
+                                    {
+                                        "name": "W_ABH"
+                                    },
+                                    {
+                                        "name": "P_EB_Evap"
+                                    },
+                                    {
+                                        "name": "W_Strip"
+                                    },
+                                    {
+                                        "name": "M_Probe"
+                                    },
+                                    {
+                                        "name": "E_RIE"
+                                    },
+                                    {
+                                        "name": "E_DRIE"
+                                    },
+                                    {
+                                        "name": "L_Spin"
+                                    },
+                                    {
+                                        "name": "H_Oven"
+                                    }
+                                ],
+                                "costs": [],
+                                "cvByProcess": false,
+                                "cellsFromProcesses": false,
+                                "inputFormat": {
+                                    "processes": [
+                                        {
+                                            "property": "Time",
+                                            "unit": "hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Std. Dev.",
+                                            "unit": "hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "FPY",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "cells": [
+                                        {
+                                            "property": "Batch Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Mean Operations to Failure",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTF",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTR",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Extra Shifts",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "tools": [
+                                        {
+                                            "property": "Lot Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "feederLines": [
+                                        {
+                                            "property": "Quantity",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Variable Cost",
+                                            "unit": "$",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "routes": [
+                                        {
+                                            "property": "% Diverted",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        }
+                                    ],
+                                    "costs": [
+                                        {
+                                            "property": "Variable",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Recurring",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ],
+                                    "laborTypes": [
+                                        {
+                                            "property": "Direct Variable",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Direct Pooled",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Fixed Indirect",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ]
+                                },
+                                "variables": [
+                                    {
+                                        "name": "All Processes CV",
+                                        "category": "all processes",
+                                        "property": "CV",
+                                        "unit": "%",
+                                        "value": 25,
+                                        "sign": "=",
+                                        "key": "All Processes CV // Piezo MUMPs R02"
+                                    }
+                                ],
+                                "variablesSimple": [
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Clean_RCA Time",
+                                        "type": "Clean_RCA",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "Clean_RCA Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "CVD_PSG Time",
+                                        "type": "CVD_PSG",
+                                        "sign": "=",
+                                        "value": 3.5,
+                                        "key": "CVD_PSG Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Anneal_PSG Time",
+                                        "type": "Anneal_PSG",
+                                        "sign": "=",
+                                        "value": 2,
+                                        "key": "Anneal_PSG Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Etch_PSG Time",
+                                        "type": "Wet_Etch_PSG",
+                                        "sign": "=",
+                                        "value": 0.4,
+                                        "key": "Wet_Etch_PSG Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Clean_PreDiff Time",
+                                        "type": "Clean_PreDiff",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "Clean_PreDiff Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Oxidation Time",
+                                        "type": "Wet_Oxidation",
+                                        "sign": "=",
+                                        "value": 3.5,
+                                        "key": "Wet_Oxidation Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Measure_Film Time",
+                                        "type": "Measure_Film",
+                                        "sign": "=",
+                                        "value": 0.083,
+                                        "key": "Measure_Film Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Pos_Thin Time",
+                                        "type": "Litho_Pos_Thin",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Pos_Thin Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Litho Time",
+                                        "type": "Inspection_Litho",
+                                        "sign": "=",
+                                        "value": 0.133,
+                                        "key": "Inspection_Litho Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Etch_Ox Time",
+                                        "type": "Wet_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 0.25,
+                                        "key": "Wet_Etch_Ox Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Dry_Strip_PR Time",
+                                        "type": "Dry_Strip_PR",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "Dry_Strip_PR Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Sputter_AlN Time",
+                                        "type": "Sputter_AlN",
+                                        "sign": "=",
+                                        "value": 2,
+                                        "key": "Sputter_AlN Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Etch_AlN Time",
+                                        "type": "Wet_Etch_AlN",
+                                        "sign": "=",
+                                        "value": 0.5,
+                                        "key": "Wet_Etch_AlN Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Etch Time",
+                                        "type": "Inspection_Etch",
+                                        "sign": "=",
+                                        "value": 0.133,
+                                        "key": "Inspection_Etch Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Neg_Lift Time",
+                                        "type": "Litho_Neg_Lift",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Neg_Lift Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "EB_Evap_CrAl Time",
+                                        "type": "EB_Evap_CrAl",
+                                        "sign": "=",
+                                        "value": 1.5,
+                                        "key": "EB_Evap_CrAl Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Strip_PR Time",
+                                        "type": "Wet_Strip_PR",
+                                        "sign": "=",
+                                        "value": 0.833,
+                                        "key": "Wet_Strip_PR Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Measure_SO_SR Time",
+                                        "type": "Measure_SO_SR",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "Measure_SO_SR Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Pos_Thick Time",
+                                        "type": "Litho_Pos_Thick",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Pos_Thick Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "RIE_Ox Time",
+                                        "type": "RIE_Ox",
+                                        "sign": "=",
+                                        "value": 0.083,
+                                        "key": "RIE_Ox Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "DRIE_STE Time",
+                                        "type": "DRIE_STE",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "DRIE_STE Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Spin_Coat_PI Time",
+                                        "type": "Spin_Coat_PI",
+                                        "sign": "=",
+                                        "value": 0.1,
+                                        "key": "Spin_Coat_PI Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Cure_PI Time",
+                                        "type": "Cure_PI",
+                                        "sign": "=",
+                                        "value": 2,
+                                        "key": "Cure_PI Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "DRIE_DTE Time",
+                                        "type": "DRIE_DTE",
+                                        "sign": "=",
+                                        "value": 1.8,
+                                        "key": "DRIE_DTE Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "RIE_PI Time",
+                                        "type": "RIE_PI",
+                                        "sign": "=",
+                                        "value": 0.5,
+                                        "key": "RIE_PI Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Final Time",
+                                        "type": "Inspection_Final",
+                                        "sign": "=",
+                                        "value": 0.25,
+                                        "key": "Inspection_Final Time // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Clean_RCA FPY",
+                                        "type": "Clean_RCA",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Clean_RCA FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "CVD_PSG FPY",
+                                        "type": "CVD_PSG",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "CVD_PSG FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Anneal_PSG FPY",
+                                        "type": "Anneal_PSG",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Anneal_PSG FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Etch_PSG FPY",
+                                        "type": "Wet_Etch_PSG",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Wet_Etch_PSG FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Clean_PreDiff FPY",
+                                        "type": "Clean_PreDiff",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Clean_PreDiff FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Oxidation FPY",
+                                        "type": "Wet_Oxidation",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Wet_Oxidation FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Measure_Film FPY",
+                                        "type": "Measure_Film",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Measure_Film FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Pos_Thin FPY",
+                                        "type": "Litho_Pos_Thin",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Litho_Pos_Thin FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Litho FPY",
+                                        "type": "Inspection_Litho",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Inspection_Litho FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Etch_Ox FPY",
+                                        "type": "Wet_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Wet_Etch_Ox FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Dry_Strip_PR FPY",
+                                        "type": "Dry_Strip_PR",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Dry_Strip_PR FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Sputter_AlN FPY",
+                                        "type": "Sputter_AlN",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Sputter_AlN FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Etch_AlN FPY",
+                                        "type": "Wet_Etch_AlN",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Wet_Etch_AlN FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Etch FPY",
+                                        "type": "Inspection_Etch",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Inspection_Etch FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Neg_Lift FPY",
+                                        "type": "Litho_Neg_Lift",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Litho_Neg_Lift FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "EB_Evap_CrAl FPY",
+                                        "type": "EB_Evap_CrAl",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "EB_Evap_CrAl FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Strip_PR FPY",
+                                        "type": "Wet_Strip_PR",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Wet_Strip_PR FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Measure_SO_SR FPY",
+                                        "type": "Measure_SO_SR",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Measure_SO_SR FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Pos_Thick FPY",
+                                        "type": "Litho_Pos_Thick",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Litho_Pos_Thick FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "RIE_Ox FPY",
+                                        "type": "RIE_Ox",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "RIE_Ox FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "DRIE_STE FPY",
+                                        "type": "DRIE_STE",
+                                        "sign": "=",
+                                        "value": 92,
+                                        "key": "DRIE_STE FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Spin_Coat_PI FPY",
+                                        "type": "Spin_Coat_PI",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Spin_Coat_PI FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Cure_PI FPY",
+                                        "type": "Cure_PI",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Cure_PI FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "DRIE_DTE FPY",
+                                        "type": "DRIE_DTE",
+                                        "sign": "=",
+                                        "value": 88,
+                                        "key": "DRIE_DTE FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "RIE_PI FPY",
+                                        "type": "RIE_PI",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "RIE_PI FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Final FPY",
+                                        "type": "Inspection_Final",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Inspection_Final FPY // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_Cln_Stn Batch Size",
+                                        "type": "W_Cln_Stn",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "W_Cln_Stn Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "C_PSG Batch Size",
+                                        "type": "C_PSG",
+                                        "sign": "=",
+                                        "value": 50,
+                                        "key": "C_PSG Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "H_RTA Batch Size",
+                                        "type": "H_RTA",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "H_RTA Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_HF_Stn Batch Size",
+                                        "type": "W_HF_Stn",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "W_HF_Stn Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "H_Ox_Wet Batch Size",
+                                        "type": "H_Ox_Wet",
+                                        "sign": "=",
+                                        "value": 50,
+                                        "key": "H_Ox_Wet Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "M_Meas_Film Batch Size",
+                                        "type": "M_Meas_Film",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "M_Meas_Film Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "L_Align Batch Size",
+                                        "type": "L_Align",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "L_Align Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "M_Insp_Mic Batch Size",
+                                        "type": "M_Insp_Mic",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "M_Insp_Mic Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_Ash Batch Size",
+                                        "type": "E_Ash",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "E_Ash Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "P_Sputter Batch Size",
+                                        "type": "P_Sputter",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "P_Sputter Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_ABH Batch Size",
+                                        "type": "W_ABH",
+                                        "sign": "=",
+                                        "value": 10,
+                                        "key": "W_ABH Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "P_EB_Evap Batch Size",
+                                        "type": "P_EB_Evap",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "P_EB_Evap Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_Strip Batch Size",
+                                        "type": "W_Strip",
+                                        "sign": "=",
+                                        "value": 10,
+                                        "key": "W_Strip Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "M_Probe Batch Size",
+                                        "type": "M_Probe",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "M_Probe Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_RIE Batch Size",
+                                        "type": "E_RIE",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "E_RIE Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_DRIE Batch Size",
+                                        "type": "E_DRIE",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "E_DRIE Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "L_Spin Batch Size",
+                                        "type": "L_Spin",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "L_Spin Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "H_Oven Batch Size",
+                                        "type": "H_Oven",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "H_Oven Batch Size // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_Cln_Stn Non-Recurring Cost",
+                                        "type": "W_Cln_Stn",
+                                        "sign": "=",
+                                        "value": 23750,
+                                        "key": "W_Cln_Stn Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "C_PSG Non-Recurring Cost",
+                                        "type": "C_PSG",
+                                        "sign": "=",
+                                        "value": 120000,
+                                        "key": "C_PSG Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "H_RTA Non-Recurring Cost",
+                                        "type": "H_RTA",
+                                        "sign": "=",
+                                        "value": 29000,
+                                        "key": "H_RTA Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_HF_Stn Non-Recurring Cost",
+                                        "type": "W_HF_Stn",
+                                        "sign": "=",
+                                        "value": 23750,
+                                        "key": "W_HF_Stn Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "H_Ox_Wet Non-Recurring Cost",
+                                        "type": "H_Ox_Wet",
+                                        "sign": "=",
+                                        "value": 125000,
+                                        "key": "H_Ox_Wet Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "M_Meas_Film Non-Recurring Cost",
+                                        "type": "M_Meas_Film",
+                                        "sign": "=",
+                                        "value": 25000,
+                                        "key": "M_Meas_Film Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "L_Align Non-Recurring Cost",
+                                        "type": "L_Align",
+                                        "sign": "=",
+                                        "value": 165000,
+                                        "key": "L_Align Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "M_Insp_Mic Non-Recurring Cost",
+                                        "type": "M_Insp_Mic",
+                                        "sign": "=",
+                                        "value": 95000,
+                                        "key": "M_Insp_Mic Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_Ash Non-Recurring Cost",
+                                        "type": "E_Ash",
+                                        "sign": "=",
+                                        "value": 38000,
+                                        "key": "E_Ash Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "P_Sputter Non-Recurring Cost",
+                                        "type": "P_Sputter",
+                                        "sign": "=",
+                                        "value": 85000,
+                                        "key": "P_Sputter Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_ABH Non-Recurring Cost",
+                                        "type": "W_ABH",
+                                        "sign": "=",
+                                        "value": 23750,
+                                        "key": "W_ABH Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "P_EB_Evap Non-Recurring Cost",
+                                        "type": "P_EB_Evap",
+                                        "sign": "=",
+                                        "value": 80000,
+                                        "key": "P_EB_Evap Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_Strip Non-Recurring Cost",
+                                        "type": "W_Strip",
+                                        "sign": "=",
+                                        "value": 18750,
+                                        "key": "W_Strip Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "M_Probe Non-Recurring Cost",
+                                        "type": "M_Probe",
+                                        "sign": "=",
+                                        "value": 25000,
+                                        "key": "M_Probe Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_RIE Non-Recurring Cost",
+                                        "type": "E_RIE",
+                                        "sign": "=",
+                                        "value": 30000,
+                                        "key": "E_RIE Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_DRIE Non-Recurring Cost",
+                                        "type": "E_DRIE",
+                                        "sign": "=",
+                                        "value": 35000,
+                                        "key": "E_DRIE Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "L_Spin Non-Recurring Cost",
+                                        "type": "L_Spin",
+                                        "sign": "=",
+                                        "value": 4500,
+                                        "key": "L_Spin Non-Recurring Cost // Piezo MUMPs R02"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "H_Oven Non-Recurring Cost",
+                                        "type": "H_Oven",
+                                        "sign": "=",
+                                        "value": 15000,
+                                        "key": "H_Oven Non-Recurring Cost // Piezo MUMPs R02"
+                                    }
+                                ],
+                                "line": "cell",
+                                "exposedVariables": []
+                            },
+                            "id": 1007521573.6381549
+                        }
+                    ],
+                    "scenario": "likely",
+                    "version": "1.0.43"
+                }
+            },
+            {
+                "source": {
+                    "type": [
+                        "manufacturing"
+                    ],
+                    "modelName": "SOI MUMPs",
+                    "manufacturing": {
+                        "line": "cell",
+                        "rate": 140,
+                        "amortization": "duration",
+                        "duration": 5,
+                        "quantity": 1000,
+                        "selectedModule": 6416752178.266014,
+                        "rates": []
+                    },
+                    "finance": {},
+                    "modules": [
+                        {
+                            "name": "SOI MUMPs R01",
+                            "type": "manufacturing",
+                            "manufacturing": {
+                                "processChain": [
+                                    {
+                                        "id": "P010",
+                                        "type": "Clean_RCA",
+                                        "cell": "W_Cln_Stn",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P020",
+                                        "type": "CVD_PSG",
+                                        "cell": "C_PSG",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P030",
+                                        "type": "Anneal_PSG",
+                                        "cell": "H_RTA",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P040",
+                                        "type": "Wet_Etch_PSG",
+                                        "cell": "W_HF_Stn",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P050",
+                                        "type": "Litho_Neg_Lift",
+                                        "cell": "L_Align",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P060",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P070",
+                                        "type": "EB_Evap_CrAU1",
+                                        "cell": "P_EB_Evap",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P080",
+                                        "type": "Wet_Strip_PR",
+                                        "cell": "W_Strip",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P090",
+                                        "type": "Measure_SO_SR",
+                                        "cell": "M_Probe",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0100",
+                                        "type": "Litho_Pos_Thick",
+                                        "cell": "L_Align",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0110",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0120",
+                                        "type": "DRIE_STE",
+                                        "cell": "E_DRIE",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0130",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0140",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0150",
+                                        "type": "Spin_Coat_PI",
+                                        "cell": "L_Spin",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0160",
+                                        "type": "Cure_PI",
+                                        "cell": "H_Oven",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0170",
+                                        "type": "Litho_Pos_Thick",
+                                        "cell": "L_Align",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0180",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0190",
+                                        "type": "RIE_Ox",
+                                        "cell": "E_RIE",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0200",
+                                        "type": "DRIE_DTE",
+                                        "cell": "E_DRIE",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0210",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0220",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0230",
+                                        "type": "Wet_Etch_Ox",
+                                        "cell": "W_HF_Stn",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0240",
+                                        "type": "RIE_PI",
+                                        "cell": "E_Ash",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0250",
+                                        "type": "Vapor_Etch_Ox",
+                                        "cell": "W_VHF_Stn",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0260",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0270",
+                                        "type": "Litho_Pos_Thin",
+                                        "cell": "L_Align",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0280",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0290",
+                                        "type": "RIE_Si",
+                                        "cell": "E_RIE",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0300",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0310",
+                                        "type": "Litho_Pos_Thick",
+                                        "cell": "L_Align",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0320",
+                                        "type": "Inspection_Litho",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0330",
+                                        "type": "Bond_Temp",
+                                        "cell": "B_TB",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0340",
+                                        "type": "DRIE_DTE",
+                                        "cell": "E_DRIE",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0350",
+                                        "type": "Debond_Temp",
+                                        "cell": "B_DB",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0360",
+                                        "type": "Inspection_Etch",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0370",
+                                        "type": "Dry_Strip_PR",
+                                        "cell": "E_Ash",
+                                        "description": "Shadow mask"
+                                    },
+                                    {
+                                        "id": "P0380",
+                                        "type": "Bond_Temp",
+                                        "cell": "B_TB",
+                                        "description": "Device wafer + Shadow Mask"
+                                    },
+                                    {
+                                        "id": "P0390",
+                                        "type": "EB_Evap_CrAU2",
+                                        "cell": "P_EB_Evap",
+                                        "description": "Device wafer + Shadow Mask"
+                                    },
+                                    {
+                                        "id": "P0400",
+                                        "type": "Debond_Temp",
+                                        "cell": "B_DB",
+                                        "description": "Device wafer + Shadow Mask"
+                                    },
+                                    {
+                                        "id": "P0410",
+                                        "type": "Measure_SO_SR",
+                                        "cell": "M_Probe",
+                                        "description": "Device wafer"
+                                    },
+                                    {
+                                        "id": "P0420",
+                                        "type": "Inspection_Final",
+                                        "cell": "M_Insp_Mic",
+                                        "description": "Device wafer"
+                                    }
+                                ],
+                                "feederProcesses": [],
+                                "feederLines": [],
+                                "secProcesses": [],
+                                "routes": [],
+                                "tools": [],
+                                "cells": [
+                                    {
+                                        "name": "W_Cln_Stn"
+                                    },
+                                    {
+                                        "name": "C_PSG"
+                                    },
+                                    {
+                                        "name": "H_RTA"
+                                    },
+                                    {
+                                        "name": "W_HF_Stn"
+                                    },
+                                    {
+                                        "name": "L_Align"
+                                    },
+                                    {
+                                        "name": "M_Insp_Mic"
+                                    },
+                                    {
+                                        "name": "P_EB_Evap"
+                                    },
+                                    {
+                                        "name": "W_Strip"
+                                    },
+                                    {
+                                        "name": "M_Probe"
+                                    },
+                                    {
+                                        "name": "E_DRIE"
+                                    },
+                                    {
+                                        "name": "E_Ash"
+                                    },
+                                    {
+                                        "name": "L_Spin"
+                                    },
+                                    {
+                                        "name": "H_Oven"
+                                    },
+                                    {
+                                        "name": "E_RIE"
+                                    },
+                                    {
+                                        "name": "W_VHF_Stn"
+                                    },
+                                    {
+                                        "name": "B_TB"
+                                    },
+                                    {
+                                        "name": "B_DB"
+                                    }
+                                ],
+                                "costs": [],
+                                "cvByProcess": false,
+                                "cellsFromProcesses": false,
+                                "inputFormat": {
+                                    "processes": [
+                                        {
+                                            "property": "Time",
+                                            "unit": "hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Std. Dev.",
+                                            "unit": "hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "FPY",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "cells": [
+                                        {
+                                            "property": "Batch Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Head Count",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Labor Rate",
+                                            "unit": "$/hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Mean Operations to Failure",
+                                            "unit": "count",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTF",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "MTTR",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Extra Shifts",
+                                            "unit": "hr",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "tools": [
+                                        {
+                                            "property": "Lot Size",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Non-Recurring Cost",
+                                            "unit": "$",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Recurring Cost",
+                                            "unit": "$/hr",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Floor Space",
+                                            "unit": "m^2",
+                                            "inputFormat": "table"
+                                        },
+                                        {
+                                            "property": "Uptime",
+                                            "unit": "%",
+                                            "inputFormat": "-"
+                                        },
+                                        {
+                                            "property": "Useful Life",
+                                            "unit": "years",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "feederLines": [
+                                        {
+                                            "property": "Quantity",
+                                            "unit": "count",
+                                            "inputFormat": "table",
+                                            "defaultValue": 1
+                                        },
+                                        {
+                                            "property": "Variable Cost",
+                                            "unit": "$",
+                                            "inputFormat": "-"
+                                        }
+                                    ],
+                                    "routes": [
+                                        {
+                                            "property": "% Diverted",
+                                            "unit": "%",
+                                            "inputFormat": "table"
+                                        }
+                                    ],
+                                    "costs": [
+                                        {
+                                            "property": "Variable",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Recurring",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ],
+                                    "laborTypes": [
+                                        {
+                                            "property": "Direct Variable",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Direct Pooled",
+                                            "unit": "$/hr",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Fixed Indirect",
+                                            "unit": "$/month",
+                                            "inputFormat": "constraint"
+                                        },
+                                        {
+                                            "property": "Non-Recurring",
+                                            "unit": "$",
+                                            "inputFormat": "constraint"
+                                        }
+                                    ]
+                                },
+                                "variables": [
+                                    {
+                                        "name": "All Processes CV",
+                                        "category": "all processes",
+                                        "property": "CV",
+                                        "unit": "%",
+                                        "value": 25,
+                                        "sign": "=",
+                                        "key": "All Processes CV // SOI MUMPs R01"
+                                    }
+                                ],
+                                "variablesSimple": [
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Clean_RCA Time",
+                                        "type": "Clean_RCA",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "Clean_RCA Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "CVD_PSG Time",
+                                        "type": "CVD_PSG",
+                                        "sign": "=",
+                                        "value": 3.5,
+                                        "key": "CVD_PSG Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Anneal_PSG Time",
+                                        "type": "Anneal_PSG",
+                                        "sign": "=",
+                                        "value": 2,
+                                        "key": "Anneal_PSG Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Etch_PSG Time",
+                                        "type": "Wet_Etch_PSG",
+                                        "sign": "=",
+                                        "value": 0.4,
+                                        "key": "Wet_Etch_PSG Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Neg_Lift Time",
+                                        "type": "Litho_Neg_Lift",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Neg_Lift Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Litho Time",
+                                        "type": "Inspection_Litho",
+                                        "sign": "=",
+                                        "value": 0.133,
+                                        "key": "Inspection_Litho Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "EB_Evap_CrAU1 Time",
+                                        "type": "EB_Evap_CrAU1",
+                                        "sign": "=",
+                                        "value": 1.5,
+                                        "key": "EB_Evap_CrAU1 Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Strip_PR Time",
+                                        "type": "Wet_Strip_PR",
+                                        "sign": "=",
+                                        "value": 0.833,
+                                        "key": "Wet_Strip_PR Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Measure_SO_SR Time",
+                                        "type": "Measure_SO_SR",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "Measure_SO_SR Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Pos_Thick Time",
+                                        "type": "Litho_Pos_Thick",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Pos_Thick Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "DRIE_STE Time",
+                                        "type": "DRIE_STE",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "DRIE_STE Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Etch Time",
+                                        "type": "Inspection_Etch",
+                                        "sign": "=",
+                                        "value": 0.133,
+                                        "key": "Inspection_Etch Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Dry_Strip_PR Time",
+                                        "type": "Dry_Strip_PR",
+                                        "sign": "=",
+                                        "value": 0.2,
+                                        "key": "Dry_Strip_PR Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Spin_Coat_PI Time",
+                                        "type": "Spin_Coat_PI",
+                                        "sign": "=",
+                                        "value": 0.1,
+                                        "key": "Spin_Coat_PI Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Cure_PI Time",
+                                        "type": "Cure_PI",
+                                        "sign": "=",
+                                        "value": 2,
+                                        "key": "Cure_PI Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "RIE_Ox Time",
+                                        "type": "RIE_Ox",
+                                        "sign": "=",
+                                        "value": 0.083,
+                                        "key": "RIE_Ox Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "DRIE_DTE Time",
+                                        "type": "DRIE_DTE",
+                                        "sign": "=",
+                                        "value": 1.8,
+                                        "key": "DRIE_DTE Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Wet_Etch_Ox Time",
+                                        "type": "Wet_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 0.25,
+                                        "key": "Wet_Etch_Ox Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "RIE_PI Time",
+                                        "type": "RIE_PI",
+                                        "sign": "=",
+                                        "value": 0.5,
+                                        "key": "RIE_PI Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Vapor_Etch_Ox Time",
+                                        "type": "Vapor_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "Vapor_Etch_Ox Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Litho_Pos_Thin Time",
+                                        "type": "Litho_Pos_Thin",
+                                        "sign": "=",
+                                        "value": 0.333,
+                                        "key": "Litho_Pos_Thin Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "RIE_Si Time",
+                                        "type": "RIE_Si",
+                                        "sign": "=",
+                                        "value": 0.25,
+                                        "key": "RIE_Si Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Bond_Temp Time",
+                                        "type": "Bond_Temp",
+                                        "sign": "=",
+                                        "value": 0.1,
+                                        "key": "Bond_Temp Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Debond_Temp Time",
+                                        "type": "Debond_Temp",
+                                        "sign": "=",
+                                        "value": 0.1,
+                                        "key": "Debond_Temp Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "EB_Evap_CrAU2 Time",
+                                        "type": "EB_Evap_CrAU2",
+                                        "sign": "=",
+                                        "value": 1.75,
+                                        "key": "EB_Evap_CrAU2 Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "hr",
+                                        "property": "Time",
+                                        "name": "Inspection_Final Time",
+                                        "type": "Inspection_Final",
+                                        "sign": "=",
+                                        "value": 0.25,
+                                        "key": "Inspection_Final Time // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Clean_RCA FPY",
+                                        "type": "Clean_RCA",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Clean_RCA FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "CVD_PSG FPY",
+                                        "type": "CVD_PSG",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "CVD_PSG FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Anneal_PSG FPY",
+                                        "type": "Anneal_PSG",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Anneal_PSG FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Etch_PSG FPY",
+                                        "type": "Wet_Etch_PSG",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Wet_Etch_PSG FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Neg_Lift FPY",
+                                        "type": "Litho_Neg_Lift",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Litho_Neg_Lift FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Litho FPY",
+                                        "type": "Inspection_Litho",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Inspection_Litho FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "EB_Evap_CrAU1 FPY",
+                                        "type": "EB_Evap_CrAU1",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "EB_Evap_CrAU1 FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Strip_PR FPY",
+                                        "type": "Wet_Strip_PR",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Wet_Strip_PR FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Measure_SO_SR FPY",
+                                        "type": "Measure_SO_SR",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Measure_SO_SR FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Pos_Thick FPY",
+                                        "type": "Litho_Pos_Thick",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Litho_Pos_Thick FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "DRIE_STE FPY",
+                                        "type": "DRIE_STE",
+                                        "sign": "=",
+                                        "value": 92,
+                                        "key": "DRIE_STE FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Etch FPY",
+                                        "type": "Inspection_Etch",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Inspection_Etch FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Dry_Strip_PR FPY",
+                                        "type": "Dry_Strip_PR",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Dry_Strip_PR FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Spin_Coat_PI FPY",
+                                        "type": "Spin_Coat_PI",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Spin_Coat_PI FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Cure_PI FPY",
+                                        "type": "Cure_PI",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Cure_PI FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "RIE_Ox FPY",
+                                        "type": "RIE_Ox",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "RIE_Ox FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "DRIE_DTE FPY",
+                                        "type": "DRIE_DTE",
+                                        "sign": "=",
+                                        "value": 88,
+                                        "key": "DRIE_DTE FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Wet_Etch_Ox FPY",
+                                        "type": "Wet_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Wet_Etch_Ox FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "RIE_PI FPY",
+                                        "type": "RIE_PI",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "RIE_PI FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Vapor_Etch_Ox FPY",
+                                        "type": "Vapor_Etch_Ox",
+                                        "sign": "=",
+                                        "value": 92,
+                                        "key": "Vapor_Etch_Ox FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Litho_Pos_Thin FPY",
+                                        "type": "Litho_Pos_Thin",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Litho_Pos_Thin FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "RIE_Si FPY",
+                                        "type": "RIE_Si",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "RIE_Si FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Bond_Temp FPY",
+                                        "type": "Bond_Temp",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "Bond_Temp FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Debond_Temp FPY",
+                                        "type": "Debond_Temp",
+                                        "sign": "=",
+                                        "value": 96,
+                                        "key": "Debond_Temp FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "EB_Evap_CrAU2 FPY",
+                                        "type": "EB_Evap_CrAU2",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "EB_Evap_CrAU2 FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "processes",
+                                        "unit": "%",
+                                        "property": "FPY",
+                                        "name": "Inspection_Final FPY",
+                                        "type": "Inspection_Final",
+                                        "sign": "=",
+                                        "value": 90,
+                                        "key": "Inspection_Final FPY // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_Cln_Stn Batch Size",
+                                        "type": "W_Cln_Stn",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "W_Cln_Stn Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "C_PSG Batch Size",
+                                        "type": "C_PSG",
+                                        "sign": "=",
+                                        "value": 50,
+                                        "key": "C_PSG Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "H_RTA Batch Size",
+                                        "type": "H_RTA",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "H_RTA Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_HF_Stn Batch Size",
+                                        "type": "W_HF_Stn",
+                                        "sign": "=",
+                                        "value": 25,
+                                        "key": "W_HF_Stn Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "L_Align Batch Size",
+                                        "type": "L_Align",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "L_Align Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "M_Insp_Mic Batch Size",
+                                        "type": "M_Insp_Mic",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "M_Insp_Mic Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "P_EB_Evap Batch Size",
+                                        "type": "P_EB_Evap",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "P_EB_Evap Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_Strip Batch Size",
+                                        "type": "W_Strip",
+                                        "sign": "=",
+                                        "value": 10,
+                                        "key": "W_Strip Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "M_Probe Batch Size",
+                                        "type": "M_Probe",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "M_Probe Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_DRIE Batch Size",
+                                        "type": "E_DRIE",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "E_DRIE Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_Ash Batch Size",
+                                        "type": "E_Ash",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "E_Ash Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "L_Spin Batch Size",
+                                        "type": "L_Spin",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "L_Spin Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "H_Oven Batch Size",
+                                        "type": "H_Oven",
+                                        "sign": "=",
+                                        "value": 100,
+                                        "key": "H_Oven Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "E_RIE Batch Size",
+                                        "type": "E_RIE",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "E_RIE Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "W_VHF_Stn Batch Size",
+                                        "type": "W_VHF_Stn",
+                                        "sign": "=",
+                                        "value": 5,
+                                        "key": "W_VHF_Stn Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "B_TB Batch Size",
+                                        "type": "B_TB",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "B_TB Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "count",
+                                        "property": "Batch Size",
+                                        "name": "B_DB Batch Size",
+                                        "type": "B_DB",
+                                        "sign": "=",
+                                        "value": 1,
+                                        "key": "B_DB Batch Size // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_Cln_Stn Non-Recurring Cost",
+                                        "type": "W_Cln_Stn",
+                                        "sign": "=",
+                                        "value": 23750,
+                                        "key": "W_Cln_Stn Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "C_PSG Non-Recurring Cost",
+                                        "type": "C_PSG",
+                                        "sign": "=",
+                                        "value": 120000,
+                                        "key": "C_PSG Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "H_RTA Non-Recurring Cost",
+                                        "type": "H_RTA",
+                                        "sign": "=",
+                                        "value": 29000,
+                                        "key": "H_RTA Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_HF_Stn Non-Recurring Cost",
+                                        "type": "W_HF_Stn",
+                                        "sign": "=",
+                                        "value": 23750,
+                                        "key": "W_HF_Stn Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "L_Align Non-Recurring Cost",
+                                        "type": "L_Align",
+                                        "sign": "=",
+                                        "value": 165000,
+                                        "key": "L_Align Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "M_Insp_Mic Non-Recurring Cost",
+                                        "type": "M_Insp_Mic",
+                                        "sign": "=",
+                                        "value": 95000,
+                                        "key": "M_Insp_Mic Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "P_EB_Evap Non-Recurring Cost",
+                                        "type": "P_EB_Evap",
+                                        "sign": "=",
+                                        "value": 80000,
+                                        "key": "P_EB_Evap Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_Strip Non-Recurring Cost",
+                                        "type": "W_Strip",
+                                        "sign": "=",
+                                        "value": 18750,
+                                        "key": "W_Strip Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "M_Probe Non-Recurring Cost",
+                                        "type": "M_Probe",
+                                        "sign": "=",
+                                        "value": 25000,
+                                        "key": "M_Probe Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_DRIE Non-Recurring Cost",
+                                        "type": "E_DRIE",
+                                        "sign": "=",
+                                        "value": 35000,
+                                        "key": "E_DRIE Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_Ash Non-Recurring Cost",
+                                        "type": "E_Ash",
+                                        "sign": "=",
+                                        "value": 38000,
+                                        "key": "E_Ash Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "L_Spin Non-Recurring Cost",
+                                        "type": "L_Spin",
+                                        "sign": "=",
+                                        "value": 4500,
+                                        "key": "L_Spin Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "H_Oven Non-Recurring Cost",
+                                        "type": "H_Oven",
+                                        "sign": "=",
+                                        "value": 15000,
+                                        "key": "H_Oven Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "E_RIE Non-Recurring Cost",
+                                        "type": "E_RIE",
+                                        "sign": "=",
+                                        "value": 30000,
+                                        "key": "E_RIE Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "W_VHF_Stn Non-Recurring Cost",
+                                        "type": "W_VHF_Stn",
+                                        "sign": "=",
+                                        "value": 55000,
+                                        "key": "W_VHF_Stn Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "B_TB Non-Recurring Cost",
+                                        "type": "B_TB",
+                                        "sign": "=",
+                                        "value": 35000,
+                                        "key": "B_TB Non-Recurring Cost // SOI MUMPs R01"
+                                    },
+                                    {
+                                        "category": "cells",
+                                        "unit": "$",
+                                        "property": "Non-Recurring Cost",
+                                        "name": "B_DB Non-Recurring Cost",
+                                        "type": "B_DB",
+                                        "sign": "=",
+                                        "value": 30000,
+                                        "key": "B_DB Non-Recurring Cost // SOI MUMPs R01"
+                                    }
+                                ],
+                                "line": "cell",
+                                "exposedVariables": [],
+                                "processComment": true
+                            },
+                            "customUnits": {
+                                "unitCurrency": "$"
+                            },
+                            "importTable": [
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Clean_RCA",
+                                    "processTime": "1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "W_Cln_Stn",
+                                    "cellBatchSize": "25",
+                                    "cellNonRecurringCost": "23750",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "CVD_PSG",
+                                    "processTime": "3.5",
+                                    "processTimeStdDev": null,
+                                    "cellName": "C_PSG",
+                                    "cellBatchSize": "50",
+                                    "cellNonRecurringCost": "120000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Anneal_PSG",
+                                    "processTime": "2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "H_RTA",
+                                    "cellBatchSize": "25",
+                                    "cellNonRecurringCost": "29000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Wet_Etch_PSG",
+                                    "processTime": "0.4",
+                                    "processTimeStdDev": null,
+                                    "cellName": "W_HF_Stn",
+                                    "cellBatchSize": "25",
+                                    "cellNonRecurringCost": "23750",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Litho_Neg_Lift",
+                                    "processTime": "0.333",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Align",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "165000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Litho",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "EB_Evap_CrAU1",
+                                    "processTime": "1.5",
+                                    "processTimeStdDev": null,
+                                    "cellName": "P_EB_Evap",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "80000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Wet_Strip_PR",
+                                    "processTime": "0.833",
+                                    "processTimeStdDev": null,
+                                    "cellName": "W_Strip",
+                                    "cellBatchSize": "10",
+                                    "cellNonRecurringCost": "18750",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "90"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Measure_SO_SR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Probe",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "25000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Litho_Pos_Thick",
+                                    "processTime": "0.333",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Align",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "165000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Litho",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "DRIE_STE",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_DRIE",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "35000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "92"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Etch",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Dry_Strip_PR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_Ash",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "38000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Spin_Coat_PI",
+                                    "processTime": "0.1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Spin",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "4500",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Cure_PI",
+                                    "processTime": "2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "H_Oven",
+                                    "cellBatchSize": "100",
+                                    "cellNonRecurringCost": "15000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Litho_Pos_Thick",
+                                    "processTime": "0.333",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Align",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "165000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Litho",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "RIE_Ox",
+                                    "processTime": "0.083",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_RIE",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "30000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "DRIE_DTE",
+                                    "processTime": "1.8",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_DRIE",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "35000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "88"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Etch",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Dry_Strip_PR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_Ash",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "38000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Wet_Etch_Ox",
+                                    "processTime": "0.25",
+                                    "processTimeStdDev": null,
+                                    "cellName": "W_HF_Stn",
+                                    "cellBatchSize": "25",
+                                    "cellNonRecurringCost": "23750",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "RIE_PI",
+                                    "processTime": "0.5",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_Ash",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "38000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Vapor_Etch_Ox",
+                                    "processTime": "1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "W_VHF_Stn",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "55000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "92"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Etch",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Litho_Pos_Thin",
+                                    "processTime": "0.333",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Align",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "165000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Inspection_Litho",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "RIE_Si",
+                                    "processTime": "0.25",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_RIE",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "30000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Dry_Strip_PR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_Ash",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "38000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Litho_Pos_Thick",
+                                    "processTime": "0.333",
+                                    "processTimeStdDev": null,
+                                    "cellName": "L_Align",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "165000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Inspection_Litho",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Bond_Temp",
+                                    "processTime": "0.1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "B_TB",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "35000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "DRIE_DTE",
+                                    "processTime": "1.8",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_DRIE",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "35000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "88"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Debond_Temp",
+                                    "processTime": "0.1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "B_DB",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "30000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Inspection_Etch",
+                                    "processTime": "0.133",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Shadow mask",
+                                    "processType": "Dry_Strip_PR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "E_Ash",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "38000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer + Shadow Mask",
+                                    "processType": "Bond_Temp",
+                                    "processTime": "0.1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "B_TB",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "35000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer + Shadow Mask",
+                                    "processType": "EB_Evap_CrAU2",
+                                    "processTime": "1.75",
+                                    "processTimeStdDev": null,
+                                    "cellName": "P_EB_Evap",
+                                    "cellBatchSize": "5",
+                                    "cellNonRecurringCost": "80000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer + Shadow Mask",
+                                    "processType": "Debond_Temp",
+                                    "processTime": "0.1",
+                                    "processTimeStdDev": null,
+                                    "cellName": "B_DB",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "30000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "96"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Measure_SO_SR",
+                                    "processTime": "0.2",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Probe",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "25000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "100"
+                                },
+                                {
+                                    "description": "Device wafer",
+                                    "processType": "Inspection_Final",
+                                    "processTime": "0.25",
+                                    "processTimeStdDev": null,
+                                    "cellName": "M_Insp_Mic",
+                                    "cellBatchSize": "1",
+                                    "cellNonRecurringCost": "95000",
+                                    "cellRecurringCost": null,
+                                    "processID": null,
+                                    "processFPY": "90"
+                                }
+                            ],
+                            "filePath": "C:\\Users\\snill\\Dropbox (MIT)\\Advanced Analytics\\Research\\Semiconductor\\MASM-InchFab\\SOI MUMPs R01.llm",
+                            "id": 6416752178.266014
+                        }
+                    ],
+                    "scenario": "likely",
+                    "version": "1.0.43"
+                }
+            }
+        ],
+        "bySplit": false,
+        "byKit": false,
+        "rate": null,
+        "rates": [],
+        "cells": [
+            {
+                "name": "W_Cln_Stn",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "C_PSG",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "H_RTA",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "W_HF_Stn",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "H_Ox_Wet",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02"
+                ]
+            },
+            {
+                "name": "M_Meas_Film",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02"
+                ]
+            },
+            {
+                "name": "L_Align",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "M_Insp_Mic",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "E_Ash",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "P_Sputter",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02"
+                ]
+            },
+            {
+                "name": "W_ABH",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02"
+                ]
+            },
+            {
+                "name": "P_EB_Evap",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "W_Strip",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "M_Probe",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "E_RIE",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "E_DRIE",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "L_Spin",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "H_Oven",
+                "usedBy": [
+                    "Piezo MUMPs ITER-02",
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "W_VHF_Stn",
+                "usedBy": [
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "B_TB",
+                "usedBy": [
+                    "SOI MUMPs"
+                ]
+            },
+            {
+                "name": "B_DB",
+                "usedBy": [
+                    "SOI MUMPs"
+                ]
+            }
+        ],
+        "tools": [],
+        "finance": {
+            "shiftsPerDay": 2,
+            "hrsPerShift": 7,
+            "daysPerWeek": 5,
+            "weeksPerYear": 50,
+            "costOfCapital": 10,
+            "rateUnit": "month",
+            "durationUnit": "years",
+            "discretizedResources": true
+        },
+        "duration": 5,
+        "quantity": 1000,
+        "amortization": "duration",
+        "scenario": "likely",
+        "version": "1.0.53"
+    },
+    "id": 248640269.8910335
+}

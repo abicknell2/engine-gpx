@@ -1,4 +1,3 @@
-import logging
 import math
 from functools import lru_cache
 
@@ -34,21 +33,6 @@ ALLOWED_CURRENCIES = {"USD", "EUR", "GBP"}
 # e.g. for base='USD', {'GBP': USD/GBP, 'EUR': USD/EUR, ...}
 CURRENT_RATES_BY_BASE: dict[str, dict[str, float]] = {}
 
-# Conservative fallback rates when online refresh fails. Values are base -> code.
-_OFFLINE_USD_TO_EUR = 0.92
-_OFFLINE_USD_TO_GBP = 0.78
-OFFLINE_RATES_BASE_TO_CODE: dict[str, dict[str, float]] = {
-    "USD": {"EUR": _OFFLINE_USD_TO_EUR, "GBP": _OFFLINE_USD_TO_GBP},
-    "EUR": {
-        "USD": 1.0 / _OFFLINE_USD_TO_EUR,
-        "GBP": _OFFLINE_USD_TO_GBP / _OFFLINE_USD_TO_EUR,
-    },
-    "GBP": {
-        "USD": 1.0 / _OFFLINE_USD_TO_GBP,
-        "EUR": _OFFLINE_USD_TO_EUR / _OFFLINE_USD_TO_GBP,
-    },
-}
-
 
 @lru_cache(maxsize=None)
 def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
@@ -60,18 +44,9 @@ def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
         Mapping base->code (e.g., {'GBP': 0.77}) meaning 1 {base} = rate {code}.
     """
     url = f"https://api.frankfurter.app/latest?base={base}"
-    try:
-        r = requests.get(url, timeout=5)
-        r.raise_for_status()
-        return dict(r.json()["rates"])  # base->code
-    except requests.RequestException as exc:  # pragma: no cover - network dependent
-        fallback = OFFLINE_RATES_BASE_TO_CODE.get(base)
-        if not fallback:
-            raise
-        logging.getLogger(__name__).warning(
-            "Falling back to offline FX rates for %s due to %s", base, exc.__class__.__name__
-        )
-        return dict(fallback)
+    r = requests.get(url, timeout=5)
+    r.raise_for_status()
+    return dict(r.json()["rates"])  # base->code
 
 
 def make_fx_context(flipped_rates: dict[str, float], base: str = "USD") -> pint.Context:

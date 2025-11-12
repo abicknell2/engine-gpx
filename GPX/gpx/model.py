@@ -6,7 +6,7 @@ import importlib.util
 import logging
 import math
 from operator import itemgetter
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Optional, Union
 
 import gpkit
 from gpkit.exceptions import UnknownInfeasible
@@ -45,7 +45,9 @@ class Model(gpkit.Model):
             self.substitutions.update(self.acyclic_inputs.get_substitutions())
 
         # kwargs["solver"] = 'mosek_conif'
-        super().solve(**kwargs)
+        solve_kwargs = dict(kwargs)
+        solve_kwargs.setdefault("verbosity", 0)
+        super().solve(**solve_kwargs)
         
         if self.acyclic_constraints:
             self.acyclic_inputs.update_results(self.solution)
@@ -69,8 +71,8 @@ class Model(gpkit.Model):
     def discretesolve(
         self,
         discrete_resources: list[gpkit.Variable],
-        target_variable: gpkit.Variable,
-        target_value: Union[int, float],
+        target_variable: Optional[gpkit.Variable],
+        target_value: Union[int, float, None],
         new_cost: gpkit.Posynomial = None,
         target_strategy: str = 'above',  # 'above' | 'below'
         rounding_strategy: str = 'round',  # 'floor' | 'round'
@@ -78,36 +80,68 @@ class Model(gpkit.Model):
         solve_orig=True,  # only matters when new cost is defined
         preserve_input_qty=True,  # if there is input on the quantity, respect
         **kwargs,
-    ) -> None:
-        '''_summary_
+    ) -> object:
+        '''Solve a discrete version of the model for production resources.'''
+        if target_variable is None:
+            raise ValueError('target_variable must be provided for discretesolve')
 
-        Parameters
-        ----------
-        discrete_resources : list[gpkit.Variable]
-            _description_
-        target_variable : gpkit.Variable
-            _description_
-        target_value : Union[int, float]
-            _description_
-        new_cost : gpkit.Posynomial, optional : default=None
-            _description_, 
-        target_strategy : str, optional : default='above'
-            _description_,
-        preserve_input_qty : bool, optional  
+        target_map: dict[gpkit.Variable, object] = {target_variable: target_value}
 
-        Returns
-        -------
-        _type_
-            _description_
+        return self._discrete_solve_core(
+            discrete_resources=discrete_resources,
+            target_map=target_map,
+            new_cost=new_cost,
+            target_strategy=target_strategy,
+            rounding_strategy=rounding_strategy,
+            sensitivity_strategy=sensitivity_strategy,
+            solve_orig=solve_orig,
+            preserve_input_qty=preserve_input_qty,
+            **kwargs,
+        )
 
-        Raises
-        ------
-        ValueError
-            _description_
-        ValueError
-            _description_
-        '''
-        'solve a discrete version of the model for productiion resources'
+    def by_rate_discretesolve(
+        self,
+        discrete_resources: list[gpkit.Variable],
+        target_dict: dict[gpkit.Variable, object],
+        new_cost: gpkit.Posynomial = None,
+        target_strategy: str = 'above',  # 'above' | 'below'
+        rounding_strategy: str = 'round',  # 'floor' | 'round'
+        sensitivity_strategy: str = 'min',  # 'min' | 'max'
+        solve_orig=True,  # only matters when new cost is defined
+        preserve_input_qty=True,  # if there is input on the quantity, respect
+        **kwargs,
+    ) -> object:
+        '''Solve the discrete model when individual product rates are targets.'''
+        if not target_dict:
+            raise ValueError('target_dict must contain at least one target variable')
+
+        return self._discrete_solve_core(
+            discrete_resources=discrete_resources,
+            target_map=target_dict,
+            new_cost=new_cost,
+            target_strategy=target_strategy,
+            rounding_strategy=rounding_strategy,
+            sensitivity_strategy=sensitivity_strategy,
+            solve_orig=solve_orig,
+            preserve_input_qty=preserve_input_qty,
+            **kwargs,
+        )
+
+    def _discrete_solve_core(
+        self,
+        discrete_resources: list[gpkit.Variable],
+        target_map: dict[gpkit.Variable, object],
+        new_cost: gpkit.Posynomial = None,
+        target_strategy: str = 'above',
+        rounding_strategy: str = 'round',
+        sensitivity_strategy: str = 'min',
+        solve_orig=True,
+        preserve_input_qty=True,
+        **kwargs,
+    ) -> object:
+        '''Common implementation for discrete solves.'''
+        if not target_map:
+            raise ValueError('target_map must contain at least one target variable')
 
         def _as_variable(entry: gpkit.Variable | tuple[gpkit.Variable, object]) -> gpkit.Variable:
             return entry[0] if isinstance(entry, tuple) else entry
@@ -180,19 +214,28 @@ class Model(gpkit.Model):
         else:
             orig_cost = None
 
-        try:
-            target_sub = self.substitutions[target_variable]
-            del self.substitutions[target_variable]
-        except KeyError:
-            # Fallback for when only the VarKey exists
-            vkey = getattr(target_variable, "key", target_variable)
-            target_sub = self.substitutions.pop(vkey, None)
+        missing = object()
+
+        def _pop_target_sub(var: gpkit.Variable) -> tuple[object | None, object]:
+            if var in self.substitutions:
+                value = self.substitutions[var]
+                del self.substitutions[var]
+                return var, value
+            vkey = getattr(var, 'key', None)
+            if vkey is not None and vkey in self.substitutions:
+                value = self.substitutions[vkey]
+                del self.substitutions[vkey]
+                return vkey, value
+            return None, missing
+
+        target_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
+        for target_var in target_map:
+            target_substitutions[target_var] = _pop_target_sub(target_var)
 
         # allow callers to loosen rounding if needed
         tolerance = kwargs.pop('rounding_tolerance', 1e-6)
         adjustable_resources: list[gpkit.Variable] = []
         start_dict: dict[gpkit.Variable, float] = {}
-        missing = object()
         original_discrete_subs: dict[gpkit.Variable, object] = {}
 
         def _rounded_start(value: float) -> float:
@@ -308,11 +351,57 @@ class Model(gpkit.Model):
                             }
                             adjustments += 1
 
-            cur_target = cur_solution['variables'][target_variable]
             target_strategy_flag = 1 if target_strategy == 'above' else -1
 
+            def _to_float(value: object) -> float | None:
+                if value is None:
+                    return None
+                try:
+                    return float(value)
+                except (TypeError, ValueError):
+                    magnitude = getattr(value, 'magnitude', None)
+                    if magnitude is not None:
+                        try:
+                            return float(magnitude)
+                        except (TypeError, ValueError):
+                            return None
+                return None
+
+            def _solution_value(solution: object, var: gpkit.Variable) -> object:
+                try:
+                    variables = solution['variables']
+                except Exception:
+                    variables = {}
+                if var in variables:
+                    return variables[var]
+                vkey = getattr(var, 'key', None)
+                if vkey is not None and vkey in variables:
+                    return variables[vkey]
+                try:
+                    return solution(var)  # type: ignore[operator]
+                except Exception:
+                    return None
+
+            def _targets_met(solution: object) -> bool:
+                comparisons: list[bool] = []
+                for var, desired in target_map.items():
+                    desired_float = _to_float(desired)
+                    if desired_float is None:
+                        continue
+                    current = _solution_value(solution, var)
+                    current_float = _to_float(current)
+                    if current_float is None:
+                        continue
+                    comparisons.append(
+                        current_float * target_strategy_flag
+                        >= desired_float * target_strategy_flag - tolerance
+                    )
+                return all(comparisons) if comparisons else True
+
+            cur_solution_targets_met = _targets_met(cur_solution)
+
             # loop to find the end point
-            while cur_target * target_strategy_flag < target_value * target_strategy_flag:
+            while not cur_solution_targets_met:
                 # gather sensitivities to choose the best knob to turn
                 candidates = [
                     (self.solution['sensitivities']['variables'][dr], dr)
@@ -328,7 +417,7 @@ class Model(gpkit.Model):
 
                 # re-solve
                 cur_solution = self.solve(**kwargs)
-                cur_target = cur_solution['variables'][target_variable]
+                cur_solution_targets_met = _targets_met(cur_solution)
 
             # save the solution for the peak discrete (optimized target_variable)
             optimized_discrete_solution = self.solution
@@ -374,11 +463,20 @@ class Model(gpkit.Model):
         if new_cost and orig_cost is not None:
             self.cost = orig_cost
 
-        # substitute the target
-        if target_sub is not None:
-            self.substitutions[target_variable] = target_sub
-        elif target_value is not None:
-            self.substitutions[target_variable] = target_value
+        # substitute the target(s)
+        for var, (sub_key, prior) in target_substitutions.items():
+            key = sub_key or var
+            if prior is missing:
+                fallback = target_map.get(var)
+                if fallback is None:
+                    try:
+                        del self.substitutions[key]
+                    except KeyError:
+                        pass
+                else:
+                    self.substitutions[key] = fallback
+            else:
+                self.substitutions[key] = prior
 
         # update the solution
         ## add the continuous solution
