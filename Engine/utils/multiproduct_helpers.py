@@ -10,7 +10,6 @@ from api.module_types.production_finance import ProductionFinance
 import gpx
 from gpx.dag.parametric import (
     ParametricVariable,
-    ParametricConstraint,
     XFromSplits,
     XSplitBySingleCell,
 )
@@ -184,6 +183,7 @@ def set_x_rate_values(multiproduct, sysm, mcsys, newsubs):
         # Bind class lam and any exposed q-lams
         multiproduct._substitutions_[mc.lam] = class_rate
         newsubs[mc.lam] = class_rate
+
         for qlam in getattr(mc, "all_lams", []):
             multiproduct._substitutions_[qlam] = class_rate
             newsubs[qlam] = class_rate
@@ -229,35 +229,6 @@ def set_x_rate_values(multiproduct, sysm, mcsys, newsubs):
     newsubs[mcsys.lam] = hourly_system_rate
 
     return newsubs
-
-class RateFromSplits(ParametricConstraint):
-    """Bind a class rate to a normalized split share and the system rate."""
-
-    def __init__(
-        self,
-        split_var: ParametricVariable,
-        system_rate_pv: ParametricVariable,
-        output_pv: ParametricVariable,
-    ) -> None:
-        self.split_var = split_var
-        self.system_rate_pv = system_rate_pv
-        inputs = {
-            split_var.varkey.key: split_var,
-            system_rate_pv.varkey.key: system_rate_pv,
-        }
-        super().__init__(constraint_as_list=[], inputvars=inputs)
-        self.update_output_var(output_pv)
-        self.func_factory()
-
-    def func_factory(self):
-        split_key = str(self.split_var.varkey)
-        sys_key = str(self.system_rate_pv.varkey)
-
-        def _rate_from_split(**vals):
-            return vals[split_key] * vals[sys_key]
-
-        self.func = _rate_from_split
-
 
 def add_x_splits_to_acyclic_constraints(multiproduct, aconstr):
     split_pvs: dict[str, ParametricVariable] = {}
@@ -305,51 +276,12 @@ def add_x_splits_to_acyclic_constraints(multiproduct, aconstr):
                 normalized_shares = {p: mag / total_rate for p, mag in rate_magnitudes.items()}
 
             for pname, share in normalized_shares.items():
-                split_key = VarKey(f"{pname} :: Rate Split Input", units='-')
+                split_key = VarKey(f"{pname} :: Rate Split Input", units="-")
                 split_pvs[pname] = make_parametric_variable(
                     key=split_key,
                     name=f"{pname} :: Class Split",
                     substitution=(share, "-"),
                 )
-
-            # Tie each class rate to its normalized share of the system rate so
-            # the absolute rates can float while preserving the intended mix.
-            mcsystem = multiproduct.gpxObject.get("system") if multiproduct.gpxObject else None
-            sys_lam_var = getattr(mcsystem, "lam", None)
-            sys_rate_pv: Optional[ParametricVariable] = None
-            if sys_lam_var is not None:
-                sys_rate_pv = make_parametric_variable(
-                    inputvar=sys_lam_var,
-                    name="System :: Rate",
-                )
-
-            if sys_rate_pv is not None:
-                rate_pv_cache: dict[str, ParametricVariable] = {}
-                for pname, mc in multiproduct.mcclasses.items():
-                    split_pv = split_pvs.get(pname)
-                    if split_pv is None:
-                        continue
-
-                    class_lam = getattr(mc, "lam", None)
-                    if class_lam is None:
-                        continue
-
-                    cache_key = str(class_lam.key)
-                    class_rate_pv = rate_pv_cache.get(cache_key)
-                    if class_rate_pv is None:
-                        class_rate_pv = make_parametric_variable(
-                            inputvar=class_lam,
-                            name=f"{pname} :: Class Rate",
-                        )
-                        rate_pv_cache[cache_key] = class_rate_pv
-
-                    aconstr.append(
-                        RateFromSplits(
-                            split_var=split_pv,
-                            system_rate_pv=sys_rate_pv,
-                            output_pv=class_rate_pv,
-                        )
-                    )
 
     all_split_pvs = list(split_pvs.values())
 

@@ -713,6 +713,17 @@ class Multiproduct(ModuleType):
             classes[pname] = mclass
             self.mcclasses[pname] = mclass
 
+            if not self.by_split:
+                base_rate = self.prod_rates.get(pname)
+                if base_rate is not None:
+                    try:
+                        lam_units = getattr(mclass.lam, "units", gpkit.units("count/hr"))
+                        lb_quantity = base_rate.to(lam_units) if hasattr(base_rate, "to") else base_rate * lam_units
+                        if hasattr(lb_quantity, "magnitude") and lb_quantity.magnitude > 0:
+                            aux_constraints.append(mclass.lam >= lb_quantity)
+                    except Exception:
+                        logging.debug("Failed to apply class-rate floor for %s", pname, exc_info=True)
+
             # update the rates for the secondary cells
             for c in mfg.gpxObject.get("secondaryCells", {}).values():
                 aux_constraints.extend([
