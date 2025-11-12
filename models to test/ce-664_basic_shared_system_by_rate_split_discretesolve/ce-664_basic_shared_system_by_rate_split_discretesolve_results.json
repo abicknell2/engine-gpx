@@ -1,0 +1,2361 @@
+{
+    "resultsIndex": [
+        {
+            "name": "Multi-Product Cells",
+            "value": "cellResults"
+        },
+        {
+            "name": "Manufacturing Processes",
+            "value": "processResults"
+        },
+        {
+            "name": "Process Time Stack-Ups",
+            "value": "processStacks"
+        },
+        {
+            "name": "Line Summary",
+            "value": "lineSummary"
+        },
+        {
+            "name": "Flow Time Distribution",
+            "value": "pdfpoints"
+        },
+        {
+            "name": "Time in Cell Detail",
+            "value": "timeInCellDetail"
+        },
+        {
+            "name": "Time in Cell Decomposed",
+            "value": "timeInCellDecomp"
+        },
+        {
+            "name": "Variable Cost Components",
+            "value": "variableCosts"
+        },
+        {
+            "name": "Recurring Cost Components",
+            "value": "recurringCosts"
+        },
+        {
+            "name": "Product Summary",
+            "value": "productSummary"
+        },
+        {
+            "name": "Product Results",
+            "value": "productResults"
+        },
+        {
+            "name": "Capital Cost Components",
+            "value": "costComponents"
+        },
+        {
+            "name": "System Total Costs",
+            "value": "totalCost"
+        },
+        {
+            "name": "System Summary By Product",
+            "value": "summaryByProduct"
+        },
+        {
+            "name": "All Variables",
+            "value": "allVariables"
+        }
+    ],
+    "cellResults": [
+        {
+            "name": "First Process Cell",
+            "utilization": 0.459,
+            "numWorkstations": 7,
+            "queueingTime": 0.431,
+            "queueingTimeUnit": "minute",
+            "arrivalCV": 0.157,
+            "departureCV": 0.213,
+            "wip": 3.231,
+            "sensitivityTime": 0.0,
+            "xSplits": {
+                "Product 1": 0.751,
+                "Product 2": 0.249
+            },
+            "wipQueue": 0.018,
+            "wipStation": 3.213
+        },
+        {
+            "name": "Second Process Cell",
+            "utilization": 0.155,
+            "numWorkstations": 5,
+            "queueingTime": 0.092,
+            "queueingTimeUnit": "minute",
+            "arrivalCV": 0.214,
+            "departureCV": 0.157,
+            "wip": 0.775,
+            "sensitivityTime": 0.0,
+            "xSplits": {
+                "Product 1": 0.751,
+                "Product 2": 0.249
+            },
+            "wipQueue": 0.004,
+            "wipStation": 0.771
+        }
+    ],
+    "processResults": [
+        {
+            "type": "First Process",
+            "name": "First Process",
+            "processTime": 60.0,
+            "stdev": 15.0,
+            "unit": "min",
+            "breakdown": {
+                "primary": 60.0
+            },
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "type": "Second Process",
+            "name": "Second Process",
+            "processTime": 18.0,
+            "stdev": 4.5,
+            "unit": "min",
+            "breakdown": {
+                "primary": 18.0
+            },
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "type": "First Process",
+            "name": "First Process",
+            "processTime": 120.0,
+            "stdev": 30.0,
+            "unit": "min",
+            "breakdown": {
+                "primary": 120.0
+            },
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "type": "Second Process",
+            "name": "Second Process",
+            "processTime": 18.0,
+            "stdev": 4.5,
+            "unit": "min",
+            "breakdown": {
+                "primary": 18.0
+            },
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "processStacks": [],
+    "lineSummary": [
+        {
+            "name": "Average Production Rate",
+            "value": 1.93,
+            "unit": "count/hr",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Average Mainline Total Flow Time",
+            "value": 1.309,
+            "unit": "hr",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Total Mainline WIP Inventory",
+            "value": 2.526,
+            "unit": "count",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Aggregate Production Rate",
+            "value": 563.0,
+            "unit": "count/month",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Standard Deviation of Aggregate Production Rate",
+            "value": 5.18,
+            "unit": "count/month",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Average Production Rate",
+            "value": 0.641,
+            "unit": "count/hr",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "name": "Average Mainline Total Flow Time",
+            "value": 2.309,
+            "unit": "hr",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "name": "Total Mainline WIP Inventory",
+            "value": 1.48,
+            "unit": "count",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "name": "Aggregate Production Rate",
+            "value": 187.0,
+            "unit": "count/month",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "name": "Standard Deviation of Aggregate Production Rate",
+            "value": 1.722,
+            "unit": "count/month",
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "pdfpoints": [
+        {
+            "time": 0.0,
+            "probability": 0.0,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.022,
+            "probability": 3.3476435324794166e-46,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.044,
+            "probability": 3.939246647204373e-36,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.066,
+            "probability": 2.392230162362659e-30,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.088,
+            "probability": 2.5520504832071462e-26,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.111,
+            "probability": 2.972811314000093e-23,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.133,
+            "probability": 8.53259571444801e-21,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.155,
+            "probability": 9.314692035081573e-19,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.177,
+            "probability": 5.011521382251776e-17,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.199,
+            "probability": 1.5706347286955084e-15,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.221,
+            "probability": 3.214029003186557e-14,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.243,
+            "probability": 4.658495605788462e-13,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.265,
+            "probability": 5.078854073219403e-12,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.288,
+            "probability": 4.3594601466068164e-11,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.31,
+            "probability": 3.0524965835745127e-10,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.332,
+            "probability": 1.793279807611841e-09,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.354,
+            "probability": 9.041872802612858e-09,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.376,
+            "probability": 3.986029004691866e-08,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.398,
+            "probability": 1.5601491591606732e-07,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.42,
+            "probability": 5.491919893523123e-07,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.442,
+            "probability": 1.7576922449681366e-06,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.464,
+            "probability": 5.162471806814763e-06,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.487,
+            "probability": 1.4026226735491936e-05,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.509,
+            "probability": 3.5497775780022825e-05,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.531,
+            "probability": 8.419048655082195e-05,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.553,
+            "probability": 0.0001881175871377383,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.575,
+            "probability": 0.00039786168368268366,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.597,
+            "probability": 0.0007997842865513365,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.619,
+            "probability": 0.0015337575397870002,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.641,
+            "probability": 0.002815267568882686,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.664,
+            "probability": 0.004960799816099027,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.686,
+            "probability": 0.008414257399124098,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.708,
+            "probability": 0.01377095810083351,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.73,
+            "probability": 0.021794747425131454,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.752,
+            "probability": 0.03342322387697898,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.774,
+            "probability": 0.049756235338955304,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.796,
+            "probability": 0.07202381548563955,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.818,
+            "probability": 0.10153158844143885,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.84,
+            "probability": 0.13958421767136164,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.863,
+            "probability": 0.18739040122151004,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.885,
+            "probability": 0.24595580621050256,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.907,
+            "probability": 0.3159727436655426,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.929,
+            "probability": 0.3977169088835779,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.951,
+            "probability": 0.490961868872573,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.973,
+            "probability": 0.5949210520070777,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.995,
+            "probability": 0.7082248590811875,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.017,
+            "probability": 0.8289374176720269,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.04,
+            "probability": 0.954613823955687,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.062,
+            "probability": 1.0823949094804988,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.084,
+            "probability": 1.2091330882715536,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.106,
+            "probability": 1.3315400730162517,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.128,
+            "probability": 1.4463454773467757,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.15,
+            "probability": 1.5504546839844942,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.172,
+            "probability": 1.6410948502288087,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.194,
+            "probability": 1.7159394077752819,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.216,
+            "probability": 1.7732036593376463,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.239,
+            "probability": 1.8117067876160797,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.261,
+            "probability": 1.8308984637273307,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.283,
+            "probability": 1.83085098445918,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.305,
+            "probability": 1.8122202434578947,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.327,
+            "probability": 1.7761806828045898,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.349,
+            "probability": 1.7243405870573714,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.371,
+            "probability": 1.6586446542191235,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.393,
+            "probability": 1.5812707529033208,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.416,
+            "probability": 1.4945272454234269,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.438,
+            "probability": 1.4007563455697825,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.46,
+            "probability": 1.302247822636998,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.482,
+            "probability": 1.2011660920027836,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.504,
+            "probability": 1.099492464599976,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.526,
+            "probability": 0.9989831576908639,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.548,
+            "probability": 0.9011426656194089,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.57,
+            "probability": 0.8072112928176175,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.592,
+            "probability": 0.7181650785746584,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.615,
+            "probability": 0.6347259894229481,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.637,
+            "probability": 0.5573801001271423,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.659,
+            "probability": 0.486401497301964,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.681,
+            "probability": 0.4218797841442849,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.703,
+            "probability": 0.36374930278574524,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.725,
+            "probability": 0.3118184864318629,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.747,
+            "probability": 0.2657980750983442,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.769,
+            "probability": 0.225327250373624,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.792,
+            "probability": 0.1899970464314125,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.814,
+            "probability": 0.1593706628171384,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.836,
+            "probability": 0.13300053124265232,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.858,
+            "probability": 0.11044217038241139,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.88,
+            "probability": 0.09126499985434937,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.902,
+            "probability": 0.07506038031287564,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.924,
+            "probability": 0.0614472058013095,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.946,
+            "probability": 0.05007540311252994,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.968,
+            "probability": 0.04062769711782206,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.991,
+            "probability": 0.032819986893446645,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.013,
+            "probability": 0.02640065052671506,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.035,
+            "probability": 0.02114906150512173,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.057,
+            "probability": 0.016873560534060986,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.079,
+            "probability": 0.013409086591434615,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.101,
+            "probability": 0.010614632309803775,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.123,
+            "probability": 0.008370652963115876,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.145,
+            "probability": 0.006576526405100181,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.168,
+            "probability": 0.005148133751148537,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.19,
+            "probability": 0.004015607530724254,
+            "unit": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.0,
+            "probability": 0.0,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.041,
+            "probability": 5.781169231290776e-37,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.082,
+            "probability": 7.160979581245646e-29,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.122,
+            "probability": 3.1477257006544664e-24,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.163,
+            "probability": 5.3523825026771476e-21,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.204,
+            "probability": 1.531582833289606e-18,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.245,
+            "probability": 1.4196769823339557e-16,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.285,
+            "probability": 6.045171797403497e-15,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.326,
+            "probability": 1.4566585336179348e-13,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.367,
+            "probability": 2.2722174663679195e-12,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.408,
+            "probability": 2.5151799316654784e-11,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.448,
+            "probability": 2.109419171205132e-10,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.489,
+            "probability": 1.4068120008491065e-09,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.53,
+            "probability": 7.739978837821224e-09,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.571,
+            "probability": 3.614707207573266e-08,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.611,
+            "probability": 1.4657682840366916e-07,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.652,
+            "probability": 5.255816440299313e-07,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.693,
+            "probability": 1.6915269127304611e-06,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.734,
+            "probability": 4.947095334485079e-06,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.774,
+            "probability": 1.3284693552087279e-05,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.815,
+            "probability": 3.3043603252929105e-05,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.856,
+            "probability": 7.670175382147922e-05,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.897,
+            "probability": 0.00016722422146184658,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.937,
+            "probability": 0.00034434218325850725,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 0.978,
+            "probability": 0.0006729616448672009,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.019,
+            "probability": 0.0012535814677927639,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.06,
+            "probability": 0.0022341481858617804,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.101,
+            "probability": 0.0038222435567413547,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.141,
+            "probability": 0.0062959791539574945,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.182,
+            "probability": 0.010011572735586682,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.223,
+            "probability": 0.015405416016654641,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.264,
+            "probability": 0.02298859944782683,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.304,
+            "probability": 0.03333237457752914,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.345,
+            "probability": 0.047043883794052846,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.386,
+            "probability": 0.06473258207313048,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.427,
+            "probability": 0.086968975431796,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.467,
+            "probability": 0.11423843699063391,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.508,
+            "probability": 0.14689376485825553,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.549,
+            "probability": 0.1851106763391041,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.59,
+            "probability": 0.2288505020621987,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.63,
+            "probability": 0.2778339287046388,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.671,
+            "probability": 0.3315287844022624,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.712,
+            "probability": 0.3891536691613589,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.753,
+            "probability": 0.449697846623488,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.793,
+            "probability": 0.5119563946735909,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.834,
+            "probability": 0.5745783172048975,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.875,
+            "probability": 0.6361242797267892,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.916,
+            "probability": 0.6951299401266294,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.956,
+            "probability": 0.7501705488196183,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 1.997,
+            "probability": 0.7999225886707532,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.038,
+            "probability": 0.8432186718641076,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.079,
+            "probability": 0.8790926341931488,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.119,
+            "probability": 0.906812673714733,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.16,
+            "probability": 0.9259013705212371,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.201,
+            "probability": 0.9361424026928096,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.242,
+            "probability": 0.9375746594387345,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.283,
+            "probability": 0.9304751851195756,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.323,
+            "probability": 0.9153329290722944,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.364,
+            "probability": 0.8928156103611212,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.405,
+            "probability": 0.8637321383501412,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.446,
+            "probability": 0.828992980143287,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.486,
+            "probability": 0.7895706666432323,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.527,
+            "probability": 0.7464623188393192,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.568,
+            "probability": 0.7006556953929661,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.609,
+            "probability": 0.6530998501435668,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.649,
+            "probability": 0.6046810775280025,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.69,
+            "probability": 0.5562044422413748,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.731,
+            "probability": 0.5083808565103836,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.772,
+            "probability": 0.4618193964371029,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.812,
+            "probability": 0.41702434353986706,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.853,
+            "probability": 0.3743962986607335,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.894,
+            "probability": 0.33423663814574117,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.935,
+            "probability": 0.2967545588160322,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 2.975,
+            "probability": 0.26207597905846,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.016,
+            "probability": 0.23025361794267257,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.057,
+            "probability": 0.2012776523465814,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.098,
+            "probability": 0.17508644419785074,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.138,
+            "probability": 0.1515769279438746,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.179,
+            "probability": 0.13061434559339496,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.22,
+            "probability": 0.11204110806406181,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.261,
+            "probability": 0.09568464358957057,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.302,
+            "probability": 0.08136416443628598,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.342,
+            "probability": 0.06889634117593217,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.383,
+            "probability": 0.058099919223398445,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.424,
+            "probability": 0.04879934594880112,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.465,
+            "probability": 0.040827499568709236,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.505,
+            "probability": 0.034027624663921695,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.546,
+            "probability": 0.028254585142889085,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.587,
+            "probability": 0.023375545359539694,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.628,
+            "probability": 0.019270185403380793,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.668,
+            "probability": 0.015830548661435653,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.709,
+            "probability": 0.012960609773868556,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.75,
+            "probability": 0.010575640036285739,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.791,
+            "probability": 0.008601435911139968,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.831,
+            "probability": 0.006973465181182403,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.872,
+            "probability": 0.005635974825694599,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.913,
+            "probability": 0.00454109519833492,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.954,
+            "probability": 0.0036479666890814493,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 3.994,
+            "probability": 0.002921907823893861,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "time": 4.035,
+            "probability": 0.0023336376857756706,
+            "unit": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "timeInCellDetail": [
+        {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 0.431,
+            "Processing Time": 60.0,
+            "Productivity": 99.287,
+            "Cell Name": "First Process Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 0.092,
+            "Processing Time": 18.0,
+            "Productivity": 99.49,
+            "Cell Name": "Second Process Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 0.431,
+            "Processing Time": 120.0,
+            "Productivity": 99.642,
+            "Cell Name": "First Process Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Waiting for Next Cell": 0.0,
+            "Queueing Before Cell": 0.092,
+            "Processing Time": 18.0,
+            "Productivity": 99.49,
+            "Cell Name": "Second Process Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "timeInCellDecomp": [
+        {
+            "Cell Name": "First Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "First Process Cell",
+            "time": 0.431,
+            "type": "Queueing Before Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "First Process Cell",
+            "time": 60.0,
+            "type": "Processing Time",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 0.092,
+            "type": "Queueing Before Cell",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 18.0,
+            "type": "Processing Time",
+            "unit": "min",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "First Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "First Process Cell",
+            "time": 0.431,
+            "type": "Queueing Before Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "First Process Cell",
+            "time": 120.0,
+            "type": "Processing Time",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 0.0,
+            "type": "Waiting for Next Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 0.092,
+            "type": "Queueing Before Cell",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        },
+        {
+            "Cell Name": "Second Process Cell",
+            "time": 18.0,
+            "type": "Processing Time",
+            "unit": "min",
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "variableCosts": [
+        {
+            "name": "Material Cost",
+            "value": 150,
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "name": "Material Cost",
+            "value": 250,
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "productSummary": [
+        {
+            "Part Flow Time": 78.524,
+            "Part Flow Time Units": "minute",
+            "Aggregate Rate": 563.0,
+            "Aggregate Rate Units": "count/month",
+            "Average Turnaround Time": 78.5,
+            "Average Turnaround Time Units": "minute",
+            "productName": "Product 1",
+            "kitSplit": 1
+        },
+        {
+            "Part Flow Time": 138.524,
+            "Part Flow Time Units": "minute",
+            "Aggregate Rate": 187.0,
+            "Aggregate Rate Units": "count/month",
+            "Average Turnaround Time": 138.5,
+            "Average Turnaround Time Units": "minute",
+            "productName": "Product 2",
+            "kitSplit": 1
+        }
+    ],
+    "productResults": [
+        {
+            "name": "Product 1",
+            "hourlyRate": 1.93,
+            "rateSensitivity": 0.035
+        },
+        {
+            "name": "Product 2",
+            "hourlyRate": 0.641,
+            "rateSensitivity": 0.02
+        }
+    ],
+    "costComponents": [
+        {
+            "name": "First Process Cell",
+            "value": 35000000.0
+        },
+        {
+            "name": "Second Process Cell",
+            "value": 100000000.0
+        }
+    ],
+    "recurringCosts": [],
+    "totalCost": {
+        "Total Non-Recurring Cost": 135000000
+    },
+    "cashflows": [
+        {
+            "cashflow": 142872098,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        },
+        {
+            "cashflow": 98.3,
+            "output": 750.0
+        }
+    ],
+    "summaryByProduct": {
+        "Product 1 | Part Flow Time": 78.524,
+        "Product 1 | Part Flow Time Units": "minute",
+        "Product 1 | Aggregate Rate": 563.0,
+        "Product 1 | Aggregate Rate Units": "count/month",
+        "Product 1 | Average Turnaround Time": 78.5,
+        "Product 1 | Average Turnaround Time Units": "minute",
+        "Product 1 | kitSplit": 1,
+        "Product 2 | Part Flow Time": 138.524,
+        "Product 2 | Part Flow Time Units": "minute",
+        "Product 2 | Aggregate Rate": 187.0,
+        "Product 2 | Aggregate Rate Units": "count/month",
+        "Product 2 | Average Turnaround Time": 138.5,
+        "Product 2 | Average Turnaround Time Units": "minute",
+        "Product 2 | kitSplit": 1
+    },
+    "allVariables": [
+        {
+            "name": "First Process Cell Queueing Time",
+            "value": 0.431,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "First Process Cell Total Utilization",
+            "value": 0.459,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "First Process Cell Workstations",
+            "value": 7.0,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": [],
+            "marginalCost": 106,
+            "marginalCostUnit": "USD / count"
+        },
+        {
+            "category": [],
+            "name": "Line Total Headcount",
+            "sensitivity": 0.0,
+            "unit": "count",
+            "value": 0
+        },
+        {
+            "name": "Product 1 | Aggregate Production Rate",
+            "value": 563.0,
+            "unit": "count/month",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 1 | All Processes CV",
+            "value": 25.0,
+            "unit": "%",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.0
+        },
+        {
+            "name": "Product 1 | Average Mainline Total Flow Time",
+            "value": 78.53999999999999,
+            "unit": "minutes",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Product 1 | Average Production Rate",
+            "value": 1.93,
+            "unit": "count/hour",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.03547,
+            "marginalCost": 47.4,
+            "marginalCostUnit": "USD / count/hour"
+        },
+        {
+            "name": "Product 1 | Average Turnaround Time",
+            "value": 78.5,
+            "unit": "minute",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 1 | First Process Cell Non-Recurring Cost",
+            "value": 5000000,
+            "unit": "$",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.24497,
+            "marginalCost": 0.016,
+            "marginalCostUnit": "USD / 100.0 USD"
+        },
+        {
+            "name": "Product 1 | First Process Time",
+            "value": 60.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 1e-05,
+            "marginalCost": 0.036,
+            "marginalCostUnit": "USD / 100.0 minute"
+        },
+        {
+            "name": "Product 1 | Material Cost",
+            "value": 150,
+            "unit": "$",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.03547,
+            "marginalCost": 0.748,
+            "marginalCostUnit": "USD / USD"
+        },
+        {
+            "name": "Product 1 | Second Process Cell Non-Recurring Cost",
+            "value": 20000000,
+            "unit": "$",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.69993,
+            "marginalCost": 0.011,
+            "marginalCostUnit": "USD / 100.0 USD"
+        },
+        {
+            "name": "Product 1 | Second Process Time",
+            "value": 18.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.0,
+            "marginalCost": 0.021,
+            "marginalCostUnit": "USD / 100.0 minute"
+        },
+        {
+            "name": "Product 1 | Standard Deviation of Aggregate Production Rate",
+            "value": 5.18,
+            "unit": "count/month",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 1 | Total Mainline WIP Inventory",
+            "value": 2.526,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Product 2 | Aggregate Production Rate",
+            "value": 187.0,
+            "unit": "count/month",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 2 | All Processes CV",
+            "value": 25.0,
+            "unit": "%",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.0
+        },
+        {
+            "name": "Product 2 | Average Mainline Total Flow Time",
+            "value": 138.54000000000002,
+            "unit": "minutes",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Product 2 | Average Production Rate",
+            "value": 0.641,
+            "unit": "count/hour",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.01963,
+            "marginalCost": 59.1,
+            "marginalCostUnit": "USD / count/hour"
+        },
+        {
+            "name": "Product 2 | Average Turnaround Time",
+            "value": 138.5,
+            "unit": "minute",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 2 | First Process Time",
+            "value": 120.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 2e-05,
+            "marginalCost": 0.044,
+            "marginalCostUnit": "USD / 100.0 minute"
+        },
+        {
+            "name": "Product 2 | Material Cost",
+            "value": 250,
+            "unit": "$",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.01963,
+            "marginalCost": 0.249,
+            "marginalCostUnit": "USD / USD"
+        },
+        {
+            "name": "Product 2 | Second Process Time",
+            "value": 18.0,
+            "unit": "minute",
+            "source": "From Assumption",
+            "tags": [],
+            "sensitivity": 0.0,
+            "marginalCost": 0.021,
+            "marginalCostUnit": "USD / 100.0 minute"
+        },
+        {
+            "name": "Product 2 | Standard Deviation of Aggregate Production Rate",
+            "value": 1.722,
+            "unit": "count/month",
+            "sensitivity": 0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 2 | Total Mainline WIP Inventory",
+            "value": 1.48,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Second Process Cell Queueing Time",
+            "value": 0.092,
+            "unit": "minute",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Second Process Cell Total Utilization",
+            "value": 0.155,
+            "unit": "",
+            "source": "Calculated Value",
+            "tags": []
+        },
+        {
+            "name": "Second Process Cell Workstations",
+            "value": 5.0,
+            "unit": "count",
+            "source": "Calculated Value",
+            "tags": [],
+            "marginalCost": 432,
+            "marginalCostUnit": "USD / count"
+        },
+        {
+            "name": "Total Non-Recurring Cost",
+            "value": 135000000,
+            "unit": "$",
+            "sensitivity": 0.0,
+            "source": "Calculated Value",
+            "category": []
+        },
+        {
+            "name": "Product 1 | Aggregate Production Rate",
+            "value": 563.0,
+            "unit": "count/month",
+            "sensitivity": 0.0,
+            "source": "Calculated Value"
+        },
+        {
+            "name": "Product 2 | Aggregate Production Rate",
+            "value": 187.0,
+            "unit": "count/month",
+            "sensitivity": 0.0,
+            "source": "Calculated Value"
+        },
+        {
+            "name": "Average Unit Cost",
+            "value": 3175,
+            "unit": "$",
+            "sensitivity": 0.0,
+            "source": "Calculated Value"
+        }
+    ]
+}
