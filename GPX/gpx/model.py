@@ -276,30 +276,16 @@ class Model(gpkit.Model):
 
         disabled_rate_controllers: list[ProductionResource] = []
 
-        def _derive_relaxed_counts(restore_targets: bool = False) -> dict[gpkit.Variable, float]:
+        def _derive_relaxed_counts() -> dict[gpkit.Variable, float]:
             """Solve with discrete counts free to estimate new integer targets."""
             if not adjustable_resources:
                 return {}
 
             resource_priors: dict[gpkit.Variable, tuple[object | None, object]] = {}
             relaxed_counts: dict[gpkit.Variable, float] = {}
-            target_restorations: dict[gpkit.Variable, tuple[object | None, object]] = {}
 
             for dr in adjustable_resources:
                 resource_priors[dr] = _pop_target_sub(dr)
-
-            if restore_targets and relaxed_target_priors:
-                for var, (sub_key, prior) in relaxed_target_priors.items():
-                    key = sub_key or var
-                    existing = self.substitutions.get(key, missing)
-                    target_restorations[var] = (key, existing)
-                    if prior is missing:
-                        self.substitutions.pop(key, None)
-                    else:
-                        self.substitutions[key] = prior
-                logging.debug(
-                    "Reinstated %d rate targets while deriving relaxed counts", len(target_restorations)
-                )
 
             try:
                 self.solve(**kwargs)
@@ -331,13 +317,6 @@ class Model(gpkit.Model):
                         suggestion,
                     )
             finally:
-                if restore_targets and target_restorations:
-                    for var, (key, prior) in target_restorations.items():
-                        if prior is missing:
-                            self.substitutions.pop(key, None)
-                        else:
-                            self.substitutions[key] = prior
-
                 for dr, (sub_key, prior) in resource_priors.items():
                     key = sub_key or dr
                     if prior is missing:
@@ -488,7 +467,7 @@ class Model(gpkit.Model):
                                 logging.debug(
                                     "Relaxed rate targets remained infeasible; deriving new discrete counts",
                                 )
-                                relaxed_counts = _derive_relaxed_counts(restore_targets=True)
+                                relaxed_counts = _derive_relaxed_counts()
 
                             if relaxed_counts:
                                 for dr, count in relaxed_counts.items():
