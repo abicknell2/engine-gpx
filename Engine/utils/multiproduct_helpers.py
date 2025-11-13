@@ -2,13 +2,17 @@ from itertools import groupby
 from typing import Optional, Union
 
 import gpkit
-from gpkit import Variable, ureg
+from gpkit import Variable, VarKey, ureg
 import numpy as np
 
 from api.acyclic_interpreter import make_parametric_constraint, make_parametric_variable
 from api.module_types.production_finance import ProductionFinance
 import gpx
-from gpx.dag.parametric import (ParametricVariable, ParametricConstraint, XFromSplits, XSplitBySingleCell)
+from gpx.dag.parametric import (
+    ParametricVariable,
+    XFromSplits,
+    XSplitBySingleCell,
+)
 from gpx.manufacturing import QNACell
 from gpx.multiclass import MClass
 from gpkit import units as gpkit_units
@@ -179,6 +183,7 @@ def set_x_rate_values(multiproduct, sysm, mcsys, newsubs):
         # Bind class lam and any exposed q-lams
         multiproduct._substitutions_[mc.lam] = class_rate
         newsubs[mc.lam] = class_rate
+
         for qlam in getattr(mc, "all_lams", []):
             multiproduct._substitutions_[qlam] = class_rate
             newsubs[qlam] = class_rate
@@ -240,15 +245,43 @@ def add_x_splits_to_acyclic_constraints(multiproduct, aconstr):
                 substitution=(split_val, "-"),  # numeric, unit‑less
             )
     else:
-        # First build one ParametricVariable per product rate
-        for pname, mc in multiproduct.mcclasses.items():
-            rate_vk = mc.lam
-            rate_val = multiproduct.prod_rates[pname]
-            split_pvs[pname] = make_parametric_variable(
-                inputvar=rate_vk,
-                name=f"{pname} :: Class Rate",
-                substitution=(rate_val, "count/hr"),
-            )
+        # Convert product rates into normalized, dimensionless splits so
+        # downstream constraints only pin the mix between products rather than
+        # fixing the absolute rates. This keeps class/system rates free during
+        # discrete solves while preserving the intended proportions.
+        rate_magnitudes: dict[str, float] = {}
+
+        for pname, _ in multiproduct.mcclasses.items():
+            rate_val = multiproduct.prod_rates.get(pname)
+            if rate_val is None:
+                continue
+
+            try:
+                quantity = rate_val if hasattr(rate_val, "to") else rate_val * gpkit.units("count/hr")
+                magnitude = float(quantity.to("count/hr").magnitude)
+            except Exception:
+                try:
+                    magnitude = float(rate_val)
+                except Exception:
+                    continue
+
+            rate_magnitudes[pname] = magnitude
+
+        if rate_magnitudes:
+            total_rate = sum(rate_magnitudes.values())
+            if total_rate <= 0:
+                share = 1.0 / max(len(rate_magnitudes), 1)
+                normalized_shares = {p: share for p in rate_magnitudes}
+            else:
+                normalized_shares = {p: mag / total_rate for p, mag in rate_magnitudes.items()}
+
+            for pname, share in normalized_shares.items():
+                split_key = VarKey(f"{pname} :: Rate Split Input", units="-")
+                split_pvs[pname] = make_parametric_variable(
+                    key=split_key,
+                    name=f"{pname} :: Class Split",
+                    substitution=(share, "-"),
+                )
 
     all_split_pvs = list(split_pvs.values())
 
