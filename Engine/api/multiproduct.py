@@ -54,8 +54,12 @@ from gpx.recurring_cost import LaborCost as GPXLaborCost
 from utils.interactive_helpers import discretize_resources
 import utils.logger as logger
 from utils.multiproduct_helpers import (
-    add_x_splits_to_acyclic_constraints, add_rate_links_to_acyclic_constraints, set_floorspace_costs, set_x_rate_values,
-    update_w_cap
+    add_x_splits_to_acyclic_constraints,
+    add_rate_links_to_acyclic_constraints,
+    compute_rate_shares,
+    set_floorspace_costs,
+    set_x_rate_values,
+    update_w_cap,
 )
 from utils.result_gens_helpers import combine_results
 from utils.settings import Settings
@@ -1673,6 +1677,23 @@ class MultiproductContext(SolutionContext):
         if not sysm.by_split:
             mcsys = sysm.gpxObject["system"]
             constr.append(mcsys.lam >= sum(mc.lam for mc in mcsys.classes))
+            rate_shares = compute_rate_shares(sysm, prod_rates=sysm.prod_rates, classes=sysm.mcclasses)
+            system_rate_var = getattr(mcsys, "lam", None)
+            if rate_shares and system_rate_var is not None:
+                for pname, share in rate_shares.items():
+                    mc = sysm.mcclasses.get(pname)
+                    if not mc:
+                        continue
+
+                    if share > 0:
+                        constr.append(mc.lam >= share * system_rate_var)
+                        constr.append(mc.lam <= share * system_rate_var)
+
+                    for qlam in getattr(mc, "all_lams", []) or []:
+                        if qlam is None:
+                            continue
+                        constr.append(qlam >= mc.lam)
+                        constr.append(qlam <= mc.lam)
 
         self.gpx_constraints = constr
 

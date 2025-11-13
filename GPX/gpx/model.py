@@ -111,6 +111,7 @@ class Model(gpkit.Model):
         preserve_input_qty=True,  # if there is input on the quantity, respect
         relax_targets_on_infeasible: bool = False,
         extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
+        restore_relaxations: bool = True,
         **kwargs,
     ) -> object:
         '''Solve the discrete model when individual product rates are targets.'''
@@ -128,6 +129,7 @@ class Model(gpkit.Model):
             preserve_input_qty=preserve_input_qty,
             relax_targets_on_infeasible=relax_targets_on_infeasible,
             extra_relaxation_vars=extra_relaxation_vars,
+            restore_relaxations=restore_relaxations,
             **kwargs,
         )
 
@@ -143,6 +145,7 @@ class Model(gpkit.Model):
         preserve_input_qty=True,
         relax_targets_on_infeasible: bool = False,
         extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
+        restore_relaxations: bool = True,
         **kwargs,
     ) -> object:
         '''Common implementation for discrete solves.'''
@@ -233,6 +236,12 @@ class Model(gpkit.Model):
                 value = self.substitutions[vkey]
                 del self.substitutions[vkey]
                 return vkey, value
+            if vkey is not None:
+                key_str = str(vkey)
+                if key_str in self.substitutions:
+                    value = self.substitutions[key_str]
+                    del self.substitutions[key_str]
+                    return key_str, value
             return None, missing
 
         target_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
@@ -410,6 +419,76 @@ class Model(gpkit.Model):
             finally:
                 _restore()
 
+        def _scale_counts_until_feasible(
+            max_scale_factor: float = 64.0,
+            refinement_iters: int = 12,
+        ) -> tuple[dict[gpkit.Variable, float], object | None]:
+            """Scale all discrete counts together until the relaxed model becomes feasible."""
+
+            if not adjustable_resources:
+                return {}, None
+
+            initial_counts = {dr: start_dict.get(dr, 1.0) for dr in adjustable_resources}
+
+            def _counts_from_scale(scale: float) -> dict[gpkit.Variable, float]:
+                scaled: dict[gpkit.Variable, float] = {}
+                for dr in adjustable_resources:
+                    base = baseline_values.get(dr, 1.0)
+                    candidate = max(base * scale, 1.0)
+                    scaled[dr] = max(math.ceil(candidate - tolerance), 1.0)
+                return scaled
+
+            def _apply(counts: dict[gpkit.Variable, float]) -> None:
+                for var, value in counts.items():
+                    self.substitutions[var] = value
+
+            lower_scale = 1.0
+            upper_scale = 1.0
+            feasible_counts: dict[gpkit.Variable, float] | None = None
+            feasible_solution: object | None = None
+
+            while upper_scale <= max_scale_factor:
+                probe_counts = _counts_from_scale(upper_scale)
+                _apply(probe_counts)
+                try:
+                    feasible_solution = self.solve(**kwargs)
+                except UnknownInfeasible:
+                    lower_scale = upper_scale
+                    upper_scale *= 2.0
+                else:
+                    feasible_counts = probe_counts
+                    break
+
+            if feasible_counts is None:
+                logging.debug(
+                    "Scaled count search failed to restore feasibility (max factor %.2f)",
+                    upper_scale,
+                )
+                _apply(initial_counts)
+                return {}, None
+
+            logging.debug(
+                "Scaled count search candidate counts: %s",
+                {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
+            )
+
+            for _ in range(refinement_iters):
+                if upper_scale - lower_scale <= 1e-3:
+                    break
+                mid = 0.5 * (lower_scale + upper_scale)
+                probe_counts = _counts_from_scale(mid)
+                _apply(probe_counts)
+                try:
+                    feasible_solution = self.solve(**kwargs)
+                except UnknownInfeasible:
+                    lower_scale = mid
+                else:
+                    feasible_counts = probe_counts
+                    upper_scale = mid
+
+            _apply(feasible_counts)
+            return feasible_counts, feasible_solution
+
         try:
             for dr in self.discrete_resources:
                 resource = resource_lookup.get(dr)
@@ -493,6 +572,21 @@ class Model(gpkit.Model):
                                     "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
                                 )
                                 targets_relaxed = False
+
+                                if relax_targets_on_infeasible and not targets_relaxed:
+                                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
+                                    if scaled_counts:
+                                        for dr, count in scaled_counts.items():
+                                            start_dict[dr] = count
+
+                                        cur_solution = scaled_solution or self.solution
+                                        relaxed_success = True
+                                        targets_relaxed = True
+                                        logging.debug(
+                                            "Discrete feasibility restored after scaled count search: %s",
+                                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
+                                        )
+
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     bulk_counts = _search_bulk_counts()
                                     if bulk_counts:
@@ -696,15 +790,16 @@ class Model(gpkit.Model):
             else:
                 self.substitutions[key] = prior
 
-        for var, (sub_key, prior) in extra_relax_substitutions.items():
-            key = sub_key or var
-            if prior is missing:
-                try:
-                    del self.substitutions[key]
-                except KeyError:
-                    pass
-            else:
-                self.substitutions[key] = prior
+        if restore_relaxations:
+            for var, (sub_key, prior) in extra_relax_substitutions.items():
+                key = sub_key or var
+                if prior is missing:
+                    try:
+                        del self.substitutions[key]
+                    except KeyError:
+                        pass
+                else:
+                    self.substitutions[key] = prior
 
         # update the solution
         ## add the continuous solution

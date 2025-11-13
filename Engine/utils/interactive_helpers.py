@@ -102,10 +102,37 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
                     vkey = getattr(rate_var, "key", None)
                     if vkey is not None:
                         target_val = interaction.gpx_model.substitutions.get(vkey)
+                    if target_val is None and vkey is not None:
+                        target_val = interaction.gpx_model.substitutions.get(str(vkey))
                 if target_val is not None:
                     target_dict[rate_var] = target_val
 
+                for linked_lam in getattr(mclass, "all_lams", []) or []:
+                    if linked_lam is not None:
+                        relaxation_vars.add(linked_lam)
+
+                line_obj = getattr(mclass, "line", None)
+                line_lam = getattr(line_obj, "lam", None)
+                if line_lam is not None:
+                    relaxation_vars.add(line_lam)
+
         gpx_obj = getattr(system_module, "gpxObject", None)
+        if isinstance(gpx_obj, dict):
+            system_obj = gpx_obj.get("system")
+        else:
+            system_obj = getattr(gpx_obj, "system", None)
+        system_rate_var = getattr(system_obj, "lam", None) if system_obj else None
+        if system_rate_var is not None:
+            sys_rate_val = interaction.gpx_model.substitutions.get(system_rate_var)
+            if sys_rate_val is None:
+                vkey = getattr(system_rate_var, "key", None)
+                if vkey is not None:
+                    sys_rate_val = interaction.gpx_model.substitutions.get(vkey)
+                if sys_rate_val is None and vkey is not None:
+                    sys_rate_val = interaction.gpx_model.substitutions.get(str(vkey))
+            if sys_rate_val is not None:
+                target_dict[system_rate_var] = sys_rate_val
+
         if isinstance(gpx_obj, dict):
             total_cost_obj = gpx_obj.get("totalCost")
         else:
@@ -115,6 +142,12 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
         if num_units_var is not None:
             relaxation_vars.add(num_units_var)
 
+        feeders = getattr(system_module, "feeders", None) or []
+        for feeder in feeders:
+            feeder_lam = getattr(feeder, "lam", None)
+            if feeder_lam is not None:
+                relaxation_vars.add(feeder_lam)
+
     if target_dict:
         return interaction.gpx_model.by_rate_discretesolve(
             discrete_resources=rescs,
@@ -122,6 +155,7 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
             solve_orig=solve_orig,
             relax_targets_on_infeasible=True,
             extra_relaxation_vars=relaxation_vars or None,
+            restore_relaxations=False,
         )
 
     # set up the discrete solve
