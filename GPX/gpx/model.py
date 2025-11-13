@@ -275,6 +275,49 @@ class Model(gpkit.Model):
 
         disabled_rate_controllers: list[ProductionResource] = []
 
+        def _derive_relaxed_counts() -> dict[gpkit.Variable, float]:
+            """Solve with discrete counts free to estimate new integer targets."""
+            if not adjustable_resources:
+                return {}
+
+            resource_priors: dict[gpkit.Variable, object] = {}
+            relaxed_counts: dict[gpkit.Variable, float] = {}
+
+            for dr in adjustable_resources:
+                resource_priors[dr] = self.substitutions.pop(dr, missing)
+
+            try:
+                self.solve(**kwargs)
+            except UnknownInfeasible:
+                relaxed_counts.clear()
+            except Exception:
+                relaxed_counts.clear()
+            else:
+                suggestion: dict[str, float] = {}
+                for dr in adjustable_resources:
+                    try:
+                        raw_value = float(self.solution(dr))
+                    except Exception:
+                        continue
+                    if not math.isfinite(raw_value):
+                        continue
+                    count = max(math.ceil(raw_value - tolerance), 1.0)
+                    relaxed_counts[dr] = count
+                    suggestion[str(dr.key)] = count
+                if suggestion:
+                    logging.debug(
+                        "Relaxed continuous solve suggested discrete counts: %s",
+                        suggestion,
+                    )
+            finally:
+                for dr, prior in resource_priors.items():
+                    if prior is missing:
+                        self.substitutions.pop(dr, None)
+                    else:
+                        self.substitutions[dr] = prior
+
+            return relaxed_counts
+
         try:
             for dr in self.discrete_resources:
                 resource = resource_lookup.get(dr)
@@ -325,10 +368,38 @@ class Model(gpkit.Model):
                         try:
                             cur_solution = self.solve(**kwargs)
                         except UnknownInfeasible:
-                            logging.debug(
-                                "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
-                            )
-                            targets_relaxed = False
+                            relaxed_success = False
+                            relaxed_counts: dict[gpkit.Variable, float] = {}
+                            if relax_targets_on_infeasible:
+                                logging.debug(
+                                    "Relaxed rate targets remained infeasible; deriving new discrete counts",
+                                )
+                                relaxed_counts = _derive_relaxed_counts()
+
+                            if relaxed_counts:
+                                for dr, count in relaxed_counts.items():
+                                    start_dict[dr] = count
+                                    self.substitutions[dr] = count
+
+                                try:
+                                    cur_solution = self.solve(**kwargs)
+                                except UnknownInfeasible:
+                                    logging.debug(
+                                        "Discrete solve still infeasible after applying relaxed counts",
+                                    )
+                                    targets_relaxed = False
+                                else:
+                                    relaxed_success = True
+                                    targets_relaxed = True
+                                    logging.debug(
+                                        "Discrete feasibility restored after applying relaxed counts: %s",
+                                        {str(dr.key): start_dict[dr] for dr in adjustable_resources},
+                                    )
+                            if not relaxed_success:
+                                logging.debug(
+                                    "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
+                                )
+                                targets_relaxed = False
 
                     if not targets_relaxed:
 
