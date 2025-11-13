@@ -89,6 +89,8 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
     system_module = interaction.active_modules.get("system") if hasattr(interaction, "active_modules") else None
     target_dict: dict[object, float | int | None] = {}
 
+    relaxation_vars: set[gpx.Variable] = set()
+
     if system_module and getattr(system_module, "by_split", True) is False:
         mcclasses = getattr(system_module, "mcclasses", {})
         if isinstance(mcclasses, dict):
@@ -104,11 +106,23 @@ def discretize_resources(interaction: "InteractiveModel", discvar, discval, **kw
                 if target_val is not None:
                     target_dict[rate_var] = target_val
 
+        gpx_obj = getattr(system_module, "gpxObject", None)
+        if isinstance(gpx_obj, dict):
+            total_cost_obj = gpx_obj.get("totalCost")
+        else:
+            total_cost_obj = getattr(gpx_obj, "totalCost", None)
+
+        num_units_var = getattr(total_cost_obj, "numUnits", None)
+        if num_units_var is not None:
+            relaxation_vars.add(num_units_var)
+
     if target_dict:
         return interaction.gpx_model.by_rate_discretesolve(
             discrete_resources=rescs,
             target_dict=target_dict,
             solve_orig=solve_orig,
+            relax_targets_on_infeasible=True,
+            extra_relaxation_vars=relaxation_vars or None,
         )
 
     # set up the discrete solve

@@ -9,6 +9,7 @@ from typing import Optional
 from gpkit import Variable
 from gpkit.units import ureg
 import pint
+import requests
 
 from gpx.custom_units import INITIALISED_FX_BASES, get_rates, refresh_fx_rates
 from gpx.dag.parametric import ParametricVariable
@@ -366,8 +367,14 @@ def setup_currency_conversion_variables(
         base_currency = (model_dict.get("modules", [{}])[0].get("customUnits", {}).get("unitCurrency", "USD").upper())
         foreign_currencies = detect_foreign_currencies(model_dict, base_currency)
 
-        # Ensure FX rates are available
-        rates = refresh_fx_rates(base_currency)
+        rates: dict[str, float] = {}
+        if foreign_currencies:
+            try:
+                rates = refresh_fx_rates(base_currency)
+            except requests.RequestException:
+                rates = get_rates(base_currency, safe=True)
+        else:
+            rates = get_rates(base_currency, safe=True)
 
         # Build fallback conversion rates for all non-base currencies
         conversion_rates = []

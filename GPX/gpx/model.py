@@ -6,7 +6,7 @@ import importlib.util
 import logging
 import math
 from operator import itemgetter
-from typing import TYPE_CHECKING, Optional, Union
+from typing import TYPE_CHECKING, Iterable, Optional, Union
 
 import gpkit
 from gpkit.exceptions import UnknownInfeasible
@@ -109,6 +109,8 @@ class Model(gpkit.Model):
         sensitivity_strategy: str = 'min',  # 'min' | 'max'
         solve_orig=True,  # only matters when new cost is defined
         preserve_input_qty=True,  # if there is input on the quantity, respect
+        relax_targets_on_infeasible: bool = False,
+        extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
         **kwargs,
     ) -> object:
         '''Solve the discrete model when individual product rates are targets.'''
@@ -124,6 +126,8 @@ class Model(gpkit.Model):
             sensitivity_strategy=sensitivity_strategy,
             solve_orig=solve_orig,
             preserve_input_qty=preserve_input_qty,
+            relax_targets_on_infeasible=relax_targets_on_infeasible,
+            extra_relaxation_vars=extra_relaxation_vars,
             **kwargs,
         )
 
@@ -137,6 +141,8 @@ class Model(gpkit.Model):
         sensitivity_strategy: str = 'min',
         solve_orig=True,
         preserve_input_qty=True,
+        relax_targets_on_infeasible: bool = False,
+        extra_relaxation_vars: Iterable[gpkit.Variable] | None = None,
         **kwargs,
     ) -> object:
         '''Common implementation for discrete solves.'''
@@ -215,6 +221,7 @@ class Model(gpkit.Model):
             orig_cost = None
 
         missing = object()
+        targets_relaxed = False
 
         def _pop_target_sub(var: gpkit.Variable) -> tuple[object | None, object]:
             if var in self.substitutions:
@@ -231,6 +238,12 @@ class Model(gpkit.Model):
         target_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
         for target_var in target_map:
             target_substitutions[target_var] = _pop_target_sub(target_var)
+
+        extra_relaxation_vars = [var for var in (extra_relaxation_vars or []) if var not in target_map]
+        extra_relax_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
+
+        for relax_var in extra_relaxation_vars:
+            extra_relax_substitutions[relax_var] = _pop_target_sub(relax_var)
 
         # allow callers to loosen rounding if needed
         tolerance = kwargs.pop('rounding_tolerance', 1e-6)
@@ -261,6 +274,49 @@ class Model(gpkit.Model):
             start_dict[dr] = rounded_val
 
         disabled_rate_controllers: list[ProductionResource] = []
+
+        def _derive_relaxed_counts() -> dict[gpkit.Variable, float]:
+            """Solve with discrete counts free to estimate new integer targets."""
+            if not adjustable_resources:
+                return {}
+
+            resource_priors: dict[gpkit.Variable, object] = {}
+            relaxed_counts: dict[gpkit.Variable, float] = {}
+
+            for dr in adjustable_resources:
+                resource_priors[dr] = self.substitutions.pop(dr, missing)
+
+            try:
+                self.solve(**kwargs)
+            except UnknownInfeasible:
+                relaxed_counts.clear()
+            except Exception:
+                relaxed_counts.clear()
+            else:
+                suggestion: dict[str, float] = {}
+                for dr in adjustable_resources:
+                    try:
+                        raw_value = float(self.solution(dr))
+                    except Exception:
+                        continue
+                    if not math.isfinite(raw_value):
+                        continue
+                    count = max(math.ceil(raw_value - tolerance), 1.0)
+                    relaxed_counts[dr] = count
+                    suggestion[str(dr.key)] = count
+                if suggestion:
+                    logging.debug(
+                        "Relaxed continuous solve suggested discrete counts: %s",
+                        suggestion,
+                    )
+            finally:
+                for dr, prior in resource_priors.items():
+                    if prior is missing:
+                        self.substitutions.pop(dr, None)
+                    else:
+                        self.substitutions[dr] = prior
+
+            return relaxed_counts
 
         try:
             for dr in self.discrete_resources:
@@ -299,57 +355,105 @@ class Model(gpkit.Model):
                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                     )
 
-                    # only reach this path when other constraints still bite after lifting rates
-                    # limit the number of safeguarded bumps so we stop after a fair sweep
-                    max_adjustments = max(len(adjustable_resources), 1) * 10
-                    # track how many bumps have been attempted
-                    adjustments = 0
-                    last_feasibility_bump: dict[str, object] | None = None
-                    # run a guarded round robin only when genuine infeasibility remains
-                    while True:
+                    if relax_targets_on_infeasible and not targets_relaxed and target_map:
+                        logging.debug(
+                            "Relaxing discrete rate targets to allow throughput to float with fixed counts",
+                        )
+                        for var in list(target_map.keys()):
+                            target_map[var] = None
+                            sub_key, _ = target_substitutions.get(var, (None, missing))
+                            target_substitutions[var] = (sub_key, missing)
+                        targets_relaxed = True
+
                         try:
-                            # re-test after any safeguarded bump
                             cur_solution = self.solve(**kwargs)
-                            if last_feasibility_bump:
-                                self.last_discrete_feasibility_bump = last_feasibility_bump
-                                resource_label = last_feasibility_bump.get("resource")
-                                log_suffix = (
-                                    f" (resource {resource_label})" if resource_label else ""
-                                )
-                                logging.debug(
-                                    "Discrete feasibility restored after bumping %s to %s%s",
-                                    last_feasibility_bump["variable"],
-                                    last_feasibility_bump["final"],
-                                    log_suffix,
-                                )
-                            break
                         except UnknownInfeasible:
-                            logging.debug(
-                                "Discrete solve still infeasible after safeguarded bump %s: %s",
-                                adjustments + 1,
-                                {
-                                    str(dr.key): start_dict[dr]
-                                    for dr in adjustable_resources
-                                },
-                            )
-                            if adjustments >= max_adjustments:
-                                self.last_discrete_feasibility_bump = None
-                                raise
-                            dr = adjustable_resources[
-                                adjustments % len(adjustable_resources)
-                            ]
-                            # increase the current cell in turn as a last resort
-                            start_dict[dr] = start_dict.get(dr, 0) + 1
-                            self.substitutions[dr] = start_dict[dr]
-                            resource = resource_lookup.get(dr)
-                            resource_label = _resource_label(resource)
-                            last_feasibility_bump = {
-                                "variable": str(dr.key),
-                                "resource": resource_label,
-                                "initial": start_dict[dr] - 1,
-                                "final": start_dict[dr],
-                            }
-                            adjustments += 1
+                            relaxed_success = False
+                            relaxed_counts: dict[gpkit.Variable, float] = {}
+                            if relax_targets_on_infeasible:
+                                logging.debug(
+                                    "Relaxed rate targets remained infeasible; deriving new discrete counts",
+                                )
+                                relaxed_counts = _derive_relaxed_counts()
+
+                            if relaxed_counts:
+                                for dr, count in relaxed_counts.items():
+                                    start_dict[dr] = count
+                                    self.substitutions[dr] = count
+
+                                try:
+                                    cur_solution = self.solve(**kwargs)
+                                except UnknownInfeasible:
+                                    logging.debug(
+                                        "Discrete solve still infeasible after applying relaxed counts",
+                                    )
+                                    targets_relaxed = False
+                                else:
+                                    relaxed_success = True
+                                    targets_relaxed = True
+                                    logging.debug(
+                                        "Discrete feasibility restored after applying relaxed counts: %s",
+                                        {str(dr.key): start_dict[dr] for dr in adjustable_resources},
+                                    )
+                            if not relaxed_success:
+                                logging.debug(
+                                    "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
+                                )
+                                targets_relaxed = False
+
+                    if not targets_relaxed:
+
+                        # only reach this path when other constraints still bite after lifting rates
+                        # limit the number of safeguarded bumps so we stop after a fair sweep
+                        max_adjustments = max(len(adjustable_resources), 1) * 10
+                        # track how many bumps have been attempted
+                        adjustments = 0
+                        last_feasibility_bump: dict[str, object] | None = None
+                        # run a guarded round robin only when genuine infeasibility remains
+                        while True:
+                            try:
+                                # re-test after any safeguarded bump
+                                cur_solution = self.solve(**kwargs)
+                                if last_feasibility_bump:
+                                    self.last_discrete_feasibility_bump = last_feasibility_bump
+                                    resource_label = last_feasibility_bump.get("resource")
+                                    log_suffix = (
+                                        f" (resource {resource_label})" if resource_label else ""
+                                    )
+                                    logging.debug(
+                                        "Discrete feasibility restored after bumping %s to %s%s",
+                                        last_feasibility_bump["variable"],
+                                        last_feasibility_bump["final"],
+                                        log_suffix,
+                                    )
+                                break
+                            except UnknownInfeasible:
+                                logging.debug(
+                                    "Discrete solve still infeasible after safeguarded bump %s: %s",
+                                    adjustments + 1,
+                                    {
+                                        str(dr.key): start_dict[dr]
+                                        for dr in adjustable_resources
+                                    },
+                                )
+                                if adjustments >= max_adjustments:
+                                    self.last_discrete_feasibility_bump = None
+                                    raise
+                                dr = adjustable_resources[
+                                    adjustments % len(adjustable_resources)
+                                ]
+                                # increase the current cell in turn as a last resort
+                                start_dict[dr] = start_dict.get(dr, 0) + 1
+                                self.substitutions[dr] = start_dict[dr]
+                                resource = resource_lookup.get(dr)
+                                resource_label = _resource_label(resource)
+                                last_feasibility_bump = {
+                                    "variable": str(dr.key),
+                                    "resource": resource_label,
+                                    "initial": start_dict[dr] - 1,
+                                    "final": start_dict[dr],
+                                }
+                                adjustments += 1
 
             target_strategy_flag = 1 if target_strategy == 'above' else -1
 
@@ -475,6 +579,16 @@ class Model(gpkit.Model):
                         pass
                 else:
                     self.substitutions[key] = fallback
+            else:
+                self.substitutions[key] = prior
+
+        for var, (sub_key, prior) in extra_relax_substitutions.items():
+            key = sub_key or var
+            if prior is missing:
+                try:
+                    del self.substitutions[key]
+                except KeyError:
+                    pass
             else:
                 self.substitutions[key] = prior
 
