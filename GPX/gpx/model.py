@@ -498,13 +498,27 @@ class Model(gpkit.Model):
             # grow the scale until we hit a feasible relaxed solution or hit the limit
             while upper_scale <= max_scale_factor:
                 probe_counts = _counts_from_scale(upper_scale)
+                _trace(
+                    "Scaled count search probing scale %.3f (lower %.3f upper %.3f)",
+                    upper_scale,
+                    lower_scale,
+                    upper_scale,
+                )
                 _apply(probe_counts)
                 try:
                     feasible_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
+                    _trace(
+                        "Scaled count search infeasible at scale %.3f; expanding bound",
+                        upper_scale,
+                    )
                     lower_scale = upper_scale
                     upper_scale *= 2.0
                 else:
+                    _trace(
+                        "Scaled count search feasible at scale %.3f; starting refinement",
+                        upper_scale,
+                    )
                     feasible_counts = probe_counts
                     break
 
@@ -522,19 +536,37 @@ class Model(gpkit.Model):
             )
 
             # refine the scale factor to get closer to a minimal feasible set of counts
-            for _ in range(refinement_iters):
+            for iteration in range(1, refinement_iters + 1):
                 if upper_scale - lower_scale <= 1e-3:
                     break
                 mid = 0.5 * (lower_scale + upper_scale)
                 probe_counts = _counts_from_scale(mid)
+                _trace(
+                    "Scaled count search refinement %d testing scale %.3f (range %.3f-%.3f)",
+                    iteration,
+                    mid,
+                    lower_scale,
+                    upper_scale,
+                )
                 _apply(probe_counts)
                 try:
                     feasible_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
+                    _trace(
+                        "Scaled count search refinement %d infeasible at %.3f",
+                        iteration,
+                        mid,
+                    )
                     lower_scale = mid
                 else:
                     feasible_counts = probe_counts
                     upper_scale = mid
+
+            if feasible_counts is not None:
+                _trace(
+                    "Scaled count search refined counts: %s",
+                    {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
+                )
 
             _apply(feasible_counts)
             return feasible_counts, feasible_solution
