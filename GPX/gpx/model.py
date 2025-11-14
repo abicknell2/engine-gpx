@@ -776,7 +776,23 @@ class Model(gpkit.Model):
                                 )
                                 targets_relaxed = False
 
-                                # run the coarse per-resource search before resorting to global scaling
+                                # try the global shared-scale sweep before the per-resource bulk search
+                                if relax_targets_on_infeasible and not targets_relaxed:
+                                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
+                                    if scaled_counts:
+                                        for dr, count in scaled_counts.items():
+                                            start_dict[dr] = count
+                                            self.substitutions[dr] = count
+
+                                        cur_solution = scaled_solution or self.solution
+                                        relaxed_success = True
+                                        targets_relaxed = True
+                                        _trace(
+                                            "Discrete feasibility restored after scaled count search: %s",
+                                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
+                                        )
+
+                                # if the global scaling pass still cannot recover, fall back to the bulk search
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     bulk_counts = _search_bulk_counts()
                                     if bulk_counts:
@@ -798,22 +814,6 @@ class Model(gpkit.Model):
                                                 "Discrete feasibility restored after bulk count search: %s",
                                                 {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                             )
-
-                                # if the coarse search also fails, try the global scaled sweep
-                                if relax_targets_on_infeasible and not targets_relaxed:
-                                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
-                                    if scaled_counts:
-                                        for dr, count in scaled_counts.items():
-                                            start_dict[dr] = count
-                                            self.substitutions[dr] = count
-
-                                        cur_solution = scaled_solution or self.solution
-                                        relaxed_success = True
-                                        targets_relaxed = True
-                                        _trace(
-                                            "Discrete feasibility restored after scaled count search: %s",
-                                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
-                                        )
 
                     # if we never managed to keep targets relaxed, go to the safeguarded bump loop
                     if not targets_relaxed:
