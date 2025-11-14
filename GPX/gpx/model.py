@@ -708,22 +708,7 @@ class Model(gpkit.Model):
                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                     )
 
-                    # Before relaxing the target rates, try a global scaled search to
-                    # see if simply giving every discrete resource a proportional bump
-                    # restores feasibility.
-                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
-                    if scaled_counts:
-                        for dr, count in scaled_counts.items():
-                            start_dict[dr] = count
-
-                        cur_solution = scaled_solution or self.solution
-                        targets_relaxed = True
-                        _trace(
-                            "Discrete feasibility restored after early scaled count search: %s",
-                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
-                        )
-
-                    elif relax_targets_on_infeasible and not targets_relaxed and target_map:
+                    if relax_targets_on_infeasible and not targets_relaxed and target_map:
                         _trace(
                             "Relaxing discrete rate targets to allow throughput to float with fixed counts",
                         )
