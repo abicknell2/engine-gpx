@@ -2,13 +2,17 @@ from itertools import groupby
 from typing import Optional, Union
 
 import gpkit
-from gpkit import Variable, ureg
+from gpkit import Variable, VarKey, ureg
 import numpy as np
 
 from api.acyclic_interpreter import make_parametric_constraint, make_parametric_variable
 from api.module_types.production_finance import ProductionFinance
 import gpx
-from gpx.dag.parametric import (ParametricVariable, ParametricConstraint, XFromSplits, XSplitBySingleCell)
+from gpx.dag.parametric import (
+    ParametricVariable,
+    XFromSplits,
+    XSplitBySingleCell,
+)
 from gpx.manufacturing import QNACell
 from gpx.multiclass import MClass
 from gpkit import units as gpkit_units
@@ -179,6 +183,7 @@ def set_x_rate_values(multiproduct, sysm, mcsys, newsubs):
         # Bind class lam and any exposed q-lams
         multiproduct._substitutions_[mc.lam] = class_rate
         newsubs[mc.lam] = class_rate
+
         for qlam in getattr(mc, "all_lams", []):
             multiproduct._substitutions_[qlam] = class_rate
             newsubs[qlam] = class_rate
@@ -225,6 +230,42 @@ def set_x_rate_values(multiproduct, sysm, mcsys, newsubs):
 
     return newsubs
 
+def compute_rate_shares(owner, prod_rates: dict | None = None, classes: dict | None = None) -> dict[str, float]:
+    """Return normalized shares derived from the configured product rates."""
+
+    class_map = classes or getattr(owner, "mcclasses", {}) or {}
+    rate_inputs = prod_rates or getattr(owner, "prod_rates", {}) or {}
+    candidate_names = list(class_map.keys()) or list(rate_inputs.keys())
+
+    rate_magnitudes: dict[str, float] = {}
+
+    for pname in candidate_names:
+        rate_val = rate_inputs.get(pname)
+        if rate_val is None:
+            continue
+
+        try:
+            quantity = rate_val if hasattr(rate_val, "to") else rate_val * gpkit.units("count/hr")
+            magnitude = float(quantity.to("count/hr").magnitude)
+        except Exception:
+            try:
+                magnitude = float(rate_val)
+            except Exception:
+                continue
+
+        rate_magnitudes[pname] = magnitude
+
+    if not rate_magnitudes:
+        return {}
+
+    total_rate = sum(rate_magnitudes.values())
+    if total_rate <= 0:
+        share = 1.0 / max(len(rate_magnitudes), 1)
+        return {p: share for p in rate_magnitudes}
+
+    return {p: mag / total_rate for p, mag in rate_magnitudes.items()}
+
+
 def add_x_splits_to_acyclic_constraints(multiproduct, aconstr):
     split_pvs: dict[str, ParametricVariable] = {}
 
@@ -240,14 +281,14 @@ def add_x_splits_to_acyclic_constraints(multiproduct, aconstr):
                 substitution=(split_val, "-"),  # numeric, unit‑less
             )
     else:
-        # First build one ParametricVariable per product rate
-        for pname, mc in multiproduct.mcclasses.items():
-            rate_vk = mc.lam
-            rate_val = multiproduct.prod_rates[pname]
+        normalized_shares = compute_rate_shares(multiproduct)
+
+        for pname, share in normalized_shares.items():
+            split_key = VarKey(f"{pname} :: Rate Split Input", units="-")
             split_pvs[pname] = make_parametric_variable(
-                inputvar=rate_vk,
-                name=f"{pname} :: Class Rate",
-                substitution=(rate_val, "count/hr"),
+                key=split_key,
+                name=f"{pname} :: Class Split",
+                substitution=(share, "-"),
             )
 
     all_split_pvs = list(split_pvs.values())

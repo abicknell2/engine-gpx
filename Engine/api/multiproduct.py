@@ -54,8 +54,12 @@ from gpx.recurring_cost import LaborCost as GPXLaborCost
 from utils.interactive_helpers import discretize_resources
 import utils.logger as logger
 from utils.multiproduct_helpers import (
-    add_x_splits_to_acyclic_constraints, add_rate_links_to_acyclic_constraints, set_floorspace_costs, set_x_rate_values,
-    update_w_cap
+    add_x_splits_to_acyclic_constraints,
+    add_rate_links_to_acyclic_constraints,
+    compute_rate_shares,
+    set_floorspace_costs,
+    set_x_rate_values,
+    update_w_cap,
 )
 from utils.result_gens_helpers import combine_results
 from utils.settings import Settings
@@ -712,6 +716,43 @@ class Multiproduct(ModuleType):
             # set the class
             classes[pname] = mclass
             self.mcclasses[pname] = mclass
+
+            if not self.by_split:
+                base_rate = self.prod_rates.get(pname)
+                try:
+                    lam_units = getattr(mclass.lam, "units", gpkit.units("count/hr"))
+                except Exception:
+                    lam_units = gpkit.units("count/hr")
+
+                # Keep each lambda strictly positive without re-imposing the full
+                # baseline rate. Scale the bound down aggressively so discrete
+                # rounding is free to reduce throughput when capacity tightens.
+                rate_floor = None
+                try:
+                    base_quantity = None
+                    if base_rate is not None:
+                        if hasattr(base_rate, "to"):
+                            base_quantity = base_rate.to(lam_units)
+                        else:
+                            base_quantity = base_rate * lam_units
+
+                    if base_quantity is not None:
+                        try:
+                            base_mag = float(getattr(base_quantity, "magnitude", base_quantity))
+                        except Exception:
+                            base_mag = None
+                    else:
+                        base_mag = None
+
+                    min_floor_mag = 1e-9
+                    scaled_floor_mag = (base_mag * 1e-6) if (base_mag and base_mag > 0) else None
+                    floor_mag = max(filter(lambda v: v is not None, [scaled_floor_mag, min_floor_mag]))
+                    rate_floor = floor_mag * lam_units
+                except Exception:
+                    logging.debug("Failed to derive relaxed rate floor for %s", pname, exc_info=True)
+
+                if rate_floor is not None:
+                    aux_constraints.append(mclass.lam >= rate_floor)
 
             # update the rates for the secondary cells
             for c in mfg.gpxObject.get("secondaryCells", {}).values():
@@ -1636,6 +1677,23 @@ class MultiproductContext(SolutionContext):
         if not sysm.by_split:
             mcsys = sysm.gpxObject["system"]
             constr.append(mcsys.lam >= sum(mc.lam for mc in mcsys.classes))
+            rate_shares = compute_rate_shares(sysm, prod_rates=sysm.prod_rates, classes=sysm.mcclasses)
+            system_rate_var = getattr(mcsys, "lam", None)
+            if rate_shares and system_rate_var is not None:
+                for pname, share in rate_shares.items():
+                    mc = sysm.mcclasses.get(pname)
+                    if not mc:
+                        continue
+
+                    if share > 0:
+                        constr.append(mc.lam >= share * system_rate_var)
+                        constr.append(mc.lam <= share * system_rate_var)
+
+                    for qlam in getattr(mc, "all_lams", []) or []:
+                        if qlam is None:
+                            continue
+                        constr.append(qlam >= mc.lam)
+                        constr.append(qlam <= mc.lam)
 
         self.gpx_constraints = constr
 
