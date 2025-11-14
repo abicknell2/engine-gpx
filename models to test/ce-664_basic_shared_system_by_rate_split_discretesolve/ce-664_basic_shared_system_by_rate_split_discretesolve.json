@@ -1,6 +1,6 @@
 {
     "model": {
-        "modelName": "CE-664 Basic Shared System by RATE SPLIT discretesolve (zero division error)",
+        "modelName": "CE-664 Basic Shared System by RATE SPLIT discretesolve",
         "type": "system",
         "line": "cell",
         "mixType": "concurrent",

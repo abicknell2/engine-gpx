@@ -104,17 +104,13 @@ class MClass(Model):
                 c.parent_mcclass = self
 
         if not by_split:
-            class_rate = kwargs['class_rate']
-            # defind the class production rate with a subsitution
-            self.lam = Variable('\\lambda_{class}', class_rate, 'count/hr', 'class production rate')
+            _ = kwargs['class_rate']  # retain for compatibility; actual substitution handled upstream
+            # define the class production rate as a free variable
+            self.lam = Variable('\\lambda_{class}', 'count/hr', 'class production rate')
 
-            # update rate substitutions for every cell in the line
+            # track the cell lambda variables for later linkage but avoid immediate substitution
             for c in self.line.cells:
-                self.line.substitutions[c.lam] = class_rate
                 self.cell_lams.append(c.lam)
-
-            # update substitutions on the line
-            self.line.substitutions[self.line.lam] = class_rate
 
         else:
             # define the class by split

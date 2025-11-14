@@ -88,10 +88,7 @@ class MCell(Model):
 
         # self.alpha_min = Variable('\\alpha_{min}', 1e-3, '-')
         self.x_min = Variable('x_{min}', 1e-6, '-', 'min arrival mix to avoid ts→0')
-        self.ts_min = Variable('t_{s,min}', 1e-6, 'min', 'min service time to avoid division by zero')
-
-        self.alpha_min = Variable('\\alpha_{min}', 1e-6, '-', 'min 1−rho to avoid singularities')
-        
+        self.ts_min = Variable('t_{s,min}', 1e-6, 'min', 'min service time to avoid division by zero')        
         
         # Calculated Variables
         self.cells = cells
@@ -117,7 +114,6 @@ class MCell(Model):
 
         ## Create constraints to return as the model
         constr = []
-        constr += [self.m >= 1e-12, alpha_bar >= self.alpha_min]
         
         self.x = []
         self.compx = []
