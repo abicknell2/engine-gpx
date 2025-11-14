@@ -468,7 +468,15 @@ class Model(gpkit.Model):
             max_scale_factor: float = 64.0,
             refinement_iters: int = 12,
         ) -> tuple[dict[gpkit.Variable, float], object | None]:
-            """Scale all discrete counts together until the relaxed model becomes feasible."""
+            """Scale all discrete counts together until the relaxed model becomes feasible.
+
+            The coarse phase multiplies every relaxed continuous count by a shared factor
+            (>=1.0) so the mix of resources stays proportional to the smooth plan while we
+            search for the smallest globally scaled set of integers that satisfies the
+            constraints. Once we find a feasible factor, a binary-search refinement keeps
+            the last infeasible/feasible bounds and repeatedly halves the gap until the
+            scale converges.
+            """
 
             if not adjustable_resources:
                 return {}, None
@@ -504,6 +512,10 @@ class Model(gpkit.Model):
             feasible_counts: dict[gpkit.Variable, float] | None = None
             feasible_solution: object | None = None
 
+            _trace(
+                "Scaled count search multiplies the relaxed continuous counts by a shared "
+                "factor (>=1.0) before rounding up so the resource mix remains proportional."
+            )
             _trace(
                 "Scaled count search baselines (continuous -> rounded start): %s",
                 _format_scaled_counts(initial_counts),
@@ -556,6 +568,14 @@ class Model(gpkit.Model):
                 _format_scaled_counts(feasible_counts),
             )
 
+            _trace(
+                "Scaled count search refinement phase: binary searching between the last "
+                "infeasible scale %.3f and feasible scale %.3f to tighten the shared "
+                "multiplier",
+                lower_scale,
+                upper_scale,
+            )
+
             # refine the scale factor to get closer to a minimal feasible set of counts
             for iteration in range(1, refinement_iters + 1):
                 if upper_scale - lower_scale <= 1e-3:
@@ -563,7 +583,8 @@ class Model(gpkit.Model):
                 mid = 0.5 * (lower_scale + upper_scale)
                 probe_counts = _counts_from_scale(mid)
                 _trace(
-                    "Scaled count search refinement %d testing scale %.3f (range %.3f-%.3f) counts: %s",
+                    "Scaled count search refinement %d testing scale %.3f (midpoint between "
+                    "infeasible %.3f and feasible %.3f) counts: %s",
                     iteration,
                     mid,
                     lower_scale,
