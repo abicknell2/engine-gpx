@@ -485,6 +485,15 @@ class Model(gpkit.Model):
                     scaled[dr] = max(math.ceil(candidate - tolerance), 1.0)
                 return scaled
 
+            def _format_scaled_counts(
+                counts: dict[gpkit.Variable, float]
+            ) -> dict[str, str]:
+                formatted: dict[str, str] = {}
+                for dr in adjustable_resources:
+                    base = baseline_values.get(dr, 0.0)
+                    formatted[str(dr.key)] = f"{base:.3f}->{counts.get(dr, 0.0):.0f}"
+                return formatted
+
             # apply a set of counts into substitutions
             def _apply(counts: dict[gpkit.Variable, float]) -> None:
                 for var, value in counts.items():
@@ -495,28 +504,40 @@ class Model(gpkit.Model):
             feasible_counts: dict[gpkit.Variable, float] | None = None
             feasible_solution: object | None = None
 
+            _trace(
+                "Scaled count search baselines (continuous -> rounded start): %s",
+                _format_scaled_counts(initial_counts),
+            )
+
             # grow the scale until we hit a feasible relaxed solution or hit the limit
             while upper_scale <= max_scale_factor:
                 probe_counts = _counts_from_scale(upper_scale)
                 _trace(
-                    "Scaled count search probing scale %.3f (lower %.3f upper %.3f)",
+                    "Scaled count search probing scale %.3f (lower %.3f upper %.3f) counts: %s",
                     upper_scale,
                     lower_scale,
                     upper_scale,
+                    _format_scaled_counts(probe_counts),
                 )
                 _apply(probe_counts)
                 try:
                     feasible_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
+                    next_upper = min(upper_scale * 2.0, max_scale_factor)
                     _trace(
-                        "Scaled count search infeasible at scale %.3f; expanding bound",
+                        "Scaled count search infeasible at scale %.3f; expanding bound to %.3f-%.3f",
                         upper_scale,
+                        upper_scale,
+                        next_upper,
                     )
                     lower_scale = upper_scale
-                    upper_scale *= 2.0
+                    upper_scale = next_upper
                 else:
                     _trace(
-                        "Scaled count search feasible at scale %.3f; starting refinement",
+                        "Scaled count search feasible at scale %.3f (counts: %s); starting refinement between %.3f-%.3f",
+                        upper_scale,
+                        _format_scaled_counts(probe_counts),
+                        lower_scale,
                         upper_scale,
                     )
                     feasible_counts = probe_counts
@@ -532,7 +553,7 @@ class Model(gpkit.Model):
 
             _trace(
                 "Scaled count search candidate counts: %s",
-                {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
+                _format_scaled_counts(feasible_counts),
             )
 
             # refine the scale factor to get closer to a minimal feasible set of counts
@@ -542,11 +563,12 @@ class Model(gpkit.Model):
                 mid = 0.5 * (lower_scale + upper_scale)
                 probe_counts = _counts_from_scale(mid)
                 _trace(
-                    "Scaled count search refinement %d testing scale %.3f (range %.3f-%.3f)",
+                    "Scaled count search refinement %d testing scale %.3f (range %.3f-%.3f) counts: %s",
                     iteration,
                     mid,
                     lower_scale,
                     upper_scale,
+                    _format_scaled_counts(probe_counts),
                 )
                 _apply(probe_counts)
                 try:
@@ -565,7 +587,7 @@ class Model(gpkit.Model):
             if feasible_counts is not None:
                 _trace(
                     "Scaled count search refined counts: %s",
-                    {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
+                    _format_scaled_counts(feasible_counts),
                 )
 
             _apply(feasible_counts)
