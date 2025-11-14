@@ -85,8 +85,10 @@ class Model(gpkit.Model):
         if target_variable is None:
             raise ValueError('target_variable must be provided for discretesolve')
 
+        # wrap a single target into the generic target_map form
         target_map: dict[gpkit.Variable, object] = {target_variable: target_value}
 
+        # delegate to the shared discrete solver core
         return self._discrete_solve_core(
             discrete_resources=discrete_resources,
             target_map=target_map,
@@ -118,6 +120,7 @@ class Model(gpkit.Model):
         if not target_dict:
             raise ValueError('target_dict must contain at least one target variable')
 
+        # delegate to the shared discrete solver core with a full target map
         return self._discrete_solve_core(
             discrete_resources=discrete_resources,
             target_map=target_dict,
@@ -152,16 +155,19 @@ class Model(gpkit.Model):
         if not target_map:
             raise ValueError('target_map must contain at least one target variable')
 
+        # helper for unpacking (variable, resource) pairs
         def _as_variable(entry: gpkit.Variable | tuple[gpkit.Variable, object]) -> gpkit.Variable:
             return entry[0] if isinstance(entry, tuple) else entry
 
         # copy the resources so we can adjust the list without side effects
         original_discrete_resources = list(discrete_resources)
+        # map variables back to their associated resource objects (if any)
         resource_lookup: dict[gpkit.Variable, ProductionResource | object | None] = {}
         # store what changed during the run for debugging later on
         self.last_discrete_adjustments: list[dict[str, object]] = []
         self.last_discrete_feasibility_bump: dict[str, object] | None = None
 
+        # simple labelling helper so logs show something meaningful
         def _resource_label(resource: object | None) -> str | None:
             if not resource:
                 return None
@@ -183,6 +189,7 @@ class Model(gpkit.Model):
         # remember the smooth solution for reporting
         continuous_solution = self.solution
 
+        # pick out the discrete resources we are actually allowed to change
         filtered_resources: list[gpkit.Variable] = []
         for entry in original_discrete_resources:
             var = _as_variable(entry)
@@ -196,6 +203,7 @@ class Model(gpkit.Model):
             filtered_resources.append(var)
             resource_lookup[var] = resource
 
+        # log a readable mapping of discrete variable keys to resources
         if resource_lookup:
             logging.debug(
                 "Discrete resource mapping: %s",
@@ -223,9 +231,11 @@ class Model(gpkit.Model):
         else:
             orig_cost = None
 
+        # sentinel for "no prior substitution"
         missing = object()
         targets_relaxed = False
 
+        # remove any existing substitution for a target-like variable and remember it
         def _pop_target_sub(var: gpkit.Variable) -> tuple[object | None, object]:
             if var in self.substitutions:
                 value = self.substitutions[var]
@@ -244,23 +254,30 @@ class Model(gpkit.Model):
                     return key_str, value
             return None, missing
 
+        # record and strip any existing substitutions for all target variables
         target_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
         relaxed_target_priors: dict[gpkit.Variable, tuple[object | None, object]] = {}
         for target_var in target_map:
             target_substitutions[target_var] = _pop_target_sub(target_var)
 
+        # ignore extra relaxation vars that are already in the target map
         extra_relaxation_vars = [var for var in (extra_relaxation_vars or []) if var not in target_map]
         extra_relax_substitutions: dict[gpkit.Variable, tuple[object | None, object]] = {}
 
+        # record and strip existing substitutions for any extra relaxation variables
         for relax_var in extra_relaxation_vars:
             extra_relax_substitutions[relax_var] = _pop_target_sub(relax_var)
 
         # allow callers to loosen rounding if needed
         tolerance = kwargs.pop('rounding_tolerance', 1e-6)
+        # variables we are free to adjust
         adjustable_resources: list[gpkit.Variable] = []
+        # current discrete counts for each adjustable resource
         start_dict: dict[gpkit.Variable, float] = {}
+        # remember original discrete substitutions so we can restore later
         original_discrete_subs: dict[gpkit.Variable, object] = {}
 
+        # helper to apply the requested rounding strategy and keep at least one unit
         def _rounded_start(value: float) -> float:
             if rounding_strategy == 'floor':
                 rounded = float(np.floor(value))
@@ -273,6 +290,7 @@ class Model(gpkit.Model):
             # keep at least one workstation so the cell stays available
             return max(float(rounded), 1.0)
 
+        # baseline continuous solution values for each discrete resource
         baseline_values: dict[gpkit.Variable, float] = {}
         for dr in self.discrete_resources:
             original_discrete_subs[dr] = self.substitutions.get(dr, missing)
@@ -283,13 +301,16 @@ class Model(gpkit.Model):
             adjustable_resources.append(dr)
             start_dict[dr] = rounded_val
 
+        # track any resources whose rate constraints get temporarily disabled
         disabled_rate_controllers: list[ProductionResource] = []
 
+        # use a relaxed continuous solve to propose new discrete counts
         def _derive_relaxed_counts() -> dict[gpkit.Variable, float]:
             """Solve with discrete counts free to estimate new integer targets."""
             if not adjustable_resources:
                 return {}
 
+            # temporarily remove any substitutions on the discrete resource variables
             resource_priors: dict[gpkit.Variable, tuple[object | None, object]] = {}
             relaxed_counts: dict[gpkit.Variable, float] = {}
 
@@ -309,6 +330,7 @@ class Model(gpkit.Model):
                 )
                 relaxed_counts.clear()
             else:
+                # pull out the relaxed solution and turn it into integer ceilings
                 suggestion: dict[str, float] = {}
                 for dr in adjustable_resources:
                     try:
@@ -326,6 +348,7 @@ class Model(gpkit.Model):
                         suggestion,
                     )
             finally:
+                # restore substitutions so the rest of the solve sees the original state
                 for dr, (sub_key, prior) in resource_priors.items():
                     key = sub_key or dr
                     if prior is missing:
@@ -335,6 +358,7 @@ class Model(gpkit.Model):
 
             return relaxed_counts
 
+        # coarse search that grows counts until a feasible combination is found
         def _search_bulk_counts() -> dict[gpkit.Variable, float]:
             """Coarsely expand discrete counts to find a feasible combination."""
             if not adjustable_resources:
@@ -344,14 +368,17 @@ class Model(gpkit.Model):
             trial_counts: dict[gpkit.Variable, float] = {
                 var: max(float(start_dict.get(var, 1.0)), 1.0) for var in adjustable_resources
             }
+            # snapshot current substitutions so we can restore after searching
             saved_subs: dict[gpkit.Variable, object] = {
                 var: self.substitutions.get(var, missing) for var in adjustable_resources
             }
 
+            # helper to apply a whole set of counts to the model
             def _set_counts(values: dict[gpkit.Variable, float]) -> None:
                 for var, val in values.items():
                     self.substitutions[var] = max(float(val), 1.0)
 
+            # helper to restore the saved state
             def _restore() -> None:
                 for var, prior in saved_subs.items():
                     if prior is missing:
@@ -361,12 +388,14 @@ class Model(gpkit.Model):
 
             feasible: dict[gpkit.Variable, float] = {}
             try:
+                # first, expand counts until some combination solves
                 attempts = 0
                 while attempts < max_attempts:
                     _set_counts(trial_counts)
                     try:
                         self.solve(**kwargs)
                     except UnknownInfeasible:
+                        # grow all counts when infeasible
                         for var in adjustable_resources:
                             current = trial_counts.get(var, 1.0)
                             step = max(1.0, math.ceil(current * 0.5))
@@ -374,6 +403,7 @@ class Model(gpkit.Model):
                         attempts += 1
                         continue
                     else:
+                        # record a feasible combination based on the solution
                         feasible = {
                             var: max(math.ceil(float(self.solution(var)) - tolerance), 1.0)
                             for var in adjustable_resources
@@ -383,6 +413,7 @@ class Model(gpkit.Model):
                 if not feasible:
                     return {}
 
+                # then try to shrink individual counts with a simple binary search
                 changed = True
                 while changed:
                     changed = False
@@ -419,6 +450,7 @@ class Model(gpkit.Model):
             finally:
                 _restore()
 
+        # global scaling search that moves all counts together until feasible
         def _scale_counts_until_feasible(
             max_scale_factor: float = 64.0,
             refinement_iters: int = 12,
@@ -428,8 +460,10 @@ class Model(gpkit.Model):
             if not adjustable_resources:
                 return {}, None
 
+            # keep a copy of the starting counts in case we need to revert
             initial_counts = {dr: start_dict.get(dr, 1.0) for dr in adjustable_resources}
 
+            # build counts from a scale factor and baseline continuous values
             def _counts_from_scale(scale: float) -> dict[gpkit.Variable, float]:
                 scaled: dict[gpkit.Variable, float] = {}
                 for dr in adjustable_resources:
@@ -438,6 +472,7 @@ class Model(gpkit.Model):
                     scaled[dr] = max(math.ceil(candidate - tolerance), 1.0)
                 return scaled
 
+            # apply a set of counts into substitutions
             def _apply(counts: dict[gpkit.Variable, float]) -> None:
                 for var, value in counts.items():
                     self.substitutions[var] = value
@@ -447,6 +482,7 @@ class Model(gpkit.Model):
             feasible_counts: dict[gpkit.Variable, float] | None = None
             feasible_solution: object | None = None
 
+            # grow the scale until we hit a feasible relaxed solution or hit the limit
             while upper_scale <= max_scale_factor:
                 probe_counts = _counts_from_scale(upper_scale)
                 _apply(probe_counts)
@@ -472,6 +508,7 @@ class Model(gpkit.Model):
                 {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
             )
 
+            # refine the scale factor to get closer to a minimal feasible set of counts
             for _ in range(refinement_iters):
                 if upper_scale - lower_scale <= 1e-3:
                     break
@@ -489,7 +526,63 @@ class Model(gpkit.Model):
             _apply(feasible_counts)
             return feasible_counts, feasible_solution
 
+        # last resort path that bumps one discrete resource at a time in round-robin
+        def _run_safeguarded_bumps() -> object:
+            # only reach this path when other constraints still bite after lifting rates
+            # limit the number of safeguarded bumps so we stop after a fair sweep
+            max_adjustments = max(len(adjustable_resources), 1) * 10
+            # track how many bumps have been attempted
+            adjustments = 0
+            last_feasibility_bump: dict[str, object] | None = None
+            # run a guarded round robin only when genuine infeasibility remains
+            while True:
+                try:
+                    # re-test after any safeguarded bump
+                    cur_solution = self.solve(**kwargs)
+                    if last_feasibility_bump:
+                        self.last_discrete_feasibility_bump = last_feasibility_bump
+                        resource_label = last_feasibility_bump.get("resource")
+                        log_suffix = (
+                            f" (resource {resource_label})" if resource_label else ""
+                        )
+                        logging.debug(
+                            "Discrete feasibility restored after bumping %s to %s%s",
+                            last_feasibility_bump["variable"],
+                            last_feasibility_bump["final"],
+                            log_suffix,
+                        )
+                    return cur_solution
+                except UnknownInfeasible:
+                    logging.debug(
+                        "Discrete solve still infeasible after safeguarded bump %s: %s",
+                        adjustments + 1,
+                        {
+                            str(dr.key): start_dict[dr]
+                            for dr in adjustable_resources
+                        },
+                    )
+                    if adjustments >= max_adjustments:
+                        self.last_discrete_feasibility_bump = None
+                        raise
+                    # pick the next adjustable resource in a cyclic fashion
+                    dr = adjustable_resources[
+                        adjustments % len(adjustable_resources)
+                    ]
+                    # increase the current cell in turn as a last resort
+                    start_dict[dr] = start_dict.get(dr, 0) + 1
+                    self.substitutions[dr] = start_dict[dr]
+                    resource = resource_lookup.get(dr)
+                    resource_label = _resource_label(resource)
+                    last_feasibility_bump = {
+                        "variable": str(dr.key),
+                        "resource": resource_label,
+                        "initial": start_dict[dr] - 1,
+                        "final": start_dict[dr],
+                    }
+                    adjustments += 1
+
         try:
+            # temporarily lift rate constraints on any resources that support it
             for dr in self.discrete_resources:
                 resource = resource_lookup.get(dr)
                 disable = getattr(resource, "disable_rate_constraint", None)
@@ -497,6 +590,7 @@ class Model(gpkit.Model):
                     # record which cells have their caps lifted
                     disabled_rate_controllers.append(resource)
 
+            # seed substitutions with the initial rounded counts
             self.substitutions.update(start_dict)
             initial_start_dict = dict(start_dict)
 
@@ -526,10 +620,12 @@ class Model(gpkit.Model):
                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                     )
 
+                    # optional path to relax rate targets before bumping counts
                     if relax_targets_on_infeasible and not targets_relaxed and target_map:
                         logging.debug(
                             "Relaxing discrete rate targets to allow throughput to float with fixed counts",
                         )
+                        # mark all target variables as "relaxed" for this pass
                         for var in list(target_map.keys()):
                             relaxed_target_priors[var] = target_substitutions.get(var, (None, missing))
                             target_map[var] = None
@@ -538,6 +634,7 @@ class Model(gpkit.Model):
                         targets_relaxed = True
 
                         try:
+                            # see if simply removing the target substitutions is enough
                             cur_solution = self.solve(**kwargs)
                         except UnknownInfeasible:
                             relaxed_success = False
@@ -546,9 +643,11 @@ class Model(gpkit.Model):
                                 logging.debug(
                                     "Relaxed rate targets remained infeasible; deriving new discrete counts",
                                 )
+                                # try to derive better counts from a relaxed continuous solve
                                 relaxed_counts = _derive_relaxed_counts()
 
                             if relaxed_counts:
+                                # apply any relaxed counts we discovered
                                 for dr, count in relaxed_counts.items():
                                     start_dict[dr] = count
                                     self.substitutions[dr] = count
@@ -573,6 +672,7 @@ class Model(gpkit.Model):
                                 )
                                 targets_relaxed = False
 
+                                # try scaling all counts together before going to bulk/bump paths
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     scaled_counts, scaled_solution = _scale_counts_until_feasible()
                                     if scaled_counts:
@@ -587,6 +687,7 @@ class Model(gpkit.Model):
                                             {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                         )
 
+                                # if scaling also fails, fall back to the coarse bulk search
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     bulk_counts = _search_bulk_counts()
                                     if bulk_counts:
@@ -609,62 +710,14 @@ class Model(gpkit.Model):
                                                 {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                             )
 
+                    # if we never managed to keep targets relaxed, go to the safeguarded bump loop
                     if not targets_relaxed:
+                        cur_solution = _run_safeguarded_bumps()
 
-                        # only reach this path when other constraints still bite after lifting rates
-                        # limit the number of safeguarded bumps so we stop after a fair sweep
-                        max_adjustments = max(len(adjustable_resources), 1) * 10
-                        # track how many bumps have been attempted
-                        adjustments = 0
-                        last_feasibility_bump: dict[str, object] | None = None
-                        # run a guarded round robin only when genuine infeasibility remains
-                        while True:
-                            try:
-                                # re-test after any safeguarded bump
-                                cur_solution = self.solve(**kwargs)
-                                if last_feasibility_bump:
-                                    self.last_discrete_feasibility_bump = last_feasibility_bump
-                                    resource_label = last_feasibility_bump.get("resource")
-                                    log_suffix = (
-                                        f" (resource {resource_label})" if resource_label else ""
-                                    )
-                                    logging.debug(
-                                        "Discrete feasibility restored after bumping %s to %s%s",
-                                        last_feasibility_bump["variable"],
-                                        last_feasibility_bump["final"],
-                                        log_suffix,
-                                    )
-                                break
-                            except UnknownInfeasible:
-                                logging.debug(
-                                    "Discrete solve still infeasible after safeguarded bump %s: %s",
-                                    adjustments + 1,
-                                    {
-                                        str(dr.key): start_dict[dr]
-                                        for dr in adjustable_resources
-                                    },
-                                )
-                                if adjustments >= max_adjustments:
-                                    self.last_discrete_feasibility_bump = None
-                                    raise
-                                dr = adjustable_resources[
-                                    adjustments % len(adjustable_resources)
-                                ]
-                                # increase the current cell in turn as a last resort
-                                start_dict[dr] = start_dict.get(dr, 0) + 1
-                                self.substitutions[dr] = start_dict[dr]
-                                resource = resource_lookup.get(dr)
-                                resource_label = _resource_label(resource)
-                                last_feasibility_bump = {
-                                    "variable": str(dr.key),
-                                    "resource": resource_label,
-                                    "initial": start_dict[dr] - 1,
-                                    "final": start_dict[dr],
-                                }
-                                adjustments += 1
-
+            # convert target strategy into a sign for comparisons
             target_strategy_flag = 1 if target_strategy == 'above' else -1
 
+            # tolerant float conversion that also handles pint-like magnitudes
             def _to_float(value: object) -> float | None:
                 if value is None:
                     return None
@@ -679,6 +732,7 @@ class Model(gpkit.Model):
                             return None
                 return None
 
+            # robustly look up a variable’s value in a solution object
             def _solution_value(solution: object, var: gpkit.Variable) -> object:
                 try:
                     variables = solution['variables']
@@ -694,6 +748,7 @@ class Model(gpkit.Model):
                 except Exception:
                     return None
 
+            # check whether all numeric targets in target_map are currently satisfied
             def _targets_met(solution: object) -> bool:
                 comparisons: list[bool] = []
                 for var, desired in target_map.items():
@@ -723,17 +778,19 @@ class Model(gpkit.Model):
                 if not candidates:
                     break
 
-                # find the most sensitive variable
+                # find the most sensitive variable according to the chosen strategy
                 most_sens = sensFinder(candidates, key=itemgetter(0))[1]
+                # bump that discrete resource by one unit
                 self.substitutions[most_sens] += 1
 
-                # re-solve
+                # re-solve and re-check the targets
                 cur_solution = self.solve(**kwargs)
                 cur_solution_targets_met = _targets_met(cur_solution)
 
-            # save the solution for the peak discrete (optimized target_variable)
-            optimized_discrete_solution = self.solution
+            # save the solution for the peak discrete (optimised target_variable)
+            optimised_discrete_solution = self.solution
 
+            # build a summary of any discrete adjustments that actually changed values
             adjustments_summary: list[dict[str, object]] = []
             for dr in adjustable_resources:
                 initial_val = initial_start_dict.get(dr)
@@ -757,12 +814,14 @@ class Model(gpkit.Model):
                 logging.debug("Discrete feasibility adjustments applied: %s", adjustments_summary)
 
         finally:
+            # restore any rate constraints that were temporarily disabled
             for resource in reversed(disabled_rate_controllers):
                 restore = getattr(resource, "restore_rate_constraint", None)
                 if callable(restore):
                     # put the rate caps back before returning
                     restore()
 
+        # restore the original discrete substitutions for all discrete resources
         for dr, prior in original_discrete_subs.items():
             if prior is missing:
                 try:
@@ -772,6 +831,7 @@ class Model(gpkit.Model):
             else:
                 self.substitutions[dr] = prior
 
+        # put the original cost back if we temporarily switched to a discrete cost
         if new_cost and orig_cost is not None:
             self.cost = orig_cost
 
@@ -779,6 +839,7 @@ class Model(gpkit.Model):
         for var, (sub_key, prior) in target_substitutions.items():
             key = sub_key or var
             if prior is missing:
+                # if there was no prior substitution, fall back to the current target value
                 fallback = target_map.get(var)
                 if fallback is None:
                     try:
@@ -790,6 +851,7 @@ class Model(gpkit.Model):
             else:
                 self.substitutions[key] = prior
 
+        # restore substitutions for any extra relaxation variables if requested
         if restore_relaxations:
             for var, (sub_key, prior) in extra_relax_substitutions.items():
                 key = sub_key or var
@@ -805,10 +867,10 @@ class Model(gpkit.Model):
         ## add the continuous solution
         self.solution['continuoussol'] = continuous_solution
         
-        ## add the optimized discrete solution
-        self.solution['discretesol'] = optimized_discrete_solution
+        ## add the optimised discrete solution
+        self.solution['discretesol'] = optimised_discrete_solution
         discrete_map = {
-            dr: optimized_discrete_solution['variables'][dr]
+            dr: optimised_discrete_solution['variables'][dr]
             for dr in self.discrete_resources
         }
         
