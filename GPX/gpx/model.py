@@ -372,18 +372,30 @@ class Model(gpkit.Model):
             return relaxed_counts
 
         # coarse search that grows counts until a feasible combination is found
-        def _search_bulk_counts() -> dict[gpkit.Variable, float]:
-            """Coarsely expand discrete counts to find a feasible combination."""
-            if not adjustable_resources:
+        def _search_bulk_counts(
+            seed_counts: dict[gpkit.Variable, float] | None = None,
+            resources: Iterable[gpkit.Variable] | None = None,
+        ) -> dict[gpkit.Variable, float]:
+            """Coarsely expand discrete counts to find a feasible combination.
+
+            When ``seed_counts`` are provided the coarse pass starts from that
+            previously-feasible point before attempting to shrink individuals,
+            which lets us reuse a scaled solution and immediately binary-search
+            each resource back toward the original rounded baseline.
+            """
+            active_resources = list(resources) if resources is not None else list(adjustable_resources)
+            if not active_resources:
                 return {}
 
-            max_attempts = max(len(adjustable_resources) * 3, 6)
+            max_attempts = max(len(active_resources) * 3, 6)
+            seed = seed_counts or start_dict
             trial_counts: dict[gpkit.Variable, float] = {
-                var: max(float(start_dict.get(var, 1.0)), 1.0) for var in adjustable_resources
+                var: max(float(seed.get(var, start_dict.get(var, 1.0))), 1.0)
+                for var in active_resources
             }
             # snapshot current substitutions so we can restore after searching
             saved_subs: dict[gpkit.Variable, object] = {
-                var: self.substitutions.get(var, missing) for var in adjustable_resources
+                var: self.substitutions.get(var, missing) for var in active_resources
             }
 
             # helper to apply a whole set of counts to the model
@@ -409,7 +421,7 @@ class Model(gpkit.Model):
                         self.solve(**kwargs)
                     except UnknownInfeasible:
                         # grow all counts when infeasible
-                        for var in adjustable_resources:
+                        for var in active_resources:
                             current = trial_counts.get(var, 1.0)
                             step = max(1.0, math.ceil(current * 0.5))
                             trial_counts[var] = max(current + step, current + 1.0)
@@ -419,7 +431,7 @@ class Model(gpkit.Model):
                         # record a feasible combination based on the solution
                         feasible = {
                             var: max(math.ceil(float(self.solution(var)) - tolerance), 1.0)
-                            for var in adjustable_resources
+                            for var in active_resources
                         }
                         break
 
@@ -430,8 +442,8 @@ class Model(gpkit.Model):
                 changed = True
                 while changed:
                     changed = False
-                    for var in adjustable_resources:
-                        lower = max(start_dict.get(var, 1.0), 1.0)
+                    for var in active_resources:
+                        lower = max(initial_start_dict.get(var, start_dict.get(var, 1.0)), 1.0)
                         upper = max(feasible.get(var, lower), lower)
                         while lower < upper:
                             mid = math.floor((lower + upper) / 2)
@@ -455,9 +467,14 @@ class Model(gpkit.Model):
                                 else:
                                     break
 
+                if seed_counts:
+                    _trace(
+                        "Bulk count search seeded with counts: %s",
+                        {str(var.key): seed_counts.get(var, 0.0) for var in active_resources},
+                    )
                 _trace(
                     "Bulk count search candidate counts: %s",
-                    {str(var.key): feasible.get(var, 0.0) for var in adjustable_resources},
+                    {str(var.key): feasible.get(var, 0.0) for var in active_resources},
                 )
                 return feasible
             finally:
@@ -759,22 +776,7 @@ class Model(gpkit.Model):
                                 )
                                 targets_relaxed = False
 
-                                # try scaling all counts together before going to bulk/bump paths
-                                if relax_targets_on_infeasible and not targets_relaxed:
-                                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
-                                    if scaled_counts:
-                                        for dr, count in scaled_counts.items():
-                                            start_dict[dr] = count
-
-                                        cur_solution = scaled_solution or self.solution
-                                        relaxed_success = True
-                                        targets_relaxed = True
-                                        _trace(
-                                            "Discrete feasibility restored after scaled count search: %s",
-                                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
-                                        )
-
-                                # if scaling also fails, fall back to the coarse bulk search
+                                # run the coarse per-resource search before resorting to global scaling
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     bulk_counts = _search_bulk_counts()
                                     if bulk_counts:
@@ -796,6 +798,22 @@ class Model(gpkit.Model):
                                                 "Discrete feasibility restored after bulk count search: %s",
                                                 {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                             )
+
+                                # if the coarse search also fails, try the global scaled sweep
+                                if relax_targets_on_infeasible and not targets_relaxed:
+                                    scaled_counts, scaled_solution = _scale_counts_until_feasible()
+                                    if scaled_counts:
+                                        for dr, count in scaled_counts.items():
+                                            start_dict[dr] = count
+                                            self.substitutions[dr] = count
+
+                                        cur_solution = scaled_solution or self.solution
+                                        relaxed_success = True
+                                        targets_relaxed = True
+                                        _trace(
+                                            "Discrete feasibility restored after scaled count search: %s",
+                                            {str(dr.key): start_dict[dr] for dr in adjustable_resources},
+                                        )
 
                     # if we never managed to keep targets relaxed, go to the safeguarded bump loop
                     if not targets_relaxed:
