@@ -3,9 +3,22 @@ from functools import lru_cache
 
 from gpkit.units import ureg
 import pint
+import logging
+from typing import Final
+
 import requests
 
 INITIALISED_FX_BASES: set[str] = set()
+
+# When the Frankfurter API is unavailable (offline test environments, proxy
+# restrictions, etc.) we still need deterministic exchange rates so models can
+# run.  These hand-tuned values are only used as a safety net – whenever the
+# live API is reachable we continue to prefer the remote data.
+FALLBACK_BASE_TO_CODE: Final[dict[str, dict[str, float]]] = {
+    "USD": {"EUR": 0.92, "GBP": 0.79},
+    "EUR": {"USD": 1.09, "GBP": 0.86},
+    "GBP": {"USD": 1.26, "EUR": 1.17},
+}
 
 # Simple units
 for unit_name in ["percent", "pct", "parts_per_million", "ppm", "hour", "h", "hr"]:
@@ -44,8 +57,17 @@ def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
         Mapping base->code (e.g., {'GBP': 0.77}) meaning 1 {base} = rate {code}.
     """
     url = f"https://api.frankfurter.app/latest?base={base}"
-    r = requests.get(url, timeout=5)
-    r.raise_for_status()
+    try:
+        r = requests.get(url, timeout=5)
+        r.raise_for_status()
+    except requests.RequestException as exc:  # pragma: no cover - network guard
+        fallback = FALLBACK_BASE_TO_CODE.get(base.upper())
+        if fallback is None:
+            raise
+        logging.warning(
+            "Falling back to bundled FX rates for base %s due to %s", base, exc
+        )
+        return dict(fallback)
     return dict(r.json()["rates"])  # base->code
 
 

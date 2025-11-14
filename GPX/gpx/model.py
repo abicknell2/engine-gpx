@@ -177,6 +177,16 @@ class Model(gpkit.Model):
                     return str(value)
             return None
 
+        def _trace(message: str, *args: object) -> None:
+            """Emit discrete-solve debug information to both logging and stdout."""
+
+            logging.debug(message, *args)
+            try:
+                formatted = message % args if args else message
+            except Exception:
+                formatted = message
+            print(f"[discrete-solve] {formatted}")
+
         if solve_orig:
             # run the smooth model first so we start from a valid plan
             _ = self.solve(**kwargs)
@@ -205,7 +215,7 @@ class Model(gpkit.Model):
 
         # log a readable mapping of discrete variable keys to resources
         if resource_lookup:
-            logging.debug(
+            _trace(
                 "Discrete resource mapping: %s",
                 {
                     str(var.key): (_resource_label(res) or "")
@@ -320,13 +330,16 @@ class Model(gpkit.Model):
             try:
                 self.solve(**kwargs)
             except UnknownInfeasible:
-                logging.debug(
+                _trace(
                     "Relaxed continuous solve infeasible while deriving discrete counts"
                 )
                 relaxed_counts.clear()
             except Exception:
                 logging.debug(
                     "Unexpected error while deriving relaxed discrete counts", exc_info=True
+                )
+                print(
+                    "[discrete-solve] Unexpected error while deriving relaxed discrete counts (see logs)"
                 )
                 relaxed_counts.clear()
             else:
@@ -343,7 +356,7 @@ class Model(gpkit.Model):
                     relaxed_counts[dr] = count
                     suggestion[str(dr.key)] = count
                 if suggestion:
-                    logging.debug(
+                    _trace(
                         "Relaxed continuous solve suggested discrete counts: %s",
                         suggestion,
                     )
@@ -359,18 +372,30 @@ class Model(gpkit.Model):
             return relaxed_counts
 
         # coarse search that grows counts until a feasible combination is found
-        def _search_bulk_counts() -> dict[gpkit.Variable, float]:
-            """Coarsely expand discrete counts to find a feasible combination."""
-            if not adjustable_resources:
+        def _search_bulk_counts(
+            seed_counts: dict[gpkit.Variable, float] | None = None,
+            resources: Iterable[gpkit.Variable] | None = None,
+        ) -> dict[gpkit.Variable, float]:
+            """Coarsely expand discrete counts to find a feasible combination.
+
+            When ``seed_counts`` are provided the coarse pass starts from that
+            previously-feasible point before attempting to shrink individuals,
+            which lets us reuse a scaled solution and immediately binary-search
+            each resource back toward the original rounded baseline.
+            """
+            active_resources = list(resources) if resources is not None else list(adjustable_resources)
+            if not active_resources:
                 return {}
 
-            max_attempts = max(len(adjustable_resources) * 3, 6)
+            max_attempts = max(len(active_resources) * 3, 6)
+            seed = seed_counts or start_dict
             trial_counts: dict[gpkit.Variable, float] = {
-                var: max(float(start_dict.get(var, 1.0)), 1.0) for var in adjustable_resources
+                var: max(float(seed.get(var, start_dict.get(var, 1.0))), 1.0)
+                for var in active_resources
             }
             # snapshot current substitutions so we can restore after searching
             saved_subs: dict[gpkit.Variable, object] = {
-                var: self.substitutions.get(var, missing) for var in adjustable_resources
+                var: self.substitutions.get(var, missing) for var in active_resources
             }
 
             # helper to apply a whole set of counts to the model
@@ -396,7 +421,7 @@ class Model(gpkit.Model):
                         self.solve(**kwargs)
                     except UnknownInfeasible:
                         # grow all counts when infeasible
-                        for var in adjustable_resources:
+                        for var in active_resources:
                             current = trial_counts.get(var, 1.0)
                             step = max(1.0, math.ceil(current * 0.5))
                             trial_counts[var] = max(current + step, current + 1.0)
@@ -406,7 +431,7 @@ class Model(gpkit.Model):
                         # record a feasible combination based on the solution
                         feasible = {
                             var: max(math.ceil(float(self.solution(var)) - tolerance), 1.0)
-                            for var in adjustable_resources
+                            for var in active_resources
                         }
                         break
 
@@ -417,8 +442,8 @@ class Model(gpkit.Model):
                 changed = True
                 while changed:
                     changed = False
-                    for var in adjustable_resources:
-                        lower = max(start_dict.get(var, 1.0), 1.0)
+                    for var in active_resources:
+                        lower = max(initial_start_dict.get(var, start_dict.get(var, 1.0)), 1.0)
                         upper = max(feasible.get(var, lower), lower)
                         while lower < upper:
                             mid = math.floor((lower + upper) / 2)
@@ -442,9 +467,14 @@ class Model(gpkit.Model):
                                 else:
                                     break
 
-                logging.debug(
+                if seed_counts:
+                    _trace(
+                        "Bulk count search seeded with counts: %s",
+                        {str(var.key): seed_counts.get(var, 0.0) for var in active_resources},
+                    )
+                _trace(
                     "Bulk count search candidate counts: %s",
-                    {str(var.key): feasible.get(var, 0.0) for var in adjustable_resources},
+                    {str(var.key): feasible.get(var, 0.0) for var in active_resources},
                 )
                 return feasible
             finally:
@@ -455,7 +485,15 @@ class Model(gpkit.Model):
             max_scale_factor: float = 64.0,
             refinement_iters: int = 12,
         ) -> tuple[dict[gpkit.Variable, float], object | None]:
-            """Scale all discrete counts together until the relaxed model becomes feasible."""
+            """Scale all discrete counts together until the relaxed model becomes feasible.
+
+            The coarse phase multiplies every relaxed continuous count by a shared factor
+            (>=1.0) so the mix of resources stays proportional to the smooth plan while we
+            search for the smallest globally scaled set of integers that satisfies the
+            constraints. Once we find a feasible factor, a binary-search refinement keeps
+            the last infeasible/feasible bounds and repeatedly halves the gap until the
+            scale converges.
+            """
 
             if not adjustable_resources:
                 return {}, None
@@ -472,6 +510,15 @@ class Model(gpkit.Model):
                     scaled[dr] = max(math.ceil(candidate - tolerance), 1.0)
                 return scaled
 
+            def _format_scaled_counts(
+                counts: dict[gpkit.Variable, float]
+            ) -> dict[str, str]:
+                formatted: dict[str, str] = {}
+                for dr in adjustable_resources:
+                    base = baseline_values.get(dr, 0.0)
+                    formatted[str(dr.key)] = f"{base:.3f}->{counts.get(dr, 0.0):.0f}"
+                return formatted
+
             # apply a set of counts into substitutions
             def _apply(counts: dict[gpkit.Variable, float]) -> None:
                 for var, value in counts.items():
@@ -482,46 +529,104 @@ class Model(gpkit.Model):
             feasible_counts: dict[gpkit.Variable, float] | None = None
             feasible_solution: object | None = None
 
+            _trace(
+                "Scaled count search multiplies the relaxed continuous counts by a shared "
+                "factor (>=1.0) before rounding up so the resource mix remains proportional."
+            )
+            _trace(
+                "Scaled count search baselines (continuous -> rounded start): %s",
+                _format_scaled_counts(initial_counts),
+            )
+
             # grow the scale until we hit a feasible relaxed solution or hit the limit
             while upper_scale <= max_scale_factor:
                 probe_counts = _counts_from_scale(upper_scale)
+                _trace(
+                    "Scaled count search probing scale %.3f (lower %.3f upper %.3f) counts: %s",
+                    upper_scale,
+                    lower_scale,
+                    upper_scale,
+                    _format_scaled_counts(probe_counts),
+                )
                 _apply(probe_counts)
                 try:
                     feasible_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
+                    next_upper = min(upper_scale * 2.0, max_scale_factor)
+                    _trace(
+                        "Scaled count search infeasible at scale %.3f; expanding bound to %.3f-%.3f",
+                        upper_scale,
+                        upper_scale,
+                        next_upper,
+                    )
                     lower_scale = upper_scale
-                    upper_scale *= 2.0
+                    upper_scale = next_upper
                 else:
+                    _trace(
+                        "Scaled count search feasible at scale %.3f (counts: %s); starting refinement between %.3f-%.3f",
+                        upper_scale,
+                        _format_scaled_counts(probe_counts),
+                        lower_scale,
+                        upper_scale,
+                    )
                     feasible_counts = probe_counts
                     break
 
             if feasible_counts is None:
-                logging.debug(
+                _trace(
                     "Scaled count search failed to restore feasibility (max factor %.2f)",
                     upper_scale,
                 )
                 _apply(initial_counts)
                 return {}, None
 
-            logging.debug(
+            _trace(
                 "Scaled count search candidate counts: %s",
-                {str(dr.key): feasible_counts.get(dr, 0.0) for dr in adjustable_resources},
+                _format_scaled_counts(feasible_counts),
+            )
+
+            _trace(
+                "Scaled count search refinement phase: binary searching between the last "
+                "infeasible scale %.3f and feasible scale %.3f to tighten the shared "
+                "multiplier",
+                lower_scale,
+                upper_scale,
             )
 
             # refine the scale factor to get closer to a minimal feasible set of counts
-            for _ in range(refinement_iters):
+            for iteration in range(1, refinement_iters + 1):
                 if upper_scale - lower_scale <= 1e-3:
                     break
                 mid = 0.5 * (lower_scale + upper_scale)
                 probe_counts = _counts_from_scale(mid)
+                _trace(
+                    "Scaled count search refinement %d testing scale %.3f (midpoint between "
+                    "infeasible %.3f and feasible %.3f) counts: %s",
+                    iteration,
+                    mid,
+                    lower_scale,
+                    upper_scale,
+                    _format_scaled_counts(probe_counts),
+                )
                 _apply(probe_counts)
                 try:
                     feasible_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
+                    _trace(
+                        "Scaled count search refinement %d infeasible at %.3f",
+                        iteration,
+                        mid,
+                    )
                     lower_scale = mid
                 else:
                     feasible_counts = probe_counts
                     upper_scale = mid
+
+            if feasible_counts is not None:
+                _trace(
+                    "Scaled count search refined counts: %s",
+                    _format_scaled_counts(feasible_counts),
+                )
 
             _apply(feasible_counts)
             return feasible_counts, feasible_solution
@@ -545,7 +650,7 @@ class Model(gpkit.Model):
                         log_suffix = (
                             f" (resource {resource_label})" if resource_label else ""
                         )
-                        logging.debug(
+                        _trace(
                             "Discrete feasibility restored after bumping %s to %s%s",
                             last_feasibility_bump["variable"],
                             last_feasibility_bump["final"],
@@ -553,7 +658,7 @@ class Model(gpkit.Model):
                         )
                     return cur_solution
                 except UnknownInfeasible:
-                    logging.debug(
+                    _trace(
                         "Discrete solve still infeasible after safeguarded bump %s: %s",
                         adjustments + 1,
                         {
@@ -598,7 +703,7 @@ class Model(gpkit.Model):
                 # try the discrete solve with just the rounded starts
                 cur_solution = self.solve(**kwargs)
             except UnknownInfeasible:
-                logging.debug(
+                _trace(
                     "Discrete solve infeasible with initial rounded counts: %s",
                     {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                 )
@@ -615,14 +720,13 @@ class Model(gpkit.Model):
                     # If the ceilled counts are sufficient we can stop here.
                     cur_solution = self.solve(**kwargs)
                 except UnknownInfeasible:
-                    logging.debug(
+                    _trace(
                         "Discrete solve still infeasible after ceiling counts: %s",
                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                     )
 
-                    # optional path to relax rate targets before bumping counts
                     if relax_targets_on_infeasible and not targets_relaxed and target_map:
-                        logging.debug(
+                        _trace(
                             "Relaxing discrete rate targets to allow throughput to float with fixed counts",
                         )
                         # mark all target variables as "relaxed" for this pass
@@ -640,7 +744,7 @@ class Model(gpkit.Model):
                             relaxed_success = False
                             relaxed_counts: dict[gpkit.Variable, float] = {}
                             if relax_targets_on_infeasible:
-                                logging.debug(
+                                _trace(
                                     "Relaxed rate targets remained infeasible; deriving new discrete counts",
                                 )
                                 # try to derive better counts from a relaxed continuous solve
@@ -655,39 +759,40 @@ class Model(gpkit.Model):
                                 try:
                                     cur_solution = self.solve(**kwargs)
                                 except UnknownInfeasible:
-                                    logging.debug(
+                                    _trace(
                                         "Discrete solve still infeasible after applying relaxed counts",
                                     )
                                     targets_relaxed = False
                                 else:
                                     relaxed_success = True
                                     targets_relaxed = True
-                                    logging.debug(
+                                    _trace(
                                         "Discrete feasibility restored after applying relaxed counts: %s",
                                         {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                     )
                             if not relaxed_success:
-                                logging.debug(
+                                _trace(
                                     "Relaxed rate targets remained infeasible; falling back to safeguarded bumps",
                                 )
                                 targets_relaxed = False
 
-                                # try scaling all counts together before going to bulk/bump paths
+                                # try the global shared-scale sweep before the per-resource bulk search
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     scaled_counts, scaled_solution = _scale_counts_until_feasible()
                                     if scaled_counts:
                                         for dr, count in scaled_counts.items():
                                             start_dict[dr] = count
+                                            self.substitutions[dr] = count
 
                                         cur_solution = scaled_solution or self.solution
                                         relaxed_success = True
                                         targets_relaxed = True
-                                        logging.debug(
+                                        _trace(
                                             "Discrete feasibility restored after scaled count search: %s",
                                             {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                         )
 
-                                # if scaling also fails, fall back to the coarse bulk search
+                                # if the global scaling pass still cannot recover, fall back to the bulk search
                                 if relax_targets_on_infeasible and not targets_relaxed:
                                     bulk_counts = _search_bulk_counts()
                                     if bulk_counts:
@@ -698,14 +803,14 @@ class Model(gpkit.Model):
                                         try:
                                             cur_solution = self.solve(**kwargs)
                                         except UnknownInfeasible:
-                                            logging.debug(
+                                            _trace(
                                                 "Discrete solve still infeasible after bulk count search"
                                             )
                                             targets_relaxed = False
                                         else:
                                             relaxed_success = True
                                             targets_relaxed = True
-                                            logging.debug(
+                                            _trace(
                                                 "Discrete feasibility restored after bulk count search: %s",
                                                 {str(dr.key): start_dict[dr] for dr in adjustable_resources},
                                             )
@@ -811,7 +916,7 @@ class Model(gpkit.Model):
 
             self.last_discrete_adjustments = adjustments_summary
             if adjustments_summary:
-                logging.debug("Discrete feasibility adjustments applied: %s", adjustments_summary)
+                _trace("Discrete feasibility adjustments applied: %s", adjustments_summary)
 
         finally:
             # restore any rate constraints that were temporarily disabled
