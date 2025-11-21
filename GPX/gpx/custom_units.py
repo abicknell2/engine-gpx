@@ -34,6 +34,15 @@ ALLOWED_CURRENCIES = {"USD", "EUR", "GBP"}
 CURRENT_RATES_BY_BASE: dict[str, dict[str, float]] = {}
 
 
+DEFAULT_FLIPPED_FX_RATES: dict[str, dict[str, float]] = {
+    # We only support three currencies, so a symmetric 1:1 fallback is fine
+    # when the live rates endpoint is unreachable.
+    "USD": {"EUR": 1.0, "GBP": 1.0},
+    "EUR": {"USD": 1.0, "GBP": 1.0},
+    "GBP": {"USD": 1.0, "EUR": 1.0},
+}
+
+
 @lru_cache(maxsize=None)
 def fetch_exchange_rates(base: str = "USD") -> dict[str, float]:
     """
@@ -71,12 +80,29 @@ def refresh_fx_rates(base: str = "USD") -> dict[str, float]:
 
     Example (base='USD'): returns {'GBP': USD/GBP, 'EUR': USD/EUR, ...}
     """
-    base_to_code = fetch_exchange_rates(base)  # cached per base
-    flipped = {
-        code: (1 / rate)
-        for code, rate in base_to_code.items()
-        if rate and not math.isnan(rate)
-    }
+    flipped: dict[str, float] | None = None
+    fetch_error: Exception | None = None
+    try:
+        base_to_code = fetch_exchange_rates(base)  # cached per base
+        flipped = {
+            code: (1 / rate)
+            for code, rate in base_to_code.items()
+            if rate and not math.isnan(rate)
+        }
+    except (requests.RequestException, ValueError, KeyError) as exc:
+        fetch_error = exc
+        # Fall back to last-known or static rates so model solves are not blocked
+        # by transient network issues. The fallback is already in "flipped"
+        # form: code -> base/code.
+        flipped = CURRENT_RATES_BY_BASE.get(base) or DEFAULT_FLIPPED_FX_RATES.get(base)
+
+    if not flipped:
+        # If we have absolutely nothing, propagate the original exception so the
+        # caller can decide how to handle it.
+        if fetch_error:
+            raise fetch_error
+        raise RuntimeError("No FX rates available for context initialization")
+
     ureg._contexts.pop("FX", None)  # remove stale context
     ureg.add_context(make_fx_context(flipped, base))
     CURRENT_RATES_BY_BASE[base] = dict(flipped)  # store a copy
