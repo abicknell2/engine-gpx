@@ -155,6 +155,9 @@ class Model(gpkit.Model):
         if not target_map:
             raise ValueError('target_map must contain at least one target variable')
 
+        # keep a copy of the original targets so we can reapply them later
+        original_target_map: dict[gpkit.Variable, object] = dict(target_map)
+
         # helper for unpacking (variable, resource) pairs
         def _as_variable(entry: gpkit.Variable | tuple[gpkit.Variable, object]) -> gpkit.Variable:
             return entry[0] if isinstance(entry, tuple) else entry
@@ -820,6 +823,40 @@ class Model(gpkit.Model):
                 if callable(restore):
                     # put the rate caps back before returning
                     restore()
+
+        # try a final solve with rate constraints restored so the solution reflects caps
+        final_start_dict = dict(start_dict)
+
+        def _set_target_value(var: gpkit.Variable, desired: object) -> None:
+            sub_key, _ = target_substitutions.get(var, (None, missing))
+            key = sub_key or var
+            self.substitutions[key] = desired
+
+        # reapply the discrete counts that were chosen during the relaxed solve
+        for dr, count in final_start_dict.items():
+            self.substitutions[dr] = count
+
+        # restore the original targets before solving with reinstated rate caps
+        for var, desired in original_target_map.items():
+            if desired is None:
+                continue
+            try:
+                _set_target_value(var, desired)
+            except Exception:
+                logging.debug(
+                    "Unable to apply target %s during final resolve", getattr(var, "key", var), exc_info=True
+                )
+
+        try:
+            final_solution = self.solve(**kwargs)
+        except UnknownInfeasible:
+            logging.debug(
+                "Final discrete solve infeasible after restoring rate constraints; keeping pre-restore solution"
+            )
+        except Exception:
+            logging.debug("Unexpected error while re-solving with restored rate constraints", exc_info=True)
+        else:
+            optimised_discrete_solution = final_solution
 
         # restore the original discrete substitutions for all discrete resources
         for dr, prior in original_discrete_subs.items():
